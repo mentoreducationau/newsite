@@ -58,6 +58,9 @@ class Header extends Component {
                     <Link to="/special-offers/">Special Offers</Link>
                   </li>
                   <li>
+                    <Link to="/lms-gateway-login/">MELMS Login</Link>
+                  </li>
+                  <li>
                     <Link to="/contact/">Contact</Link>
                   </li>
                   <li>
@@ -84,10 +87,13 @@ class Header extends Component {
             <Link to="/courses/">Courses</Link>
           </li>
           <li>
-            <Link to="/student-info/">Student Information</Link>
+            <Link to="/student-information/">Student Information</Link>
           </li>
           <li>
             <Link to="/special-offers/">Special Offers</Link>
+          </li>
+          <li>
+            <Link to="/lms-gateway-login/">MELMS Login</Link>
           </li>
           <li>
             <Link to="/contact/">Contact</Link>
