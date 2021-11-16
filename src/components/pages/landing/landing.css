@@ -1,0 +1,42 @@
+
+
+ 
+
+
+/* Card for tableDesc */
+
+
+
+.tableDescrContainer {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+  .tableDescCard {
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 15px 15px 0 15px;
+  }
+  
+  .tableDescCardImage {
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+
+  
+  .tableDescCardTitle {
+    font-weight: bold !important;
+    font-size: 1.3em;
+    /* border-bottom: darkgrey thin solid; */
+  }
+  
+  .tableDescCardImage img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .tableDescCardText {
+    padding-bottom: 15px;
+  }

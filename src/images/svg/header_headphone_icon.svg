@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.313" height="38.3" viewBox="0 0 38.313 38.3">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #707070;
+      }
+    </style>
+  </defs>
+  <g id="Group_131" data-name="Group 131" transform="translate(-209.586 -33.587)">
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M11.322,26.231a12.766,12.766,0,0,1-3.961-.618A12.017,12.017,0,0,1,3.5,23.52,12.3,12.3,0,0,1,.634,20.177,13.564,13.564,0,0,1-.982,15.838l1.964-.376a10.83,10.83,0,0,0,3.778,6.5,10.337,10.337,0,0,0,7.07,2.254A11.093,11.093,0,0,0,14.1,23.9l.012,0a14.014,14.014,0,0,0,6.645-4.053,11.88,11.88,0,0,0,3.092-6.457v-.01c.1-.723.122-1.043.136-1.353A10.525,10.525,0,0,0,20.967,4.01a10.448,10.448,0,0,0-7.956-3l-.087-2a12.34,12.34,0,0,1,13.055,13.1c-.016.365-.046.732-.151,1.525a13.705,13.705,0,0,1-3.6,7.557,16.012,16.012,0,0,1-7.585,4.63,13.027,13.027,0,0,1-2.727.392Q11.619,26.231,11.322,26.231Z" transform="translate(228.045 70.486) rotate(-133)"/>
+    <path id="Path_14" data-name="Path 14" class="cls-1" d="M1,0H4A1,1,0,0,1,5,1V6A1,1,0,0,1,4,7H1A1,1,0,0,1,0,6V1A1,1,0,0,1,1,0Z" transform="translate(214.818 57.649)"/>
+    <path id="Path_14_-_Outline" data-name="Path 14 - Outline" class="cls-1" d="M2,2V5H3V2H2M1,0H4A1,1,0,0,1,5,1V6A1,1,0,0,1,4,7H1A1,1,0,0,1,0,6V1A1,1,0,0,1,1,0Z" transform="translate(214.818 57.649)"/>
+    <path id="Path_3" data-name="Path 3" class="cls-1" d="M1,0H4A1,1,0,0,1,5,1V6A1,1,0,0,1,4,7H1A1,1,0,0,1,0,6V1A1,1,0,0,1,1,0Z" transform="translate(237.616 57.649)"/>
+    <path id="Path_3_-_Outline" data-name="Path 3 - Outline" class="cls-1" d="M2,2V5H3V2H2M1,0H4A1,1,0,0,1,5,1V6A1,1,0,0,1,4,7H1A1,1,0,0,1,0,6V1A1,1,0,0,1,1,0Z" transform="translate(237.616 57.649)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-1" d="M9.788,0A13.448,13.448,0,0,1,5.2.888,19.984,19.984,0,0,1,0,0" transform="translate(218.616 62.484) rotate(17)"/>
+    <path id="Path_2_-_Outline" data-name="Path 2 - Outline" class="cls-1" d="M5.2,1.888A20.831,20.831,0,0,1-.307.952l.614-1.9A19.087,19.087,0,0,0,5.2-.112,12.549,12.549,0,0,0,9.407-.924L10.171.924A14.405,14.405,0,0,1,5.2,1.888Z" transform="translate(218.616 62.484) rotate(17)"/>
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="2" cy="2" r="2" transform="translate(227.452 62.858)"/>
+    <path id="Ellipse_1_-_Outline" data-name="Ellipse 1 - Outline" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(227.452 62.858)"/>
+  </g>
+</svg>
