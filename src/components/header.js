@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 import "materialize-css/dist/css/materialize.min.css"
+import { Typography } from "../styles/Typography.css"
 
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
@@ -14,6 +16,11 @@ class Header extends Component {
 
   render() {
     return (
+      <>
+      <Typography />
+      <Helmet>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      </Helmet>
       <div className="">
         <div
           className="navbar-fixed"
@@ -111,6 +118,7 @@ class Header extends Component {
           </li>
         </ul>
       </div>
+      </>
     )
   }
 }

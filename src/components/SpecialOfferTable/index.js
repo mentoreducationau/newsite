@@ -1,15 +1,13 @@
 import React from "react"
 import { Container } from "../../styles/ContainerStyles.css"
-import "materialize-css/dist/css/materialize.min.css"
 import { Paragraph } from "../../styles/Typography.css"
 import { RedDecParagraph } from "../SpecialOffersScrollMenu/index.css"
-import { Button } from "react-materialize"
 
 const SpecialOffersTable = ({ tableData, excuteScroll }) => {
   return (
     <Container style={{ marginTop: "3.25rem" }}>
       <Paragraph>School Name</Paragraph>
-      <table className="striped">
+      <table className="striped centered">
         <tr>
           <th>Course Code</th>
           <th>Course</th>
@@ -30,7 +28,7 @@ const SpecialOffersTable = ({ tableData, excuteScroll }) => {
         ))}
       </table>
       <RedDecParagraph onClick={() => excuteScroll(0)}>Back to Top</RedDecParagraph>
-      <Button>Request a Callback<i className="playlist_play"></i></Button>
+      <a class="waves-effect waves-light btn">Request a Callback<i class="material-icons right">play_circle_outline</i></a>
     </Container>
   )
 }

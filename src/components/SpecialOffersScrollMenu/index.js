@@ -6,7 +6,7 @@ import { StudentLifeSubtitle } from "../../templates/StudentLifeTemplate/index.c
 
 const SpecialOffersScrollMenu = ({ excuteScroll }) => {
   return (
-    <Container style={{ marginTop: 0 }}>
+    <Container style={{ marginTop: 0, textAlign: "center" }}>
       <StudentLifeSubtitle>Special Offers - Must end Thursday November 25th 2021 @ 4.00pm AEDT.</StudentLifeSubtitle>
       <SpecialOffersScrollMenuWrapper>
         {specialOffersArray.map((item, index) => (
