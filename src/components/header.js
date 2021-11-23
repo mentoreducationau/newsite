@@ -43,11 +43,14 @@ class Header extends Component {
                     <Link to="/about/">About Us</Link>
                   </li>
                   <li>
+                    <Link to="/templates/schools/faculties/faculty-course-overview/">Courses</Link>
+                  </li>
+                  {/* <li>
                     <Link to="/schools/">Schools</Link>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <Link to="/courses/">Courses</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/student-information/">Student Information</Link>
                   </li>

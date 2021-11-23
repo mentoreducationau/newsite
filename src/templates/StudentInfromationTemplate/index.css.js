@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import img from "../../images/student-information-imgs/banner1.jpg"
+import img from "../../images/student-information-imgs/banner1_non_top.jpg"
 import { Container } from "../../styles/ContainerStyles.css"
 
 export const TitleBanner = styled.div`
