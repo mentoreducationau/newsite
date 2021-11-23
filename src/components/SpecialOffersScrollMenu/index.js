@@ -2,23 +2,18 @@ import React from "react"
 import { Container } from "../../styles/ContainerStyles.css"
 import { specialOffersArray } from "../../contents/courseArrayForSpecialOffers"
 import { RedDecParagraph, SpecialOffersScrollMenuWrapper } from "./index.css"
+import { StudentLifeSubtitle } from "../../templates/StudentLifeTemplate/index.css"
 
 const SpecialOffersScrollMenu = ({ excuteScroll }) => {
-  console.log(specialOffersArray)
   return (
     <Container style={{ marginTop: 0 }}>
+      <StudentLifeSubtitle>Special Offers - Must end Thursday November 25th 2021 @ 4.00pm AEDT.</StudentLifeSubtitle>
       <SpecialOffersScrollMenuWrapper>
         {specialOffersArray.map((item, index) => (
           <RedDecParagraph key={index} onClick={() => excuteScroll(index)}>
             {"school " + (index + 1)}
           </RedDecParagraph>
         ))}
-        {/* <RedDecParagraph onClick={() => excuteScroll(0)}>{"school 1"}</RedDecParagraph>
-        <RedDecParagraph onClick={() => excuteScroll(1)}>{"school 2"}</RedDecParagraph>
-        <RedDecParagraph onClick={() => excuteScroll(2)}>{"school 3"}</RedDecParagraph>
-        <RedDecParagraph onClick={() => excuteScroll(3)}>{"school 4"}</RedDecParagraph>
-        <RedDecParagraph onClick={() => excuteScroll(4)}>{"school 5"}</RedDecParagraph>
-        <RedDecParagraph onClick={() => excuteScroll(5)}>{"school 6"}</RedDecParagraph> */}
       </SpecialOffersScrollMenuWrapper>
     </Container>
   )
