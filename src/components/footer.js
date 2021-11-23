@@ -15,11 +15,11 @@ const Footer = () => {
   return (
     <div
       className="page-footer red darken-2"
-      style={{
+      // style={{
        
-        width: "100vw",
+      //   width: "100vw",
         
-      }}
+      // }}
     >
       <div className="container">
         <div className="row">

@@ -13,13 +13,13 @@ export const FormField = styled(GlobalFormField)`
     font-family: Futura Medium;
     font-size: 18px;
     line-height: 23px;
-    color: #464343;
+    color: white;
     padding-left: 1rem;
     margin-bottom: 8px;
   }
 
   input {
-    border: 2px solid #707070;
+    border: 2px solid white !important;
     height: 50px;
   }
 

@@ -3,9 +3,10 @@ import socialIcons from "../../../static/socialmediaicon.png"
 import { Container } from "../../styles/ContainerStyles.css"
 
 export const FooterContainer = styled.footer`
-  background: #f1f1f1;
+  background: #D32F2F;
   padding: 36px;
   clear: both;
+  color: white;
 `
 
 export const Footer = styled(Container)`
@@ -18,11 +19,11 @@ export const Footer = styled(Container)`
   h2,
   h3,
   h4 {
-    color: #333;
+    color: white;
   }
 
   h4 {
-    color: #666;
+    color: white;
     font-size: 14px;
     margin: 20px 0 0;
   }
@@ -38,7 +39,7 @@ export const Footer = styled(Container)`
 
   ul,
   li {
-    color: grey;
+    color: white;
     font-size: 14px;
   }
 
@@ -48,16 +49,16 @@ export const Footer = styled(Container)`
   }
 
   a {
-    color: #666;
+    color: white;
     text-decoration: none;
 
     :hover {
-      text-decoration: underline #0071ba;
+      text-decoration: underline white;
     }
   }
 
   a:visited {
-    color: #666;
+    color: white;
     font-weight: 700;
   }
 `
@@ -82,7 +83,7 @@ export const FooterColumns = styled.div`
 
     a {
       :hover {
-        text-decoration: underline #666;
+        text-decoration: underline white;
       }
     }
   }
@@ -124,7 +125,7 @@ export const FooterCourseList = styled.ul`
   li {
     position: relative;
     padding-left: 11px;
-    color: grey;
+    color: white;
     font-size: 14px;
 
     ::before {
@@ -135,17 +136,17 @@ export const FooterCourseList = styled.ul`
       width: 0;
       height: 0;
       border-top: 3px solid transparent;
-      border-left: 6px solid #cc4a28;
+      border-left: 6px solid white;
       border-bottom: 3px solid transparent;
       display: inline-block;
     }
 
     a {
-      color: grey;
+      color: white;
       font-weight: 400;
 
       :hover {
-        text-decoration: underline #666;
+        text-decoration: underline white;
       }
     }
   }
@@ -156,14 +157,14 @@ export const RowTwo = styled.div`
   font-family: Futura Medium;
 
   p {
-    color: grey;
+    color: white;
     font-size: 16px;
     line-height: 24px;
   }
 
   a {
     :hover {
-      text-decoration: underline #666;
+      text-decoration: underline white;
     }
   }
 `
@@ -173,7 +174,7 @@ export const Connect = styled.div`
   float: bottom;
 
   h4 {
-    color: #666;
+    color: white;
     font-size: 14px;
     margin: 20px 0 0;
   }

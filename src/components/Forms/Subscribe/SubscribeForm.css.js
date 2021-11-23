@@ -12,6 +12,11 @@ export const SubscribeFormStyled = styled.form`
 export const SubscribeFormField = styled(GlobalFormField)`
   input {
     border-radius: 3px;
+    color: white;
+    border-color: white !important;
+  }
+  label {
+    color: white !important;
   }
 `
 
@@ -42,7 +47,7 @@ export const SubscribeButton = styled.input`
 `
 
 export const RequiredIndicator = styled.span`
-  color: #e85c41;
+  color: white;
   font-size: 150%;
   font-weight: normal;
   position: relative;

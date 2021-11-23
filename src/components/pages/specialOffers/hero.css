@@ -3,7 +3,7 @@
     background-image: url("./images/hero.jpg");
     background-size: cover;
     background-color: #cccccc;
-    width: 100vw;
+    /* width: 100vw; */
     margin: 0 auto;
 }
 
@@ -12,7 +12,7 @@
   
   background-size: cover;
   background-color: white;
-  width: 100vw;
+  /* width: 100vw; */
   margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@
   background-image: url("./images/hero.jpg");
   background-size: cover;
   background-color: #cccccc;
-  width: 100vw;
+  /* width: 100vw; */
   margin: 0 auto;
 }
 

@@ -13,7 +13,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Header from "./header";
-import Footer from "./footer";
+// import Footer from "./footer";
+import Footer from "./Footer/footer"
 import "./layout.css";
 
 const Layout = ({ children }) => {
@@ -36,7 +37,7 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: "100vw",
+          // maxWidth: "100vw",
           minHeight: "1000px",
         }}
       >
