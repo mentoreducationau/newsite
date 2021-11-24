@@ -27,7 +27,7 @@ const SpecialOffersTable = ({ tableData, excuteScroll }) => {
           </tr>
         ))}
       </table>
-      <RedDecParagraph onClick={() => excuteScroll(0)}>Back to Top</RedDecParagraph>
+      <RedDecParagraph onClick={() => excuteScroll(999)}>Back to Top</RedDecParagraph>
       <a class="waves-effect waves-light btn">Request a Callback<i class="material-icons right">play_circle_outline</i></a>
     </Container>
   )

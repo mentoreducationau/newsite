@@ -11,7 +11,7 @@ const SpecialOffersTemplate = () => {
   const itemsRef = useRef([])
 
   const excuteScroll = el => {
-    // const pos = itemsRef.current[el].getBoundingClientRect().top
+    // const pos = itemsRef.current[el].getBoundingClientRect().top - 50
     // window.scrollTo({ top: pos, behavior: "smooth" })
     itemsRef.current[el].scrollIntoView({ behavior: "smooth" })
   }
@@ -26,13 +26,22 @@ const SpecialOffersTemplate = () => {
     <>
       <SpecialOffersHero />
       <MainContainer>
-        <SpecialOffersScrollMenu excuteScroll={excuteScroll} />
+        <div ref={el => (itemsRef.current[999] = el)}>
+          <SpecialOffersScrollMenu excuteScroll={excuteScroll} />
+        </div>
         {specialOffersArray.map((item, index) => (
           <div ref={el => (itemsRef.current[index] = el)}>
-            <SpecialOffersTable key={index} tableData={item.school} excuteScroll={excuteScroll} />
+            <SpecialOffersTable
+              key={index}
+              tableData={item.school}
+              excuteScroll={excuteScroll}
+            />
           </div>
         ))}
-        <SpecialOffersTable tableData={trueIndemandArray} excuteScroll={excuteScroll} />
+        <SpecialOffersTable
+          tableData={trueIndemandArray}
+          excuteScroll={excuteScroll}
+        />
         <StudentsWork course="false" />
       </MainContainer>
     </>
