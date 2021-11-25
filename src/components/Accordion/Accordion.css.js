@@ -16,6 +16,7 @@ export const AccordionBlock = styled.div`
   align-items: center;
   gap: 1rem;
   border: none;
+  border-radius: 5px;
   outline: none;
   transition: background-color 0.6s ease;
   margin-bottom: ${props=>props.active === "active" ? "0" : "1rem"};

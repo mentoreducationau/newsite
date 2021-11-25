@@ -1,5 +1,4 @@
 import * as React from "react"
-// import Layout from "../../components/layout"
 import Layout from "../../components/Layout/Layout"
 import Seo from "../../components/Seo/Seo"
 
@@ -29,7 +28,6 @@ const CoursePage = ({ pageContext, location, ...props }) => {
 
   return (
     <Layout pageContext={pageContext} location={location} crumbLabel={courseId}>
-    {/* <Layout> */}
       <Seo title="Courses" />
       <TitleBanner>
         <Container>

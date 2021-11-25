@@ -49,6 +49,7 @@ const ImageGrid = () => {
                 key={index}
                 title={student.title}
                 content={student.content}
+                link={student.link}
                 image={
                   images.allFile.edges.filter(
                     item => item.node.name === student.image

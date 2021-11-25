@@ -58,7 +58,7 @@ class MailchimpForm extends Component {
           }}
         >
           <div className="row">
-            <div class="input-field col s12">
+            <div className="input-field col s12">
               <h4>Subscribe</h4>
 
               {this.state.result === "error" ? (

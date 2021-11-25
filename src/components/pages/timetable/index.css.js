@@ -45,6 +45,6 @@ export const ParagraphWrapper = styled.div`
   }
 
   i {
-      transform: ${props=>props.openState == true ? 'rotate(90deg)' : 'rotate(0deg)'};
+      transform: ${props=> props.openState ? 'rotate(90deg)' : 'rotate(0deg)'};
   }
 `

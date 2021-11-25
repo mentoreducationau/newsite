@@ -89,7 +89,7 @@ class Header extends Component {
             </div>
           </nav>
         </div>
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
           <li>
             <Link to="/about/">About Us</Link>
           </li>

@@ -35,7 +35,7 @@ const Accordion = ({ item }) => {
       >
         <table>
           <tr>
-            <td style={{ textAlign: "center" }} colspan="5">
+            <td style={{ textAlign: "left" }} colspan="5">
               {item.description}
             </td>
           </tr>

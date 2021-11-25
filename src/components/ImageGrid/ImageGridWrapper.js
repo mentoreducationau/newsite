@@ -4,7 +4,7 @@ import { CourseCardTitle } from "../BusinessSkillSet/AcademicPathway/Courses/cou
 import { H4 } from "../../styles/Typography.css"
 import React from "react"
 
-const ImageGridWrapper = ({ title, content, image }) => {
+const ImageGridWrapper = ({ title, content, image, link }) => {
   return (
     <>
       <GatsbyImage
@@ -16,7 +16,7 @@ const ImageGridWrapper = ({ title, content, image }) => {
         <CourseCardTitle
           style={{ color: "#C0202F", textDecoration: "underline" }}
         >
-          <H4 card>{title}</H4>
+          <Link to={link}><H4 card>{title}</H4></Link>
         </CourseCardTitle>
       </Link>
       <CourseCardTitle>{content}</CourseCardTitle>

@@ -39,9 +39,9 @@ const TestimonialsLanding = () => {
               data-sal-duration="500"
               data-sal-easing="ease"
             >
-              <div class="card ">
+              <div className="card ">
                 <div
-                  class="card-content"
+                  className="card-content"
                   style={{
                     color: `#455a64`,
                   }}
@@ -89,9 +89,9 @@ const TestimonialsLanding = () => {
               data-sal-duration="500"
               data-sal-easing="ease"
             >
-              <div class="card ">
+              <div className="card ">
                 <div
-                  class="card-content"
+                  className="card-content"
                   style={{
                     color: `#455a64`,
                   }}
@@ -139,9 +139,9 @@ const TestimonialsLanding = () => {
               data-sal-duration="500"
               data-sal-easing="ease"
             >
-              <div class="card">
+              <div className="card">
                 <div
-                  class="card-content"
+                  className="card-content"
                   style={{
                     color: `#455a64`,
                   }}
