@@ -48,7 +48,7 @@ const About = ({ pageContext, location }) => {
                   professional team, we demonstrate our shared values by:
                 </p>
               </div>
-              <div className="col s12 offset-m6">
+              <div className="col s12 offset-m6" style={{width: "50%"}}>
                 <ul>
                   <li>
                     - Delivering quality outcomes for all our stakeholders

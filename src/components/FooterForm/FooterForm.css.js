@@ -76,6 +76,12 @@ export const InputForm = styled.input`
   padding-left: 9px;
   padding-right: 9px;
 
+  border: 2px solid #707070 !important;
+  height: 45px !important;
+    
+  border-radius: 5px !important;
+  transition: none !important;
+
   ${props => props.theme.desktop`
     height: 59px;
   `}

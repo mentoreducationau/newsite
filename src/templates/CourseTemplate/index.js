@@ -1,4 +1,7 @@
-import React from "react"
+import * as React from "react"
+// import Layout from "../../components/layout"
+import Layout from "../../components/Layout/Layout"
+import Seo from "../../components/Seo/Seo"
 
 import {
   TitleBanner,
@@ -21,9 +24,13 @@ import DownloadFree from "../../components/Forms/DownloadFree"
 import { Container } from "../../styles/ContainerStyles.css"
 import { Headline, Paragraph } from "../../styles/Typography.css"
 
-const CourseTemplate = () => {
+const CoursePage = ({ pageContext, location, ...props }) => {
+  const courseId = props.params.courseId
+
   return (
-    <>
+    <Layout pageContext={pageContext} location={location} crumbLabel={courseId}>
+    {/* <Layout> */}
+      <Seo title="Courses" />
       <TitleBanner>
         <Container>
           <Headline banner>
@@ -67,8 +74,8 @@ const CourseTemplate = () => {
           GST/BAS taxation principles that is approved by the TPB.
         </Paragraph>
       </Terms>
-    </>
+    </Layout>
   )
 }
 
-export default CourseTemplate
+export default CoursePage

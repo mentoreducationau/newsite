@@ -19,7 +19,7 @@ const Timetable = () => {
         <Container>
           <Headline banner>TimeTable</Headline>
         </Container>
-      </TitleBanner>
+      </TitleBanner>f
       <MainContainer>
         <ParagraphWrapper  openState={openState}>
           <Paragraph>
@@ -28,7 +28,7 @@ const Timetable = () => {
             Mentor Education is currently running online virtual classes and
             on-campus in class study for the following qualifications:
           </Paragraph>
-          <a class="grey darken-3 waves-effect waves-light btn" onClick={()=>setopenState(!openState)}>Online Tutorials and Webinars<i class="material-icons left">play_circle_outline</i></a>
+          <a class="grey darken-3 waves-effect waves-light btn" onClick={()=>setopenState(!openState)}>Online Tutorials and Webinars<i class="material-icons left">play_circle_filled</i></a>
         </ParagraphWrapper>
         {courseArrayForTimetable.map((item, index)=>(
             openState ? (

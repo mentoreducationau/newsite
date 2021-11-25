@@ -8,19 +8,22 @@ export const CustomFormStyled = styled.form`
 
 export const FormField = styled(GlobalFormField)`
   width: 100%;
-
+  padding-bottom: 0;
   label {
     font-family: Futura Medium;
     font-size: 18px;
     line-height: 23px;
-    color: white;
+    color: #464343;
     padding-left: 1rem;
     margin-bottom: 8px;
   }
 
   input {
-    border: 2px solid white !important;
-    height: 50px;
+    border: 2px solid #707070 !important;
+    height: 45px !important;
+    
+    border-radius: 5px !important;
+    transition: none !important;
   }
 
   ${props => props.theme.desktop`

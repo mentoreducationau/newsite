@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import Header from "../Header/Header"
 import "./layout.css"
-import Footer from "../Footer/footer"
+import FooterNew from "../Footer/footerNew"
 import GlobalStyles from "../../styles/GlobalStyles.css"
 import { Typography } from "../../styles/Typography.css"
 
@@ -44,7 +44,7 @@ const Layout = ({ children, pageContext, location, crumbLabel }) => {
           />
           {children}
         </main>
-        <Footer />
+        <FooterNew />
       </div>
     </>
   )
