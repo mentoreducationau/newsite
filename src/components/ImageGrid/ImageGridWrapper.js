@@ -16,7 +16,7 @@ const ImageGridWrapper = ({ title, content, image, link }) => {
         <CourseCardTitle
           style={{ color: "#C0202F", textDecoration: "underline" }}
         >
-          <Link to={link}><H4 card>{title}</H4></Link>
+          <Link to={link} style={{color: "rgb(192, 32, 47)"}}><H4 card>{title}</H4></Link>
         </CourseCardTitle>
       </Link>
       <CourseCardTitle>{content}</CourseCardTitle>

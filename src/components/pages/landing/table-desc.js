@@ -50,7 +50,6 @@ const TableDesc = () => {
                 data-sal-duration="500"
               >
                 <div className="tableDescCardImage">
-                  {/* <img src={require("./images/tableDescrImg1.jpg")} alt="table-desc-img-1" /> */}
                   <StaticImage
                     src="./images/tableDescrImg1.jpg"
                     alt="table-desc-img-1"

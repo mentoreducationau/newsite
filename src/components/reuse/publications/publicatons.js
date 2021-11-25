@@ -35,7 +35,6 @@ const Publicatons = () => {
             data-sal-duration="500"
             data-sal-easing="ease"
           >
-            {/* <StaticImage src="./images/pub1.png" /> */}
             <StaticImage src="./images/pub1.png" alt="publications-img-1" />
           </div>
           <div

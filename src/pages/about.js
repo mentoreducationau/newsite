@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 // import PageTransition from 'gatsby-plugin-page-transitions'
 
 import Layout from "../components/layout"
@@ -124,7 +123,6 @@ const About = ({ pageContext, location }) => {
           </div>
         </div>
       </div>
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }
