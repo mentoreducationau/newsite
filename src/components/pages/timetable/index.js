@@ -26,13 +26,13 @@ const Timetable = () => {
             Mentor Education is currently running online virtual classes and
             on-campus in class study for the following qualifications:
           </Paragraph>
-          <button
+          <a
             className="grey darken-3 waves-effect waves-light btn"
             onClick={() => setopenState(!openState)}
           >
             Online Tutorials and Webinars
             <i className="material-icons left">play_circle_filled</i>
-          </button>
+          </a>
         </ParagraphWrapper>
         {courseArrayForTimetable.map((item, index) =>
           openState ? (
