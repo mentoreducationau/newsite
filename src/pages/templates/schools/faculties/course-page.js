@@ -2,17 +2,15 @@ import React from "react";
 
 import Layout from "../../../../components/layout";
 import Seo from "../../../../components/seo";
-import Breadcrumb from "../../../../components/breadcrumb";
 
 import CourseTabs from '../../../../components/pages/schools/course-tabs'
 import CoursePaymentPlans from "../../../../components/pages/schools/course-payment-plans";
-export default function CoursePage() {
+export default function CoursePage({pageContext, location}) {
   return (
-    <Layout>
+    <Layout pageContext={pageContext} location={location} crumbLabel="course">
       <Seo title="Dynamically returned title" />
       
       <div className="container">
-        <Breadcrumb />
         <div className="section">
           <h1>I am the dynamically created course page</h1>
         </div>

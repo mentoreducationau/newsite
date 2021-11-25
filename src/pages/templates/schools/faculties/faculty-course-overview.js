@@ -2,15 +2,13 @@ import React from "react";
 
 import Layout from "../../../../components/layout";
 import Seo from "../../../../components/seo";
-import Breadcrumb from '../../../../components/breadcrumb'
 import CourseLinkCard from './course-link-card'
 
-export default function FacultyCourseOverview() {
+export default function FacultyCourseOverview({pageContext, location}) {
   return (
-    <Layout>
+    <Layout pageContext={pageContext} location={location} crumbLabel="Courses">
       <Seo title="Faculty" />
       <div className="container">
-          <Breadcrumb />
         <div className="section">
           <div className="section">
             <h1> Accounting and Book Keeping </h1>

@@ -5,12 +5,11 @@ import StudentLifeTemplate from "../templates/StudentLifeTemplate"
 import Layout from "../components/layout"
 
 const StudentLifePage = ({ pageContext, location }) => (
-  // <Layout
-  //   pageContext={pageContext}
-  //   location={location}
-  //   crumbLabel="Student Life"
-  // >
-  <Layout>
+  <Layout
+    pageContext={pageContext}
+    location={location}
+    crumbLabel="Student Life"
+  >
     <Seo title="Student Life" />
     <StudentLifeTemplate />
   </Layout>

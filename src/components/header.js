@@ -50,7 +50,7 @@ class Header extends Component {
                     <Link to="/about/">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/templates/schools/faculties/faculty-course-overview/">Courses</Link>
+                    <Link to="/courses/">Courses</Link>
                   </li>
                   <li>
                     <Link to="/workshop-dates/">Timetable</Link>

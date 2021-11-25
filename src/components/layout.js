@@ -10,6 +10,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
+import { Breadcrumb } from "gatsby-plugin-breadcrumb";
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Header from "./header";
@@ -17,7 +18,14 @@ import Header from "./header";
 import Footer from "./Footer/footer"
 import "./layout.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageContext, location, crumbLabel }) => {
+
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
+  const customCrumbLabel = crumbLabel
+    ? crumbLabel
+    : location.pathname.toLowerCase().replace("-", " ")
   const data = useStaticQuery(graphql`
     query SiteTitleQuery1 {
       site {
@@ -47,6 +55,11 @@ const Layout = ({ children }) => {
             minHeight: "100vh",
           }}
         >
+          <Breadcrumb
+            crumbs={crumbs}
+            location={location}
+            crumbLabel={customCrumbLabel}
+          />
           {children}
         </main>
         <Footer />

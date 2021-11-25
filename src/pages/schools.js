@@ -1,17 +1,17 @@
-import React from "react";
+import React from "react"
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Breadcrumb from "../components/breadcrumb";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-import SchoolCard from '../components/pages/schools/school-card'
+import SchoolCard from "../components/pages/schools/school-card"
 
-
-
-const Schools = () => (
-  <Layout>
+const Schools = ({ pageContext, location }) => (
+  <Layout
+    pageContext={pageContext}
+    location={location}
+    crumbLabel="Schools"
+  >
     <SEO title="Schools" />
-    <Breadcrumb />
     <div className="container">
       <div className="section">
         <h1> Welcome to our schools page</h1>
@@ -21,17 +21,14 @@ const Schools = () => (
         </h3>
       </div>
 
-<div className="section">
-  <div className="row">
-  <SchoolCard />
-  <SchoolCard />
-  </div>
-</div>
-     
-      
-      
+      <div className="section">
+        <div className="row">
+          <SchoolCard />
+          <SchoolCard />
+        </div>
+      </div>
     </div>
   </Layout>
-);
+)
 
-export default Schools;
+export default Schools

@@ -1,21 +1,21 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from "react"
+import { Link } from "gatsby"
 // import PageTransition from 'gatsby-plugin-page-transitions'
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Breadcrumb from "../components/breadcrumb";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Principles from "../components/pages/about/principles"
+import AboutTable from "../components/pages/about/about-table"
+import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
 
-import Principles from "../components/pages/about/principles";
-import AboutTable from "../components/pages/about/about-table";
-import WhereOurGraduatesWork from '../components/reuse/where-our-graduates-work-banner/where-our-graduates-work'
-const About = () => {
+const About = ({ pageContext, location }) => {
   return (
-    <Layout>
+    <Layout
+      pageContext={pageContext}
+      location={location}
+      crumbLabel="About Us"
+    >
       <SEO title="About Us" />
-     
-      <Breadcrumb />
-      
       <div className="section">
         <div className="container">
           <h1>Welcome to Mentor Education</h1>
@@ -101,33 +101,31 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            <div className="section">
-            <div className="row">
-                <h2>Registered Training Organisation (RTO 21683)</h2>
-                <div className="col s12 m12">
-                  <p style={{ margin: `0`, paddingBottom: `.1rem` }}>
-                    Mentor Education Pty Ltd (ABN 47 106 065 847) is registered
-                    under the National Vocational Education and Training
-                    Regulator Act 2011 providing nationally recognised and
-                    accredited courses throughout Australia. As a
-                    well-established registered training organisation, with a
-                    reputation for exemplar industry standards our main aim is
-                    to provide quality education, and deliver competency based
-                    training programs. You can find the full list of all courses
-                    we offer here.
-                  </p>
+              <div className="section">
+                <div className="row">
+                  <h2>Registered Training Organisation (RTO 21683)</h2>
+                  <div className="col s12 m12">
+                    <p style={{ margin: `0`, paddingBottom: `.1rem` }}>
+                      Mentor Education Pty Ltd (ABN 47 106 065 847) is
+                      registered under the National Vocational Education and
+                      Training Regulator Act 2011 providing nationally
+                      recognised and accredited courses throughout Australia. As
+                      a well-established registered training organisation, with
+                      a reputation for exemplar industry standards our main aim
+                      is to provide quality education, and deliver competency
+                      based training programs. You can find the full list of all
+                      courses we offer here.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
               <WhereOurGraduatesWork />
             </div>
           </div>
         </div>
       </div>
       <Link to="/">Go back to the homepage</Link>
-      
     </Layout>
-    
-  );
-};
-export default About;
+  )
+}
+export default About
