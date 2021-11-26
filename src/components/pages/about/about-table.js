@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 export default function AboutTable() {
   const data = useStaticQuery(graphql`
@@ -162,7 +163,7 @@ export default function AboutTable() {
                   <div className="tableDescCardText">
                     <p>The latest Webinars from Mentor Education.</p>
                   </div>
-                  <button className="btn red">Find out more </button>
+                  <button className="btn red"><Link to="/about-us/webinar-series/" style={{color: "white"}}>Find out more</Link></button>
                 </div>
               </div>
             </div>

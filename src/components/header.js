@@ -47,7 +47,7 @@ class Header extends Component {
               >
                 <ul className=" hide-on-med-and-down row-flex">
                   <li>
-                    <Link to="/about/">About Us</Link>
+                    <Link to="/about-us/">About Us</Link>
                   </li>
                   <li>
                     <Link to="/courses/">Courses</Link>

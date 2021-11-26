@@ -5,21 +5,18 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
- 
+import React from "react"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import PageTransition from "gatsby-plugin-page-transitions"
 
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
-import { Breadcrumb } from "gatsby-plugin-breadcrumb";
-import PageTransition from 'gatsby-plugin-page-transitions';
-
-import Header from "./header";
+import Header from "./header"
 // import Footer from "./footer";
 import Footer from "./Footer/footer"
-import "./layout.css";
+import "./layout.css"
 
 const Layout = ({ children, pageContext, location, crumbLabel }) => {
-
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -34,43 +31,44 @@ const Layout = ({ children, pageContext, location, crumbLabel }) => {
         }
       }
     }
-  `);
+  `)
 
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <PageTransition
-    
-  >
-      <div
-        style={{
-          margin: `0 auto`,
-          // maxWidth: "100vw",
-          minHeight: "1000px",
-        }}
-      >
-        <main
+      <PageTransition>
+        <div
           style={{
-            margin: `0`,
-            minHeight: "100vh",
+            margin: `0 auto`,
+            // maxWidth: "100vw",
+            minHeight: "1000px",
           }}
         >
-          <Breadcrumb
-            crumbs={crumbs}
-            location={location}
-            crumbLabel={customCrumbLabel}
-          />
-          {children}
-        </main>
-        <Footer />
-      </div>
+          <main
+            style={{
+              margin: `0`,
+              minHeight: "100vh",
+            }}
+          >
+            {crumbLabel !== "Home" && (
+              <Breadcrumb
+                crumbs={crumbs}
+                location={location}
+                crumbLabel={customCrumbLabel}
+              />
+            )}
+
+            {children}
+          </main>
+          <Footer />
+        </div>
       </PageTransition>
     </>
-  );
-};
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+export default Layout

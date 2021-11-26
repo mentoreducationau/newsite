@@ -1,11 +1,11 @@
 import React from "react"
 // import PageTransition from 'gatsby-plugin-page-transitions'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Principles from "../components/pages/about/principles"
-import AboutTable from "../components/pages/about/about-table"
-import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import Principles from "../../components/pages/about/principles"
+import AboutTable from "../../components/pages/about/about-table"
+import WhereOurGraduatesWork from "../../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
 
 const About = ({ pageContext, location }) => {
   return (
