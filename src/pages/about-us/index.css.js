@@ -28,9 +28,14 @@ export const CourseHeading = styled.div`
   }
 `
 export const MainContainer = styled(Container)`
-  width: 60%;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
   a:hover {
     text-decoration: underline;
+  }
+  ol{
+    list-style-type: initial !important;
+    margin-left: 3.5rem;
   }
   @media (max-width: 768px) {
     flex-direction: column;

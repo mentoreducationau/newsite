@@ -148,7 +148,7 @@ export default function AboutTable() {
                       paddingBottom: `2rem`,
                     }}
                   >
-                    <button className="btn red">Read More</button>
+                    <button className="btn red"><Link to="/about-us/jobs-at-mentor/" style={{color: "white"}}>Read more</Link></button>
                   </div>
                 </div>
               </div>

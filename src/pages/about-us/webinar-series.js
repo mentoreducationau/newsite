@@ -19,7 +19,7 @@ const WebinarSeriesPage = ({ pageContext, location }) => (
         </Headline>
       </Container>
     </TitleBanner>
-    <MainContainer>
+    <MainContainer style={{width:"60%"}}>
       <Title course style={{ marginTop: "3.5rem" }}>
         <a href="https://www.mentor.edu.au/course-information-session">
           Student information sessions
