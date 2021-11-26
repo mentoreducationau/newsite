@@ -58,7 +58,7 @@ const EmploymentOpportunitiesPage = ({ pageContext, location }) => (
       <Paragraph>
         We are inviting experienced candidates to register with us.
       </Paragraph>
-      <ParagraphMedium style={{fontSize: "20px"}}>Requirements:</ParagraphMedium>
+      <Paragraph><b>Requirements:</b></Paragraph>
       <ol>
         {requirements.map((item, index) => (
           <li key={index}>
@@ -77,7 +77,7 @@ const EmploymentOpportunitiesPage = ({ pageContext, location }) => (
           </li>
         ))}
       </ol>
-      <ParagraphMedium style={{fontSize: "20px"}}>To lodge your expression of interest please:</ParagraphMedium>
+      <Paragraph><b>To lodge your expression of interest please:</b></Paragraph>
       <ol>
         {expressions.list.map((item, index) =>
           index === 0 ? (
@@ -104,7 +104,7 @@ const EmploymentOpportunitiesPage = ({ pageContext, location }) => (
         information to successfol candidates on the engagement options.
       </Paragraph>
       <Paragraph>
-        The Educational Services (Post-Secondary Education) Award 2010 applies
+        <i>The Educational Services (Post-Secondary Education) Award 2010</i> applies
         to employees, and pay rates are as per award.
       </Paragraph>
       <Paragraph>

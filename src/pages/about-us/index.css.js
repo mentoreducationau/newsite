@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import img from "../../images/student-information-imgs/banner1_non_top.jpg"
 import { Container } from "../../styles/ContainerStyles.css"
-import { Paragraph } from "../../styles/Typography.css"
+import { Paragraph, Headline } from "../../styles/Typography.css"
+import quote from "../../images/quote.png"
 
 export const TitleBanner = styled.div`
   position: relative;
@@ -60,19 +61,19 @@ export const BottomBannerContainer = styled.div`
   text-align: center;
   padding: 50px 0;
   margin: 0;
-  a{
+  a {
     width: 20%;
     align-self: center;
-    background-color: #D32F2F;
+    background-color: #d32f2f;
   }
 
-  @media(max-width: 1200px){
-    a{
+  @media (max-width: 1200px) {
+    a {
       width: 40%;
     }
   }
-  @media(max-width: 450px){
-    a{
+  @media (max-width: 450px) {
+    a {
       width: 80%;
     }
   }
@@ -81,8 +82,29 @@ export const BottomBannerText = styled(Paragraph)`
   font-size: 22px;
   color: white;
 `
+export const TestimonialParagraph = styled(Paragraph)`
+  background: url(${quote}) no-repeat;
+  font-style: italic;
+`
+export const TestimonialHeadline = styled(Headline)`
+  font-size: 34px;
+  font-family: "Futura Medium"; 
+`
 
 export const PathwayContainer = styled(Container)`
   padding: 2rem 0;
   border-bottom: 1px solid #707070;
+`
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: ${props=>props.first === "true" ? "2rem 0" : "0"};
+  @media(max-width: 450px){
+    flex-direction: column;
+  }
+`
+export const OneImgWrapper = styled.div`
+  width: 20%;
 `

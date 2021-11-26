@@ -3,34 +3,39 @@ import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
 import { useStaticQuery } from "gatsby"
 import { graphql } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
-import GatsbyImage from "gatsby-image"
 import { Link } from "gatsby"
 import {
   TitleBanner,
   MainContainer,
   IframeContainer,
   PathwayContainer,
+  ImageWrapper,
+  OneImgWrapper
 } from "./about-us/index.css"
 import { Headline, Paragraph, ParagraphMedium } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { pathwayCourses, businessArray } from "../contents/career-pathway"
+import Img from "gatsby-image"
 
 const CareerPathwayPage = ({ pageContext, location }) => {
-  const image = useStaticQuery(graphql`
-    query CareerPathwayImage {
+
+  const imageData = useStaticQuery(graphql`
+    query MyQuery2 {
       allFile(
         filter: {
-          name: { in: ["ducere-logo-1", "TorrensUniversityAustralia_logo"] }
+          extension: { regex: "/(png)/" }
+          relativeDirectory: { eq: "career-pathway" }
         }
       ) {
         edges {
           node {
             id
+            base
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
+              }
             }
-            name
           }
         }
       }
@@ -72,48 +77,33 @@ const CareerPathwayPage = ({ pageContext, location }) => {
           <PathwayContainer key={index}>
             <ParagraphMedium>{item.title}</ParagraphMedium>
             {index === 0 && (
-              <div style={{ height: "30vh" }}>
-                <GatsbyImage
-                  image={getImage(
-                    image.allFile.edges.filter(
-                      item => item.node.name === "ducere-logo-1"
-                    )[0].node.childImageSharp
-                  )}
-                  imgStyle={{ width: "100%" }}
-                  alt="ducere-logo-1"
+              <ImageWrapper first="true">
+              <OneImgWrapper style={{ width: "20%" }}>
+              <Img
+                  fluid={imageData.allFile.edges[0].node.childImageSharp.fluid}
                 />
-                <GatsbyImage
-                  image={getImage(
-                    image.allFile.edges.filter(
-                      item =>
-                        item.node.name === "TorrensUniversityAustralia_logo"
-                    )[0].node.childImageSharp
-                  )}
-                  imgStyle={{ width: "100%" }}
-                  alt="TorrensUniversityAustralia_logo"
+              </OneImgWrapper>
+              <OneImgWrapper style={{ width: "20%" }}>
+                <Img
+                  fluid={imageData.allFile.edges[1].node.childImageSharp.fluid}
                 />
-              </div>
+              </OneImgWrapper>
+            </ImageWrapper>
             )}
             {index === 1 ? (
-              <div>
-                <div style={{width: "75%"}}>
+              <ImageWrapper>
+                <div style={{ width: "75%" }}>
                   <Paragraph>
                     {item.description + ": "}
                     <Link to={item.link}>{item.link}</Link>
                   </Paragraph>
                 </div>
-                <div style={{width: "25%"}}>
-                  <GatsbyImage
-                    image={getImage(
-                      image.allFile.edges.filter(
-                        item => item.node.name === "ducere-logo-1"
-                      )[0].node.childImageSharp
-                    )}
-                    imgStyle={{ width: "100%" }}
-                    alt="ducere-logo-1"
+                <div style={{ width: "25%" }}>
+                  <Img
+                    fluid={imageData.allFile.edges[0].node.childImageSharp.fluid}
                   />
                 </div>
-              </div>
+              </ImageWrapper>
             ) : (
               <Paragraph>
                 {item.description + ": "}
