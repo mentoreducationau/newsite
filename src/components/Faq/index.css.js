@@ -9,7 +9,7 @@ export const SearchContainer = styled.div`
   align-items: center;
 
   a {
-      color: #CC4A28;
+    color: #cc4a28;
   }
 `
 export const InlineSearch = styled.div`
@@ -19,11 +19,19 @@ export const InlineSearch = styled.div`
   button {
     vertical-align: middle;
     padding: 0.5rem;
+    border: 1px solid #707070 !important;
   }
   input {
-    border-right: none;
+    border-radius: 5px 0 0 5px !important;
+    margin-bottom: 0 !important;
+    width: auto !important;
+    border-right: none !important;
+    transition: none !impotant;
+    padding-left: 5px !important;
   }
   button {
     background: transparent;
+    border-radius: 0 5px 5px 0 !important;
+    height: 3.1rem !important;
   }
 `

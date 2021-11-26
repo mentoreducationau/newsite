@@ -11,9 +11,15 @@ export const SubscribeFormStyled = styled.form`
 
 export const SubscribeFormField = styled(GlobalFormField)`
   input {
-    border-radius: 3px;
-    color: white;
-    border-color: white !important;
+    border-radius: 3px !important;
+    background-color: white !important;
+    transition: none !important;
+    border: 2px solid white !important;
+    height: 45px !important;
+
+    :focus  {
+      outline: none !important;
+    }
   }
   label {
     color: white !important;

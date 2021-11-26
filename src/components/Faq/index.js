@@ -11,7 +11,7 @@ const Faq = () => {
       <SearchContainer>
         <InlineSearch>
           <input type="text" placeholder="Start typing here…" />
-          <button>?</button>
+          <button>{" ? "}</button>
         </InlineSearch>
         <ParagraphMedium> or Head to our <Link to="/faq">FAQs</Link> page</ParagraphMedium>
       </SearchContainer>

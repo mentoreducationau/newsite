@@ -124,7 +124,8 @@ export const QuotedBoxRight = styled.div`
 
 export const Textarea = styled.textarea`
   height: 145px;
-  border: 3px solid #707070;
+  border: 2px solid #707070;
+  border-radius: 5px;
   width: 100%;
   padding-left: 9px;
   padding-right: 9px;

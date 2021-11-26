@@ -1,5 +1,5 @@
 import * as React from "react"
-import Layout from "../components/Layout/Layout"
+import Layout from "../components/layout"
 import Seo from "../components/Seo/Seo"
 import CoursesTemplate from "../templates/CoursesTemplate"
 
