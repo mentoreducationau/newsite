@@ -81,3 +81,8 @@ export const BottomBannerText = styled(Paragraph)`
   font-size: 22px;
   color: white;
 `
+
+export const PathwayContainer = styled(Container)`
+  padding: 2rem 0;
+  border-bottom: 1px solid #707070;
+`

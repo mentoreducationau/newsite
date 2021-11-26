@@ -51,7 +51,7 @@ export const studentInformation = [
   {
     image: "studentinfo_pathways",
     title: "Education Pathways",
-    link: "/",
+    link: "/career-pathway/",
     content:
       "For students seeking pathways to higher education, visit our Education Pathways page to find out how your Mentor Education qualification can lead you to your next qualification.",
   },
