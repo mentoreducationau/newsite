@@ -1,7 +1,7 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { TitleBanner, MainContainer, ParagraphWrapper } from "./index.css"
-
 import { Headline, Title } from "../../../styles/Typography.css"
 import { Container } from "../../../styles/ContainerStyles.css"
 import { Paragraph } from "../../../styles/Typography.css"
@@ -72,7 +72,7 @@ const ContactUs = () => {
           <Paragraph>P: <a href="tel:1300306146">1300 306 146</a> (Australia)</Paragraph>
           <Paragraph>E: <a href="https://service@mentor.edu.au">service@mentor.edu.au</a></Paragraph>
           <Paragraph>
-            B: <a href="https://www.mentor.edu.au/bookings">Click here</a> to book an appointment with a Trainer and/or Assessor.
+            B: <Link to="/bookings/">Click here</Link> to book an appointment with a Trainer and/or Assessor.
           </Paragraph>
         </ParagraphWrapper>
       </MainContainer>

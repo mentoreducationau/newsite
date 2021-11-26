@@ -1,19 +1,19 @@
 import * as React from "react"
-import Seo from "../../components/Seo/Seo"
-import Layout from "../../components/layout"
-import { TitleBanner, MainContainer } from "./index.css"
+import Seo from "../components/Seo/Seo"
+import Layout from "../components/layout"
+import { TitleBanner, MainContainer } from "./about-us/index.css"
 import {
   Headline,
   Title,
   Paragraph,
   ParagraphMedium,
-} from "../../styles/Typography.css"
-import { Container } from "../../styles/ContainerStyles.css"
+} from "../styles/Typography.css"
+import { Container } from "../styles/ContainerStyles.css"
 import {
   requirements,
   expressions,
   qualifications,
-} from "../../contents/aboutusEmployOpportunity"
+} from "../contents/aboutusEmployOpportunity"
 
 const EmploymentOpportunitiesPage = ({ pageContext, location }) => (
   <Layout

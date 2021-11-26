@@ -123,7 +123,7 @@ export default function AboutTable() {
                       paddingBottom: `2rem`,
                     }}
                   >
-                    <button className="btn red"><Link to="/about-us/testimonials/" style={{color: "white"}}>Read More</Link></button>
+                    <button className="btn red"><Link to="/testimonials/" style={{color: "white"}}>Read More</Link></button>
                   </div>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function AboutTable() {
                       paddingBottom: `2rem`,
                     }}
                   >
-                    <button className="btn red"><Link to="/about-us/jobs-at-mentor/" style={{color: "white"}}>Read more</Link></button>
+                    <button className="btn red"><Link to="/jobs-at-mentor/" style={{color: "white"}}>Read more</Link></button>
                   </div>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function AboutTable() {
                   <div className="tableDescCardText">
                     <p>The latest Webinars from Mentor Education.</p>
                   </div>
-                  <button className="btn red"><Link to="/about-us/webinar-series/" style={{color: "white"}}>Find out more</Link></button>
+                  <button className="btn red"><Link to="/webinar-series/" style={{color: "white"}}>Find out more</Link></button>
                 </div>
               </div>
             </div>

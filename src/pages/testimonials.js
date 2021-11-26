@@ -1,10 +1,10 @@
 import * as React from "react"
-import Seo from "../../components/Seo/Seo"
-import Layout from "../../components/layout"
-import { TitleBanner, MainContainer, IframeContainer, BottomBannerContainer, BottomBannerText } from "./index.css"
-import { Headline, Paragraph } from "../../styles/Typography.css"
-import { Container } from "../../styles/ContainerStyles.css"
-import { testimonials } from "../../contents/testimonials"
+import Seo from "../components/Seo/Seo"
+import Layout from "../components/layout"
+import { TitleBanner, MainContainer, IframeContainer, BottomBannerContainer, BottomBannerText } from "./about-us/index.css"
+import { Headline, Paragraph } from "../styles/Typography.css"
+import { Container } from "../styles/ContainerStyles.css"
+import { testimonials } from "../contents/testimonials"
 
 const TestimonialsPage = ({ pageContext, location }) => (
   <Layout
