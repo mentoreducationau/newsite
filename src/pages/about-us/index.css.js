@@ -89,6 +89,7 @@ export const TestimonialParagraph = styled(Paragraph)`
 export const TestimonialHeadline = styled(Headline)`
   font-size: 34px;
   font-family: "Futura Medium"; 
+  text-align: center;
 `
 
 export const PathwayContainer = styled(Container)`
@@ -98,7 +99,7 @@ export const PathwayContainer = styled(Container)`
 export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: ${props=>props.first === "true" ? "center" : "initial"};
   gap: 1rem;
   margin: ${props=>props.first === "true" ? "2rem 0" : "0"};
   @media(max-width: 450px){
@@ -106,5 +107,35 @@ export const ImageWrapper = styled.div`
   }
 `
 export const OneImgWrapper = styled.div`
-  width: 20%;
+  width: ${props=>props.first === "true" ? "20%" : "25%"};
+  @media(max-width: 768px){
+    width: ${props=>props.first === "true" ? "40%" : "40%"};
+  }
+  @media(max-width: 450px){
+    width: ${props=>props.first === "true" ? "60%" : "80%"};
+    order: ${props=>props.first === null && "0"};
+    margin: 0 auto;
+  }
+`
+export const TextWrapper = styled.div`
+  width: 75%;
+  @media(max-width: 768px){
+    width: 60%;
+  }
+  @media(max-width: 450px){
+    width: 80%;
+    order: 1;
+  }
+`
+export const WebinarSeriesContainer = styled(Container)`
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  width: 60%;
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 90%;
+  }
 `

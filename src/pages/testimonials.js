@@ -1,8 +1,16 @@
 import * as React from "react"
 import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
-import { TitleBanner, MainContainer, IframeContainer, BottomBannerContainer, BottomBannerText, TestimonialParagraph, TestimonialHeadline } from "./about-us/index.css"
-import { Headline, Paragraph } from "../styles/Typography.css"
+import {
+  TitleBanner,
+  MainContainer,
+  IframeContainer,
+  BottomBannerContainer,
+  BottomBannerText,
+  TestimonialParagraph,
+  TestimonialHeadline,
+} from "./about-us/index.css"
+import { Headline } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { testimonials } from "../contents/testimonials"
 
@@ -32,11 +40,14 @@ const TestimonialsPage = ({ pageContext, location }) => (
           webkitallowfullscreen=""
           mozallowfullscreen=""
           allowfullscreen=""
+          title="testimonial-iframe-1"
         ></iframe>
       </IframeContainer>
       {testimonials.map((item, index) => (
-        <div style={{marginBottom: "5rem"}}>
-          <TestimonialParagraph>{'"' + item.content + '"' + " - " + item.author}</TestimonialParagraph>
+        <div style={{ marginBottom: "5rem" }}>
+          <TestimonialParagraph>
+            {'"' + item.content + '" - ' + item.author}
+          </TestimonialParagraph>
         </div>
       ))}
       <IframeContainer>
@@ -46,12 +57,18 @@ const TestimonialsPage = ({ pageContext, location }) => (
           webkitallowfullscreen=""
           mozallowfullscreen=""
           allowfullscreen=""
+          title="testimonial-iframe-1"
         ></iframe>
       </IframeContainer>
     </MainContainer>
     <BottomBannerContainer>
-        <BottomBannerText>“Completing the Diploma led me to gaining a <b>promotion</b> and a pay <b>increase</b> of nearly $10,000...”</BottomBannerText>
-        <a class="waves-effect waves-light btn-large red"><i class="material-icons right">play_arrow</i>view courses</a>
+      <BottomBannerText>
+        “Completing the Diploma led me to gaining a <b>promotion</b> and a pay{" "}
+        <b>increase</b> of nearly $10,000...”
+      </BottomBannerText>
+      <a class="waves-effect waves-light btn-large red">
+        <i class="material-icons right">play_arrow</i>view courses
+      </a>
     </BottomBannerContainer>
   </Layout>
 )

@@ -10,7 +10,8 @@ import {
   IframeContainer,
   PathwayContainer,
   ImageWrapper,
-  OneImgWrapper
+  OneImgWrapper,
+  TextWrapper
 } from "./about-us/index.css"
 import { Headline, Paragraph, ParagraphMedium } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
@@ -18,7 +19,6 @@ import { pathwayCourses, businessArray } from "../contents/career-pathway"
 import Img from "gatsby-image"
 
 const CareerPathwayPage = ({ pageContext, location }) => {
-
   const imageData = useStaticQuery(graphql`
     query MyQuery2 {
       allFile(
@@ -78,31 +78,37 @@ const CareerPathwayPage = ({ pageContext, location }) => {
             <ParagraphMedium>{item.title}</ParagraphMedium>
             {index === 0 && (
               <ImageWrapper first="true">
-              <OneImgWrapper style={{ width: "20%" }}>
-              <Img
-                  fluid={imageData.allFile.edges[0].node.childImageSharp.fluid}
-                />
-              </OneImgWrapper>
-              <OneImgWrapper style={{ width: "20%" }}>
-                <Img
-                  fluid={imageData.allFile.edges[1].node.childImageSharp.fluid}
-                />
-              </OneImgWrapper>
-            </ImageWrapper>
+                <OneImgWrapper first="true">
+                  <Img
+                    fluid={
+                      imageData.allFile.edges[0].node.childImageSharp.fluid
+                    }
+                  />
+                </OneImgWrapper>
+                <OneImgWrapper first="true">
+                  <Img
+                    fluid={
+                      imageData.allFile.edges[1].node.childImageSharp.fluid
+                    }
+                  />
+                </OneImgWrapper>
+              </ImageWrapper>
             )}
             {index === 1 ? (
               <ImageWrapper>
-                <div style={{ width: "75%" }}>
+                <TextWrapper>
                   <Paragraph>
                     {item.description + ": "}
                     <Link to={item.link}>{item.link}</Link>
                   </Paragraph>
-                </div>
-                <div style={{ width: "25%" }}>
+                </TextWrapper>
+                <OneImgWrapper>
                   <Img
-                    fluid={imageData.allFile.edges[0].node.childImageSharp.fluid}
+                    fluid={
+                      imageData.allFile.edges[0].node.childImageSharp.fluid
+                    }
                   />
-                </div>
+                </OneImgWrapper>
               </ImageWrapper>
             ) : (
               <Paragraph>
@@ -120,6 +126,7 @@ const CareerPathwayPage = ({ pageContext, location }) => {
                     webkitallowfullscreen=""
                     mozallowfullscreen=""
                     allowfullscreen=""
+                    title="pathway-iframe-1"
                   ></iframe>
                 </IframeContainer>
                 {item.items.map((it, idx) => (
@@ -137,6 +144,7 @@ const CareerPathwayPage = ({ pageContext, location }) => {
                     webkitallowfullscreen=""
                     mozallowfullscreen=""
                     allowfullscreen=""
+                    title="pathway-iframe-2"
                   ></iframe>
                 </IframeContainer>
               </>

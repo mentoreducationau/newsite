@@ -597,7 +597,7 @@ pre tt:after {
 }
 
 .breadcrumb {
-  padding: 0 0 0 7rem;
+  padding: 0 0 0 10%;
   font-size: 24px;
   /* line-height: 32px; */
   font-weight: normal;
@@ -619,5 +619,6 @@ pre tt:after {
     line-height: 18px;
     font-weight: normal;
     background-color: white;
+    padding-top: 18px;
   }
 }

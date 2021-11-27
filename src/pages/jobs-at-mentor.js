@@ -6,7 +6,6 @@ import {
   Headline,
   Title,
   Paragraph,
-  ParagraphMedium,
 } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import {

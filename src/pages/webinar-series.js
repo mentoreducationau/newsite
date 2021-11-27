@@ -1,7 +1,7 @@
 import * as React from "react"
 import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
-import { TitleBanner, MainContainer } from "./about-us/index.css"
+import { TitleBanner, WebinarSeriesContainer } from "./about-us/index.css"
 import { Headline, Title, Paragraph } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 
@@ -19,7 +19,7 @@ const WebinarSeriesPage = ({ pageContext, location }) => (
         </Headline>
       </Container>
     </TitleBanner>
-    <MainContainer style={{width:"60%"}}>
+    <WebinarSeriesContainer>
       <Title course style={{ marginTop: "3.5rem" }}>
         <a href="https://www.mentor.edu.au/course-information-session">
           Student information sessions
@@ -52,7 +52,7 @@ const WebinarSeriesPage = ({ pageContext, location }) => (
         </a>{" "}
         for all other upcoming webinars.
       </Paragraph>
-    </MainContainer>
+    </WebinarSeriesContainer>
   </Layout>
 )
 
