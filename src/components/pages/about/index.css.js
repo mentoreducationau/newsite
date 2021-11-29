@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import img from "../../images/student-information-imgs/banner1_non_top.jpg"
-import { Container } from "../../styles/ContainerStyles.css"
-import { Paragraph, Headline } from "../../styles/Typography.css"
-import quote from "../../images/quote.png"
+import img from "../../../images/student-information-imgs/banner1_non_top.jpg"
+import { Container } from "../../../styles/ContainerStyles.css"
+import { Paragraph, Headline } from "../../../styles/Typography.css"
+import quote from "../../../images/quote.png"
 
 export const TitleBanner = styled.div`
   position: relative;
