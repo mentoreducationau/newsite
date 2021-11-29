@@ -1,5 +1,4 @@
 import * as React from "react"
-// import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo/Seo"
 import StudentInformationTemplate from "../templates/StudentInfromationTemplate"
 import Layout from "../components/layout"

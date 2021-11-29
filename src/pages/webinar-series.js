@@ -1,7 +1,7 @@
 import * as React from "react"
 import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
-import { TitleBanner, WebinarSeriesContainer } from "./about-us/index.css"
+import { TitleBanner, WebinarSeriesContainer } from "../components/pages/about/index.css"
 import { Headline, Title, Paragraph } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 

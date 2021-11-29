@@ -9,7 +9,7 @@ import {
   BottomBannerText,
   TestimonialParagraph,
   TestimonialHeadline,
-} from "./about-us/index.css"
+} from "../components/pages/about/index.css"
 import { Headline } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { testimonials } from "../contents/testimonials"

@@ -12,7 +12,7 @@ import {
   ImageWrapper,
   OneImgWrapper,
   TextWrapper
-} from "./about-us/index.css"
+} from "../components/pages/about/index.css"
 import { Headline, Paragraph, ParagraphMedium } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { pathwayCourses, businessArray } from "../contents/career-pathway"

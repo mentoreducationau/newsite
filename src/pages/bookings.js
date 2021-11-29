@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import {
   TitleBanner,
   MainContainer
-} from "./about-us/index.css"
+} from "../components/pages/about/index.css"
 import { Headline, Paragraph } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 

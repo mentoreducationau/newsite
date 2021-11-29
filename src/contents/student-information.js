@@ -30,7 +30,7 @@ export const studentInformation = [
   {
     image: "studentinfo_forms",
     title: "Student Forms",
-    link: "/",
+    link: "/forms/",
     content:
       "If you can't enrol online and need to download an enrolment form, visit our Student Forms and Documents page for all available PDF enrolment forms.",
   },
