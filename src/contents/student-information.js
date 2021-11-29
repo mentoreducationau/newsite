@@ -16,7 +16,7 @@ export const studentInformation = [
   {
     image: "studentinfo_lms",
     title: "Learning Management System",
-    link: "/",
+    link: "/lms-gateway-login/",
     content:
       "Mentor Education currently use a number of Student Learning Management Systems. Please visit our Learning Management System gateway page to login.",
   },
