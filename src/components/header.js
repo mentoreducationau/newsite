@@ -28,9 +28,9 @@ class Header extends Component {
             margin: `0`,
           }}
         >
-          <nav style={{ padding: "0 20px 0 20px", background: `red` }}>
+          <nav style={{ padding: "0 20px 0 20px" }}>
             <div className="nav-wrapper">
-              <Link to="/">Mentor Education</Link>
+              <Link to="/" style={{color: "red"}}>Mentor Education</Link>
 
               <a
                 href="/"

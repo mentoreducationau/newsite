@@ -1,6 +1,5 @@
 import React from "react"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Hero from "../components/pages/landing/hero"
@@ -11,9 +10,10 @@ import TestimonialsLanding from "../components/pages/landing/testimonials-landin
 import MarkQaulity from "../components/reuse/mark-qaulity/mark-qaulity"
 import QouteCoursesBanner from "../components/pages/landing/qoute-courses-banner"
 import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
+import LandingLayout from "../components/LandingLayout"
 
 const IndexPage = ({pageContext, location}) => (
-  <Layout pageContext={pageContext} location={location} crumbLabel="Home">
+  <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home">
     <SEO title="Home" />
     <Hero />
     <TableDesc />
@@ -23,7 +23,7 @@ const IndexPage = ({pageContext, location}) => (
     <MarkQaulity />
     <QouteCoursesBanner />
     <WhereOurGraduatesWork />
-  </Layout>
+  </LandingLayout>
 )
 
 export default IndexPage

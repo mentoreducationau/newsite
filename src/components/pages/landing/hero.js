@@ -1,10 +1,107 @@
-import React from "react";
-import "./hero.css";
+import React from "react"
+import { Link } from "gatsby"
+import "./hero.css"
 
 const Hero = () => {
   return (
     <>
       <div className="container-hero responsive-image hide-on-med-and-down">
+ {/* header start */}
+        <div
+          className="navbar-fixed"
+          style={{
+            margin: `0`,
+          }}
+        >
+          <nav style={{ padding: "0 20px 0 20px" }}>
+            <div className="nav-wrapper">
+              <Link to="/" style={{ color: "red" }}>
+                Mentor Education
+              </Link>
+
+              <a
+                href="/"
+                data-target="mobile-demo"
+                className="sidenav-trigger right"
+              >
+                <i className="material-icons">menu</i>
+              </a>
+              <div
+                className=""
+                style={{
+                  float: `right`,
+                }}
+              >
+                <ul className=" hide-on-med-and-down row-flex">
+                  <li>
+                    <Link to="/about-us/">About Us</Link>
+                  </li>
+                  <li>
+                    <Link to="/courses/">Courses</Link>
+                  </li>
+                  <li>
+                    <Link to="/workshop-dates/">Timetable</Link>
+                  </li>
+                  <li>
+                    <Link to="/student-information/">Student Information</Link>
+                  </li>
+                  <li>
+                    <Link to="/student-life/">Student Life</Link>
+                  </li>
+                  <li>
+                    <Link to="/special-offers/">Special Offers</Link>
+                  </li>
+                  <li>
+                    <Link to="/lms-gateway-login/">MELMS Login</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact/">Contact</Link>
+                  </li>
+                  <li>
+                    <button
+                      className="btn-flat white"
+                      style={{ color: "#37474f" }}
+                    >
+                      Sign-In{" "}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <ul className="sidenav" id="mobile-demo">
+          <li>
+            <Link to="/about/">About Us</Link>
+          </li>
+          <li>
+            <Link to="/schools/">Schools</Link>
+          </li>
+          <li>
+            <Link to="/courses/">Courses</Link>
+          </li>
+          <li>
+            <Link to="/student-information/">Student Information</Link>
+          </li>
+          <li>
+            <Link to="/special-offers/">Special Offers</Link>
+          </li>
+          <li>
+            <Link to="/lms-gateway-login/">MELMS Login</Link>
+          </li>
+          <li>
+            <Link to="/contact/">Contact</Link>
+          </li>
+          <li className="center-align">
+            <button
+              className="btn-flat red darken-2"
+              style={{ color: "white", fontStyle: "bold" }}
+            >
+              Sign-In{" "}
+            </button>
+          </li>
+        </ul>
+{/* header end */}
         <div className="section ">
           <div
             className="row "
@@ -42,26 +139,26 @@ const Hero = () => {
                 </h1>
 
                 <div className="center-align">
-                <div
+                  <div
                     className=""
                     data-sal="slide-left"
                     data-sal-delay="200"
                     data-sal-easing="ease"
                     data-sal-duration="500"
                   >
-                  <p
-                    className="btn-large"
-                    style={{
-                      width: `80%`,
-                      fontSize: `130%`,
-                      fontWeight: `bold`,
-                      height: "100%",
-                      background: `red`,
-                      marginBottom: `.5rem`,
-                    }}
-                  >
-                    Speak with an expert now
-                  </p>
+                    <p
+                      className="btn-large"
+                      style={{
+                        width: `80%`,
+                        fontSize: `130%`,
+                        fontWeight: `bold`,
+                        height: "100%",
+                        background: `red`,
+                        marginBottom: `.5rem`,
+                      }}
+                    >
+                      Speak with an expert now
+                    </p>
                   </div>
                   <div
                     className=""
@@ -70,18 +167,18 @@ const Hero = () => {
                     data-sal-easing="ease"
                     data-sal-duration="500"
                   >
-                  <p
-                    className="btn-large"
-                    style={{
-                      width: `80%`,
-                      fontWeight: `bold`,
-                      height: "100%",
-                      background: `red`,
-                      marginBottom: `.5rem`,
-                    }}
-                  >
-                    Download Course Guide
-                  </p>
+                    <p
+                      className="btn-large"
+                      style={{
+                        width: `80%`,
+                        fontWeight: `bold`,
+                        height: "100%",
+                        background: `red`,
+                        marginBottom: `.5rem`,
+                      }}
+                    >
+                      Download Course Guide
+                    </p>
                   </div>
                   <div
                     className=""
@@ -176,7 +273,7 @@ const Hero = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

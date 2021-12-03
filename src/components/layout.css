@@ -629,6 +629,15 @@ html {
   pre tt:after {
     content: "";
   }
+
+  nav{
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+
+
+
   @media only screen and (max-width: 480px) {
     html {
       font-size: 100%;
