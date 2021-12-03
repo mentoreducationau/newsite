@@ -93,7 +93,7 @@ export const InputForm = styled.input`
 
 export const InputLabel = styled.label`
   font-family: Futura Medium;
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 26px;
   letter-spacing: 0px;
   color: #464343;
@@ -103,12 +103,12 @@ export const InputLabel = styled.label`
   width: 100%;
 
   ${props => props.theme.desktop`
-    font-size: 28px;
+    font-size: 1.4rem;
     line-height: 35px;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 36px;
+    font-size: 1.8rem;
     line-height: 46px;
   `}
 `
@@ -149,7 +149,7 @@ export const FooterFormbuttonWrapper = styled.div`
 
 export const FooterFormbutton = styled.button`
   font-family: Futura Heavy;
-  font-size: 30px;
+  font-size: 1.5rem;
   line-height: 38px;
   letter-spacing: 0px;
   color: #ffffff;
@@ -162,14 +162,14 @@ export const FooterFormbutton = styled.button`
   cursor: pointer;
 
   ${props => props.theme.desktop`
-    font-size: 40px;
+    font-size: 2rem;
     line-height: 51px;
     padding: 10px 70px;
     width: fit-content;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 53px;
+    font-size: 2.65rem;
     line-height: 68px;
   `}
 `

@@ -22,27 +22,27 @@ export const JourneyCardContainer = styled.div`
   align-items: center;
 `
 export const JourneyTitle = styled(H5)`
-  font-size: 41px;
+  font-size: 2rem;
   line-height: 54px;
   text-decoration: underline;
   color: #393939;
 `
 export const JourneyOldPrice = styled(H5)`
-  font-size: 32px;
+  font-size: 1.6rem;
   line-height: 43px;
   color: #707070;
   letter-spacing: 0px;
   text-decoration: line-through;
 `
 export const JourneyPrice = styled(H5)`
-  font-size: 51px;
+  font-size: 2.5rem;
   line-height: 68px;
   color: #CC4A28;
   letter-spacing: 0px;
   text-decoration: underline;
 `
 export const PriceDes = styled(H5)`
-  font-size: 32px;
+  font-size: 1.6rem;
   line-height: 38px;
   color: #707070;
   letter-spacing: 0px;
@@ -51,7 +51,7 @@ export const PriceDes = styled(H5)`
 
 export const PriceButton = styled.button`
   font-family: Futura Heavy;
-  font-size: 30px;
+  font-size: 1.5rem;
   line-height: 38px;
   background: #cc4a28;
   color: white;
@@ -67,12 +67,12 @@ export const PriceButton = styled.button`
   justify-content: center;
 
   ${props => props.theme.desktop`
-    font-size: 40px;
+    font-size: 2rem;
     line-height: 51px;
   `}
 
 ${props => props.theme.largeScreen`
-    font-size: 48px;
+    font-size: 2.4rem;
     line-height: 61px;
     height: 70px;
   `}

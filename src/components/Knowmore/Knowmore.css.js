@@ -73,7 +73,7 @@ export const KnowmoreCourseBox = styled.div`
 `
 
 export const Percentage = styled(SpanHeavy)`
-  font-size: 55px;
+  font-size: 2.75rem;
   line-height: 71px;
   opacity: 1;
   margin-top: 16%;
@@ -85,7 +85,7 @@ export const Percentage = styled(SpanHeavy)`
 
   ${props => props.theme.desktop`
     margin-top: ${props.course ? "0" : "8%"};
-    font-size: ${props.course ? "49px" : "94px"};
+    font-size: ${props.course ? "2.45rem" : "4.7rem"};
     line-height:  ${props.course ? "64px" : "112px"};
   `}
 `

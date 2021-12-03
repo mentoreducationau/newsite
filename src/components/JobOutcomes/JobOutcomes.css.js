@@ -66,7 +66,7 @@ export const JobHeader = styled(SubtitleBold)`
   width: 100%;
   margin: ${props => (props.margin ? props.margin : 0)};
   color: ${props => (props.light ? "#707070" : "")};
-  font-size: ${props => (props.size === "sm" ? "20px" : "")};
+  font-size: ${props => (props.size === "sm" ? "1rem" : "")};
 
   ${props => props.theme.desktop`
       max-width: fit-content;
@@ -76,12 +76,12 @@ export const JobHeader = styled(SubtitleBold)`
 export const JobTitle = styled.p`
   font-family: ${props =>
     props.size === "xs" ? "Futura Medium" : "Futura Bold"};
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 30px;
   color: ${props => (props.size === "xs" ? "#153E35" : "#707070")};
 
   ${props => props.theme.desktop`
-    font-size: 33px;
+    font-size: 1.65rem;
     line-height: 40px;
     font-weight: 400;
     font-family: Futura Medium;

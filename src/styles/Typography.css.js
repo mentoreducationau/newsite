@@ -59,7 +59,8 @@ const Headline = styled.h1`
   margin: ${props => (props.banner ? 0 : "")};
 
   ${props => props.theme.mobile`
-    font-size: 30px;
+    // font-size: 30px;
+    font-size: 1.5rem
     line-height: 35px;
   `}
 
@@ -68,19 +69,19 @@ const Headline = styled.h1`
   `}
 
   ${props => props.theme.desktop`
-    font-size: ${props.banner ? "60px" : "36px"};
+    font-size: ${props.banner ? "3rem" : "1.75rem"};
     line-height: ${props.banner ? "77px" : "45px"};
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: ${props.banner ? "80px" : "56px"};
+    font-size: ${props.banner ? "4rem" : "3rem"};
     line-height: ${props.banner ? "100px" : "72px"};
   `}
 `
 
 const Title = styled.h2`
   font-family: Futura Heavy;
-  font-size: 30px;
+  font-size: 1.5rem;
   line-height: 35px;
   letter-spacing: 0px;
   margin: 0 auto;
@@ -89,31 +90,31 @@ const Title = styled.h2`
 
   ${props => props.theme.desktop`
     text-align: ${props.course ? "left" : "center"};
-    font-size: ${props.course ? "36px" : "50px"};
+    font-size: ${props.course ? "1.75rem" : "2.75rem"};
     line-height: ${props.course ? "40px" : "60px"};
   `}
 
   ${props => props.theme.largeScreen`
     text-align: ${props.course ? "left" : "center"};
-    font-size: ${props.course ? "36px" : "65px"};
+    font-size: ${props.course ? "1.75rem" : "3.25rem"};
     line-height: ${props.course ? "40px" : "84px"};
   `}
 `
 
 const Subtitle = styled.h4`
   font-family: Futura Heavy;
-  font-size: 25px;
+  font-size: 1.25rem;
   line-height: 30px;
   margin-bottom: 13px;
   color: #707070;
 
   ${props => props.theme.desktop`
-    font-size: 36px;
+    font-size: 1.8rem;
     line-height: 45px;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 40px;
+    font-size: 2rem;
     line-height: 51px;
   `}
 `
@@ -149,17 +150,17 @@ const TabTitle = styled.h3`
 
 const H3 = styled.h3`
   font-family: Futura Heavy;
-  font-size: 23px;
+  font-size: 1.15rem;
   line-height: 28px;
   color: #707070;
   margin: 0;
 
   ${props => props.theme.desktop`
-    font-size: ${props.course ? "23px" : "36px"};
+    font-size: ${props.course ? "1.15rem" : "1.8rem"};
     line-height: ${props.course ? "28px" : "45px"};
   `}
   ${props => props.theme.largeScreen`
-    font-size: ${props.course ? "25px" : "56px"};
+    font-size: ${props.course ? "1.2rem" : "2.8rem"};
     line-height: ${props.course ? "30px" : "72px"};
   `}
 `
@@ -169,16 +170,16 @@ const H4 = styled.h4`
   margin: 0;
 
   ${props => props.theme.mobile`
-    font-size: ${props.card ? "19px" : "14px"};
+    font-size: ${props.card ? "1rem" : "0.7rem"};
     line-height: ${props.card ? "25px" : "19px"};
   `}
 
   ${props => props.theme.desktop`
-    font-size: ${props.card ? "23px" : "14px"};
+    font-size: ${props.card ? "1.15rem" : "0.7rem"};
     line-height: ${props.card ? "30px" : "19px"};
   `}
   ${props => props.theme.largeScreen`
-    font-size: ${props.card ? "31px" : "14px"};
+    font-size: ${props.card ? "1.55rem" : "0.7rem"};
     line-height: ${props.card ? "39px" : "19px"};
   `}
 `
@@ -190,35 +191,38 @@ const H5 = styled.h5`
 
 const Paragraph = styled.p`
   font-family: "Futura Medium";
-  font-size: 20px;
+  // font-size: 20px;
+  font-size: 1rem;
   line-height: 26px;
   color: #707070;
 
   ${props => props.theme.desktop`
-    font-size: 24px;
+    // font-size: 24px;
+    font-size: 1.25rem;
     line-height: 31px;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 28px;
+    // font-size: 28px;
+    font-size: 1.5rem;
     line-height: 31px;
   `}
 `
 
 const ParagraphMedium = styled.p`
   font-family: Futura Medium;
-  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 27px;
   color: #535353;
   letter-spacing: 0px;
 
   ${props => props.theme.desktop`
-    font-size: ${props.course ? "25px" : "32px"};
+    font-size: ${props.course ? "1.25rem" : "1.6rem"};
     line-height: ${props.course ? "30px" : "45px"};
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: ${props.course ? "25px" : "36px"};
+    font-size: ${props.course ? "1.25rem" : "1.8rem"};
     line-height: ${props.course ? "30px" : "45px"};
   `}
 `
@@ -243,20 +247,20 @@ const ParagraphHeavy = styled.p`
 
 const DivHeavy = styled.div`
   font-family: Futura Heavy;
-  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 27px;
   letter-spacing: 0px;
   color: #707070;
   text-align: center;
 
   ${props => props.theme.desktop`
-    font-size: 32px;
+    font-size: 1.6rem;
     line-height: 41px;
     text-align: left;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 36px;
+    font-size: 1.8rem;
     line-height: 46px;
   `}
 `

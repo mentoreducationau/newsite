@@ -45,7 +45,7 @@ export const FormField = styled(GlobalFormField)`
 
 export const FormButton = styled.button`
   font-family: Futura Heavy;
-  font-size: 30px;
+  font-size: 1.5rem;
   line-height: 38px;
   background: #cc4a28;
   color: white;
@@ -62,13 +62,13 @@ export const FormButton = styled.button`
 
   ${props => props.theme.desktop`
     margin: ${props.course ? "2% auto 0" : "6% auto 0"};
-    font-size: ${props.course ? "18px" : "40px"};
+    font-size: ${props.course ? "0.9rem" : "2rem"};
     line-height: ${props.course ? "23px" : "51px"};
     height: ${props.course ? "45px" : "70px"};
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: ${props.course ? "18px" : "48px"};
+    font-size: ${props.course ? "0.9rem" : "2.4rem"};
     line-height: ${props.course ? "23px" : "56px"};
     height: ${props.course ? "50px" : "70px"};
   `}
