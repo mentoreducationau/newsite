@@ -16,7 +16,6 @@ export const CardsWrapper = styled.div`
     --repeat: 3;
   }
 
-
   display: grid;
   grid-template-columns: repeat(
     var(--repeat, auto-fit),
@@ -36,18 +35,11 @@ const Schools = ({ pageContext, location, data }) => {
       crumbLabel="Mentor Education Schools"
     >
       <SEO title="Mentor Education Schools" />
-      <Headline style={{color: "#707070"}} banner>Mentor Education - Schools</Headline>
+      <Headline style={{ color: "#707070" }} banner>
+        Mentor Education - Schools
+      </Headline>
       <MainContainer>
-        <Paragraph>
-          Mentor Education's{" "}
-          <Link to="https://www.mentor.edu.au/school-of-accounting-and-finance/">
-            School of Accounting and Finance
-          </Link>{" "}
-          provides courses from Certificate III to Advanced Diploma Level,
-          including qualifications in Accounting, Bookkeeping and Mortgage
-          Broking.
-        </Paragraph>
-        <Paragraph>
+        {/* <Paragraph>
           Mentor Education's{" "}
           <Link to="https://www.mentor.edu.au/school-of-business-it-project-management/">
             School of Business, IT and Project Management
@@ -55,15 +47,26 @@ const Schools = ({ pageContext, location, data }) => {
           provides courses from Certificate III to Graduate Diploma Level,
           including qualifications in business, project management and strategic
           leadership.
-        </Paragraph>
+        </Paragraph> */}
         {data.allContentfulSchool.nodes.map((item, index) => (
-          <div style={{marginTop: "3.25rem"}} key={index}>
+          <Paragraph>
+            Mentor Education's{" "}
+            <Link to={"/" + item.heading.toLowerCase().replaceAll(" ", "-")}>
+              {item.heading}
+            </Link>{" "}
+            provides courses from Certificate III to Advanced Diploma Level,
+            including qualifications in Accounting, Bookkeeping and Mortgage
+            Broking.
+          </Paragraph>
+        ))}
+        {data.allContentfulSchool.nodes.map((item, index) => (
+          <div style={{ marginTop: "3.25rem" }} key={index}>
             <Title style={{ textAlign: "center" }} course>
               {item.heading}
             </Title>
-            <CardsWrapper>  
+            <CardsWrapper>
               {item.faculties.map((it, idx) => (
-                <Card key={idx} card={it} />
+                <Card key={idx} heading={it.heading} link={"/" + it.heading.toLowerCase().replaceAll(" & ", "-") + "-courses"} />
               ))}
             </CardsWrapper>
           </div>

@@ -8,13 +8,13 @@ import {
   LeftWrapper,
 } from "./index.css"
 
-const Card = ({ card }) => {
+const Card = ({ heading, link }) => {
   return (
     <CourseCardWrapper style={{ padding: "0", height: "135px" }}>
       <CardWrapper>
         <LeftWrapper>
           <Paragraph>
-            <Link to={card.heading.toLowerCase().replaceAll(" & ", "-")}>{card.heading}</Link>
+            <Link to={link}>{heading}</Link>
           </Paragraph>
         </LeftWrapper>
         <RightWrapper></RightWrapper>

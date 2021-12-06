@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "assert": "^2.0.0",
     "gatsby": "^3.1.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-breadcrumb": "^12.1.1",
@@ -25,6 +26,7 @@
     "mailchimp-api-v3": "^1.15.0",
     "material-icons": "^1.10.2",
     "materialize-css": "^1.0.0",
+    "path-browserify": "^1.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-accessible-accordion": "^3.3.5",
