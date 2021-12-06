@@ -1,19 +1,52 @@
-import React from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { Link } from "gatsby"
 import "./hero.css"
 
 const Hero = () => {
+  const ref = useRef(null)
+  const ulRef = useRef(null)
+  const btnRef = useRef(null)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const handleScroll = () => {
+    const position = window.pageYOffset
+    if (position > 0) {
+      ref.current.style.background = "white"
+      btnRef.current.style.background = "darkgray"
+      btnRef.current.style.color = "white"
+    } else {
+      ref.current.style.background = "transparent"
+      btnRef.current.style.background = "white"
+      btnRef.current.style.color = "darkgray"
+    }
+    setScrollPosition(position)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <>
       <div className="container-hero responsive-image hide-on-med-and-down">
- {/* header start */}
+        {/* header start */}
         <div
           className="navbar-fixed"
           style={{
             margin: `0`,
           }}
         >
-          <nav style={{ padding: "0 20px 0 20px" }}>
+          <nav
+            style={{
+              padding: "0 20px 0 20px",
+              background: "transparent",
+              boxShadow: "none"
+            }}
+            ref={ref}
+          >
             <div className="nav-wrapper">
               <Link to="/" style={{ color: "red" }}>
                 Mentor Education
@@ -32,7 +65,7 @@ const Hero = () => {
                   float: `right`,
                 }}
               >
-                <ul className=" hide-on-med-and-down row-flex">
+                <ul className=" hide-on-med-and-down row-flex" ref={ulRef}>
                   <li>
                     <Link to="/about-us/">About Us</Link>
                   </li>
@@ -59,8 +92,10 @@ const Hero = () => {
                   </li>
                   <li>
                     <button
-                      className="btn-flat white"
-                      style={{ color: "#37474f" }}
+                      className="btn-flat daken-2"
+                      // style={{ color: "#37474f" }}
+                      style={{ color: "darkgray" }}
+                      ref={btnRef}
                     >
                       Sign-In{" "}
                     </button>
@@ -101,7 +136,7 @@ const Hero = () => {
             </button>
           </li>
         </ul>
-{/* header end */}
+        {/* header end */}
         <div className="section ">
           <div
             className="row "
