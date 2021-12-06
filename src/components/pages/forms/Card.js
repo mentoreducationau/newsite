@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { Paragraph } from "../../../styles/Typography.css"
 import { CourseCardWrapper } from "../../ImageGrid/index.css"
 import {
-  ButtonWrapper,
   RightWrapper,
   CardWrapper,
   LeftWrapper,
@@ -11,22 +10,12 @@ import {
 
 const Card = ({ card }) => {
   return (
-    <CourseCardWrapper style={{ padding: "0" }}>
+    <CourseCardWrapper style={{ padding: "0", height: "135px" }}>
       <CardWrapper>
         <LeftWrapper>
           <Paragraph>
-            <Link to={card.title_link}>{card.title}</Link>
+            <Link to={card.heading.toLowerCase().replaceAll(" & ", "-")}>{card.heading}</Link>
           </Paragraph>
-          {card.buttons.map((btn, index) => (
-            <ButtonWrapper key={index}>
-              <Link to={btn.link}>
-                <button className="waves-effect waves-light btn red">
-                {btn.title}
-                  <i className="material-icons right">play_circle_outline</i>
-                </button>
-              </Link>
-            </ButtonWrapper>
-          ))}
         </LeftWrapper>
         <RightWrapper></RightWrapper>
       </CardWrapper>

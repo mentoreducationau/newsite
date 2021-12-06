@@ -5,7 +5,7 @@ import { Headline, Title } from "../../../styles/Typography.css"
 import { Container } from "../../../styles/ContainerStyles.css"
 import Intro from "./Intro"
 import { CardsWrapper } from "../../ImageGrid/index.css"
-import Card from "./Card"
+import CardWithBotton from "./CardWithBotton"
 
 const StudentForms = () => {
   const data = [
@@ -39,7 +39,7 @@ const StudentForms = () => {
             <Title style={{ textAlign: "center" }} course>{item.title}</Title>
             <CardsWrapper>
               {item.cards.map((it, idx)=>(
-                  <Card key={idx} card={it} />
+                  <CardWithBotton key={idx} card={it} />
               ))}
             </CardsWrapper>
           </React.Fragment>
