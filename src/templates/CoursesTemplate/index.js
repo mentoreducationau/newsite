@@ -29,10 +29,14 @@ import { Headline, Paragraph } from "../../styles/Typography.css"
 import playbutton from "../../images/svg/playbutton.svg"
 
 const CoursesTemplate = ({ pageContext, location }) => {
+  const courseData = pageContext.courseData
   const ref = useRef(null)
   const handleScroll = () => {
-    const position = ref.current.getBoundingClientRect().top - window.innerHeight / 10
-    position < 0 ? ref.current.style.paddingTop = "5rem" : ref.current.style.paddingTop = "0rem"
+    const position =
+      ref.current.getBoundingClientRect().top - window.innerHeight / 10
+    position < 0
+      ? (ref.current.style.paddingTop = "5rem")
+      : (ref.current.style.paddingTop = "0rem")
   }
 
   useEffect(() => {
@@ -47,9 +51,9 @@ const CoursesTemplate = ({ pageContext, location }) => {
       <Layout
         pageContext={pageContext}
         location={location}
-        crumbLabel="Courses"
+        crumbLabel={courseData.courseCode + " " + courseData.courseName}
       >
-        <Seo title="Courses" />
+        <Seo title={courseData.courseCode + " " + courseData.courseName} />
         <HeroVideo>
           <StaticImage
             src="../../images/placeholder.png"
