@@ -138,12 +138,12 @@ const SubtitleBold = styled.h4`
 
 const TabTitle = styled.h3`
   font-family: Futura Medium;
-  font-size: 11px;
+  font-size: 0.55rem;
   line-height: 13px;
   margin: 0;
 
   ${props => props.theme.desktop`
-    font-size: 30px;
+    font-size: 1.5rem;
     line-height: 38px;
   `}
 `

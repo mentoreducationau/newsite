@@ -11,11 +11,11 @@ import { EnrolContainer, PriceContainer, Prices, PriceButton } from "./index.css
 const EnrolNow = () => {
   return (
     <EnrolContainer>
-      <StaticImage
+      {/* <StaticImage
         src="../../images/support.png"
         alt="support"
         width={340}
-      />
+      /> */}
       <Paragraph style={{ fontSize: 18 }}>
         Need help? <Link to="#">Click here</Link> to speak with an expert
       </Paragraph>

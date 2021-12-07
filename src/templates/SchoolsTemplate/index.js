@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../../components/layout"
@@ -8,7 +6,6 @@ import { MainContainer } from "../../components/pages/about/index.css"
 import SEO from "../../components/seo"
 import {
   Headline,
-  Paragraph,
   ParagraphMedium,
   Title,
 } from "../../styles/Typography.css"
@@ -83,7 +80,7 @@ const SchoolsTemplate = ({ pageContext, location }) => {
       </Headline>
       <MainContainer>
         <ParagraphMedium>{schoolData.heading}</ParagraphMedium>
-        <Renderer node={schoolData.instruction} />
+        {/* <Renderer node={schoolData.instruction} /> */}
         {requireData.map((item, index) => (
           <div style={{ marginTop: "3.25rem" }} key={index}>
             <Title style={{ textAlign: "center" }} course>
@@ -93,7 +90,7 @@ const SchoolsTemplate = ({ pageContext, location }) => {
               {item.courses.map((it, idx) => (
                 <Card
                   key={idx}
-                  heading={it.coursedId + "-" + it.heading}
+                  heading={it.courseId + "-" + it.heading}
                   link={
                     "/courses/" +
                     it.heading.toLowerCase().replaceAll(" ", "-") +
