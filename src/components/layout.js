@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import PageTransition from "gatsby-plugin-page-transitions"
 
-import Header from "./header"
+import Header from "../components/Header/Header"
 // import Footer from "./footer";
 import Footer from "./Footer/footer"
 import "./layout.css"
