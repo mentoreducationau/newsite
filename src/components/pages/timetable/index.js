@@ -9,7 +9,7 @@ import Accordion from "../../Accordion/Accordion"
 import { courseArrayForTimetable } from "../../../contents/courseArrayForTimetable"
 
 const Timetable = () => {
-  const [openState, setopenState] = useState(false)
+  const [openState, setOpenState] = useState(false)
 
   return (
     <>
@@ -27,11 +27,11 @@ const Timetable = () => {
             on-campus in class study for the following qualifications:
           </Paragraph>
           <a
-            className="grey darken-3 waves-effect waves-light btn"
-            onClick={() => setopenState(!openState)}
+            class="grey darken-3 waves-effect waves-light btn"
+            onClick={() => setOpenState(!openState)}
           >
             Online Tutorials and Webinars
-            <i className="material-icons left">play_circle_filled</i>
+            <i class="material-icons left">play_circle_filled</i>
           </a>
         </ParagraphWrapper>
         {courseArrayForTimetable.map((item, index) =>

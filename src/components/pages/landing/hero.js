@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import "./hero.css"
 
@@ -6,7 +6,6 @@ const Hero = () => {
   const ref = useRef(null)
   const ulRef = useRef(null)
   const btnRef = useRef(null)
-  const [scrollPosition, setScrollPosition] = useState(0)
   const handleScroll = () => {
     const position = window.pageYOffset
     if (position > 0) {
@@ -18,7 +17,6 @@ const Hero = () => {
       btnRef.current.style.background = "white"
       btnRef.current.style.color = "darkgray"
     }
-    setScrollPosition(position)
   }
 
   useEffect(() => {
@@ -43,7 +41,7 @@ const Hero = () => {
             style={{
               padding: "0 20px 0 20px",
               background: "transparent",
-              boxShadow: "none"
+              boxShadow: "none",
             }}
             ref={ref}
           >
@@ -71,6 +69,9 @@ const Hero = () => {
                   </li>
                   <li>
                     <Link to="/courses/">Courses</Link>
+                  </li>
+                  <li>
+                    <Link to="/schools/">Schools</Link>
                   </li>
                   <li>
                     <Link to="/workshop-dates/">Timetable</Link>
@@ -107,16 +108,22 @@ const Hero = () => {
         </div>
         <ul className="sidenav" id="mobile-demo">
           <li>
-            <Link to="/about/">About Us</Link>
-          </li>
-          <li>
-            <Link to="/schools/">Schools</Link>
+            <Link to="/about-us/">About Us</Link>
           </li>
           <li>
             <Link to="/courses/">Courses</Link>
           </li>
           <li>
+            <Link to="/schools/">Schools</Link>
+          </li>
+          <li>
+            <Link to="/workshop-dates/">Timetable</Link>
+          </li>
+          <li>
             <Link to="/student-information/">Student Information</Link>
+          </li>
+          <li>
+            <Link to="/student-life/">Student Life</Link>
           </li>
           <li>
             <Link to="/special-offers/">Special Offers</Link>
