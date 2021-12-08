@@ -39,15 +39,6 @@ const Schools = ({ pageContext, location, data }) => {
         Mentor Education - Schools
       </Headline>
       <MainContainer>
-        {/* <Paragraph>
-          Mentor Education's{" "}
-          <Link to="https://www.mentor.edu.au/school-of-business-it-project-management/">
-            School of Business, IT and Project Management
-          </Link>{" "}
-          provides courses from Certificate III to Graduate Diploma Level,
-          including qualifications in business, project management and strategic
-          leadership.
-        </Paragraph> */}
         {data.allContentfulSchool.nodes.map((item, index) => (
           <Paragraph>
             Mentor Education's{" "}

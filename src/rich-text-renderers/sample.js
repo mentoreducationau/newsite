@@ -4,12 +4,13 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Paragraph } from "../styles/Typography.css"
 
 const Renderer = ({ node }) => {
+  console.log(node)
   const options = {
     renderMark: {
-      [MARKS.BOLD]: text => <Paragraph color="black"><b>${text}</b></Paragraph>
+      [MARKS.BOLD]: text => <Paragraph><b>{text}</b></Paragraph>
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph color="black">{children}</Paragraph>
+      [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph>{children}</Paragraph>
     },
   }
 

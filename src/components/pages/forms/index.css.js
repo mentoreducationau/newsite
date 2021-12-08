@@ -57,7 +57,7 @@ export const RightWrapper = styled.div`
   background-image: url(${cardImg});
   background-repeat: no-repeat;
   background-position: top center;
-  width: 95px;
+  min-width: 95px;
   height: 135px;
   background-color: #2a496b;
   border-radius: 0 22px 22px 0;

@@ -80,7 +80,7 @@ const SchoolsTemplate = ({ pageContext, location }) => {
       </Headline>
       <MainContainer>
         <ParagraphMedium>{schoolData.heading}</ParagraphMedium>
-        <Renderer node={schoolData.instruction} />
+        <Renderer node={schoolData.introduction} />
         {requireData.map((item, index) => (
           <div style={{ marginTop: "3.25rem" }} key={index}>
             <Title style={{ textAlign: "center" }} course>
