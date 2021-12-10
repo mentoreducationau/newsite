@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Layout from "../../components/layout"
 import { MainContainer } from "../../components/pages/about/index.css"
 import SEO from "../../components/seo"
-import { Headline, ParagraphMedium, Title } from "../../styles/Typography.css"
+import { Headline, Title } from "../../styles/Typography.css"
 import Card from "../../components/pages/forms/Card"
 import Renderer from "../../rich-text-renderers/sample"
 
@@ -26,7 +26,6 @@ export const CardsWrapper = styled.div`
 
 const SchoolsTemplate = ({ pageContext, location }) => {
   const schoolData = pageContext.schoolData
-  console.log(schoolData)
 
   return (
     <Layout

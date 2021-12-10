@@ -26,7 +26,6 @@ export const CardsWrapper = styled.div`
 
 const CoursesList = ({ pageContext, location }) => {
   const facultyData = pageContext.facultyData
-  console.log(facultyData)
 
   return (
     <Layout

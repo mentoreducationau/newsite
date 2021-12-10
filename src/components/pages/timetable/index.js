@@ -11,6 +11,10 @@ import { courseArrayForTimetable } from "../../../contents/courseArrayForTimetab
 const Timetable = () => {
   const [openState, setOpenState] = useState(false)
 
+  const onClick = () => {
+    setOpenState(!openState)
+  }
+
   return (
     <>
       <TitleBanner style={{ backgroundAttachment: "fixed" }}>
@@ -28,7 +32,7 @@ const Timetable = () => {
           </Paragraph>
           <a
             class="grey darken-3 waves-effect waves-light btn"
-            onClick={() => setOpenState(!openState)}
+            onClick={() => onClick()}
           >
             Online Tutorials and Webinars
             <i class="material-icons left">play_circle_filled</i>
