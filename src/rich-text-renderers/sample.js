@@ -4,7 +4,6 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Paragraph } from "../styles/Typography.css"
 
 const Renderer = ({ node }) => {
-  console.log(node)
   const options = {
     renderMark: {
       [MARKS.BOLD]: text => <Paragraph><b>{text}</b></Paragraph>

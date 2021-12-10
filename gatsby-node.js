@@ -10,12 +10,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allContentfulSchool {
         edges {
           node {
+            id
             heading
             introduction {
               raw
             }
             faculties {
               heading
+              introduction {
+                raw
+              }
+              courseSections {
+                heading
+                courses {
+                  courseName
+                  courseCode
+                  studyLevel
+                }
+              }
             }
           }
         }
@@ -30,6 +42,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const SchoolsTemplate = path.resolve(
       `src/templates/SchoolsTemplate/index.js`
     )
+
     schools.data.allContentfulSchool.edges.forEach(({ node }) => {
       const path = `/${node.heading.toLowerCase().replace(/ /g, "-")}`
       createPage({
@@ -40,6 +53,65 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           schoolData: node,
         },
       })
+    })
+  })
+
+  const faculties = await graphql(`
+    query facultiesQuery {
+      allContentfulSchool {
+        edges {
+          node {
+            id
+            heading
+            introduction {
+              raw
+            }
+            faculties {
+              heading
+              introduction {
+                raw
+              }
+              courseSections {
+                heading
+                courses {
+                  courseName
+                  courseCode
+                  studyLevel
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `).then(faculties => {
+    if (faculties.errors) {
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
+    }
+    // Create pages for each markdown file.
+    const CoursesListTemplate = path.resolve(
+      `src/templates/SchoolsTemplate/coursesList.js`
+    )
+
+    faculties.data.allContentfulSchool.edges.forEach(({ node }) => {
+      for (var i = 0; i < node.faculties.length; i++) {
+        const path = `/${
+          node.faculties[i].heading
+            .toLowerCase()
+            .replace(/ & /g, "-")
+            .replace(/ /g, "-") + "-courses"
+        }`
+        console.log(path)
+        createPage({
+          path,
+          component: CoursesListTemplate,
+          context: {
+            pagePath: path,
+            facultyData: node.faculties[i],
+          },
+        })
+      }
     })
   })
 
