@@ -13,7 +13,7 @@ export let links = [
       },
       {
         name: "Timetable",
-        slug: "/timetable"
+        slug: "/workshop-dates"
       },
       {
         name: "Student Information",

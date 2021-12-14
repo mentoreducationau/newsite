@@ -181,7 +181,7 @@ export const CourseCardButtonContainer = styled.div`
 
 export const CourseCardButton = styled.button`
   font-family: Futura Heavy;
-  font-size: 21px;
+  font-size: 1.05rem;
   line-height: 27px;
   width: 100%;
   background-color: #cc4a28;
@@ -190,12 +190,12 @@ export const CourseCardButton = styled.button`
   color: #ffffff;
 
   ${props => props.theme.desktop`
-    font-size: 26px;
+    font-size: 1.3rem;
     line-height: 34px;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 34px;
+    font-size: 1.7rem;
     line-height: 43px;
   `}
 `

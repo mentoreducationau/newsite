@@ -120,18 +120,18 @@ const Subtitle = styled.h4`
 `
 const SubtitleBold = styled.h4`
   font-family: Futura Bold;
-  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 30px;
   color: #153e35;
 
   ${props => props.theme.desktop`
-    font-size: 36px;
+    font-size: 1.8rem;
     line-height: 45px;
     margin-bottom: 13px;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 40px;
+    font-size: 2rem;
     line-height: 44px;
   `}
 `
