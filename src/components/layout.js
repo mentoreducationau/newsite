@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import PageTransition from "gatsby-plugin-page-transitions"
-
+import Helmet from "react-helmet"
+import { Typography } from "../styles/Typography.css"
 import Header from "../components/Header/Header"
 // import Footer from "./footer";
 import Footer from "./Footer/footer"
@@ -35,6 +36,13 @@ const Layout = ({ children, pageContext, location, crumbLabel }) => {
 
   return (
     <>
+      <Typography />
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <PageTransition>
         <div

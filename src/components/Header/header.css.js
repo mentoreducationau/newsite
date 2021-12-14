@@ -30,22 +30,20 @@ export const LinksWrapper = styled.div`
 `
 
 export const HeaderLink = styled(Link)`
-display: flex;
-justify-content: space-between;
-align-items: center;
-color: grey;
-height: 50%;
-font-family: futura;
-font-size: .75rem;
-line-height: 0;
-margin: 0;
-padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+  height: 50%;
+  font-family: futura;
+  font-size: 0.75rem;
+  line-height: 0;
+  margin: 0;
+  padding: 0 1rem;
 
-:hover {
+  :hover {
     border-bottom: 2px solid grey;
-}
-
-
+  }
 `
 
 export const SignInButton = styled.button`
