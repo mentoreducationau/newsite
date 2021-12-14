@@ -126,6 +126,45 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               courses {
                 courseCode
                 courseName
+                coreUnits {
+                  unitCode
+                  unitName
+                  unitType
+                }
+                electiveUnits {
+                  unitCode
+                  unitName
+                  unitType
+                }
+                entryRequirements {
+                  raw
+                }
+                intro {
+                  raw
+                }
+                landingIntro {
+                  raw
+                }
+                learningExperience {
+                  raw
+                }
+                outcomes {
+                  raw
+                }
+                overview {
+                  raw
+                }
+                paymentOptions {
+                  raw
+                }
+                priceWTutorialsSale
+                priceWTurorialsRrp
+                priceSale
+                priceRrp
+                unitsDelivery {
+                  raw
+                }
+                studyLevel
               }
             }
           }
@@ -165,7 +204,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  return Promise.all([schools, courses])
+  return Promise.all([schools, faculties, courses])
 }
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

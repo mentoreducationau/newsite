@@ -90,7 +90,7 @@ const Hero = () => {
             ))}
           </LinksWrapper>
         </NavWrapper>
-        
+{/*         
         <ul className="sidenav" id="mobile-demo">
           <li>
             <Link to="/about-us/">About Us</Link>
@@ -127,7 +127,7 @@ const Hero = () => {
               Sign-In{" "}
             </button>
           </li>
-        </ul>
+        </ul> */}
         {/* header end */}
         <div className="section ">
           <div

@@ -31,7 +31,7 @@ export const MainContainer = styled(Container)`
 `
 
 export const StickySideBar = styled.div`
-  width: 28%;
+  width: 22.5%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
