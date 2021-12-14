@@ -33,7 +33,7 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: grey;
+  color: #2c2d2f;
   height: 50%;
   font-family: futura;
   font-size: 0.75rem;

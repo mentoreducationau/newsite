@@ -1,21 +1,70 @@
 import React, { useEffect, useRef } from "react"
+import styled from "styled-components"
 import { Link } from "gatsby"
 import "./hero.css"
+import { links } from "../../Header/links-array"
+
+export const NavWrapper = styled.nav`
+  width: 100%;
+  height: 10vh;
+  padding: 0 3rem;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: none;
+`
+
+export const LogoWrapepr = styled(Link)`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: red;
+`
+
+export const LinksWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const HeaderLink = styled(Link)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2c2d2f;
+  height: 50%;
+  font-family: futura;
+  font-size: 0.75rem;
+  line-height: 0;
+  margin: 0;
+  padding: 0 1rem;
+
+  :hover {
+    border-bottom: 2px solid grey;
+  }
+`
+
+export const SignInButton = styled.button`
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid red;
+  color: red;
+  box-shadow: none;
+`
 
 const Hero = () => {
   const ref = useRef(null)
-  const ulRef = useRef(null)
-  const btnRef = useRef(null)
   const handleScroll = () => {
     const position = window.pageYOffset
     if (position > 0) {
       ref.current.style.background = "white"
-      btnRef.current.style.background = "darkgray"
-      btnRef.current.style.color = "white"
     } else {
       ref.current.style.background = "transparent"
-      btnRef.current.style.background = "white"
-      btnRef.current.style.color = "darkgray"
     }
   }
 
@@ -31,81 +80,17 @@ const Hero = () => {
     <>
       <div className="container-hero responsive-image hide-on-med-and-down">
         {/* header start */}
-        <div
-          className="navbar-fixed"
-          style={{
-            margin: `0`,
-          }}
-        >
-          <nav
-            style={{
-              padding: "0 20px 0 20px",
-              background: "transparent",
-              boxShadow: "none",
-            }}
-            ref={ref}
-          >
-            <div className="nav-wrapper">
-              <Link to="/" style={{ color: "red" }}>
-                Mentor Education
-              </Link>
-
-              <a
-                href="/"
-                data-target="mobile-demo"
-                className="sidenav-trigger right"
-              >
-                <i className="material-icons">menu</i>
-              </a>
-              <div
-                className=""
-                style={{
-                  float: `right`,
-                }}
-              >
-                <ul className=" hide-on-med-and-down row-flex" ref={ulRef}>
-                  <li>
-                    <Link to="/about-us/">About Us</Link>
-                  </li>
-                  <li>
-                    <Link to="/courses/">Courses</Link>
-                  </li>
-                  <li>
-                    <Link to="/schools/">Schools</Link>
-                  </li>
-                  <li>
-                    <Link to="/workshop-dates/">Timetable</Link>
-                  </li>
-                  <li>
-                    <Link to="/student-information/">Student Information</Link>
-                  </li>
-                  <li>
-                    <Link to="/student-life/">Student Life</Link>
-                  </li>
-                  <li>
-                    <Link to="/special-offers/">Special Offers</Link>
-                  </li>
-                  <li>
-                    <Link to="/lms-gateway-login/">MELMS Login</Link>
-                  </li>
-                  <li>
-                    <Link to="/contact/">Contact</Link>
-                  </li>
-                  <li>
-                    <button
-                      className="btn-flat daken-2"
-                      // style={{ color: "#37474f" }}
-                      style={{ color: "darkgray" }}
-                      ref={btnRef}
-                    >
-                      Sign-In{" "}
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
+        <NavWrapper ref={ref}>
+          <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
+          <LinksWrapper>
+            {links.map((link, i) => (
+              <HeaderLink className="border-bottom" to={`${link.slug}`}>
+                {link.name}
+              </HeaderLink>
+            ))}
+          </LinksWrapper>
+        </NavWrapper>
+        
         <ul className="sidenav" id="mobile-demo">
           <li>
             <Link to="/about-us/">About Us</Link>
