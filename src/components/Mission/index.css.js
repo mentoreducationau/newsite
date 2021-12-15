@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const MissionContainer = styled.div`
-  margin-top: 4rem;
-
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   h2 {
     text-align: center;
   }

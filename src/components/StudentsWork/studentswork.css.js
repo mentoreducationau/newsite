@@ -34,7 +34,7 @@ export const CompanyLogosWrapper = styled.div`
   }
 `
 export const CourseContainer = styled.div`
-  margin-top: 4rem;
+  margin-bottom: 6rem;
   h2 {
     text-align: center;
   }

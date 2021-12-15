@@ -6,7 +6,7 @@ export const TabWrapper = styled.div`
   align-items: stretch;
   justify-items: stretch;
   width: 100%;
-  margin: 2rem 0;
+  margin: 2rem 0 6rem;
   padding: 0px 0.2%;
 `
 

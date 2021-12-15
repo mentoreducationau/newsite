@@ -3,6 +3,7 @@ import { H3 } from "../../styles/Typography.css"
 
 export const AccordionContainer = styled.div`
   margin-top: 4rem;
+  margin-bottom: 6rem;
 
   .accordion {
     border: none;

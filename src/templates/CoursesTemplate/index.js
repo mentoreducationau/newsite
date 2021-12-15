@@ -67,7 +67,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
         </HeroVideo>
         <Container>
           <Headline banner>
-            ABC123456 - Certificate IV in Account and Bookkeeping
+            {courseData.courseCode + " - " + courseData.studyLevel + " " + courseData.courseName}
           </Headline>
         </Container>
         <MainContainer>
@@ -78,6 +78,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
               unitsDelivery={courseData.unitsDelivery}
               learningExperience={courseData.learningExperience}
               paymentOptions={courseData.paymentOptions}
+              landingIntro={courseData.landingIntro}
             />
             <JourneyStarted />
             <LiveTutorials />

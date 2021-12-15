@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const CourseContainer = styled.div`
-  margin-top: 41px;
   h2 {
     text-align: center;
   }
@@ -9,7 +8,7 @@ export const CourseContainer = styled.div`
 export const FormIntroContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  margin-top: 41px;
+  margin-bottom: 6rem;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -58,7 +57,7 @@ export const InputContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-bottom: 6rem;
 `
 
 export const QuotedBoxLeft = styled.div`
@@ -165,14 +164,14 @@ export const FooterFormbutton = styled.button`
   cursor: pointer;
 
   ${props => props.theme.desktop`
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 51px;
     padding: 10px 70px;
     width: fit-content;
   `}
 
   ${props => props.theme.largeScreen`
-    font-size: 2.65rem;
+    font-size: 1.5rem;
     line-height: 68px;
   `}
 `

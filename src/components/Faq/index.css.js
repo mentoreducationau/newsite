@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const FaqContainer = styled.div`
-  margin-top: 4rem;
+  margin-bottom: 6rem;
 `
 export const SearchContainer = styled.div`
   margin-top: 2rem;

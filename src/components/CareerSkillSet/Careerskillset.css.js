@@ -12,5 +12,5 @@ export const CareerInfo = styled.div`
   `}
 `
 export const CourseContainer = styled.div`
-  margin-top: 4rem;
+  
 `

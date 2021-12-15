@@ -67,12 +67,12 @@ export const PriceButton = styled.button`
   justify-content: center;
 
   ${props => props.theme.desktop`
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 51px;
   `}
 
 ${props => props.theme.largeScreen`
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     line-height: 61px;
     height: 70px;
   `}

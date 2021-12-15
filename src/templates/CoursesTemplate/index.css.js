@@ -41,4 +41,8 @@ export const CourseContainer = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
+
+  ul > li {
+    list-style-type: square;
+  }
 `

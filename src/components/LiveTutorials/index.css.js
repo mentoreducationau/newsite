@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const TutorialsContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 `
 export const TutorialVideoContainer = styled.div`
   margin-top: 2rem;
