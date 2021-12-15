@@ -8,7 +8,7 @@ import { Headline, Title } from "../../styles/Typography.css"
 import Card from "../../components/pages/forms/Card"
 import Renderer from "../../rich-text-renderers/sample"
 
-export const CardsWrapper = styled.div`
+const CardsWrapper = styled.div`
   --repeat: auto-fit;
 
   @media (min-width: calc(250px * 5)) {

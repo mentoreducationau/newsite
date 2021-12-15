@@ -1,6 +1,7 @@
 import * as React from "react"
 import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
+import styled from "styled-components"
 import {
   TitleBanner,
   MainContainer,
@@ -14,6 +15,17 @@ import { Headline } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { testimonials } from "../contents/testimonials"
 
+const ViewCoursesButton = styled.button`
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 11px;
+  color: white;
+  background-color: red !important;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5rem;
+`
 const TestimonialsPage = ({ pageContext, location }) => (
   <Layout
     pageContext={pageContext}
@@ -44,7 +56,7 @@ const TestimonialsPage = ({ pageContext, location }) => (
         ></iframe>
       </IframeContainer>
       {testimonials.map((item, index) => (
-        <div style={{ marginBottom: "5rem" }}>
+        <div key={index} style={{ marginBottom: "5rem" }}>
           <TestimonialParagraph>
             {'"' + item.content + '" - ' + item.author}
           </TestimonialParagraph>
@@ -66,9 +78,9 @@ const TestimonialsPage = ({ pageContext, location }) => (
         “Completing the Diploma led me to gaining a <b>promotion</b> and a pay{" "}
         <b>increase</b> of nearly $10,000...”
       </BottomBannerText>
-      <a class="waves-effect waves-light btn-large red">
-        <i class="material-icons right">play_arrow</i>view courses
-      </a>
+      <ViewCoursesButton className="waves-effect waves-light btn-large">
+        <i className="material-icons right">play_arrow</i>view courses
+      </ViewCoursesButton>
     </BottomBannerContainer>
   </Layout>
 )

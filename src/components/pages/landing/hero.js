@@ -87,7 +87,7 @@ const Hero = () => {
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
           <LinksWrapper>
             {links.map((link, i) => (
-              <HeaderLink className="border-bottom" to={`${link.slug}`}>
+              <HeaderLink key={link.slug} className="border-bottom" to={`${link.slug}`}>
                 {link.name}
               </HeaderLink>
             ))}

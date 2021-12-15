@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-import { TitleBanner, MainContainer, ParagraphWrapper } from "./index.css"
+import { TitleBanner, MainContainer, ParagraphWrapper, TimeTableExpandButton } from "./index.css"
 import { Headline } from "../../../styles/Typography.css"
 import { Container } from "../../../styles/ContainerStyles.css"
 import { Paragraph } from "../../../styles/Typography.css"
@@ -30,13 +30,13 @@ const Timetable = () => {
             Mentor Education is currently running online virtual classes and
             on-campus in class study for the following qualifications:
           </Paragraph>
-          <a
-            class="grey darken-3 waves-effect waves-light btn"
+          <TimeTableExpandButton
+            className="darken-3 waves-effect waves-light btn"
             onClick={() => onClick()}
           >
             Online Tutorials and Webinars
-            <i class="material-icons left">play_circle_filled</i>
-          </a>
+            <i className="material-icons left">play_circle_filled</i>
+          </TimeTableExpandButton>
         </ParagraphWrapper>
         {courseArrayForTimetable.map((item, index) =>
           openState ? (

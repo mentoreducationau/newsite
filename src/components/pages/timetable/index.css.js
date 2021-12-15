@@ -45,6 +45,21 @@ export const ParagraphWrapper = styled.div`
   }
 
   i {
-      transform: ${props=> props.openState ? 'rotate(90deg)' : 'rotate(0deg)'};
+    transform: ${props => (props.openState ? "rotate(90deg)" : "rotate(0deg)")};
+  }
+`
+export const TimeTableExpandButton = styled.button`
+  font-size: 1.5rem;
+  font-weight: 300;
+  width: 100%;
+  border-radius: 5px;
+  padding: 12px 0;
+  background-color: #666 !important;
+  height: auto;
+  border: none;
+  color: white;
+
+  i {
+    margin-left: 30px;
   }
 `

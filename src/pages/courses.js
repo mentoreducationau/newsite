@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import { Headline, Title } from "../styles/Typography.css"
 import Card from "../components/pages/forms/Card"
 
-export const CardsWrapper = styled.div`
+const CardsWrapper = styled.div`
   --repeat: auto-fit;
 
   @media (min-width: calc(250px * 5)) {
@@ -26,11 +26,7 @@ export const CardsWrapper = styled.div`
 `
 
 const CoursesPage = ({ pageContext, location, data }) => {
-  const {
-    heading,
-    coursesSelection,
-  } = data.allContentfulCoursesPage.nodes[0]
-  console.log(heading, coursesSelection)
+  const { heading, coursesSelection } = data.allContentfulCoursesPage.nodes[0]
   return (
     <Layout pageContext={pageContext} location={location} crumbLabel={heading}>
       <SEO title={heading} />

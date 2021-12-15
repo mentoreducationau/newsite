@@ -1,15 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-
 import Layout from "../components/layout"
 import { MainContainer } from "../components/pages/about/index.css"
 import SEO from "../components/seo"
 import { Headline, Paragraph, Title } from "../styles/Typography.css"
 import Card from "../components/pages/forms/Card"
 
-export const CardsWrapper = styled.div`
+const CardsWrapper = styled.div`
   --repeat: auto-fit;
 
   @media (min-width: calc(250px * 5)) {
@@ -40,7 +38,7 @@ const Schools = ({ pageContext, location, data }) => {
       </Headline>
       <MainContainer>
         {data.allContentfulSchool.nodes.map((item, index) => (
-          <Paragraph>
+          <Paragraph key={index}>
             Mentor Education's{" "}
             <Link to={"/" + item.heading.toLowerCase().replaceAll(" ", "-")}>
               {item.heading}
@@ -57,7 +55,15 @@ const Schools = ({ pageContext, location, data }) => {
             </Title>
             <CardsWrapper>
               {item.faculties.map((it, idx) => (
-                <Card key={idx} heading={it.heading} link={"/" + it.heading.toLowerCase().replaceAll(" & ", "-") + "-courses"} />
+                <Card
+                  key={idx}
+                  heading={it.heading}
+                  link={
+                    "/" +
+                    it.heading.toLowerCase().replaceAll(" & ", "-") +
+                    "-courses"
+                  }
+                />
               ))}
             </CardsWrapper>
           </div>
