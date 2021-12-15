@@ -2,10 +2,10 @@ import styled, { createGlobalStyle } from "styled-components"
 
 import fontLight from "../assets/fonts/FuturaPT-Light.ttf"
 import fontRegular from "../assets/fonts/FuturaPT-Book.ttf"
-import FuturaMedium from "../assets/fonts/FuturaPTMedium.otf"
+import FuturaMedium from "../assets/fonts/FuturaPTMedium.ttf"
 import fontBold from "../assets/fonts/FuturaPT-Bold.ttf"
 import fontExtraBold from "../assets/fonts/FuturaPT-ExtraBold.ttf"
-import FuturaHeavy from "../assets/fonts/FuturaPTHeavy.otf"
+import FuturaHeavy from "../assets/fonts/FuturaPTHeavy.ttf"
 
 const Typography = createGlobalStyle`
   @font-face {
