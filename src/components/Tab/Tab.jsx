@@ -32,7 +32,7 @@ const tabTitleArray = [
 ]
 
 const Tab = ({ tabContentArray }) => {
-  const [activeTab, setActiveTab] = React.useState()
+  const [activeTab, setActiveTab] = React.useState(1)
   return (
     <TabWrapper>
       <TabButtonsWrapper>
