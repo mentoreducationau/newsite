@@ -20,6 +20,8 @@ export const LogoWrapepr = styled(Link)`
   display: flex;
   align-items: center;
   color: red;
+  font-size: 1rem;
+  font-weight: 600;
 `
 
 export const LinksWrapper = styled.div`
@@ -36,9 +38,10 @@ export const HeaderLink = styled(Link)`
   color: #2c2d2f;
   height: 50%;
   font-family: futura;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
   line-height: 0;
-  margin: 0;
+  margin: 0 0.5rem;
   padding: 0 1rem;
 
   :hover {
