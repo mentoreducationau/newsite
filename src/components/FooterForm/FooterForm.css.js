@@ -51,6 +51,9 @@ export const InputContainer = styled.div`
     flex-direction: row;
   }
 
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
