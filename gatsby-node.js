@@ -102,7 +102,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             .replace(/ & /g, "-")
             .replace(/ /g, "-") + "-courses"
         }`
-        console.log(path)
         createPage({
           path,
           component: CoursesListTemplate,

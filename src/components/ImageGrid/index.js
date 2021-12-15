@@ -30,7 +30,7 @@ const ImageGrid = () => {
           node {
             id
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(layout: FULL_WIDTH)
             }
             name
           }
