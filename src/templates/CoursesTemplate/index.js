@@ -72,7 +72,13 @@ const CoursesTemplate = ({ pageContext, location }) => {
         </Container>
         <MainContainer>
           <CourseContainer>
-            <CourseInfo />
+            <CourseInfo
+              outcomes={courseData.outcomes}
+              entryRequirements={courseData.entryRequirements}
+              unitsDelivery={courseData.unitsDelivery}
+              learningExperience={courseData.learningExperience}
+              paymentOptions={courseData.paymentOptions}
+            />
             <JourneyStarted />
             <LiveTutorials />
             <Faq />

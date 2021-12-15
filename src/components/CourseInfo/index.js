@@ -3,7 +3,21 @@ import React from "react"
 import Tab from "../Tab/Tab"
 import { Paragraph } from "../../styles/Typography.css"
 
-const CourseInfo = () => {
+const CourseInfo = ({
+  outcomes,
+  entryRequirements,
+  unitsDelivery,
+  learningExperience,
+  paymentOptions,
+}) => {
+
+  const tabContentArray = [
+    outcomes,
+    entryRequirements,
+    unitsDelivery,
+    learningExperience,
+    paymentOptions,
+  ]
   return (
     <>
       <Paragraph>
@@ -17,7 +31,7 @@ const CourseInfo = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </Paragraph>
-      <Tab />
+      <Tab tabContentArray={tabContentArray} />
     </>
   )
 }

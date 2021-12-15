@@ -1,7 +1,19 @@
-import React, { useEffect } from "react"
-import { courses } from "./testArray"
+//   const [courseItems, setCourseItems] = React.useState([])
+//   const [activeTab, setActiveTab] = React.useState()
 
-import { Paragraph, TabTitle } from "../../styles/Typography.css"
+//   useEffect(() => {
+//     const newCourseItems = []
+//     for (let [value] of Object.entries(courses[0])) {
+//       newCourseItems.push(`${value}`)
+//       setCourseItems(newCourseItems)
+//       setActiveTab(Object.keys(courses[0])[0])
+//     }
+//   },[])
+
+import React from "react"
+import Renderer from "../../rich-text-renderers/sample"
+
+import { TabTitle } from "../../styles/Typography.css"
 
 import {
   TabButtonsWrapper,
@@ -11,32 +23,29 @@ import {
   Display,
 } from "./Tab.css"
 
-const Tab = () => {
-  const [courseItems, setCourseItems] = React.useState([])
-  const [activeTab, setActiveTab] = React.useState()
+const tabTitleArray = [
+  "Outcomes",
+  "Entry Requirements",
+  "Units & Delivery",
+  "Learning Experience",
+  "Payment Options",
+]
 
-  useEffect(() => {
-    const newCourseItems = []
-    for (let [value] of Object.entries(courses[0])) {
-      newCourseItems.push(`${value}`)
-      setCourseItems(newCourseItems)
-      setActiveTab(Object.keys(courses[0])[0])
-    }
-  },[])
- 
+const Tab = ({ tabContentArray }) => {
+  const [activeTab, setActiveTab] = React.useState()
   return (
     <TabWrapper>
       <TabButtonsWrapper>
-        {Object.keys(courses[0]).map((name, i) => {
+        {tabTitleArray.map((title, index) => {
           return (
             <TabButton
-              id={i + 1}
-              key={i}
-              onClick={() => setActiveTab(name)}
-              className={activeTab === name ? "active" : ""}
+              id={index + 1}
+              key={index}
+              onClick={() => setActiveTab(index + 1)}
+              className={activeTab === index + 1 ? "active" : ""}
             >
               <TabTitle>
-                {name
+                {title
                   .replace(/([A-Z])/g, " $1")
                   .trim()
                   .trim()}
@@ -47,14 +56,10 @@ const Tab = () => {
       </TabButtonsWrapper>
 
       <TabInfoWrapper>
-        {courses &&
-          courseItems.map((course, i) => (
-            <Display
-              activeTab={activeTab}
-              id={Object.keys(courses[0])[i]}
-              key={i}
-            >
-              <Paragraph>{course}</Paragraph>
+        {tabContentArray &&
+          tabContentArray.map((content, index) => (
+            <Display activeTab={activeTab} id={index + 1} key={index}>
+              <Renderer node={content} />
             </Display>
           ))}
       </TabInfoWrapper>

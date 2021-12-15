@@ -36,9 +36,11 @@ export const TabButton = styled.div`
   }
 
   @media (min-width: 768px) {
-    border: 4px solid #707070;
-    margin-left: -4px;
-    margin-top: -4px;
+    border: 2px solid #707070;
+    margin-left: -2px;
+    margin-top: -2px;
+    border-top-left-radius: ${props => props.id === 1 && "5px"};
+    border-top-right-radius: ${props => props.id === 3 && "5px"};
     &:hover,
     &.active {
       border: 2px solid #707070;
@@ -49,11 +51,16 @@ export const TabButton = styled.div`
 export const TabInfoWrapper = styled.div`
   padding: 1.5rem;
   border: 1px solid #707070;
-  
+
   @media (min-width: 768px) {
-    margin-top: -3px;
-    border: 3px solid;
+    margin-top: -2px;
+    border: 2px solid;
     border-color: rgba(112, 112, 112, 0.45);
+    border-radius: 2px;
+  }
+
+  ul > li {
+    list-style-type: square;
   }
 `
 const rotate = keyframes`
