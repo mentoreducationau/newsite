@@ -156,10 +156,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 paymentOptions {
                   raw
                 }
-                priceWTutorialsSale
-                priceWTurorialsRrp
-                priceSale
-                priceRrp
                 unitsDelivery {
                   raw
                 }
@@ -184,11 +180,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         for (var i = 0; i < node.coursesSelection[j].courses.length; i++) {
           const path = `/${
             "courses/" +
-            node.coursesSelection[j].courses[i].courseName
+            node.coursesSelection[j].courses[i].courseCode.toLowerCase() +
+            "-" +
+            node.coursesSelection[j].courses[i].studyLevel
               .toLowerCase()
               .replace(/ /g, "-") +
-            "-" +
-            node.coursesSelection[j].courses[i].courseCode.toLowerCase()
+            "_" +
+            node.coursesSelection[j].courses[i].courseName
+              .toLowerCase()
+              .replace(/ /g, "-")
           }`
           createPage({
             path,

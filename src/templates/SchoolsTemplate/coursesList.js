@@ -52,9 +52,11 @@ const CoursesList = ({ pageContext, location }) => {
                   heading={it.courseCode + "-" + it.courseName}
                   link={
                     "/courses/" +
-                    it.courseName.toLowerCase().replaceAll(" ", "-") +
+                    it.courseCode.toLowerCase() +
                     "-" +
-                    it.courseCode.toLowerCase()
+                    it.studyLevel.toLowerCase().replace(/ /g, "-") +
+                    "_" +
+                    it.courseName.toLowerCase().replace(/ /g, "-")
                   }
                 />
               ))}

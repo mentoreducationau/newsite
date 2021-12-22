@@ -12,7 +12,7 @@ import {
 
 import {
   CareerSkillSket,
-  CareerAccordion,
+  // CareerAccordion,
   Knowmore,
   FooterForm,
   StudentsWork,
@@ -87,7 +87,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
               course
               title="Where will this course take your career?"
             />
-            <CareerAccordion />
+            {/* <CareerAccordion /> */}
             <Knowmore course />
             <Mission />
             <StudentsWork course />
