@@ -25,6 +25,12 @@ export const LogoWrapepr = styled(Link)`
   color: red;
   font-size: 1rem;
   font-weight: 600;
+  white-space: nowrap;
+
+  @media(max-width: 1100px) {
+    white-space: unset;
+    line-height: 34px;
+  }
 `
 
 export const LinksWrapper = styled.div`
@@ -32,6 +38,7 @@ export const LinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
 `
 
 export const HeaderLink = styled(Link)`
@@ -49,6 +56,10 @@ export const HeaderLink = styled(Link)`
 
   :hover {
     border-bottom: 2px solid grey;
+  }
+
+  @media(max-width: 1400px) {
+    padding: 0;
   }
 `
 
