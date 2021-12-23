@@ -16,7 +16,7 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACEID,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
-        // host: process.env.CONTENTFUL_HOST
+        host: process.env.CONTENTFUL_HOST
       }
     },
     {
