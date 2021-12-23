@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import img from "../../images/student-information-imgs/banner1_non_top.jpg"
-import { Container } from "../../styles/ContainerStyles.css"
-import { Paragraph } from "../../styles/Typography.css"
+import img from "../../../images/student-information-imgs/banner1_non_top.jpg"
+import { Container } from "../../../styles/ContainerStyles.css"
 
 export const TitleBanner = styled.div`
   position: relative;
@@ -112,9 +111,61 @@ export const StudentLifeSubtitle = styled.h4`
   `}
 `
 
+export const ArticleWrapper = styled.div`
+  @media (min-width: 250 * 3px) {
+    max-width: 250px;
+  }
+
+  width: 100%;
+
+  height: 100%;
+  margin: auto;
+  align-content: space-between;
+  font-family: Futura Heavy;
+  border-radius: 10px;
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+  :hover {
+    cursor: pointer;
+    -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
+      -10px 10px 20px rgba(0, 0, 0, 10%);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
+      -10px 10px 20px rgba(0, 0, 0, 10%);
+  }
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    justify-self: center;
+  }
+
+  ${props => props.theme.tablet`
+    max-width: unset;
+  `}
+`
+
+export const CardsWrapper = styled.div`
+  --repeat: auto-fit;
+
+  @media (min-width: calc(250px * 5)) {
+    --repeat: 2;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--repeat, auto-fit),
+    minmax(calc(250px * 1), 1fr)
+  );
+  grid-template-rows: auto;
+  gap: 6rem;
+  width: 100%;
+`
+export const ArticleInfoWrapper = styled.div`
+  padding: 3.25rem;
+`
+
 export const LinkText = styled.h3`
-  color: red;
-  text-align: right;
+    color: red;
+    text-align: right;
 `
 
 export const IntroWrapper = styled.div`
@@ -123,43 +174,9 @@ export const IntroWrapper = styled.div`
 `
 
 export const SubHeadingText = styled.h3`
+  text-align: center;
   font-size: 2rem;
   color: #707070;
   margin: 1.45rem 0;
 `
-export const BackToArticlesText = styled(Paragraph)`
-  text-align: right;
-  margin-bottom: 0;
-`
-export const Arrow = styled.div`
-  width: 40px;
-  height: 30px;
-  display: grid;
-  :before {
-    width: 40px;
-    content: "";
-    grid-area: 1/1;
-    background: #707070;
-    clip-path: polygon(
-      0 10px,
-      calc(100% - 15px) 10px,
-      calc(100% - 15px) 0,
-      100% 50%,
-      calc(100% - 15px) 100%,
-      calc(100% - 15px) calc(100% - 10px),
-      0 calc(100% - 10px)
-    );
-    transform: rotate(180deg);
-  }
-`
-export const BackArrowWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 20px;
-  margin-bottom: 1.75rem;
 
-  :hover {
-    cursor: pointer;
-  }
-`

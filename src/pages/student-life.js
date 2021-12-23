@@ -1,8 +1,8 @@
 import * as React from "react"
 // import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo/Seo"
-import StudentLifeTemplate from "../templates/StudentLifeTemplate"
 import Layout from "../components/layout"
+import StudentLife from "../components/pages/studentLife"
 
 const StudentLifePage = ({ pageContext, location }) => (
   <Layout
@@ -11,7 +11,7 @@ const StudentLifePage = ({ pageContext, location }) => (
     crumbLabel="Student Life"
   >
     <Seo title="Student Life" />
-    <StudentLifeTemplate />
+    <StudentLife />
   </Layout>
 )
 

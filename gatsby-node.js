@@ -203,6 +203,51 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  const studentLifeArticles = await graphql(`
+    query studentLifeArticleQuery {
+      allContentfulStudentLifeArticles {
+        edges {
+          node {
+            author
+            date(formatString: "LL")
+            title
+            articleBody {
+              raw
+            }
+            image {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `).then(studentLifeArticles => {
+    if (studentLifeArticles.errors) {
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
+    }
+    // Create pages for each markdown file.
+    const StudentLifeArticlesTemplate = path.resolve(
+      `src/templates/StudentLifeTemplate/index.js`
+    )
+
+    studentLifeArticles.data.allContentfulStudentLifeArticles.edges.forEach(
+      ({ node }) => {
+        const path = `/student-life/${node.title
+          .toLowerCase()
+          .replace(/ /g, "-").replace("/", "-")}`
+        createPage({
+          path,
+          component: StudentLifeArticlesTemplate,
+          context: {
+            pagePath: path,
+            articleData: node,
+          },
+        })
+      }
+    )
+  })
+
   return Promise.all([schools, faculties, courses])
 }
 exports.onCreateWebpackConfig = ({ actions }) => {

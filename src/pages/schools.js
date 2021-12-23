@@ -25,7 +25,6 @@ const CardsWrapper = styled.div`
 `
 
 const Schools = ({ pageContext, location, data }) => {
-  console.log(data)
   return (
     <Layout
       pageContext={pageContext}

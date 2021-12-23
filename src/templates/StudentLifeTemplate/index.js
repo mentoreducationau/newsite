@@ -1,69 +1,44 @@
 import React from "react"
-
-import { TitleBanner, MainContainer } from "./index.css"
-
-import { Headline } from "../../styles/Typography.css"
-import { StudentsWork } from "../../components"
-import { Container } from "../../styles/ContainerStyles.css"
-import { Paragraph } from "../../styles/Typography.css"
+import Layout from "../../components/layout"
+import Seo from "../../components/Seo/Seo"
 import {
-  StudentInfoContainer,
-  NameAndDate,
-  NameAndDateContainer,
-  StudentLifeTitle,
-  StudentLifeSubtitle
+  TitleBanner,
+  MainContainer,
+  IntroWrapper,
+  SubHeadingText,
+  BackToArticlesText,
+  Arrow,
+  BackArrowWrapper,
 } from "./index.css"
+import { Headline } from "../../styles/Typography.css"
+import ArticleRenderer from "../../rich-text-renderers/ArticleRenderer"
 
-const StudentLifeTemplate = () => {
-  const studentLife = {
-    title: "Class Timetable",
-    name: "Nicolay",
-    date: "June 21 , 2021",
-    content: [
-      {
-        subtitle: "Story 1",
-        subcontent:
-          "Not sure when your virtual class is on? Don't worry, we have an an up-to-date timetable for all students who have enrolled into Virtual Classes, tutorials or on-campus classes online, which can be found by visiting our Timetable website page.",
-      },
-      {
-        subtitle: "Story 2",
-        subcontent:
-          "Not sure when your virtual class is on? Don't worry, we have an an up-to-date timetable for all students who have enrolled into Virtual Classes, tutorials or on-campus classes online, which can be found by visiting our Timetable website page.",
-      },
-      {
-        subtitle: "Story 3",
-        subcontent:
-          "Not sure when your virtual class is on? Don't worry, we have an an up-to-date timetable for all students who have enrolled into Virtual Classes, tutorials or on-campus classes online, which can be found by visiting our Timetable website page.",
-      },
-    ],
-  }
-
+const StudentLifeTemplate = ({ pageContext, location }) => {
+  const articleData = pageContext.articleData
   return (
-    <>
-      <TitleBanner style={{ backgroundAttachment: "fixed" }}>
-        <Container>
-          <Headline banner>Student Life</Headline>
-        </Container>
-      </TitleBanner>
+    <Layout
+      pageContext={pageContext}
+      location={location}
+      crumbLabel="Student Life"
+    >
+      <Seo title="Student Life" />
+      <TitleBanner />
       <MainContainer>
-        <StudentInfoContainer>
-          <StudentLifeTitle>{studentLife.title}</StudentLifeTitle>
-          {studentLife.content.map((item, index) => (
-            <React.Fragment key={index}>
-              <StudentLifeSubtitle>
-                {item.subtitle}
-              </StudentLifeSubtitle>
-              <Paragraph>{item.subcontent}</Paragraph>
-            </React.Fragment>
-          ))}
-          <NameAndDateContainer>
-            <NameAndDate>{studentLife.name}</NameAndDate>
-            <NameAndDate>{studentLife.date}</NameAndDate>
-          </NameAndDateContainer>
-        </StudentInfoContainer>
-        <StudentsWork course="false" />
+        <IntroWrapper>
+          <Headline banner style={{ textAlign: "left" }}>
+            {articleData.title}
+          </Headline>
+          <SubHeadingText>
+            {articleData.author + " - " + articleData.date}
+          </SubHeadingText>
+          <BackArrowWrapper onClick={() => window.history.back()}>
+            <Arrow />
+            <BackToArticlesText>Back to articles</BackToArticlesText>
+          </BackArrowWrapper>
+          <ArticleRenderer node={articleData.articleBody} />
+        </IntroWrapper>
       </MainContainer>
-    </>
+    </Layout>
   )
 }
 

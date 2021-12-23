@@ -74,6 +74,7 @@ export const CoursesPageData = graphql`
           courses {
             courseCode
             courseName
+            studyLevel
           }
         }
       }
