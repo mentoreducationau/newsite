@@ -72,7 +72,7 @@ const Header = ({ siteTitle, pageName }) => {
   return (
     <>
       <HeaderWrapper
-        className="container-hero responsive-image hide-on-med-and-down"
+        className="container-hero"
         ref={wrapperRef}
       >
         {/* header start */}
@@ -131,7 +131,6 @@ const Header = ({ siteTitle, pageName }) => {
         {/* header end */}
         <div className="section ">
           <div className="row ">
-            <div className="col m12 l6" style={{ height: `50vh` }}></div>
             <ColorShapeWrapper className="col m12 l6 valign-wrapper">
               <ColorShape marginTop="0px" opacity="0.2" width="750px" />
               <ColorShape marginTop="-290px" opacity="0.4" width="690px" />

@@ -11,7 +11,7 @@ import {
   PathwayContainer,
   ImageWrapper,
   OneImgWrapper,
-  TextWrapper
+  TextWrapper,
 } from "../components/pages/about/index.css"
 import { Headline, Paragraph, ParagraphMedium } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
