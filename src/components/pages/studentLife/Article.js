@@ -33,7 +33,7 @@ const Article = ({ title, author, date, image }) => {
           years ago, fly the Atlantic? Why does Rice play Texas?
         </Paragraph>
         <Link to={"/student-life/" + title.toLowerCase().replaceAll(" ", "-").replaceAll("/", "-")}>
-          <LinkText>Read More</LinkText>
+          <LinkText>View Article</LinkText>
         </Link>
       </ArticleInfoWrapper>
     </ArticleWrapper>
