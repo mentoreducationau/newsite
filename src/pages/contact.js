@@ -8,7 +8,7 @@ const Contact = ({ pageContext, location }) => (
   <Layout
     pageContext={pageContext}
     location={location}
-    crumbLabel="Contact"
+    crumbLabel="Contact Us"
   >
     <SEO title="Contact Us" />
     <ContactUs />

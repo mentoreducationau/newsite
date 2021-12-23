@@ -198,3 +198,7 @@ export const BigTitle = styled(Headline)`
   text-decoration-thickness: 4px;
   line-height: 45px;
 `
+export const PageNameWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+`

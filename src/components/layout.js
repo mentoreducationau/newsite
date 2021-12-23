@@ -43,7 +43,7 @@ const Layout = ({ children, pageContext, location, crumbLabel }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} pageName={crumbLabel} />
       <PageTransition>
         <div
           style={{

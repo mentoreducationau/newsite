@@ -35,9 +35,10 @@ import {
   TitleWrapper,
   BigTitle,
   SmallTitle,
+  PageNameWrapper,
 } from "./header.css"
 
-const Header = () => {
+const Header = ({ siteTitle, pageName }) => {
   const ref = useRef(null)
   const handleScroll = () => {
     const position = window.pageYOffset
@@ -56,9 +57,24 @@ const Header = () => {
     }
   }, [])
 
+  const wrapperRef = useRef(null)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const pos =
+        wrapperRef.current.getBoundingClientRect().bottom +
+        window.pageYOffset -
+        72
+      window.scrollTo({ top: pos, behavior: "smooth" })
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
-      <HeaderWrapper className="container-hero responsive-image hide-on-med-and-down">
+      <HeaderWrapper
+        className="container-hero responsive-image hide-on-med-and-down"
+        ref={wrapperRef}
+      >
         {/* header start */}
         <NavWrapper ref={ref}>
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
@@ -133,9 +149,13 @@ const Header = () => {
                   <SmallTitle marginLeft="40px">
                     Over 6,000 currently enrolled
                   </SmallTitle>
-                  <BigTitle marginLeft="60px" color="#132050" underline>
-                    Student Life
-                  </BigTitle>
+                  <PageNameWrapper>
+                    <BigTitle marginLeft="60px" color="#132050" underline>
+                      {pageName}
+                    </BigTitle>
+                    <SmallTitle marginLeft="20px">at</SmallTitle>
+                  </PageNameWrapper>
+
                   <BigTitle marginLeft="80px">Mentor Education</BigTitle>
                 </TitleWrapper>
               </ColorShape>
