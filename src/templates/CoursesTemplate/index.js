@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
@@ -30,22 +30,7 @@ import playbutton from "../../images/svg/playbutton.svg"
 
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData
-  const ref = useRef(null)
-  const handleScroll = () => {
-    const position =
-      ref.current.getBoundingClientRect().top - window.innerHeight / 10
-    position < 0
-      ? (ref.current.style.paddingTop = "5rem")
-      : (ref.current.style.paddingTop = "0rem")
-  }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
   return (
     <>
       <Layout
@@ -93,7 +78,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
             <StudentsWork course />
             <FooterForm course />
           </CourseContainer>
-          <StickySideBar ref={ref}>
+          <StickySideBar>
             <CourseGuide course />
             <EnrolNow />
           </StickySideBar>

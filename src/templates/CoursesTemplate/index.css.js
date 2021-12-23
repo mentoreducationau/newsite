@@ -36,6 +36,8 @@ export const StickySideBar = styled.div`
   position: sticky;
   top: 0;
   height: 100vh; // experiment with this value, try changing to 110vh
+  margin-top: -4.5rem;
+  padding-top: 4.5rem;
 `
 export const CourseContainer = styled.div`
   width: 70%;
