@@ -88,7 +88,7 @@ import bgImg from "../../images/header-hero.jpeg"
 
 export const HeaderWrapper = styled.div`
   min-height: 91vh;
-  background-image: url(${bgImg});
+  background: url(${bgImg});
   background-size: cover;
   background-color: #cccccc;
   margin: 0 auto;

@@ -4,11 +4,11 @@ import { Link } from "gatsby"
 // import "./hero.css"
 import { links } from "../../Header/links-array"
 import { Headline } from "../../../styles/Typography.css"
-import bgImg from "./images/header-hero.jpeg"
+import bgImg from "../../../images/header-hero.jpeg"
 
 export const HeaderWrapper = styled.div`
   min-height: 91vh;
-  background-image: url(${bgImg});
+  background: url(${bgImg});
   background-size: cover;
   background-color: #cccccc;
   margin: 0 auto;
