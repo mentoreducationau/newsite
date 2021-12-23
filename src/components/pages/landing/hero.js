@@ -1,8 +1,18 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import "./hero.css"
+// import "./hero.css"
 import { links } from "../../Header/links-array"
+import { Headline } from "../../../styles/Typography.css"
+import bgImg from "./images/header-hero.jpeg"
+
+export const HeaderWrapper = styled.div`
+  min-height: 91vh;
+  background-image: url(${bgImg});
+  background-size: cover;
+  background-color: #cccccc;
+  margin: 0 auto;
+`
 
 export const NavWrapper = styled.nav`
   width: 100%;
@@ -27,7 +37,7 @@ export const LogoWrapepr = styled(Link)`
   font-weight: 600;
   white-space: nowrap;
 
-  @media(max-width: 1100px) {
+  @media (max-width: 1100px) {
     white-space: unset;
     line-height: 34px;
   }
@@ -58,7 +68,7 @@ export const HeaderLink = styled(Link)`
     border-bottom: 2px solid grey;
   }
 
-  @media(max-width: 1400px) {
+  @media (max-width: 1400px) {
     padding: 0;
   }
 `
@@ -69,6 +79,44 @@ export const SignInButton = styled.button`
   border: 1px solid red;
   color: red;
   box-shadow: none;
+`
+export const ColorShapeWrapper = styled.div`
+  height: 100vh;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 4.5rem;
+  padding: 0 !important;
+`
+export const ColorShape = styled.div`
+  border-left: 90px solid transparent;
+  border-right: 0 solid transparent;
+  border-top: 340px solid red;
+  width: ${props => (props.width ? props.width : "100%")};
+  opacity: ${props => (props.opacity ? props.opacity : "1")};
+  margin-top: ${props => (props.marginTop ? props.marginTop : "0")};
+  height: 200px;
+`
+export const TitleWrapper = styled.div`
+  position: absolute;
+  top: -310px;
+  left: -40px;
+`
+export const SmallTitle = styled.h3`
+  font-size: 35px;
+  color: white;
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : "0")};
+  margin-bottom: 0.8rem;
+`
+export const BigTitle = styled(Headline)`
+  font-size: 50px;
+  color: white;
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : "0")};
+  color: ${props => (props.color ? props.color : "0")};
+  text-decoration: ${props => (props.underline ? "underline" : "none")};
+  margin-bottom: 0.8rem;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 4px;
+  line-height: 45px;
 `
 
 const Hero = () => {
@@ -92,13 +140,17 @@ const Hero = () => {
 
   return (
     <>
-      <div className="container-hero responsive-image hide-on-med-and-down">
+      <HeaderWrapper className="container-hero responsive-image hide-on-med-and-down">
         {/* header start */}
         <NavWrapper ref={ref}>
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
           <LinksWrapper>
             {links.map((link, i) => (
-              <HeaderLink key={link.slug} className="border-bottom" to={`${link.slug}`}>
+              <HeaderLink
+                key={link.slug}
+                className="border-bottom"
+                to={`${link.slug}`}
+              >
                 {link.name}
               </HeaderLink>
             ))}
@@ -144,175 +196,37 @@ const Hero = () => {
         </ul> */}
         {/* header end */}
         <div className="section ">
-          <div
-            className="row "
-            style={{
-              marginRight: "1.5rem",
-            }}
-          >
+          <div className="row ">
             <div className="col m12 l6" style={{ height: `50vh` }}></div>
-            <div
-              className="col m12 l6 valign-wrapper "
-              style={{ height: `100vh` }}
-            >
-              <div
-                className="row"
-                style={{
-                  marginLeft: `16%`,
-                  marginTop: `8rem`,
-                }}
+            <ColorShapeWrapper className="col m12 l6 valign-wrapper">
+              <ColorShape marginTop="0px" opacity="0.2" width="750px" />
+              <ColorShape marginTop="-290px" opacity="0.4" width="690px" />
+              <ColorShape
+                marginTop="-290px"
+                opacity="1"
+                width="630px"
+                style={{ position: "relative" }}
               >
-                <h1
-                  className="center-align"
-                  style={{
-                    textAlign: `center`,
-                    width: `100%`,
-                    padding: `20px 10px`,
-                    color: `white`,
-                    background: `red`,
-                    lineHeight: "2.5rem",
-                  }}
-                  data-sal="slide-up"
-                  data-sal-delay="200"
-                  data-sal-easing="ease"
-                >
-                  Excite your potential with Mentor Education
-                </h1>
-
-                <div className="center-align">
-                  <div
-                    className=""
-                    data-sal="slide-left"
-                    data-sal-delay="200"
-                    data-sal-easing="ease"
-                    data-sal-duration="500"
-                  >
-                    <p
-                      className="btn-large"
-                      style={{
-                        width: `80%`,
-                        fontSize: `130%`,
-                        fontWeight: `bold`,
-                        height: "100%",
-                        background: `red`,
-                        marginBottom: `.5rem`,
-                      }}
-                    >
-                      Speak with an expert now
-                    </p>
-                  </div>
-                  <div
-                    className=""
-                    data-sal="slide-left"
-                    data-sal-delay="400"
-                    data-sal-easing="ease"
-                    data-sal-duration="500"
-                  >
-                    <p
-                      className="btn-large"
-                      style={{
-                        width: `80%`,
-                        fontWeight: `bold`,
-                        height: "100%",
-                        background: `red`,
-                        marginBottom: `.5rem`,
-                      }}
-                    >
-                      Download Course Guide
-                    </p>
-                  </div>
-                  <div
-                    className=""
-                    data-sal="slide-left"
-                    data-sal-delay="600"
-                    data-sal-easing="ease"
-                    data-sal-duration="500"
-                  >
-                    <p
-                      className="btn-large"
-                      style={{
-                        width: `80%`,
-                        fontWeight: `bold`,
-                        height: "100%",
-                        background: `red`,
-                      }}
-                    >
-                      View Courses
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <TitleWrapper>
+                  <SmallTitle>17 years</SmallTitle>
+                  <SmallTitle marginLeft="20px">
+                    Over 20,000 students graduated
+                  </SmallTitle>
+                  <SmallTitle marginLeft="40px">
+                    Over 6,000 currently enrolled
+                  </SmallTitle>
+                  <BigTitle marginLeft="60px" color="#132050" underline>
+                    Student Life
+                  </BigTitle>
+                  <BigTitle marginLeft="80px">Mentor Education</BigTitle>
+                </TitleWrapper>
+              </ColorShape>
+            </ColorShapeWrapper>
           </div>
         </div>
-      </div>
+      </HeaderWrapper>
 
-      <div className="container-hero-small show-on-small">
-        <div
-          className="row hide-on-med-and-up"
-          style={{
-            marginBottom: "0",
-          }}
-        >
-          <h1
-            className="center-align"
-            style={{
-              textAlign: `center`,
-              marginBottom: "0",
-              width: `100%`,
-              padding: `20px 10px`,
-              color: `white`,
-              background: `red`,
-              lineHeight: "2.5rem",
-            }}
-          >
-            Excite your potential with Mentor Education
-          </h1>
-          <div className="container-hero-small-img "></div>
-
-          <div className="center-align section ">
-            <p
-              className="btn-large responsive-text"
-              style={{
-                width: `80%`,
-                fontSize: `120%`,
-                fontWeight: `bold`,
-                height: "100%",
-                background: `red`,
-                marginBottom: `.5rem`,
-                lineHeight: `2rem`,
-                padding: ".5rem .5rem",
-              }}
-            >
-              Speak with an expert now
-            </p>
-            <p
-              className="btn-large"
-              style={{
-                width: `80%`,
-                fontWeight: `bold`,
-                height: "100%",
-                background: `red`,
-                marginBottom: `.5rem`,
-              }}
-            >
-              Download Course Guide
-            </p>
-            <p
-              className="btn-large"
-              style={{
-                width: `80%`,
-                fontWeight: `bold`,
-                height: "100%",
-                background: `red`,
-                marginBottom: `.1rem`,
-              }}
-            >
-              View Courses
-            </p>
-          </div>
-        </div>
-      </div>
+      <div className="container-hero-small show-on-small"></div>
     </>
   )
 }

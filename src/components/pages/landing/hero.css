@@ -1,15 +1,15 @@
 .container-hero {
-    min-height: 91vh;
-    background-image: url("./images/hero.jpg");
-    background-size: cover;
-    background-color: #cccccc;
-    /* width: 100vw; */
-    margin: 0 auto;
+  min-height: 91vh;
+  background-image: url("./images/header-hero.jpeg");
+  background-size: cover;
+  background-color: #cccccc;
+  /* width: 100vw; */
+  margin: 0 auto;
 }
 
 .container-hero-small {
   height: 100%;
-  
+
   background-size: cover;
   background-color: white;
   /* width: 100vw; */
@@ -18,25 +18,23 @@
 
 .container-hero-small-img {
   height: 50vh;
-  background-image: url("./images/hero.jpg");
+  background-image: url("./images/header-hero.jpeg");
   background-size: cover;
   background-color: #cccccc;
   /* width: 100vw; */
   margin: 0 auto;
 }
 
-
-
 /* Centering Content */
 .row-flex {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .col-flex {
-    /* **width % is relative to amount of col's req eg 4x = 25% */
-    min-width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
+
+.col-flex {
+  /* **width % is relative to amount of col's req eg 4x = 25% */
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
