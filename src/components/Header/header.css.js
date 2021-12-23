@@ -84,7 +84,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Headline } from "../../styles/Typography.css"
-import bgImg from "../pages/landing/images/header-hero.jpeg"
+import bgImg from "../../images/header-hero.jpeg"
 
 export const HeaderWrapper = styled.div`
   min-height: 91vh;
