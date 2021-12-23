@@ -17,7 +17,7 @@ import Header from "../components/Header/Header"
 import Footer from "./Footer/footer"
 import "./layout.css"
 
-const Layout = ({ children, pageContext, location, crumbLabel }) => {
+const Layout = ({ children, pageContext, location, crumbLabel, pageName }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -43,7 +43,7 @@ const Layout = ({ children, pageContext, location, crumbLabel }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} pageName={crumbLabel} />
+      <Header siteTitle={data.site.siteMetadata.title} pageName={pageName} />
       <PageTransition>
         <div
           style={{

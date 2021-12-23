@@ -19,6 +19,7 @@ const EmploymentOpportunitiesPage = ({ pageContext, location }) => (
     pageContext={pageContext}
     location={location}
     crumbLabel="Employment Opportunities"
+    pageName="Employment Opportunities"
   >
     <Seo title="Employment Opportunities" />
     <TitleBanner style={{ backgroundAttachment: "fixed" }}>

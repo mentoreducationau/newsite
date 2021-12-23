@@ -9,6 +9,7 @@ const Contact = ({ pageContext, location }) => (
     pageContext={pageContext}
     location={location}
     crumbLabel="Contact Us"
+    pageName="Contact Us"
   >
     <SEO title="Contact Us" />
     <ContactUs />

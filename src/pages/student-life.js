@@ -9,6 +9,7 @@ const StudentLifePage = ({ pageContext, location }) => (
     pageContext={pageContext}
     location={location}
     crumbLabel="Student Life"
+    pageName="Student Life"
   >
     <Seo title="Student Life" />
     <StudentLife />

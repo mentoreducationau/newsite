@@ -36,9 +36,10 @@ const CoursesTemplate = ({ pageContext, location }) => {
       <Layout
         pageContext={pageContext}
         location={location}
-        crumbLabel={courseData.courseCode + " " + courseData.courseName}
+        crumbLabel={courseData.courseCode + " - " + courseData.studyLevel + " " + courseData.courseName}
+        pageName="Courses"
       >
-        <Seo title={courseData.courseCode + " " + courseData.courseName} />
+        <Seo title={courseData.courseCode + " - " + courseData.studyLevel + " " + courseData.courseName} />
         <HeroVideo>
           <StaticImage
             src="../../images/placeholder.png"

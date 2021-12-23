@@ -5,7 +5,7 @@ import SpecialOffersTemplate from "../templates/SpecialOffersTemplate"
 import Layout from "../components/layout"
 
 const StudentInformationPage = ({ pageContext, location }) => (
-  <Layout pageContext={pageContext} location={location} crumbLabel="Special Offers">
+  <Layout pageContext={pageContext} location={location} crumbLabel="Special Offers" pageName="Special Offers">
     <Seo title="Special Offers" />
     <SpecialOffersTemplate />
   </Layout>

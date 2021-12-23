@@ -13,7 +13,7 @@ import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-
 import LandingLayout from "../components/LandingLayout"
 
 const IndexPage = ({pageContext, location}) => (
-  <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home">
+  <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
     <SEO title="Home" />
     <Hero />
     <TableDesc />

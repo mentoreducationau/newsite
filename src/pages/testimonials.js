@@ -31,6 +31,7 @@ const TestimonialsPage = ({ pageContext, location }) => (
     pageContext={pageContext}
     location={location}
     crumbLabel="Mentor Education Student Testimonials"
+    pageName="Student Testimonials"
   >
     <Seo title="Testimonials" />
     <TitleBanner style={{ backgroundAttachment: "fixed" }}>

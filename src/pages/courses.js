@@ -28,7 +28,7 @@ const CardsWrapper = styled.div`
 const CoursesPage = ({ pageContext, location, data }) => {
   const { heading, coursesSelection } = data.allContentfulCoursesPage.nodes[0]
   return (
-    <Layout pageContext={pageContext} location={location} crumbLabel={heading}>
+    <Layout pageContext={pageContext} location={location} crumbLabel={heading} pageName="Courses">
       <SEO title={heading} />
       <Headline style={{ color: "#707070" }} banner>
         {heading}
@@ -43,7 +43,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
               {item.courses.map((it, idx) => (
                 <Card
                   key={idx}
-                  heading={it.courseCode + " - " + it.courseName}
+                  heading={it.courseCode + " - " + it.studyLevel + " " + it.courseName}
                   link={
                     "/courses/" +
                     it.courseCode.toLowerCase() +

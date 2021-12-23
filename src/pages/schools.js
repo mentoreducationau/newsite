@@ -30,6 +30,7 @@ const Schools = ({ pageContext, location, data }) => {
       pageContext={pageContext}
       location={location}
       crumbLabel="Schools"
+      pageName="Schools"
     >
       <SEO title="Mentor Education Schools" />
       <Headline style={{ color: "#707070" }} banner>

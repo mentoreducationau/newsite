@@ -7,7 +7,7 @@ import { Paragraph } from "../styles/Typography.css"
 const ArticleRenderer = ({ node }) => {
   const richTextImages = {}
   node.references.map(reference => {
-    richTextImages[reference.contentful_id] = {
+    return richTextImages[reference.contentful_id] = {
       image: reference.gatsbyImageData,
       alt: reference.title,
     }

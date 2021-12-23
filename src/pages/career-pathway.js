@@ -47,6 +47,7 @@ const CareerPathwayPage = ({ pageContext, location }) => {
       pageContext={pageContext}
       location={location}
       crumbLabel="Education Pathway"
+      pageName="Education Pathway"
     >
       <Seo title="Education Pathway" />
       <TitleBanner style={{ backgroundAttachment: "fixed" }}>

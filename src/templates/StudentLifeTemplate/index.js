@@ -15,14 +15,14 @@ import ArticleRenderer from "../../rich-text-renderers/ArticleRenderer"
 
 const StudentLifeTemplate = ({ pageContext, location }) => {
   const articleData = pageContext.articleData
-  console.log(articleData)
   return (
     <Layout
       pageContext={pageContext}
       location={location}
-      crumbLabel="Student Life"
+      crumbLabel={articleData.title}
+      pageName="Student Life"
     >
-      <Seo title="Student Life" />
+      <Seo title={articleData.title} />
       <TitleBanner />
       <MainContainer>
         <IntroWrapper>

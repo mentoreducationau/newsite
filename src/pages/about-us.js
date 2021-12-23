@@ -13,6 +13,7 @@ const About = ({ pageContext, location }) => {
       pageContext={pageContext}
       location={location}
       crumbLabel="About Us"
+      pageName="About Us"
     >
       <SEO title="About Us" />
       <div className="section">

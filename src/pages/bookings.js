@@ -16,6 +16,7 @@ const BookingsPage = ({ pageContext, location }) => {
       pageContext={pageContext}
       location={location}
       crumbLabel="Book an appointment"
+      pageName="Bookings"
     >
       <Seo title="Book an appointment" />
       <TitleBanner style={{ backgroundAttachment: "fixed" }}>

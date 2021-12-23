@@ -4,7 +4,7 @@ import StudentInformationTemplate from "../templates/StudentInfromationTemplate"
 import Layout from "../components/layout"
 
 const StudentInformationPage = ({ pageContext, location }) => (
-  <Layout pageContext={pageContext} location={location} crumbLabel="Student Information">
+  <Layout pageContext={pageContext} location={location} crumbLabel="Student Information" pageName="Student Information">
     <Seo title="Student Information" />
     <StudentInformationTemplate />
   </Layout>

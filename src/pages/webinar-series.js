@@ -10,6 +10,7 @@ const WebinarSeriesPage = ({ pageContext, location }) => (
     pageContext={pageContext}
     location={location}
     crumbLabel="Mentor Education Webinar Series"
+    pageName="Webinar Series"
   >
     <Seo title="Webinars" />
     <TitleBanner style={{ backgroundAttachment: "fixed" }}>

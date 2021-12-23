@@ -32,6 +32,7 @@ const CoursesList = ({ pageContext, location }) => {
       pageContext={pageContext}
       location={location}
       crumbLabel={facultyData.heading}
+      pageName="Schools"
     >
       <SEO title={facultyData.heading} />
       <Headline style={{ color: "#707070" }} banner>
@@ -49,7 +50,7 @@ const CoursesList = ({ pageContext, location }) => {
               {courseSection.courses.map((it, ix) => (
                 <Card
                   key={ix}
-                  heading={it.courseCode + "-" + it.courseName}
+                  heading={it.courseCode + " - " + it.studyLevel + " " + it.courseName}
                   link={
                     "/courses/" +
                     it.courseCode.toLowerCase() +

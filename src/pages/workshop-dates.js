@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Timetable from "../components/pages/timetable"
 
 const WorkshopDates = ({pageContext, location}) => (
-  <Layout pageContext={pageContext} location={location} crumbLabel="TimeTable">
+  <Layout pageContext={pageContext} location={location} crumbLabel="TimeTable" pageName="TimeTable" >
     <SEO title="TimeTable" />
     <Timetable />
   </Layout>
