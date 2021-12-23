@@ -213,6 +213,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             title
             articleBody {
               raw
+              references {
+                gatsbyImageData
+                contentful_id
+              }
             }
             image {
               gatsbyImageData
@@ -235,7 +239,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ({ node }) => {
         const path = `/student-life/${node.title
           .toLowerCase()
-          .replace(/ /g, "-").replace("/", "-")}`
+          .replace(/ /g, "-")
+          .replace("/", "-")}`
         createPage({
           path,
           component: StudentLifeArticlesTemplate,
