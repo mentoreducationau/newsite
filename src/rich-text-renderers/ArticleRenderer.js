@@ -25,9 +25,7 @@ const ArticleRenderer = ({ node }) => {
       [BLOCKS.HEADING_4]: (node, children) => <Subtitle>{children}</Subtitle>,
       [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
         // render the EMBEDDED_ASSET as you need
-        // const imageData = richTextImages[node.data.target.sys.id]
-        console.log(node)
-        const imageData = richTextImages["6IFceeldbZ3TfdoUl6YokB"]
+        const imageData = richTextImages[node.data.target.sys.id]
         const image = getImage(imageData.image)
 
         return (
