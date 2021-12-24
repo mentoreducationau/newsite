@@ -214,8 +214,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             articleBody {
               raw
               references {
-                gatsbyImageData
                 contentful_id
+                title
+                gatsbyImageData
+                internal {
+                  type
+                }
+                sys {
+                  type
+                }
               }
             }
             image {
