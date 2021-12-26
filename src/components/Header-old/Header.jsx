@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => (
         <span>Prefer to speak over the phone? Call us</span>
         <span>
           <StaticImage
-            src="../../../static/phone.png"
+            src="../../images/phone.png"
             alt="phone"
             placeholder="blurred"
           />

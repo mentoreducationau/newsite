@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import socialIcons from "../../../static/socialmediaicon.png"
+import socialIcons from "../../images/socialmediaicon.png"
 import { Container } from "../../styles/ContainerStyles.css"
 
 export const FooterContainer = styled.footer`

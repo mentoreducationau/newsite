@@ -31,7 +31,7 @@ const FooterForm = props => {
         talk to an expert?
       </Title>
       <FormIntroContainer>
-        <StaticImage src="../../../static/footer-img.jpg" alt="form-image" />
+        <StaticImage src="../../images/footer-img.jpg" alt="form-image" />
         <FormDescription>
           <Subtitle>We understand</Subtitle>
           <DivHeavy>Help</DivHeavy>
@@ -72,7 +72,7 @@ const FooterForm = props => {
         talk to an expert?
       </Title>
       <FormIntroContainer>
-        <StaticImage src="../../../static/footer-img.jpg" alt="form-image" />
+        <StaticImage src="../../images/footer-img.jpg" alt="form-image" />
         <FormDescription>
           <Subtitle>We understand</Subtitle>
           <DivHeavy>Help</DivHeavy>
