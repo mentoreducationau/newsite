@@ -30,9 +30,16 @@ const ImageGrid = () => {
           node {
             id
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              fluid {
+                base64
+                aspectRatio
+                sizes
+                src
+                srcSet
+              }
             }
             name
+            base
           }
         }
       }
@@ -53,7 +60,7 @@ const ImageGrid = () => {
                 image={
                   images.allFile.edges.filter(
                     item => item.node.name === student.image
-                  )[0].node.childImageSharp
+                  )[0].node.childImageSharp.fluid
                 }
               />
             </CourseCardWrapper>
