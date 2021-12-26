@@ -50,11 +50,10 @@ const TableDesc = () => {
                 data-sal-duration="500"
               >
                 <div className="tableDescCardImage">
-                  {/* <StaticImage
+                  <StaticImage
                     src="./images/tableDescrImg1.jpg"
                     alt="table-desc-img-1"
-                  /> */}
-                  <img src="./images/tableDescrImg1.jpg" />
+                  />
                 </div>
                 <div className="tableDescCardTitle">ONLINE LEARNING</div>
                 <div className="tableDescCardText">
