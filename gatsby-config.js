@@ -9,7 +9,6 @@ module.exports = {
     description: `Established since 2003, Mentor Education is an Australian nationally recognised vocational education and training (VET) provider.`,
     author: `@marek.reid`,
   },
-  pathPrefix: `/blog`,
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
