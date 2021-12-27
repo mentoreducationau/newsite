@@ -30,6 +30,7 @@ import playbutton from "../../images/svg/playbutton.svg"
 
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData
+  const screenHeight = window.innerHeight
 
   return (
     <>
@@ -79,7 +80,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
             <StudentsWork course />
             <FooterForm course />
           </CourseContainer>
-          <StickySideBar>
+          <StickySideBar screenHeight={screenHeight/10}>
             <CourseGuide course />
             <EnrolNow />
           </StickySideBar>

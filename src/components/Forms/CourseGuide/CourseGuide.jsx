@@ -10,7 +10,7 @@ const CourseGuide = ({ course, imgContained }) => {
   }
   return (
     <CourseGuideContainer course={course}>
-      <H3 course={course}>Download a Course Guide</H3>
+      <H3 style={{marginTop: "0"}} course={course}>Download a Course Guide</H3>
       {imgContained && (
         <ImageContainer>
           <StaticImage
