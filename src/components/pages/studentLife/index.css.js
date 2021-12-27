@@ -144,15 +144,15 @@ export const ArticleWrapper = styled.div`
 `
 
 export const CardsWrapper = styled.div`
-  --repeat: auto-fit;
+  --repeat: 2;
 
-  @media (min-width: calc(250px * 5)) {
-    --repeat: 2;
+  @media (max-width: 990px) {
+    --repeat: 1;
   }
 
   display: grid;
   grid-template-columns: repeat(
-    var(--repeat, auto-fit),
+    var(--repeat, 2),
     minmax(calc(250px * 1), 1fr)
   );
   grid-template-rows: auto;
@@ -160,7 +160,15 @@ export const CardsWrapper = styled.div`
   width: 100%;
 `
 export const ArticleInfoWrapper = styled.div`
-  padding: 3.25rem;
+  padding: 2.5rem;
+
+  @media(max-width: 1200px) {
+    padding: 1.25rem;
+  }
+
+  @media(max-width: 451px) {
+    padding: 0.75rem;
+  }
 `
 
 export const LinkText = styled.h3`
