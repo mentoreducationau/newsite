@@ -1,8 +1,24 @@
 import React from "react"
+import styled from "styled-components"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Paragraph, Subtitle } from "../styles/Typography.css"
+
+const ImageWrapper = styled.div`
+  width: 65%;
+  height: auto;
+  float: ${props => (props.index % 2 === 0 ? "left" : "right")};
+  margin-left: ${props => (props.index % 2 === 0 ? "0" : "2.5rem")};
+  margin-right: ${props => (props.index % 2 === 0 ? "2.5rem" : "0")};
+
+  @media(max-width: 451px){
+    width: 100%;
+    height: auto;
+    float: none;
+    margin: 0;
+  }
+`
 
 const ArticleRenderer = ({ node }) => {
   const richTextImages = {}
@@ -31,28 +47,10 @@ const ArticleRenderer = ({ node }) => {
         const imageData = richTextImages[node.data.target.sys.id]
         const image = getImage(imageData.image)
 
-        return index % 2 === 0 ? (
-          <div
-            style={{
-              width: "65%",
-              height: "auto",
-              float: "left",
-              marginRight: "2.5rem",
-            }}
-          >
+        return (
+          <ImageWrapper index={index}>
             <GatsbyImage image={image} alt={imageData.alt} />
-          </div>
-        ) : (
-          <div
-            style={{
-              width: "65%",
-              height: "auto",
-              float: "right",
-              marginLeft: "2.5rem",
-            }}
-          >
-            <GatsbyImage image={image} alt={imageData.alt} />
-          </div>
+          </ImageWrapper>
         )
       },
     },
