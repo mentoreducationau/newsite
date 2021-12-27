@@ -38,7 +38,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad1.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-1"
             />
@@ -53,7 +54,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad2.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-2"
             />
@@ -68,7 +70,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad3.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-3"
             />
@@ -83,7 +86,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad4.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-4"
             />
@@ -98,7 +102,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad5.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-5"
             />
@@ -113,7 +118,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad6.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-6"
             />
@@ -128,7 +134,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad7.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-7"
             />
@@ -143,7 +150,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad8.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-8"
             />
@@ -158,7 +166,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad9.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-9"
             />
@@ -173,7 +182,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad10.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-10"
             />
@@ -188,7 +198,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad11.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-11"
             />
@@ -203,7 +214,8 @@ const WhereOurGraduatesWork = () => {
             <StaticImage
               src="./images/grad12.png"
               style={{
-                height: `4rem`,
+                height: `100%`,
+                width: `auto`
               }}
               alt="graduates-img-12"
             />
