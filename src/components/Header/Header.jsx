@@ -36,7 +36,18 @@ import {
   BigTitle,
   SmallTitle,
   PageNameWrapper,
+  IconWrapper,
+  IconImg,
+  ColorRectWrapper,
+  ColorRect,
 } from "./header.css"
+import {
+  DesktopContainer,
+  MobileContainer,
+} from "../../styles/ContainerStyles.css"
+import hamburgerIcon from "../../images/svg/hamburger_icon.svg"
+import mailIcon from "../../images/svg/mail_icon.svg"
+import phoneIcon from "../../images/svg/phone_icon.svg"
 
 const Header = ({ siteTitle, pageName }) => {
   const ref = useRef(null)
@@ -71,11 +82,7 @@ const Header = ({ siteTitle, pageName }) => {
 
   return (
     <>
-      <HeaderWrapper
-        className="container-hero"
-        ref={wrapperRef}
-      >
-        {/* header start */}
+      <HeaderWrapper className="container-hero" ref={wrapperRef}>
         <NavWrapper ref={ref}>
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
           <LinksWrapper>
@@ -89,81 +96,55 @@ const Header = ({ siteTitle, pageName }) => {
               </HeaderLink>
             ))}
           </LinksWrapper>
+          <IconWrapper>
+            <IconImg src={phoneIcon} alt="phone-icon" />
+            <IconImg src={mailIcon} alt="mail-icon" />
+            <IconImg src={hamburgerIcon} alt="hamburger-icon" />
+          </IconWrapper>
         </NavWrapper>
-        {/*         
-        <ul className="sidenav" id="mobile-demo">
-          <li>
-            <Link to="/about-us/">About Us</Link>
-          </li>
-          <li>
-            <Link to="/courses/">Courses</Link>
-          </li>
-          <li>
-            <Link to="/schools/">Schools</Link>
-          </li>
-          <li>
-            <Link to="/workshop-dates/">Timetable</Link>
-          </li>
-          <li>
-            <Link to="/student-information/">Student Information</Link>
-          </li>
-          <li>
-            <Link to="/student-life/">Student Life</Link>
-          </li>
-          <li>
-            <Link to="/special-offers/">Special Offers</Link>
-          </li>
-          <li>
-            <Link to="/lms-gateway-login/">MELMS Login</Link>
-          </li>
-          <li>
-            <Link to="/contact/">Contact</Link>
-          </li>
-          <li className="center-align">
-            <button
-              className="btn-flat red darken-2"
-              style={{ color: "white", fontStyle: "bold" }}
-            >
-              Sign-In{" "}
-            </button>
-          </li>
-        </ul> */}
-        {/* header end */}
         <div className="section ">
           <div className="row ">
-            <ColorShapeWrapper className="col m12 l6 valign-wrapper">
-              <ColorShape marginTop="0px" opacity="0.2" width="750px" />
-              <ColorShape marginTop="-290px" opacity="0.4" width="690px" />
-              <ColorShape
-                marginTop="-290px"
-                opacity="1"
-                width="630px"
-                style={{ position: "relative" }}
-              >
-                <TitleWrapper>
-                  <SmallTitle>17 years</SmallTitle>
-                  <SmallTitle marginLeft="20px">
-                    Over 20,000 students graduated
-                  </SmallTitle>
-                  <SmallTitle marginLeft="40px">
-                    Over 6,000 currently enrolled
-                  </SmallTitle>
-                  <PageNameWrapper>
-                    <BigTitle marginLeft="60px" color="#132050" underline>
-                      {pageName}
-                    </BigTitle>
-                    <SmallTitle marginLeft="20px">at</SmallTitle>
-                  </PageNameWrapper>
+            <DesktopContainer>
+              <ColorShapeWrapper className="col m12 l6 valign-wrapper">
+                <ColorShape marginTop="0px" opacity="0.2" width="750px" />
+                <ColorShape marginTop="-290px" opacity="0.4" width="690px" />
+                <ColorShape
+                  marginTop="-290px"
+                  opacity="1"
+                  width="630px"
+                  style={{ position: "relative" }}
+                >
+                  <TitleWrapper>
+                    <SmallTitle>17 years</SmallTitle>
+                    <SmallTitle marginLeft="20px">
+                      Over 20,000 students graduated
+                    </SmallTitle>
+                    <SmallTitle marginLeft="40px">
+                      Over 6,000 currently enrolled
+                    </SmallTitle>
+                    <PageNameWrapper>
+                      <BigTitle marginLeft="60px" color="#132050" underline>
+                        {pageName}
+                      </BigTitle>
+                      <SmallTitle marginLeft="20px">at</SmallTitle>
+                    </PageNameWrapper>
 
-                  <BigTitle marginLeft="80px">Mentor Education</BigTitle>
-                </TitleWrapper>
-              </ColorShape>
-            </ColorShapeWrapper>
+                    <BigTitle marginLeft="80px">Mentor Education</BigTitle>
+                  </TitleWrapper>
+                </ColorShape>
+              </ColorShapeWrapper>
+            </DesktopContainer>
+            <MobileContainer>
+              <ColorRectWrapper>
+                <ColorRect width="259px" />
+                <ColorRect width="179px" />
+                <ColorRect width="254px" />
+                <ColorRect width="179px" />
+              </ColorRectWrapper>
+            </MobileContainer>
           </div>
         </div>
       </HeaderWrapper>
-
-      <div className="container-hero-small show-on-small"></div>
     </>
   )
 }

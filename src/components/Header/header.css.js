@@ -1,7 +1,5 @@
 ///// Old //////
 
-
-
 // import styled from "styled-components"
 // import { Link } from "gatsby"
 
@@ -72,14 +70,7 @@
 //   box-shadow: none;
 // `
 
-
-
-
-
 //////  New ///////
-
-
-
 
 import styled from "styled-components"
 import { Link } from "gatsby"
@@ -106,6 +97,11 @@ export const NavWrapper = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   box-shadow: none;
+
+  @media (max-width: 450px) {
+    padding: 12px 20px;
+    height: auto;
+  }
 `
 
 export const LogoWrapepr = styled(Link)`
@@ -113,13 +109,20 @@ export const LogoWrapepr = styled(Link)`
   display: flex;
   align-items: center;
   color: red;
-  font-size: 1rem;
+  font-size: 15px;
+  line-height; 20px;
   font-weight: 600;
   white-space: nowrap;
 
   @media (max-width: 1100px) {
     white-space: unset;
     line-height: 34px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 17px;
+    line-height: 16px;
+    flex-basis: min-content;
   }
 `
 
@@ -129,6 +132,10 @@ export const LinksWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   white-space: nowrap;
+
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 
 export const HeaderLink = styled(Link)`
@@ -171,7 +178,7 @@ export const ColorShapeWrapper = styled.div`
 export const ColorShape = styled.div`
   border-left: 90px solid transparent;
   border-right: 0 solid transparent;
-  border-top: 340px solid red;
+  border-top: 340px solid #df2f16;
   width: ${props => (props.width ? props.width : "100%")};
   opacity: ${props => (props.opacity ? props.opacity : "1")};
   margin-top: ${props => (props.marginTop ? props.marginTop : "0")};
@@ -202,4 +209,27 @@ export const BigTitle = styled(Headline)`
 export const PageNameWrapper = styled.div`
   display: flex;
   align-items: baseline;
+`
+export const IconWrapper = styled.div`
+  display: none;
+  @media (max-width: 450px) {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+`
+export const IconImg = styled.img`
+  margin-bottom: 0;
+`
+export const ColorRectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 21rem;
+`
+export const ColorRect = styled.div`
+  background-color: #df2f16;
+  width: ${props => (props.width ? props.width : "50%")};
+  height: 43px;
+  margin-bottom: 1.1rem;
 `

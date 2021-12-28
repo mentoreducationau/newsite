@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const SectionWrapper = styled.div`
+export const SectionWrapper = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: ${props =>
@@ -8,7 +8,7 @@ const SectionWrapper = styled.div`
   margin-top: ${props => (props.marginTop ? props.marginTop : "")};
 `
 
-const SplitContainer = styled.div`
+export const SplitContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
 
@@ -27,7 +27,7 @@ const SplitContainer = styled.div`
   `}
 `
 
-const Container = styled.div`
+export const Container = styled.div`
   /* border: 2px solid tomato; */
   margin: 2rem auto;
   padding: 0 2rem;
@@ -144,5 +144,18 @@ const Container = styled.div`
     }};
   }
 `
+export const DesktopContainer = styled.div`
+  display: block;
 
-export { Container, SectionWrapper, SplitContainer }
+  @media (max-width: 450px) {
+    display: none;
+  }
+`
+
+export const MobileContainer = styled.div`
+  display: none;
+
+  @media (max-width: 450px) {
+    display: block;
+  }
+`
