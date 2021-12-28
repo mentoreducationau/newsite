@@ -9,6 +9,10 @@ export const HeaderWrapper = styled.div`
   background-size: cover;
   background-color: #cccccc;
   margin: 0 auto;
+
+  @media (max-width: 450px) {
+    background-position: bottom 0px left 17%;
+  }
 `
 
 export const NavWrapper = styled.nav`
@@ -199,6 +203,6 @@ export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: translateX(${props => props.menuOpen ? "unset" : "100%"});
+  transform: translateX(${props => (props.menuOpen ? "unset" : "100%")});
   transition: transform 0.5s ease-out;
 `
