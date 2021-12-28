@@ -1,8 +1,7 @@
 import React from "react"
-
 import SEO from "../components/seo"
-// import Layout from "../components/layout"
-import Hero from "../components/pages/landing/hero"
+import Layout from "../components/layout"
+// import Hero from "../components/pages/landing/hero"
 import Publications from "../components/reuse/publications/publicatons"
 import TableDesc from "../components/pages/landing/table-desc"
 import Pathways from "../components/reuse/pathways/pathways"
@@ -10,13 +9,13 @@ import TestimonialsLanding from "../components/pages/landing/testimonials-landin
 import MarkQaulity from "../components/reuse/mark-qaulity/mark-qaulity"
 import QouteCoursesBanner from "../components/pages/landing/qoute-courses-banner"
 import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
-import LandingLayout from "../components/LandingLayout"
+// import LandingLayout from "../components/LandingLayout"
 
 const IndexPage = ({pageContext, location}) => (
-  <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
-  {/* <Layout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home"> */}
+  // <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
+  <Layout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
     <SEO title="Home" />
-    <Hero />
+    {/* <Hero /> */}
     <TableDesc />
     <Publications />
     <Pathways />
@@ -24,7 +23,7 @@ const IndexPage = ({pageContext, location}) => (
     <MarkQaulity />
     <QouteCoursesBanner />
     <WhereOurGraduatesWork />
-  </LandingLayout>
+  </Layout>
 )
 
 export default IndexPage

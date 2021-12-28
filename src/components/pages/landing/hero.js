@@ -157,10 +157,9 @@ const Hero = () => {
   return (
     <>
       <HeaderWrapper
-        className="container-hero responsive-image hide-on-med-and-down"
+        className="container-hero responsive-image"
         ref={wrapperRef}
       >
-        {/* header start */}
         <NavWrapper ref={ref}>
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
           <LinksWrapper>
@@ -175,45 +174,6 @@ const Hero = () => {
             ))}
           </LinksWrapper>
         </NavWrapper>
-        {/*         
-        <ul className="sidenav" id="mobile-demo">
-          <li>
-            <Link to="/about-us/">About Us</Link>
-          </li>
-          <li>
-            <Link to="/courses/">Courses</Link>
-          </li>
-          <li>
-            <Link to="/schools/">Schools</Link>
-          </li>
-          <li>
-            <Link to="/workshop-dates/">Timetable</Link>
-          </li>
-          <li>
-            <Link to="/student-information/">Student Information</Link>
-          </li>
-          <li>
-            <Link to="/student-life/">Student Life</Link>
-          </li>
-          <li>
-            <Link to="/special-offers/">Special Offers</Link>
-          </li>
-          <li>
-            <Link to="/lms-gateway-login/">MELMS Login</Link>
-          </li>
-          <li>
-            <Link to="/contact/">Contact</Link>
-          </li>
-          <li className="center-align">
-            <button
-              className="btn-flat red darken-2"
-              style={{ color: "white", fontStyle: "bold" }}
-            >
-              Sign-In{" "}
-            </button>
-          </li>
-        </ul> */}
-        {/* header end */}
         <div className="section ">
           <div className="row ">
             <ColorShapeWrapper className="col m12 l6 valign-wrapper">
@@ -247,8 +207,6 @@ const Hero = () => {
           </div>
         </div>
       </HeaderWrapper>
-
-      <div className="container-hero-small show-on-small"></div>
     </>
   )
 }

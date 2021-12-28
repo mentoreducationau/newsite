@@ -13,9 +13,12 @@ import PageTransition from "gatsby-plugin-page-transitions"
 import Helmet from "react-helmet"
 import { Typography } from "../styles/Typography.css"
 import Header from "../components/Header/Header"
-// import Footer from "./footer";
+import "materialize-css/dist/css/materialize.min.css"
 import Footer from "./Footer/footer"
 import "./layout.css"
+if (typeof window !== "undefined") {
+  require("materialize-css/dist/js/materialize.min.js")
+}
 
 const Layout = ({ children, pageContext, location, crumbLabel, pageName }) => {
   const {
