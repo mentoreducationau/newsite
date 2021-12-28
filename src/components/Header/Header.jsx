@@ -40,6 +40,11 @@ import {
   IconImg,
   ColorRectWrapper,
   ColorRect,
+  TopBannerWrapper,
+  MenuListWrapper,
+  MenuLink,
+  BottomLink,
+  BottomWrapper,
 } from "./header.css"
 import {
   DesktopContainer,
@@ -48,6 +53,7 @@ import {
 import hamburgerIcon from "../../images/svg/hamburger_icon.svg"
 import mailIcon from "../../images/svg/mail_icon.svg"
 import phoneIcon from "../../images/svg/phone_icon.svg"
+import cancelIcon from "../../images/svg/cancel_icon.svg"
 
 const Header = ({ siteTitle, pageName }) => {
   const ref = useRef(null)
@@ -79,6 +85,18 @@ const Header = ({ siteTitle, pageName }) => {
     }, 500)
     return () => clearTimeout(timer)
   }, [])
+
+  const menuItems = [
+    { title: "About Us", to: "/about-us" },
+    { title: "Schools", to: "/schools" },
+    { title: "Courses", to: "/courses" },
+    { title: "Timetable", to: "/timetable" },
+    { title: "Student Information", to: "/student-information" },
+    { title: "Student Life", to: "/student-life" },
+    { title: "Special Offers", to: "special-offers" },
+    { title: "Contact Us", to: "/contact-us" },
+    { title: "MELMS Login", to: "/contact-us" },
+  ]
 
   return (
     <>
@@ -143,6 +161,34 @@ const Header = ({ siteTitle, pageName }) => {
               </ColorRectWrapper>
             </MobileContainer>
           </div>
+        </div>
+        <div
+          style={{
+            position: "fixed",
+            zIndex: "2000",
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "#DF2F16",
+            top: "0",
+            left: "0",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between"
+          }}
+        >
+          <TopBannerWrapper>
+            <LogoWrapepr to={"/"} mobileMenu>Mentor Education</LogoWrapepr>
+            <IconImg src={cancelIcon} alt="cancel-icon" />
+          </TopBannerWrapper>
+          <MenuListWrapper>
+            {menuItems.map((item, index) => (
+              <MenuLink to={item.to}>{item.title}</MenuLink>
+            ))}
+          </MenuListWrapper>
+          <BottomWrapper>
+            <BottomLink to="">support @mentor.edu.au</BottomLink>
+            <BottomLink to="">1800 - 000 - 000</BottomLink>
+          </BottomWrapper>
         </div>
       </HeaderWrapper>
     </>

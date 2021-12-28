@@ -108,7 +108,7 @@ export const LogoWrapepr = styled(Link)`
   height: 100%;
   display: flex;
   align-items: center;
-  color: red;
+  color: ${props => props.mobileMenu ? "white" : "red"};
   font-size: 15px;
   line-height; 20px;
   font-weight: 600;
@@ -232,4 +232,33 @@ export const ColorRect = styled.div`
   width: ${props => (props.width ? props.width : "50%")};
   height: 43px;
   margin-bottom: 1.1rem;
+`
+
+export const TopBannerWrapper = styled.div`
+  padding:17px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+export const MenuListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 11px;
+`
+export const MenuLink = styled(Link)`
+  color: white;
+  font-size: 32px;
+  line-height: 43px;
+`
+export const BottomWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 33px;
+`
+export const BottomLink = styled(Link)`
+  color: white;
+  font-size: 22px;
+  line-height: 30px;
 `
