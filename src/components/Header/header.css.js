@@ -16,7 +16,7 @@ export const HeaderWrapper = styled.div`
 `
 
 export const NavWrapper = styled.nav`
-  width: 100%;
+  width: 100vw;
   height: 10vh;
   padding: 0 3rem;
   background: transparent;
