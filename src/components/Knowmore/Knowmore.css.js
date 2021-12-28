@@ -5,6 +5,7 @@ import { SpanHeavy } from "../../styles/Typography.css"
 export const MentorEducationContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 6rem;
 `
 export const KnowmoreContainer = styled(Container)`
   max-width: 84vw;

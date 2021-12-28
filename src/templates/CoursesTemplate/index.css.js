@@ -2,14 +2,6 @@ import styled from "styled-components"
 import { Container } from "../../styles/ContainerStyles.css"
 
 export const HeroVideo = styled.div`
-  position: relative;
-  .playbutton {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-  }
   p {
     padding: 8px 4rem;
     text-align: right;

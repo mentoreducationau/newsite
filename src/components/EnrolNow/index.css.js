@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { ParagraphMedium } from "../../styles/Typography.css"
 
 export const EnrolContainer = styled.div`
   margin-top: 1rem;
@@ -12,9 +11,10 @@ export const EnrolContainer = styled.div`
 `
 export const PriceContainer = styled.div`
   margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  text-align: center;
 `
 export const Prices = styled.div`
   display: flex;
@@ -48,10 +48,24 @@ export const PriceButton = styled.button`
     height:50px;
   `}
 `
-export const ClickHereLink = styled(ParagraphMedium)`
-  color: #cc4a28;
-
-  :hover {
-    cursor: pointer;
-  }
+export const EnrolText = styled.p`
+  font-size: 22px;
+  line-height: 30px;
+  color: black;
+`
+export const PriceText = styled.p`
+  font-size: 62px;
+  line-height: 62px;
+  color: #df2f16;
+`
+export const ClickHereWrapper = styled.div`
+  text-align: center;
+`
+export const ClickHereText = styled.p`
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 0;
+  color: ${props => (props.click ? "#cc4a28" : "black")};
+  text-decoration: ${props => (props.click ? "underline" : "none")};
+  ${props => props.click && ":hover {cursor: pointer;}"};
 `

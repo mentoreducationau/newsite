@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import {
   Subtitle,
   Paragraph,
@@ -10,22 +11,26 @@ import {
   PriceContainer,
   Prices,
   PriceButton,
-  ClickHereLink,
+  EnrolText,
+  PriceText,
+  ClickHereWrapper,
+  ClickHereText
 } from "./index.css"
 
-const EnrolNow = ({ excuteScroll }) => {
+const EnrolNow = ({ price, excuteScroll }) => {
   return (
     <EnrolContainer>
-      {/* <StaticImage
-        src="../../images/support.png"
+      <StaticImage
+        src="../../images/footer-img.jpg"
         alt="support"
         width={340}
-      /> */}
-      <Paragraph style={{ fontSize: 18 }}>
-        Need help? <Link to="#">Click here</Link> to speak with an expert
-      </Paragraph>
+      />
+      <ClickHereWrapper>
+        <ClickHereText onClick={() => excuteScroll()} click>Click here</ClickHereText>
+        <ClickHereText>speak with an expert</ClickHereText>
+      </ClickHereWrapper>
       <PriceContainer>
-        <Prices>
+        {/* <Prices>
           <Paragraph>Self Paced</Paragraph>
           <ParagraphMedium
             style={{ textDecoration: "line-through", marginBottom: 0 }}
@@ -58,15 +63,17 @@ const EnrolNow = ({ excuteScroll }) => {
           >
             $990
           </Subtitle>
-        </Prices>
+        </Prices> */}
+        <EnrolText>ENROL NOW FROM</EnrolText>
+        <PriceText>${price}*</PriceText>
       </PriceContainer>
       <PriceButton>ENROL NOW</PriceButton>
-      <ParagraphMedium course style={{ margin: "8px" }}>
+      {/* <ParagraphMedium course style={{ margin: "8px" }}>
         Payment Plans also available
       </ParagraphMedium>
-      <ClickHereLink course onClick={() => excuteScroll()}>
+      <ParagraphMedium course style={{ color: "#CC4A28" }}>
         Click Here
-      </ClickHereLink>
+      </ParagraphMedium> */}
     </EnrolContainer>
   )
 }

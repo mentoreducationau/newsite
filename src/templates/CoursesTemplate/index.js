@@ -92,7 +92,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
               landingIntro={courseData.landingIntro}
             />
             <JourneyStarted />
-            <LiveTutorials />
+            {/* <LiveTutorials /> */}
             {/* <Faq /> */}
             {/* <CareerSkillSket
               course
@@ -100,7 +100,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
             /> */}
             {/* <CareerAccordion /> */}
             <Knowmore course />
-            <Mission />
+            {/* <Mission /> */}
             <StudentsWork course />
             <div ref={ref}>
               <FooterForm course />
@@ -108,7 +108,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
           </CourseContainer>
           <StickySideBar screenHeight={screenHeight / 10}>
             <CourseGuide course />
-            <EnrolNow excuteScroll={excuteScroll} />
+            <EnrolNow price={courseData.pricing.salePrice} excuteScroll={excuteScroll} />
           </StickySideBar>
         </MainContainer>
       </Layout>
