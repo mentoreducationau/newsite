@@ -1,7 +1,7 @@
 import React from "react"
 
 import SEO from "../components/seo"
-
+// import Layout from "../components/layout"
 import Hero from "../components/pages/landing/hero"
 import Publications from "../components/reuse/publications/publicatons"
 import TableDesc from "../components/pages/landing/table-desc"
@@ -14,6 +14,7 @@ import LandingLayout from "../components/LandingLayout"
 
 const IndexPage = ({pageContext, location}) => (
   <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
+  {/* <Layout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home"> */}
     <SEO title="Home" />
     <Hero />
     <TableDesc />

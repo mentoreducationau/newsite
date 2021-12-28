@@ -13,6 +13,7 @@ import theme from "./src/constant/theme"
 // import { Typography } from "./src/styles/Typography.css"
 import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
 import "react-accessible-accordion/dist/fancy-example.css"
+import { ActiveMenuProvider } from "./src/hooks/ActiveMenu"
 
 const App = ({ element }) => {
   // const [width] = useWindowSize()
@@ -21,7 +22,7 @@ const App = ({ element }) => {
     <ThemeProvider theme={theme}>
       {/* <GlobalStyles />
       <Typography /> */}
-      {element}
+      <ActiveMenuProvider>{element}</ActiveMenuProvider>
     </ThemeProvider>
   )
 }

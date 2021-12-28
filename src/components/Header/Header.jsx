@@ -1,29 +1,6 @@
-///// Old Header //////
-
-// import React from "react"
-// import { links } from "./links-array"
-// import { HeaderLink, LinksWrapper, LogoWrapepr, NavWrapper } from "./header.css"
-// const Header = () => {
-//   return (
-//     <NavWrapper>
-//       <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
-//       <LinksWrapper>
-//         {links.map((link, i) => (
-//           <HeaderLink key={link.slug} className="border-bottom" to={`${link.slug}`}>
-//             {link.name}
-//           </HeaderLink>
-//         ))}
-//       </LinksWrapper>
-//     </NavWrapper>
-//   )
-// }
-
-// export default Header
-
-////// New Header ////////
-
 import React, { useEffect, useRef } from "react"
 import { links } from "./links-array"
+import useActiveMenu from "../../hooks/ActiveMenu"
 import {
   HeaderLink,
   LinksWrapper,
@@ -40,11 +17,6 @@ import {
   IconImg,
   ColorRectWrapper,
   ColorRect,
-  TopBannerWrapper,
-  MenuListWrapper,
-  MenuLink,
-  BottomLink,
-  BottomWrapper,
 } from "./header.css"
 import {
   DesktopContainer,
@@ -53,10 +25,13 @@ import {
 import hamburgerIcon from "../../images/svg/hamburger_icon.svg"
 import mailIcon from "../../images/svg/mail_icon.svg"
 import phoneIcon from "../../images/svg/phone_icon.svg"
-import cancelIcon from "../../images/svg/cancel_icon.svg"
+import Menu from "./Menu"
 
 const Header = ({ siteTitle, pageName }) => {
   const ref = useRef(null)
+  const wrapperRef = useRef(null)
+  const { setMenuOpen } = useActiveMenu()
+
   const handleScroll = () => {
     const position = window.pageYOffset
     if (position > 0) {
@@ -74,7 +49,6 @@ const Header = ({ siteTitle, pageName }) => {
     }
   }, [])
 
-  const wrapperRef = useRef(null)
   useEffect(() => {
     const timer = setTimeout(() => {
       const pos =
@@ -86,17 +60,9 @@ const Header = ({ siteTitle, pageName }) => {
     return () => clearTimeout(timer)
   }, [])
 
-  const menuItems = [
-    { title: "About Us", to: "/about-us" },
-    { title: "Schools", to: "/schools" },
-    { title: "Courses", to: "/courses" },
-    { title: "Timetable", to: "/timetable" },
-    { title: "Student Information", to: "/student-information" },
-    { title: "Student Life", to: "/student-life" },
-    { title: "Special Offers", to: "special-offers" },
-    { title: "Contact Us", to: "/contact-us" },
-    { title: "MELMS Login", to: "/contact-us" },
-  ]
+  const openMenu = () => {
+    setMenuOpen(true)
+  }
 
   return (
     <>
@@ -117,7 +83,11 @@ const Header = ({ siteTitle, pageName }) => {
           <IconWrapper>
             <IconImg src={phoneIcon} alt="phone-icon" />
             <IconImg src={mailIcon} alt="mail-icon" />
-            <IconImg src={hamburgerIcon} alt="hamburger-icon" />
+            <IconImg
+              src={hamburgerIcon}
+              onClick={() => openMenu()}
+              alt="hamburger-icon"
+            />
           </IconWrapper>
         </NavWrapper>
         <div className="section ">
@@ -162,34 +132,7 @@ const Header = ({ siteTitle, pageName }) => {
             </MobileContainer>
           </div>
         </div>
-        <div
-          style={{
-            position: "fixed",
-            zIndex: "2000",
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "#DF2F16",
-            top: "0",
-            left: "0",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between"
-          }}
-        >
-          <TopBannerWrapper>
-            <LogoWrapepr to={"/"} mobileMenu>Mentor Education</LogoWrapepr>
-            <IconImg src={cancelIcon} alt="cancel-icon" />
-          </TopBannerWrapper>
-          <MenuListWrapper>
-            {menuItems.map((item, index) => (
-              <MenuLink to={item.to}>{item.title}</MenuLink>
-            ))}
-          </MenuListWrapper>
-          <BottomWrapper>
-            <BottomLink to="">support @mentor.edu.au</BottomLink>
-            <BottomLink to="">1800 - 000 - 000</BottomLink>
-          </BottomWrapper>
-        </div>
+        <Menu />
       </HeaderWrapper>
     </>
   )
