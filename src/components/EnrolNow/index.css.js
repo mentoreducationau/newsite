@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { ParagraphMedium } from "../../styles/Typography.css"
 
 export const EnrolContainer = styled.div`
   margin-top: 1rem;
@@ -46,4 +47,11 @@ export const PriceButton = styled.button`
     line-height: 38px;
     height:50px;
   `}
+`
+export const ClickHereLink = styled(ParagraphMedium)`
+  color: #cc4a28;
+
+  :hover {
+    cursor: pointer;
+  }
 `

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
@@ -31,17 +31,37 @@ import playbutton from "../../images/svg/playbutton.svg"
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData
   const screenHeight = window.innerHeight
+  const ref = useRef(null)
+
+  const excuteScroll = () => {
+    const pos = ref.current.getBoundingClientRect().top + window.pageYOffset - window.innerHeight/10
+    window.scrollTo({ top: pos, behavior: "smooth" })
+  }
 
   return (
     <>
       <Layout
         pageContext={pageContext}
         location={location}
-        crumbLabel={courseData.courseCode + " - " + courseData.studyLevel + " " + courseData.courseName}
+        crumbLabel={
+          courseData.courseCode +
+          " - " +
+          courseData.studyLevel +
+          " " +
+          courseData.courseName
+        }
         pageName="Courses"
       >
-        <Seo title={courseData.courseCode + " - " + courseData.studyLevel + " " + courseData.courseName} />
-        <HeroVideo>
+        <Seo
+          title={
+            courseData.courseCode +
+            " - " +
+            courseData.studyLevel +
+            " " +
+            courseData.courseName
+          }
+        />
+        {/* <HeroVideo>
           <StaticImage
             src="../../images/placeholder.png"
             alt="banner background"
@@ -51,10 +71,14 @@ const CoursesTemplate = ({ pageContext, location }) => {
           <Paragraph>
             Watch video for comprehensive overview of this course
           </Paragraph>
-        </HeroVideo>
+        </HeroVideo> */}
         <Container>
           <Headline banner>
-            {courseData.courseCode + " - " + courseData.studyLevel + " " + courseData.courseName}
+            {courseData.courseCode +
+              " - " +
+              courseData.studyLevel +
+              " " +
+              courseData.courseName}
           </Headline>
         </Container>
         <MainContainer>
@@ -69,20 +93,22 @@ const CoursesTemplate = ({ pageContext, location }) => {
             />
             <JourneyStarted />
             <LiveTutorials />
-            <Faq />
-            <CareerSkillSket
+            {/* <Faq /> */}
+            {/* <CareerSkillSket
               course
               title="Where will this course take your career?"
-            />
+            /> */}
             {/* <CareerAccordion /> */}
             <Knowmore course />
             <Mission />
             <StudentsWork course />
-            <FooterForm course />
+            <div ref={ref}>
+              <FooterForm course />
+            </div>
           </CourseContainer>
-          <StickySideBar screenHeight={screenHeight/10}>
+          <StickySideBar screenHeight={screenHeight / 10}>
             <CourseGuide course />
-            <EnrolNow />
+            <EnrolNow excuteScroll={excuteScroll} />
           </StickySideBar>
         </MainContainer>
       </Layout>

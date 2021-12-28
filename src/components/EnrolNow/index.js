@@ -5,9 +5,15 @@ import {
   Paragraph,
   ParagraphMedium,
 } from "../../styles/Typography.css"
-import { EnrolContainer, PriceContainer, Prices, PriceButton } from "./index.css"
+import {
+  EnrolContainer,
+  PriceContainer,
+  Prices,
+  PriceButton,
+  ClickHereLink,
+} from "./index.css"
 
-const EnrolNow = () => {
+const EnrolNow = ({ excuteScroll }) => {
   return (
     <EnrolContainer>
       {/* <StaticImage
@@ -36,7 +42,7 @@ const EnrolNow = () => {
             $960
           </Subtitle>
         </Prices>
-        <Prices style={{borderLeft: "1px solid"}}>
+        <Prices style={{ borderLeft: "1px solid" }}>
           <Paragraph>With Tutorials</Paragraph>
           <ParagraphMedium
             style={{ textDecoration: "line-through", marginBottom: 0 }}
@@ -55,8 +61,12 @@ const EnrolNow = () => {
         </Prices>
       </PriceContainer>
       <PriceButton>ENROL NOW</PriceButton>
-      <ParagraphMedium course style={{ margin: "8px"}}>Payment Plans also available</ParagraphMedium>
-      <ParagraphMedium course style={{color: "#CC4A28"}}>Click Here</ParagraphMedium>
+      <ParagraphMedium course style={{ margin: "8px" }}>
+        Payment Plans also available
+      </ParagraphMedium>
+      <ClickHereLink course onClick={() => excuteScroll()}>
+        Click Here
+      </ClickHereLink>
     </EnrolContainer>
   )
 }
