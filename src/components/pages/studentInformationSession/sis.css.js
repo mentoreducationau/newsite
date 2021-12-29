@@ -174,9 +174,19 @@ export const CancelWrapper = styled.div`
   justify-content: space-between;
   padding: 24px 25px 24px 0;
 `
+export const IconWrapper = styled.div`
+  :hover {
+    cursor: pointer;
+  }
+`
+
 export const CancelText = styled.p`
   font-size: 22px;
   line-height: 24px;
   font-weight: 800;
   margin-bottom: 0;
+
+  :hover {
+    cursor: pointer;
+  }
 `

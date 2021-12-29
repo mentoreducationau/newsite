@@ -7,10 +7,11 @@ import {
   ThankyouTitleText,
   ViewLink,
   CancelWrapper,
-  CancelText
+  CancelText,
+  IconWrapper,
 } from "./sis.css"
 
-export default function Thankyou({toggleModal}) {
+export default function Thankyou({ toggleModal }) {
   return (
     <ThankyouWrapper>
       <StaticImage
@@ -31,8 +32,15 @@ export default function Thankyou({toggleModal}) {
         <ViewLink to="">View Course Details</ViewLink>
       </ThankyouContentWrapper>
       <CancelWrapper>
-        <StaticImage src="../../../images/svg/modal_cancel_icon.svg" style={{width: "100%"}} onClick={()=>toggleModal(0, true)} />
-        <CancelText onClick={()=>toggleModal(0, true)}>Close</CancelText>
+        <IconWrapper>
+          <StaticImage
+            src="../../../images/svg/modal_cancel_icon.svg"
+            style={{ width: "100%" }}
+            onClick={() => toggleModal(0, true)}
+          />
+        </IconWrapper>
+
+        <CancelText onClick={() => toggleModal(0, true)}>Close</CancelText>
       </CancelWrapper>
     </ThankyouWrapper>
   )
