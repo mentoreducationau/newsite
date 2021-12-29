@@ -125,6 +125,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               courses {
                 heroImage {
                   gatsbyImageData
+                  file {
+                    url
+                  }
                 }
                 courseCode
                 courseName

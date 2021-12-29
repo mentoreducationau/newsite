@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
 
-const Layout = ({ children, pageContext, location, crumbLabel, pageName }) => {
+const Layout = ({ children, pageContext, location, crumbLabel, pageName, background }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -46,7 +46,7 @@ const Layout = ({ children, pageContext, location, crumbLabel, pageName }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} pageName={pageName} />
+      <Header siteTitle={data.site.siteMetadata.title} pageName={pageName} background={background} />
       <PageTransition>
         <div
           style={{

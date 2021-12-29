@@ -50,7 +50,14 @@ const CoursesTemplate = ({ pageContext, location }) => {
           " " +
           courseData.courseName
         }
-        pageName="Courses"
+        pageName={
+          courseData.courseCode +
+          " - " +
+          courseData.studyLevel +
+          " " +
+          courseData.courseName
+        }
+        background={courseData.heroImage.file.url}
       >
         <Seo
           title={

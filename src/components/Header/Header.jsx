@@ -27,7 +27,7 @@ import mailIcon from "../../images/svg/mail_icon.svg"
 import phoneIcon from "../../images/svg/phone_icon.svg"
 import Menu from "./Menu"
 
-const Header = ({ siteTitle, pageName }) => {
+const Header = ({ siteTitle, pageName, background }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
@@ -66,7 +66,7 @@ const Header = ({ siteTitle, pageName }) => {
 
   return (
     <>
-      <HeaderWrapper className="container-hero" ref={wrapperRef}>
+      <HeaderWrapper className="container-hero" ref={wrapperRef} background={background}>
         <NavWrapper ref={ref}>
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
           <LinksWrapper>

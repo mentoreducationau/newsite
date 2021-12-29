@@ -5,7 +5,7 @@ import bgImg from "../../images/header-hero.jpeg"
 
 export const HeaderWrapper = styled.div`
   min-height: 91vh;
-  background: url(${bgImg});
+  background: url(${props => props.background ? props.background : bgImg});
   background-size: cover;
   background-color: #cccccc;
   margin: 0 auto;
