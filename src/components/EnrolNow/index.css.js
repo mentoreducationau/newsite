@@ -25,28 +25,28 @@ export const Prices = styled.div`
 export const PriceButton = styled.button`
   margin-top: 0.5rem;
   font-family: Futura Heavy;
-  font-size: 1.5rem;
-  line-height: 38px;
-  background: #cc4a28;
+  font-size: 28px;
+  line-height: 37px;
+  background: #DF2F16;
   color: white;
   border: 0;
-  border-radius: 2px;
-  width: 70%;
-  height: 50px;
+  border-radius: 5px;
+  width: 100%;
+  height: 52px;
   text-transform: uppercase;
   cursor: pointer;
 
-  ${props => props.theme.desktop`
-    font-size: 0.9rem;
-    line-height: 23px;
-    height:45px ;
-  `}
+  // ${props => props.theme.desktop`
+  //   font-size: 0.9rem;
+  //   line-height: 23px;
+  //   height:45px ;
+  // `}
 
-  ${props => props.theme.largeScreen`
-    font-size: 1.5rem;
-    line-height: 38px;
-    height:50px;
-  `}
+  // ${props => props.theme.largeScreen`
+  //   font-size: 1.5rem;
+  //   line-height: 38px;
+  //   height:50px;
+  // `}
 `
 export const EnrolText = styled.p`
   font-size: 22px;
@@ -67,7 +67,7 @@ export const ClickHereText = styled.p`
   font-size: 22px;
   line-height: 22px;
   margin-bottom: 0;
-  color: ${props => (props.click ? "#cc4a28" : "black")};
+  color: ${props => (props.click ? "#DF2F16" : "black")};
   text-decoration: ${props => (props.click ? "underline" : "none")};
   ${props => props.click && ":hover {cursor: pointer;}"};
 `

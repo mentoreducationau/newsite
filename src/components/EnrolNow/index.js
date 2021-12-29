@@ -67,7 +67,7 @@ const EnrolNow = ({ price, excuteScroll }) => {
         <EnrolText>ENROL NOW FROM</EnrolText>
         <PriceText>${price}*</PriceText>
       </PriceContainer>
-      <PriceButton>ENROL NOW</PriceButton>
+      <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"><PriceButton>ENROL</PriceButton></a>
       {/* <ParagraphMedium course style={{ margin: "8px" }}>
         Payment Plans also available
       </ParagraphMedium>

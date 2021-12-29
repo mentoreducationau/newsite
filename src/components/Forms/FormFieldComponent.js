@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import { uniqueId } from "lodash"
 import useForm from "../../hooks/useForm"
 import { CustomFormStyled, FormField, FormButton } from "./formComponent.css"
@@ -53,18 +53,9 @@ export const CustomForm = ({ course, buttonText, handleSubmit }) => {
     <CustomFormStyled onSubmit={onSubmit}>
       <FormField course={course}>
         <FormFieldComponent
-          label="Name"
+          label="Name*"
           name="name"
           value={values.name || ""}
-          onChange={handleChange}
-        />
-      </FormField>
-      <FormField course={course}>
-        <FormFieldComponent
-          label="Email"
-          name="email"
-          type="email"
-          value={values.email || ""}
           onChange={handleChange}
         />
       </FormField>
@@ -73,6 +64,15 @@ export const CustomForm = ({ course, buttonText, handleSubmit }) => {
           label="Phone"
           name="phone"
           value={values.phone || ""}
+          onChange={handleChange}
+        />
+      </FormField>
+      <FormField course={course}>
+        <FormFieldComponent
+          label="Email*"
+          name="email"
+          type="email"
+          value={values.email || ""}
           onChange={handleChange}
         />
       </FormField>
