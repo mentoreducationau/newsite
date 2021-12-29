@@ -123,12 +123,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             coursesSelection {
               heading
               courses {
-                heroImage {
-                  gatsbyImageData
-                  file {
-                    url
-                  }
-                }
                 courseCode
                 courseName
                 coreUnits {
@@ -164,8 +158,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 }
                 unitsDelivery {
                   raw
+                  references {
+                    ... on ContentfulCoreUnitGroup {
+                      id
+                      coreUnits {
+                        unitName
+                        unitCode
+                      }
+                    }
+                    ... on ContentfulElectiveUnitGroup {
+                      id
+                      electiveUnitGroup {
+                        unitName
+                        unitCode
+                      }
+                    }
+                  }
                 }
                 studyLevel
+                heroImage {
+                  gatsbyImageData
+                  file {
+                    url
+                  }
+                }
                 pricing {
                   salePrice
                 }

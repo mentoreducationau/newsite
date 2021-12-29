@@ -22,6 +22,7 @@ import {
   TabInfoWrapper,
   Display,
 } from "./Tab.css"
+import UnitAccordion from "./UnitAccordion"
 
 const tabTitleArray = [
   "Outcomes",
@@ -57,11 +58,25 @@ const Tab = ({ tabContentArray }) => {
 
       <TabInfoWrapper>
         {tabContentArray &&
-          tabContentArray.map((content, index) => (
-            <Display activeTab={activeTab} id={index + 1} key={index}>
-              <Renderer node={content} />
-            </Display>
-          ))}
+          tabContentArray.map((content, index) =>
+            index === 2 ? (
+              <Display activeTab={activeTab} id={index + 1} key={index}>
+                <Renderer node={content} />
+                <UnitAccordion
+                  item={content.references[0].coreUnits}
+                  title="Core Units"
+                />
+                <UnitAccordion
+                  item={content.references[1].electiveUnitGroup}
+                  title="Elevtive Unit Group"
+                />
+              </Display>
+            ) : (
+              <Display activeTab={activeTab} id={index + 1} key={index}>
+                <Renderer node={content} />
+              </Display>
+            )
+          )}
       </TabInfoWrapper>
     </TabWrapper>
   )
