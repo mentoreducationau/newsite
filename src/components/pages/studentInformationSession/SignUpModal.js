@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Modal from "styled-react-modal"
 import { SignUpForm } from "./SignUpForm"
+import Thankyou from "./Thankyou"
 
 const StyledModal = Modal.styled`
   width: 904px;
@@ -22,6 +23,7 @@ export default function SignUpModal({
   beforeClose,
   toggleModal,
   zoomWebinarId,
+  signedUp,
 }) {
   return (
     <div>
@@ -33,7 +35,11 @@ export default function SignUpModal({
         onEscapeKeydown={toggleModal}
         opacity={opacity}
       >
-        <SignUpForm zoomWebinarId={zoomWebinarId} />
+        {signedUp ? (
+          <Thankyou />
+        ) : (
+          <SignUpForm zoomWebinarId={zoomWebinarId} />
+        )}
       </StyledModal>
     </div>
   )

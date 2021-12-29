@@ -17,10 +17,12 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
+  const [signedUp, setSignedUp] = useState(false)
 
-  const toggleModal = (id) => {
+  const toggleModal = (id, cardSignedUp) => {
     setOpacity(0)
     setSelectedZoomWebinarId(id)
+    setSignedUp(cardSignedUp)
     setIsOpen(!isOpen)
   }
 
@@ -72,6 +74,7 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
         afterOpen={afterOpen}
         beforeClose={beforeClose}
         zoomWebinarId={selectedZoomWebinarId}
+        signedUp={signedUp}
       />
       </ModalProvider>
     </Layout>

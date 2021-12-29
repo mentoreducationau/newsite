@@ -134,3 +134,18 @@ export const DescText = styled.p`
   margin-bottom: 14px;
   width: 72%;
 `
+// Thank you
+
+export const ThankyouWrapper = styled.div`
+  display: flex;
+  gap: 26px;
+`
+export const ThankyouContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+export const ThankyouTitleText = styled.p`
+  font-size: 48px;
+  line-height: 24px;
+  margin-bottom: 0;
+`

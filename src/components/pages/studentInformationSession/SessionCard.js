@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import {
   SessionCardWrapper,
@@ -13,9 +13,17 @@ import {
   PersonNameText,
 } from "./sis.css"
 
-const SessionCard = ({ image, sessionDate, course, hosts, zoomWebinarId, toggleModal }) => {
-    const nowTime = new Date().getTime()
-    const parseSessionDate = Date.parse(sessionDate)
+const SessionCard = ({
+  image,
+  sessionDate,
+  course,
+  hosts,
+  zoomWebinarId,
+  toggleModal,
+}) => {
+  const nowTime = new Date().getTime()
+  const parseSessionDate = Date.parse(sessionDate)
+  const [signedUp, setSignedUp] = useState(true)
   return (
     <SessionCardWrapper>
       <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
@@ -44,7 +52,16 @@ const SessionCard = ({ image, sessionDate, course, hosts, zoomWebinarId, toggleM
             ))}
           </ImageWrapper>
           <ButtonWrapper>
-            <SignUpButton onClick={()=>toggleModal(zoomWebinarId)}>{nowTime > parseSessionDate ? "WATCH NOW" : "SIGN UP"}</SignUpButton>
+            {nowTime > parseSessionDate ? (
+              <SignUpButton>
+                WATCH NOW
+              </SignUpButton>
+            ) : (
+              <SignUpButton onClick={() => toggleModal(zoomWebinarId, signedUp)}>
+                SIGN UP
+              </SignUpButton>
+            )}
+
             <HintText>**Click anywhere to view detail</HintText>
           </ButtonWrapper>
         </ImageAndButtonWrapper>
