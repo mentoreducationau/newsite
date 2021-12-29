@@ -1,7 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 import Modal from "styled-react-modal"
 import { SignUpForm } from "./SignUpForm"
+import { SignFormWrapper } from "./sis.css"
 import Thankyou from "./Thankyou"
 
 const StyledModal = Modal.styled`
@@ -11,7 +11,6 @@ const StyledModal = Modal.styled`
   display: flex;
   background-color: white;
   border: none;
-  padding: 39px 56px;
   border-radius: 10px;
   opacity: 1;
   transition : all 0.3s ease-in-out;`
@@ -31,14 +30,16 @@ export default function SignUpModal({
         isOpen={isOpen}
         afterOpen={afterOpen}
         beforeClose={beforeClose}
-        onBackgroundClick={toggleModal}
-        onEscapeKeydown={toggleModal}
+        // onBackgroundClick={toggleModal}
+        // onEscapeKeydown={toggleModal}
         opacity={opacity}
       >
         {signedUp ? (
-          <Thankyou />
+          <Thankyou toggleModal={toggleModal} />
         ) : (
-          <SignUpForm zoomWebinarId={zoomWebinarId} />
+          <SignFormWrapper>
+            <SignUpForm zoomWebinarId={zoomWebinarId} />
+          </SignFormWrapper>
         )}
       </StyledModal>
     </div>

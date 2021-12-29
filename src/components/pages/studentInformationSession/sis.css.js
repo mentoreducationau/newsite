@@ -1,3 +1,5 @@
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { GlobalFormField } from "../../../styles/FormStyles.css"
 
@@ -68,6 +70,9 @@ export const HintText = styled.p`
   margin-bottom: 0;
   margin-right: 10px;
 `
+export const SignFormWrapper = styled.div`
+  padding: 39px 56px;
+`
 
 // Sign Up Form
 
@@ -105,7 +110,7 @@ export const FormButton = styled.button`
   font-family: Futura Heavy;
   font-size: 43px;
   line-height: 57px;
-  background: #DF2F16;
+  background: #df2f16;
   color: white;
   border: none;
   border-radius: 5px;
@@ -138,6 +143,7 @@ export const DescText = styled.p`
 
 export const ThankyouWrapper = styled.div`
   display: flex;
+  align-items: center;
   gap: 26px;
 `
 export const ThankyouContentWrapper = styled.div`
@@ -147,5 +153,30 @@ export const ThankyouContentWrapper = styled.div`
 export const ThankyouTitleText = styled.p`
   font-size: 48px;
   line-height: 24px;
+  margin-bottom: 24px;
+`
+export const ViewLink = styled(Link)`
+  font-size: 22px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+
+  :hover {
+    cursor: pointer;
+  }
+`
+export const CancelWrapper = styled.div`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 25px 24px 0;
+`
+export const CancelText = styled.p`
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 800;
   margin-bottom: 0;
 `
