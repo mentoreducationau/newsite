@@ -13,7 +13,7 @@ import {
   PersonNameText,
 } from "./sis.css"
 
-const SessionCard = ({ image, sessionDate, course }) => {
+const SessionCard = ({ image, sessionDate, course, hosts }) => {
   return (
     <SessionCardWrapper>
       <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
@@ -26,30 +26,20 @@ const SessionCard = ({ image, sessionDate, course }) => {
             course.courseName}
         </CourseDataText>
         <CourseDataText color="#DF2F16">Upcoming:{sessionDate}</CourseDataText>
-        <CourseDataText color="#DF2F16" host>Hosts:</CourseDataText>
+        <CourseDataText color="#DF2F16" host>
+          Hosts:
+        </CourseDataText>
         <ImageAndButtonWrapper>
           <ImageWrapper>
-            <Wrapper>
-              <StaticImage
-                src="../../../images/mask-group.png"
-                style={{ width: "80px", height: "80px", borderRadius: "50%" }}
-              />
-              <PersonNameText>Joe Bloggs</PersonNameText>
-            </Wrapper>
-            <Wrapper>
-              <StaticImage
-                src="../../../images/mask-group.png"
-                style={{ width: "80px", height: "80px", borderRadius: "50%" }}
-              />
-              <PersonNameText>Joe Bloggs</PersonNameText>
-            </Wrapper>
-            <Wrapper>
-              <StaticImage
-                src="../../../images/mask-group.png"
-                style={{ width: "80px", height: "80px", borderRadius: "50%" }}
-              />
-              <PersonNameText>Joe Bloggs</PersonNameText>
-            </Wrapper>
+            {hosts.map(item => (
+              <Wrapper key={item.name}>
+                <GatsbyImage
+                  image={getImage(item.portrait)}
+                  style={{ width: "80px", height: "80px", borderRadius: "50%" }}
+                />
+                <PersonNameText>{item.name}</PersonNameText>
+              </Wrapper>
+            ))}
           </ImageWrapper>
           <ButtonWrapper>
             <SignUpButton>Sign Up</SignUpButton>

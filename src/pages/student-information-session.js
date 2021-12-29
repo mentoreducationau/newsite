@@ -14,12 +14,20 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
       pageName="Student Information Session"
     >
       <Seo title="Student Information Session" />
-      <div style={{ width: "90%", margin: "0 auto", display: "flex", flexDirection: "column" }}>
+      <div
+        style={{
+          width: "90%",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {data.allContentfulStudentInformationSession.nodes.map(item => (
           <SessionCard
             image={item.coverImage}
             sessionDate={item.sessionDate}
             course={item.course}
+            hosts={item.hosts}
           />
         ))}
       </div>
@@ -42,6 +50,12 @@ export const sisData = graphql`
           courseCode
           courseName
           studyLevel
+        }
+        hosts {
+          name
+          portrait {
+            gatsbyImageData(aspectRatio: 1)
+          }
         }
       }
     }

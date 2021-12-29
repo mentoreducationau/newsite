@@ -35,6 +35,7 @@ export const ImageWrapper = styled.div`
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 6px;
 `
 export const PersonNameText = styled.p`
@@ -56,10 +57,13 @@ export const SignUpButton = styled.button`
     color: white;
     border: none;
     border-radius: 2px;
+    margin-bottom: 11px;
 `
 export const HintText = styled.p`
     font-size: 8px;
     line-height: 11px;
     color: black;
+    text-align: right;
     margin-bottom: 0;
+    margin-right: 10px;
 `
