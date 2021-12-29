@@ -13,7 +13,9 @@ import {
   PersonNameText,
 } from "./sis.css"
 
-const SessionCard = ({ image, sessionDate, course, hosts }) => {
+const SessionCard = ({ image, sessionDate, course, hosts, zoomWebinarId, toggleModal }) => {
+    const nowTime = new Date().getTime()
+    const parseSessionDate = Date.parse(sessionDate)
   return (
     <SessionCardWrapper>
       <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
@@ -42,7 +44,7 @@ const SessionCard = ({ image, sessionDate, course, hosts }) => {
             ))}
           </ImageWrapper>
           <ButtonWrapper>
-            <SignUpButton>Sign Up</SignUpButton>
+            <SignUpButton onClick={()=>toggleModal(zoomWebinarId)}>{nowTime > parseSessionDate ? "WATCH NOW" : "SIGN UP"}</SignUpButton>
             <HintText>**Click anywhere to view detail</HintText>
           </ButtonWrapper>
         </ImageAndButtonWrapper>

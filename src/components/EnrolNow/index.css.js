@@ -51,11 +51,13 @@ export const PriceButton = styled.button`
 export const EnrolText = styled.p`
   font-size: 22px;
   line-height: 30px;
+  margin-bottom: 0;
   color: black;
 `
 export const PriceText = styled.p`
   font-size: 62px;
   line-height: 62px;
+  margin-bottom: 7px;
   color: #df2f16;
 `
 export const ClickHereWrapper = styled.div`
