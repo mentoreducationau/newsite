@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import SessionCard from "../components/pages/studentInformationSession/SessionCard"
 import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
+import ThankyouModal from "../components/pages/studentInformationSession/ThankyouModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -32,14 +33,20 @@ const IntroText = styled.p`
 `
 const StudentInformationSessionPage = ({ pageContext, location, data }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
-  const [signedUp, setSignedUp] = useState(false)
+  const [courseUrl, setCourseUrl] = useState("")
 
-  const toggleModal = (id, cardSignedUp) => {
+  const toggleThankyouModal = (url) => {
+    setOpacity(0)
+    setCourseUrl(url)
+    setIsThankyouOpen(!isThankyouOpen)
+  }
+
+  const toggleModal = (id) => {
     setOpacity(0)
     setSelectedZoomWebinarId(id)
-    setSignedUp(cardSignedUp)
     setIsOpen(!isOpen)
   }
 
@@ -102,6 +109,7 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
               hosts={item.hosts}
               zoomWebinarId={item.zoomWebinarId}
               toggleModal={toggleModal}
+              toggleThankyouModal={toggleThankyouModal}
             />
           ))}
         </div>
@@ -112,7 +120,14 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
           afterOpen={afterOpen}
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
-          signedUp={signedUp}
+        />
+        <ThankyouModal
+          isOpen={isThankyouOpen}
+          opacity={opacity}
+          toggleModal={toggleThankyouModal}
+          afterOpen={afterOpen}
+          beforeClose={beforeClose}
+          courseUrl={courseUrl}
         />
       </ModalProvider>
     </Layout>

@@ -20,6 +20,7 @@ const SessionCard = ({
   hosts,
   zoomWebinarId,
   toggleModal,
+  toggleThankyouModal,
 }) => {
   const nowTime = new Date().getTime()
   const parseSessionDate = Date.parse(sessionDate)
@@ -53,11 +54,23 @@ const SessionCard = ({
           </ImageWrapper>
           <ButtonWrapper>
             {nowTime > parseSessionDate ? (
-              <SignUpButton>
-                WATCH NOW
+              <SignUpButton>WATCH NOW</SignUpButton>
+            ) : signedUp ? (
+              <SignUpButton
+                onClick={() =>
+                  toggleThankyouModal(
+                    course.courseCode.toLowerCase() +
+                      "-" +
+                      course.studyLevel.toLowerCase().replace(/ /g, "-") +
+                      "_" +
+                      course.courseName.toLowerCase().replace(/ /g, "-")
+                  )
+                }
+              >
+                SIGN UP
               </SignUpButton>
             ) : (
-              <SignUpButton onClick={() => toggleModal(zoomWebinarId, signedUp)}>
+              <SignUpButton onClick={() => toggleModal(zoomWebinarId)}>
                 SIGN UP
               </SignUpButton>
             )}
