@@ -3,9 +3,11 @@ import { CourseGuideContainer } from "./index.css"
 import { CustomForm } from "../../components/Forms/FormFieldComponent"
 import { H3 } from "../../styles/Typography.css"
 
-const Form = ({ course, title, buttonTitle }) => {
+const Form = ({ course, title, buttonTitle, toggleModal }) => {
   const handleSubmit = v => {
     console.log(v)
+    
+    // toggleModal()
   }
   return (
     <CourseGuideContainer course={course}>

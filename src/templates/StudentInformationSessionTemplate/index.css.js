@@ -33,7 +33,7 @@ export const StickySideBar = styled.div`
   padding-top: ${props =>
     props.screenHeight ? props.screenHeight + "px" : "4.5rem"};
 `
-export const CourseContainer = styled.div`
+export const CourseDataContainer = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -87,4 +87,23 @@ export const PriceButton = styled.button`
   //   line-height: 38px;
   //   height:50px;
   // `}
+`
+
+export const WatchNowSection = styled.div`
+    text-align: center;
+`
+export const WatchNowTitle = styled.p`
+    font-size: 62px;
+    line-height: 62px;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+`
+export const IframeWrapper = styled.div`
+    width: 834px;
+    height: 509px;
+    margin-top: 23px auto;
+
+    iframe {
+      width: 100%;
+    }
 `

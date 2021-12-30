@@ -56,7 +56,7 @@ export default function ThankyouModal({
             <DescText>
               You will receive a confirmation and reminders in your email
             </DescText>
-            <ViewLink to="">View Session Details</ViewLink>
+            <ViewLink to={"/student-information-session/"+courseUrl}>View Session Details</ViewLink>
             <ViewLink to={"/courses/"+courseUrl}>View Course Details</ViewLink>
           </ThankyouContentWrapper>
           <CancelWrapper>

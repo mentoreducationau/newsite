@@ -280,7 +280,105 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     )
   })
 
-  return Promise.all([schools, faculties, courses])
+  const studentInformationSessions = await graphql(`
+    query StudentInformationSessionsQuery {
+      allContentfulStudentInformationSession {
+        edges {
+          node {
+            id
+            coverImage {
+              gatsbyImageData(aspectRatio: 1.8, layout: FULL_WIDTH)
+            }
+            sessionDate
+            course {
+              courseCode
+              courseName
+              studyLevel
+              entryRequirements {
+                raw
+              }
+              landingIntro {
+                raw
+              }
+              learningExperience {
+                raw
+              }
+              outcomes {
+                raw
+              }
+              paymentOptions {
+                raw
+              }
+              unitsDelivery {
+                raw
+                references {
+                  ... on ContentfulCoreUnitGroup {
+                    id
+                    coreUnits {
+                      unitName
+                      unitCode
+                    }
+                  }
+                  ... on ContentfulElectiveUnitGroup {
+                    id
+                    electiveUnitGroup {
+                      unitName
+                      unitCode
+                    }
+                  }
+                }
+              }
+            }
+            hosts {
+              name
+              portrait {
+                gatsbyImageData(aspectRatio: 1)
+              }
+            }
+            youtubeUrl {
+              file {
+                url
+              }
+            }
+            zoomWebinarId
+          }
+        }
+      }
+    }
+  `).then(studentInformationSessions => {
+    if (studentInformationSessions.errors) {
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
+    }
+    // Create pages for each markdown file.
+    const studentInformationSessionsTemplate = path.resolve(
+      `src/templates/StudentInformationSessionTemplate/index.js`
+    )
+
+    studentInformationSessions.data.allContentfulStudentInformationSession.edges.forEach(
+      ({ node }) => {
+        const path = `/student-information-session/${node.course.courseCode.toLowerCase() +
+          "-" +
+          node.course.studyLevel
+            .toLowerCase()
+            .replace(/ /g, "-") +
+          "_" +
+          node.course.courseName
+            .toLowerCase()
+            .replace(/ /g, "-")}`
+        createPage({
+          path,
+          component: studentInformationSessionsTemplate,
+          context: {
+            pagePath: path,
+            sessionData: node,
+          },
+        })
+      }
+    )
+  })
+
+  return Promise.all([schools, faculties, courses, studentLifeArticles, studentInformationSessions])
 }
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

@@ -47,7 +47,11 @@ FormFieldComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export const CustomForm = ({ course, buttonText, handleSubmit }) => {
+export const CustomForm = ({
+  course,
+  buttonText,
+  handleSubmit,
+}) => {
   const { values, onSubmit, handleChange } = useForm(() => handleSubmit(values))
   return (
     <CustomFormStyled onSubmit={onSubmit}>
