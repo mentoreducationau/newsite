@@ -289,7 +289,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             coverImage {
               gatsbyImageData(aspectRatio: 1.8, layout: FULL_WIDTH)
             }
-            sessionDate
+            sessionDate(formatString: "YYYY-MM-DD")
             course {
               courseCode
               courseName
@@ -365,7 +365,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           "_" +
           node.course.courseName
             .toLowerCase()
-            .replace(/ /g, "-")}`
+            .replace(/ /g, "-") + "-" + node.sessionDate.replace(/-/g, "")}`
         createPage({
           path,
           component: studentInformationSessionsTemplate,

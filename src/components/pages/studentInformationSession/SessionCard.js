@@ -24,7 +24,9 @@ const SessionCard = ({
 }) => {
   const nowTime = new Date().getTime()
   const parseSessionDate = Date.parse(sessionDate)
+  const urlDate = sessionDate.replaceAll("-", "")
   const [signedUp, setSignedUp] = useState(true)
+  console.log(parseSessionDate)
   return (
     <SessionCardWrapper>
       <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
@@ -54,7 +56,20 @@ const SessionCard = ({
           </ImageWrapper>
           <ButtonWrapper>
             {nowTime > parseSessionDate ? (
-              <SignUpButton>WATCH NOW</SignUpButton>
+              <SignUpButton
+                onClick={() =>
+                  toggleThankyouModal(
+                    course.courseCode.toLowerCase() +
+                      "-" +
+                      course.studyLevel.toLowerCase().replace(/ /g, "-") +
+                      "_" +
+                      course.courseName.toLowerCase().replace(/ /g, "-") +
+                      "-" + urlDate
+                  )
+                }
+              >
+                WATCH NOW
+              </SignUpButton>
             ) : signedUp ? (
               <SignUpButton
                 onClick={() =>
@@ -63,7 +78,8 @@ const SessionCard = ({
                       "-" +
                       course.studyLevel.toLowerCase().replace(/ /g, "-") +
                       "_" +
-                      course.courseName.toLowerCase().replace(/ /g, "-")
+                      course.courseName.toLowerCase().replace(/ /g, "-") +
+                      urlDate
                   )
                 }
               >

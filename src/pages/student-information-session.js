@@ -144,7 +144,7 @@ export const sisData = graphql`
         coverImage {
           gatsbyImageData(aspectRatio: 1.8, layout: FULL_WIDTH)
         }
-        sessionDate
+        sessionDate(formatString: "YYYY-MM-DD")
         course {
           courseCode
           courseName
