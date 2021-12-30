@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { uniqueId } from "lodash"
 import useForm from "../../hooks/useForm"
-import { CustomFormStyled, FormField, FormButton } from "./formComponent.css"
+import { CustomFormStyled, FormField } from "./formComponent.css"
 
 export const FormFieldComponent = ({
   children,
@@ -47,7 +47,7 @@ FormFieldComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export const VerticalFormTemplate = ({
+export const CustomForm = ({
   course,
   buttonText,
   handleSubmit,
@@ -80,7 +80,6 @@ export const VerticalFormTemplate = ({
           onChange={handleChange}
         />
       </FormField>
-      <FormButton course={course}>{buttonText}</FormButton>
     </CustomFormStyled>
   )
 }

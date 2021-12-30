@@ -1,6 +1,6 @@
 import React from "react"
 import { CourseGuideContainer, ImageContainer } from "./CourseGuide.css"
-import { CustomForm } from "../FormFieldComponent"
+import { VerticalFormTemplate } from "../FormFieldComponent"
 import { H3 } from "../../../styles/Typography.css"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -19,7 +19,7 @@ const CourseGuide = ({ course, imgContained }) => {
           />
         </ImageContainer>
       )}
-      <CustomForm
+      <VerticalFormTemplate
         course={course}
         buttonText="Download"
         handleSubmit={handleSubmit}

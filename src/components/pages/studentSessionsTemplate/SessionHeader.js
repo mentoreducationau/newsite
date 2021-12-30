@@ -7,16 +7,9 @@ import {
   LogoWrapepr,
   NavWrapper,
   HeaderWrapper,
-  ColorShapeWrapper,
-  ColorShape,
-  TitleWrapper,
-  BigTitle,
-  SmallTitle,
-  PageNameWrapper,
   IconWrapper,
   IconImg,
   ColorRectWrapper,
-  ColorRect,
   ContentContainer,
   TitleText,
   SessionDateText,
@@ -26,6 +19,8 @@ import {
   NameAndRoleWrapper,
   NameText,
   HostText,
+  FormWrapper,
+  TipText,
 } from "./index.css"
 import {
   DesktopContainer,
@@ -36,28 +31,29 @@ import mailIcon from "../../../images/svg/mail_icon.svg"
 import phoneIcon from "../../../images/svg/phone_icon.svg"
 import Menu from "../../Header/Menu"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { SessionHeaderForm } from "./SessionHeaderForm.js"
 
-const SessionHeader = ({ siteTitle, background, sessionData }) => {
+const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
 
-//   const handleScroll = () => {
-//     const position = window.pageYOffset
-//     if (position > 0) {
-//       ref.current.style.background = "white"
-//     } else {
-//       ref.current.style.background = "transparent"
-//     }
-//   }
+  //   const handleScroll = () => {
+  //     const position = window.pageYOffset
+  //     if (position > 0) {
+  //       ref.current.style.background = "white"
+  //     } else {
+  //       ref.current.style.background = "transparent"
+  //     }
+  //   }
 
-//   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll)
+  //   useEffect(() => {
+  //     window.addEventListener("scroll", handleScroll)
 
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll)
-//     }
-//   }, [])
+  //     return () => {
+  //       window.removeEventListener("scroll", handleScroll)
+  //     }
+  //   }, [])
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -144,6 +140,13 @@ const SessionHeader = ({ siteTitle, background, sessionData }) => {
                     </PhotoWrapper>
                   ))}
                 </HostWrapper>
+                <FormWrapper status={status}>
+                  <SessionHeaderForm course buttonText="Register Now" />
+                  <TipText>
+                    **Include your phone number to receive a free call with one
+                    of our course advisors.
+                  </TipText>
+                </FormWrapper>
               </ContentContainer>
             </DesktopContainer>
             <MobileContainer>

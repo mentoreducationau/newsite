@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
 
-const SessionLayout = ({ children, pageContext, location, crumbLabel, background, sessionData }) => {
+const SessionLayout = ({ children, pageContext, location, crumbLabel, background, sessionData, status }) => {
     const data = useStaticQuery(graphql`
     query SiteTitleQuery4 {
       site {
@@ -31,7 +31,7 @@ const SessionLayout = ({ children, pageContext, location, crumbLabel, background
           rel="stylesheet"
         />
       </Helmet>
-      <SessionHeader siteTitle={data.site.siteMetadata.title} background={background} sessionData={sessionData} />
+      <SessionHeader siteTitle={data.site.siteMetadata.title} background={background} sessionData={sessionData} status={status} />
       <PageTransition>
         <div
           style={{

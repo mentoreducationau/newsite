@@ -244,7 +244,7 @@ export const HostWrapper = styled.div`
     gap: 20px;
   }
 `
-export const HostText = styled.div`
+export const HostText = styled.p`
   font-size: 32px;
   line-height: 43px;
   margin-bottom: 0px;
@@ -262,8 +262,20 @@ export const NameAndRoleWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
 `
-export const NameText = styled.div`
+export const NameText = styled.p`
   font-size: 15px;
   line-height: 20px;
   margin-bottom: 0px;
+`
+export const FormWrapper = styled.div`
+  max-width: 750px;
+  margin-top: 25px;
+  display: ${props => props.status ? "none" : "display"};
+`
+export const TipText = styled.p`
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  width: 40%;
 `

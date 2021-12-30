@@ -34,13 +34,14 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
   const sessionData = pageContext.sessionData
   const nowTime = new Date().getTime()
   const parseSessionDate = Date.parse(sessionData.sessionDate)
+  const status = nowTime > parseSessionDate
   const screenHeight = window.innerHeight
   const ref = useRef(null)
   const [dateStatus, setDateStatus] = useState(true)
 
   const excuteScroll = () => {
-    // const pos = ref.current.getBoundingClientRect().top + window.pageYOffset - window.innerHeight/10
-    // window.scrollTo({ top: pos, behavior: "smooth" })
+    const pos = ref.current.getBoundingClientRect().top + window.pageYOffset - window.innerHeight/10
+    window.scrollTo({ top: pos, behavior: "smooth" })
   }
   const [isOpen, setIsOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
@@ -72,6 +73,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
       location={location}
       crumbLabel="session"
       sessionData={sessionData}
+      status={status}
     >
       <Seo title="session" />
       <ModalProvider backgroundComponent={FadingBackground}>
@@ -118,7 +120,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
             </div>
           </CourseDataContainer>
           <StickySideBar screenHeight={screenHeight / 10}>
-            {nowTime < parseSessionDate ? (
+            {!status ? (
               <>
                 <Form course title="Register" buttonTitle="Register NOW!" />
                 <Form

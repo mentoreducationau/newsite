@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { uniqueId } from "lodash"
-import useForm from "../../hooks/useForm"
-import { CustomFormStyled, FormField, FormButton } from "./formComponent.css"
+import useForm from "../../../hooks/useForm"
+import { CustomFormStyled, FormField, FormButton } from "./Form.css"
 
 export const FormFieldComponent = ({
   children,
@@ -47,7 +47,7 @@ FormFieldComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export const VerticalFormTemplate = ({
+export const SessionHeaderForm = ({
   course,
   buttonText,
   handleSubmit,
@@ -63,20 +63,21 @@ export const VerticalFormTemplate = ({
           onChange={handleChange}
         />
       </FormField>
-      <FormField course={course}>
-        <FormFieldComponent
-          label="Phone"
-          name="phone"
-          value={values.phone || ""}
-          onChange={handleChange}
-        />
-      </FormField>
+      
       <FormField course={course}>
         <FormFieldComponent
           label="Email*"
           name="email"
           type="email"
           value={values.email || ""}
+          onChange={handleChange}
+        />
+      </FormField>
+      <FormField course={course}>
+        <FormFieldComponent
+          label="Phone"
+          name="phone"
+          value={values.phone || ""}
           onChange={handleChange}
         />
       </FormField>
