@@ -1,16 +1,27 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 import PageTransition from "gatsby-plugin-page-transitions"
 import { Helmet } from "react-helmet"
 import "materialize-css/dist/css/materialize.min.css"
-import { Typography } from "../styles/Typography.css"
-import Footer from "./Footer/footer"
-import "./layout.css"
+import { Typography } from "../../../styles/Typography.css"
+import Footer from "../../Footer/footer"
+import "../../layout.css"
+import SessionHeader from "./SessionHeader"
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
 
-const LandingLayout = ({ children, pageContext, location, crumbLabel }) => {
+const SessionLayout = ({ children, pageContext, location, crumbLabel, background, sessionData }) => {
+    const data = useStaticQuery(graphql`
+    query SiteTitleQuery4 {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   return (
     <>
       <Typography />
@@ -20,6 +31,7 @@ const LandingLayout = ({ children, pageContext, location, crumbLabel }) => {
           rel="stylesheet"
         />
       </Helmet>
+      <SessionHeader siteTitle={data.site.siteMetadata.title} background={background} sessionData={sessionData} />
       <PageTransition>
         <div
           style={{
@@ -43,8 +55,8 @@ const LandingLayout = ({ children, pageContext, location, crumbLabel }) => {
   )
 }
 
-LandingLayout.propTypes = {
+SessionLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default LandingLayout
+export default SessionLayout

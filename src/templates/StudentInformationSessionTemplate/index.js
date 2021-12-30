@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import styled from "styled-components"
-import Layout from "../../components/layout"
+import SessionLayout from "../../components/pages/studentSessionsTemplate/SessionLayout"
 import Seo from "../../components/Seo/Seo"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import {
@@ -67,11 +67,11 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
   }
 
   return (
-    <Layout
+    <SessionLayout
       pageContext={pageContext}
       location={location}
       crumbLabel="session"
-      pageName="session"
+      sessionData={sessionData}
     >
       <Seo title="session" />
       <ModalProvider backgroundComponent={FadingBackground}>
@@ -162,7 +162,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
           />
         </MainContainer>
       </ModalProvider>
-    </Layout>
+    </SessionLayout>
   )
 }
 

@@ -30,7 +30,7 @@ const SessionCard = ({
   console.log(parseSessionDate)
   return (
     <>
-      {/* <Link
+      <Link
         to={
           "/student-information-session/" +
           course.courseCode.toLowerCase() +
@@ -41,7 +41,7 @@ const SessionCard = ({
           "-" +
           urlDate
         }
-      > */}
+      >
         <SessionCardWrapper>
           <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
           <ContentWrapper>
@@ -119,7 +119,7 @@ const SessionCard = ({
             </ImageAndButtonWrapper>
           </ContentWrapper>
         </SessionCardWrapper>
-      {/* </Link> */}
+      </Link>
     </>
   )
 }

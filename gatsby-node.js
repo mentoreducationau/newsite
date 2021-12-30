@@ -331,6 +331,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             hosts {
               name
+              role
               portrait {
                 gatsbyImageData(aspectRatio: 1)
               }
