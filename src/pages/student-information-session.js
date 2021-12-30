@@ -31,6 +31,18 @@ const IntroText = styled.p`
   line-height: 24px;
   margin-bottom: 0;
 `
+const MainContainer = styled.div`
+max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  @media(max-width: 1300px) {
+    width: 90%;
+  }
+`
+
 const StudentInformationSessionPage = ({ pageContext, location, data }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isThankyouOpen, setIsThankyouOpen] = useState(false)
@@ -38,13 +50,13 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
   const [courseUrl, setCourseUrl] = useState("")
 
-  const toggleThankyouModal = (url) => {
+  const toggleThankyouModal = url => {
     setOpacity(0)
     setCourseUrl(url)
     setIsThankyouOpen(!isThankyouOpen)
   }
 
-  const toggleModal = (id) => {
+  const toggleModal = id => {
     setOpacity(0)
     setSelectedZoomWebinarId(id)
     setIsOpen(!isOpen)
@@ -72,14 +84,7 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
     >
       <Seo title="Student Information Session" />
       <ModalProvider backgroundComponent={FadingBackground}>
-        <div
-          style={{
-            width: "90%",
-            margin: "0 auto",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <MainContainer>
           <IntroWrapper>
             <PageTitle>Student Inforamtion Sessions</PageTitle>
             <IntroText>
@@ -112,7 +117,7 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
               toggleThankyouModal={toggleThankyouModal}
             />
           ))}
-        </div>
+        </MainContainer>
         <SignUpModal
           isOpen={isOpen}
           opacity={opacity}

@@ -9,12 +9,24 @@ export const SessionCardWrapper = styled.div`
   align-items: center;
   gap: 25px;
   margin-bottom: 86px;
+
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+  :hover {
+    cursor: pointer;
+    -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
+      -10px 10px 20px rgba(0, 0, 0, 10%);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
+      -10px 10px 20px rgba(0, 0, 0, 10%);
+  }
 `
 
 export const ContentWrapper = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
+  width: 50%;
+  padding-right: 20px;
 `
 export const CourseDataText = styled.p`
   font-size: 18px;
