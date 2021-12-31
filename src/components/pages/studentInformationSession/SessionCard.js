@@ -26,11 +26,11 @@ const SessionCard = ({
   const nowTime = new Date().getTime()
   const parseSessionDate = Date.parse(sessionDate)
   const urlDate = sessionDate.replaceAll("-", "")
-  const [signedUp, setSignedUp] = useState(true)
+  const [signedUp, setSignedUp] = useState(false)
   console.log(parseSessionDate)
   return (
     <>
-      <Link
+      {/* <Link
         to={
           "/student-information-session/" +
           course.courseCode.toLowerCase() +
@@ -41,7 +41,7 @@ const SessionCard = ({
           "-" +
           urlDate
         }
-      >
+      > */}
         <SessionCardWrapper>
           <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
           <ContentWrapper>
@@ -119,7 +119,7 @@ const SessionCard = ({
             </ImageAndButtonWrapper>
           </ContentWrapper>
         </SessionCardWrapper>
-      </Link>
+      {/* </Link> */}
     </>
   )
 }
