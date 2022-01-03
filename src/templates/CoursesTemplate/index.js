@@ -1,32 +1,32 @@
 import React, { useRef } from "react"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/Seo/Seo"
 import {
-  HeroVideo,
+  // HeroVideo,
   MainContainer,
   CourseContainer,
   StickySideBar,
 } from "./index.css"
 
 import {
-  CareerSkillSket,
+  // CareerSkillSket,
   // CareerAccordion,
   Knowmore,
   FooterForm,
   StudentsWork,
   CourseInfo,
   JourneyStarted,
-  LiveTutorials,
-  Faq,
+  // LiveTutorials,
+  // Faq,
   EnrolNow,
-  Mission,
+  // Mission,
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
-import { Headline, Paragraph } from "../../styles/Typography.css"
-import playbutton from "../../images/svg/playbutton.svg"
+import { Headline } from "../../styles/Typography.css"
+// import playbutton from "../../images/svg/playbutton.svg"
 
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData

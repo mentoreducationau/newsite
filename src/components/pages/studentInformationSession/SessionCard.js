@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   SessionCardWrapper,
   ContentWrapper,
@@ -12,7 +12,7 @@ import {
   Wrapper,
   PersonNameText,
 } from "./sis.css"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 const SessionCard = ({
   image,

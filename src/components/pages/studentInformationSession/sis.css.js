@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { GlobalFormField } from "../../../styles/FormStyles.css"
 

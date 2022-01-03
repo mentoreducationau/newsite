@@ -1,15 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import {
-  Subtitle,
-  Paragraph,
-  ParagraphMedium,
-} from "../../styles/Typography.css"
+// import {
+//   Subtitle,
+//   Paragraph,
+//   ParagraphMedium,
+// } from "../../styles/Typography.css"
 import {
   EnrolContainer,
   PriceContainer,
-  Prices,
+  // Prices,
   PriceButton,
   EnrolText,
   PriceText,
@@ -67,7 +67,9 @@ const EnrolNow = ({ price, excuteScroll }) => {
         <EnrolText>ENROL NOW FROM</EnrolText>
         <PriceText>${price}*</PriceText>
       </PriceContainer>
-      <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"><PriceButton>ENROL</PriceButton></a>
+      {/* <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"> */}
+        <PriceButton>ENROL</PriceButton>
+      {/* </a> */}
       {/* <ParagraphMedium course style={{ margin: "8px" }}>
         Payment Plans also available
       </ParagraphMedium>
