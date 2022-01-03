@@ -25,9 +25,14 @@ const SessionCard = ({
 }) => {
   const nowTime = new Date().getTime()
   const parseSessionDate = Date.parse(sessionDate)
-  const urlDate = sessionDate.replaceAll("-", "")
+  const courseUrl =
+    course.courseCode.toLowerCase() +
+    "-" +
+    course.studyLevel.toLowerCase().replace(/ /g, "-") +
+    "_" +
+    course.courseName.toLowerCase().replace(/ /g, "-")
+  const sessionUrl = courseUrl + "-" + sessionDate.replaceAll("-", "")
   const [signedUp, setSignedUp] = useState(false)
-  console.log(parseSessionDate)
   return (
     <>
       {/* <Link
@@ -42,83 +47,63 @@ const SessionCard = ({
           urlDate
         }
       > */}
-        <SessionCardWrapper>
-          <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
-          <ContentWrapper>
-            <CourseDataText>
-              {course.courseCode +
-                " - " +
-                course.studyLevel +
-                " " +
-                course.courseName}
-            </CourseDataText>
-            <CourseDataText color="#DF2F16">
-              {nowTime > parseSessionDate ? "Session Date: " : "Upcoming: "}
-              {sessionDate}
-            </CourseDataText>
-            <CourseDataText color="#DF2F16" host>
-              Hosts:
-            </CourseDataText>
-            <ImageAndButtonWrapper>
-              <ImageWrapper>
-                {hosts.map(item => (
-                  <Wrapper key={item.name}>
-                    <GatsbyImage
-                      image={getImage(item.portrait)}
-                      style={{
-                        width: "80px",
-                        height: "80px",
-                        borderRadius: "50%",
-                      }}
-                    />
-                    <PersonNameText>{item.name}</PersonNameText>
-                  </Wrapper>
-                ))}
-              </ImageWrapper>
-              <ButtonWrapper>
-                {nowTime > parseSessionDate ? (
-                  <SignUpButton
-                    onClick={() =>
-                      toggleThankyouModal(
-                        course.courseCode.toLowerCase() +
-                          "-" +
-                          course.studyLevel.toLowerCase().replace(/ /g, "-") +
-                          "_" +
-                          course.courseName.toLowerCase().replace(/ /g, "-") +
-                          "-" +
-                          urlDate
-                      )
-                    }
-                  >
-                    WATCH NOW
-                  </SignUpButton>
-                ) : signedUp ? (
-                  <SignUpButton
-                    onClick={() =>
-                      toggleThankyouModal(
-                        course.courseCode.toLowerCase() +
-                          "-" +
-                          course.studyLevel.toLowerCase().replace(/ /g, "-") +
-                          "_" +
-                          course.courseName.toLowerCase().replace(/ /g, "-") +
-                          "-" +
-                          urlDate
-                      )
-                    }
-                  >
-                    SIGN UP
-                  </SignUpButton>
-                ) : (
-                  <SignUpButton onClick={() => toggleModal(zoomWebinarId)}>
-                    SIGN UP
-                  </SignUpButton>
-                )}
+      <SessionCardWrapper>
+        <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
+        <ContentWrapper>
+          <CourseDataText>
+            {course.courseCode +
+              " - " +
+              course.studyLevel +
+              " " +
+              course.courseName}
+          </CourseDataText>
+          <CourseDataText color="#DF2F16">
+            {nowTime > parseSessionDate ? "Session Date: " : "Upcoming: "}
+            {sessionDate}
+          </CourseDataText>
+          <CourseDataText color="#DF2F16" host>
+            Hosts:
+          </CourseDataText>
+          <ImageAndButtonWrapper>
+            <ImageWrapper>
+              {hosts.map(item => (
+                <Wrapper key={item.name}>
+                  <GatsbyImage
+                    image={getImage(item.portrait)}
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <PersonNameText>{item.name}</PersonNameText>
+                </Wrapper>
+              ))}
+            </ImageWrapper>
+            <ButtonWrapper>
+              {nowTime > parseSessionDate ? (
+                <SignUpButton
+                  onClick={() => toggleThankyouModal(sessionUrl, courseUrl)}
+                >
+                  WATCH NOW
+                </SignUpButton>
+              ) : signedUp ? (
+                <SignUpButton
+                  onClick={() => toggleThankyouModal(sessionUrl, courseUrl)}
+                >
+                  SIGN UP
+                </SignUpButton>
+              ) : (
+                <SignUpButton onClick={() => toggleModal(zoomWebinarId)}>
+                  SIGN UP
+                </SignUpButton>
+              )}
 
-                <HintText>**Click anywhere to view detail</HintText>
-              </ButtonWrapper>
-            </ImageAndButtonWrapper>
-          </ContentWrapper>
-        </SessionCardWrapper>
+              <HintText>**Click anywhere to view detail</HintText>
+            </ButtonWrapper>
+          </ImageAndButtonWrapper>
+        </ContentWrapper>
+      </SessionCardWrapper>
       {/* </Link> */}
     </>
   )

@@ -17,7 +17,8 @@ const useForm = (callback, validate = undefined) => {
     } else {
       setIsSubmiting(false)
     }
-  }, [errors, isSubmitting, callback])
+  // }, [errors, isSubmitting, callback])
+  }, [errors, isSubmitting])
 
   const handleChange = e => {
     e.persist()

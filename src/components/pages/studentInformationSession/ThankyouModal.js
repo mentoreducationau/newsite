@@ -29,7 +29,8 @@ export default function ThankyouModal({
   afterOpen,
   beforeClose,
   toggleModal,
-  courseUrl
+  courseUrl,
+  sessionUrl
 }) {
   return (
     <div>
@@ -56,8 +57,8 @@ export default function ThankyouModal({
             <DescText>
               You will receive a confirmation and reminders in your email
             </DescText>
-            <ViewLink to={"/student-information-session/"+courseUrl}>View Session Details</ViewLink>
-            <ViewLink to={"/courses/"+courseUrl}>View Course Details</ViewLink>
+            <ViewLink to={"/student-information-session/"+sessionUrl} onClick={() => toggleModal()}>View Session Details</ViewLink>
+            <ViewLink to={"/courses/"+courseUrl} onClick={() => toggleModal()}>View Course Details</ViewLink>
           </ThankyouContentWrapper>
           <CancelWrapper>
             <IconWrapper>

@@ -34,24 +34,22 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
   const sessionData = pageContext.sessionData
   const nowTime = new Date().getTime()
   const parseSessionDate = Date.parse(sessionData.sessionDate)
+  const courseUrl =
+    sessionData.course.courseCode.toLowerCase() +
+    "-" +
+    sessionData.course.studyLevel.toLowerCase().replace(/ /g, "-") +
+    "_" +
+    sessionData.course.courseName.toLowerCase().replace(/ /g, "-")
+  const sessionUrl =
+    courseUrl + "-" + sessionData.sessionDate.toLowerCase().replace(/-/g, "")
   const status = nowTime > parseSessionDate
   const screenHeight = window.innerHeight
-  const ref = useRef(null)
-  const [dateStatus, setDateStatus] = useState(true)
-
-  const excuteScroll = () => {
-    const pos = ref.current.getBoundingClientRect().top + window.pageYOffset - window.innerHeight/10
-    window.scrollTo({ top: pos, behavior: "smooth" })
-  }
-  const [isOpen, setIsOpen] = useState(false)
+  const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
-  const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
-  const [courseUrl, setCourseUrl] = useState("")
 
-  const toggleModal = id => {
+  const toggleThankyouModal = () => {
     setOpacity(0)
-    setSelectedZoomWebinarId(id)
-    setIsOpen(!isOpen)
+    setIsThankyouOpen(!isThankyouOpen)
   }
 
   const afterOpen = () => {
@@ -65,6 +63,15 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
       setOpacity(0)
       setTimeout(resolve, 300)
     })
+  }
+
+  const ref = useRef(null)
+  const excuteScroll = () => {
+    const pos =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+    window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
   return (
@@ -122,7 +129,12 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
           <StickySideBar screenHeight={screenHeight / 10}>
             {!status ? (
               <>
-                <Form course title="Register" buttonTitle="Register NOW!" />
+                <Form
+                  course
+                  title="Register"
+                  buttonTitle="Register NOW!"
+                  toggleModal={toggleThankyouModal}
+                />
                 <Form
                   course
                   title="DownLoad Course Guide"
@@ -138,9 +150,9 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                   >
                     ENROL NOW
                   </H3>
-                  <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20">
+                  {/* <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"> */}
                     <PriceButton>ENROL</PriceButton>
-                  </a>
+                  {/* </a> */}
                 </div>
               </>
             ) : (
@@ -155,12 +167,13 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
             )}
           </StickySideBar>
           <ThankyouModal
-            isOpen={isOpen}
+            isOpen={isThankyouOpen}
             opacity={opacity}
-            toggleModal={toggleModal}
+            toggleModal={toggleThankyouModal}
             afterOpen={afterOpen}
             beforeClose={beforeClose}
             courseUrl={courseUrl}
+            sessionUrl={sessionUrl}
           />
         </MainContainer>
       </ModalProvider>

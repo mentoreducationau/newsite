@@ -6,12 +6,13 @@ import { H3 } from "../../styles/Typography.css"
 const Form = ({ course, title, buttonTitle, toggleModal }) => {
   const handleSubmit = v => {
     console.log(v)
-    
-    // toggleModal()
+    toggleModal && toggleModal()
   }
   return (
     <CourseGuideContainer course={course}>
-      <H3 style={{marginTop: "0"}} course={course}>{title}</H3>
+      <H3 style={{ marginTop: "0" }} course={course}>
+        {title}
+      </H3>
       <VerticalFormTemplate
         course={course}
         buttonText={buttonTitle}

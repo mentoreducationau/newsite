@@ -49,10 +49,12 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
   const [courseUrl, setCourseUrl] = useState("")
+  const [sessionUrl, setSessionUrl] = useState("")
 
-  const toggleThankyouModal = url => {
+  const toggleThankyouModal = (sUrl, cUrl) => {
     setOpacity(0)
-    setCourseUrl(url)
+    setCourseUrl(cUrl)
+    setSessionUrl(sUrl)
     setIsThankyouOpen(!isThankyouOpen)
   }
 
@@ -133,6 +135,7 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
           afterOpen={afterOpen}
           beforeClose={beforeClose}
           courseUrl={courseUrl}
+          sessionUrl={sessionUrl}
         />
       </ModalProvider>
     </Layout>
