@@ -163,7 +163,7 @@ export const MobileContainer = styled.div`
 export const SectionContainer = styled.div`
   display: flex;
   flex-direction: ${props => props.row ? "row" : "column"};
-  width: 80%;
+  max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
   margin-top: ${props => props.marginTop ? props.marginTop : "0"};

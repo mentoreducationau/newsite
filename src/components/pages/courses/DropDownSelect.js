@@ -35,11 +35,11 @@ const DropDownSelect = ({ options, error, excuteScroll }) => {
     placeholder: (provided, state) => ({
       ...provided,
       color: "#adb4d2",
-      fontSize: "1.25rem",
+      fontSize: "22px",
     }),
     option: (provided, state) => ({
       ...provided,
-      fontSize: "1.25rem",
+      fontSize: "22px",
     }),
   }
 
@@ -48,7 +48,7 @@ const DropDownSelect = ({ options, error, excuteScroll }) => {
       <Select
         options={options}
         styles={customStyles}
-        placeholder="Please select an option"
+        placeholder="Start typing or click to open menu"
         menuColor="red"
         menuPlacement="bottom"
         isMulti={false}

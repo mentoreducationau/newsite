@@ -5,8 +5,8 @@ import DropDownSelect from "./DropDownSelect"
 
 const CoursesSearch = ({options, excuteScroll}) => {
   return (
-    <SectionContainer marginBottom="70px">
-        <SearchText>heading</SearchText>
+    <SectionContainer marginBottom="58px" row style={{alignItems: "baseline", gap: "35px"}}>
+        <SearchText>Quick select field of study: </SearchText>
         <DropDownSelect options={options} excuteScroll={excuteScroll} />
     </SectionContainer>
   )

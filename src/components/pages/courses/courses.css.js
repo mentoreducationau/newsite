@@ -55,11 +55,11 @@ export const CourseCardWrapper = styled.div`
   font-family: Futura Heavy;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 7%);
-  -webkit-box-shadow: 10px 0px 13px -7px rgba(0, 0, 0, 5%),
-    5px 5px 15px 5px rgba(0, 0, 0, 1%);
-  box-shadow: 10px 0px 13px -7px rgba(0, 0, 0, 5%),
-    5px 5px 15px 5px rgba(0, 0, 0, 1%);
-  transition: transform 0.3s ease-in-out;
+  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
+    -10px 10px 20px rgba(0, 0, 0, 10%);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
+    -10px 10px 20px rgba(0, 0, 0, 10%);
+  // transition: transform 0.3s ease-in-out;
   //   :hover {
   //     transform: scale(1.05);
   //   }
@@ -107,11 +107,8 @@ export const SearchText = styled.p`
   margin-bottom: 0;
 `
 
-
-
-
-
 export const DropDownWrapper = styled.div`
   position: relative;
   min-height: 80px;
+  width: 50%;
 `
