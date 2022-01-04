@@ -52,6 +52,12 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
     setIsThankyouOpen(!isThankyouOpen)
   }
 
+  const openDownloadWindow = () => {
+    setTimeout(() => {
+      window.open("", '_blank', 'noopener,noreferrer')
+    }, 3000);
+  }
+
   const afterOpen = () => {
     setTimeout(() => {
       setOpacity(1)
@@ -95,7 +101,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
         </Container>
         <MainContainer>
           <CourseDataContainer>
-            {nowTime > parseSessionDate && (
+            {status && (
               <WatchNowSection>
                 <WatchNowTitle>WATCH NOW</WatchNowTitle>
                 <IframeWrapper>
@@ -139,6 +145,8 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                   course
                   title="DownLoad Course Guide"
                   buttonTitle="Download"
+                  toggleModal={toggleThankyouModal}
+                  openDownloadWindow={openDownloadWindow}
                 />
                 <div>
                   <H3
@@ -161,8 +169,10 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                   course
                   title="DownLoad Course Guide"
                   buttonTitle="Download"
+                  toggleModal={toggleThankyouModal}
+                  openDownloadWindow={openDownloadWindow}
                 />
-                <EnrolNow price="999" excuteScroll={excuteScroll} />
+                <EnrolNow price={sessionData.course.pricing.salePrice} excuteScroll={excuteScroll} />
               </>
             )}
           </StickySideBar>

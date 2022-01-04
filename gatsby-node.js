@@ -294,6 +294,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               courseCode
               courseName
               studyLevel
+              pricing {
+                salePrice
+              }
               entryRequirements {
                 raw
               }

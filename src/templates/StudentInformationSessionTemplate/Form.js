@@ -3,10 +3,11 @@ import { CourseGuideContainer } from "./index.css"
 import { VerticalFormTemplate } from "../../components/Forms/FormFieldComponent"
 import { H3 } from "../../styles/Typography.css"
 
-const Form = ({ course, title, buttonTitle, toggleModal }) => {
+const Form = ({ course, title, buttonTitle, toggleModal, openDownloadWindow }) => {
   const handleSubmit = v => {
     console.log(v)
     toggleModal && toggleModal()
+    openDownloadWindow && openDownloadWindow()
   }
   return (
     <CourseGuideContainer course={course}>
