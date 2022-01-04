@@ -1,17 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-
 import Layout from "../components/layout"
-import { MainContainer } from "../components/pages/about/index.css"
 import SEO from "../components/seo"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
-import { Headline, Title } from "../styles/Typography.css"
-import Card from "../components/pages/forms/Card"
 import CoursesIntro from "../components/pages/courses/Intro"
 import { SectionContainer } from "../styles/ContainerStyles.css"
 import CourseCollection from "../components/pages/courses/CourseCollection"
 import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
+import CoursesSearch from "../components/pages/courses/CourseSearch"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -27,6 +24,13 @@ const CoursesPage = ({ pageContext, location, data }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
+  const collectionsRef = useRef([])
+  const courseCollections = []
+
+  coursesSelection.map((item, index) => {
+    const collection = { value: index, label: item.heading }
+    courseCollections.push(collection)
+  })
 
   const toggleModal = id => {
     setOpacity(0)
@@ -47,6 +51,11 @@ const CoursesPage = ({ pageContext, location, data }) => {
     })
   }
 
+  const excuteScroll = el => {
+    const pos = collectionsRef.current[el].getBoundingClientRect().top + window.pageYOffset - window.innerHeight / 10
+    window.scrollTo({ top: pos, behavior: "smooth" })
+  }
+
   return (
     <Layout
       pageContext={pageContext}
@@ -57,11 +66,15 @@ const CoursesPage = ({ pageContext, location, data }) => {
       <SEO title={heading} />
       <ModalProvider backgroundComponent={FadingBackground}>
         <CoursesIntro heading={heading} intro={intro} />
-        <MainContainer>
-          {coursesSelection.map((item, index) => (
-            <CourseCollection courseCollection={item} key={index} toggleModal={toggleModal} />
-          ))}
-        </MainContainer>
+        <CoursesSearch options={courseCollections} excuteScroll={excuteScroll} />
+        {coursesSelection.map((item, index) => (
+          <div key={index} ref={el => (collectionsRef.current[index] = el)}>
+            <CourseCollection
+              courseCollection={item}
+              toggleModal={toggleModal}
+            />
+          </div>
+        ))}
         <SignUpModal
           isOpen={isOpen}
           opacity={opacity}
@@ -89,7 +102,7 @@ export const CoursesPageData = graphql`
             courseName
             studyLevel
             heroImage {
-              gatsbyImageData
+              gatsbyImageData(aspectRatio: 0.56)
             }
           }
         }

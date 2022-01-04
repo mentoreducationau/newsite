@@ -5,11 +5,13 @@ export const HeadingText = styled.p`
   line-height: 84px;
   font-weight: 800;
   text-align: center;
+  margin-bottom: 33px;
 `
 export const IntroText = styled.p`
   font-size: 18px;
   line-height: 26.1px;
   font-weight: 800;
+  margin-bottom: 0;
 `
 export const CourseCollectionHeadingText = styled.p`
   font-size: 46px;
@@ -70,8 +72,8 @@ export const CourseCardWrapper = styled.div`
 
 export const CardButton = styled.button`
   font-family: Futura Heavy;
-  font-size: ${props => (props.fontSize ? props.fontSize + "px" : "25px")};
-  line-height: ${props => (props.fontSize ? props.lineHeight + "px" : "33px")};
+  font-size: ${props => (props.fontSize ? props.fontSize : "25px")};
+  line-height: ${props => (props.fontSize ? props.lineHeight : "33px")};
   background: #df2f16;
   color: white;
   border: 0;
@@ -97,4 +99,19 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   padding: 0 21px 51px 21px;
   gap: 9px;
+`
+export const SearchText = styled.p`
+  font-size: 22px;
+  line-height: 32.2px;
+  font-weight: 800;
+  margin-bottom: 0;
+`
+
+
+
+
+
+export const DropDownWrapper = styled.div`
+  position: relative;
+  min-height: 80px;
 `

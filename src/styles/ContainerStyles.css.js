@@ -164,7 +164,10 @@ export const SectionContainer = styled.div`
   display: flex;
   flex-direction: ${props => props.row ? "row" : "column"};
   width: 80%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: ${props => props.marginTop ? props.marginTop : "0"};
+  margin-bottom: ${props => props.marginBottom ? props.marginBottom : "0"}; 
   
   @media(max-width: 1280px) {
     max-width: 1200px;

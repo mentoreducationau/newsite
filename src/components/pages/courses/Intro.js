@@ -4,7 +4,7 @@ import { HeadingText, IntroText } from "./courses.css"
 
 const CoursesIntro = ({ heading, intro }) => {
   return (
-    <SectionContainer>
+    <SectionContainer marginBottom="70px">
         <HeadingText>{heading}</HeadingText>
         <IntroText>{intro}</IntroText>
     </SectionContainer>
