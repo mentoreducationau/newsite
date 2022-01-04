@@ -159,3 +159,15 @@ export const MobileContainer = styled.div`
     display: block;
   }
 `
+
+export const SectionContainer = styled.div`
+  display: flex;
+  flex-direction: ${props => props.row ? "row" : "column"};
+  width: 80%;
+  margin: 0 auto;
+  
+  @media(max-width: 1280px) {
+    max-width: 1200px;
+    width: 90%;
+  }
+`

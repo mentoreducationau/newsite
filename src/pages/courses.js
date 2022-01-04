@@ -1,63 +1,76 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
 import { MainContainer } from "../components/pages/about/index.css"
 import SEO from "../components/seo"
+import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import { Headline, Title } from "../styles/Typography.css"
 import Card from "../components/pages/forms/Card"
+import CoursesIntro from "../components/pages/courses/Intro"
+import { SectionContainer } from "../styles/ContainerStyles.css"
+import CourseCollection from "../components/pages/courses/CourseCollection"
+import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
 
-const CardsWrapper = styled.div`
-  --repeat: auto-fit;
-
-  @media (min-width: calc(250px * 5)) {
-    --repeat: 3;
-  }
-
-  display: grid;
-  grid-template-columns: repeat(
-    var(--repeat, auto-fit),
-    minmax(calc(250px * 1), 1fr)
-  );
-  grid-template-rows: auto;
-  gap: 27px;
-  width: 100%;
+const FadingBackground = styled(BaseModalBackground)`
+  opacity: ${props => props.opacity};
+  align-items: start;
+  transition: all 0.3s ease-in-out;
 `
 
 const CoursesPage = ({ pageContext, location, data }) => {
   const { heading, coursesSelection } = data.allContentfulCoursesPage.nodes[0]
+  const intro =
+    "I’m baby knausgaard schlitz tote bag mlkshk flannel you probably haven’t heard of them prism retro quinoa ennui shabby chic. Marfa waistcoat fixie craft beer shoreditch man bun ethical mixtape keytar celiac selfies church-key. Gastropub 3 wolf moon lo-fi fingerstache truffaut, +1 cronut hella humblebrag. Fam heirloom synth pickled pinterest XOXO. Cloud bread pour-over scenester fixie 8-bit, raw denim venmo pork belly cornhole disrupt before they sold out blog."
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [opacity, setOpacity] = useState(0)
+  const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
+
+  const toggleModal = id => {
+    setOpacity(0)
+    setSelectedZoomWebinarId(id)
+    setIsOpen(!isOpen)
+  }
+
+  const afterOpen = () => {
+    setTimeout(() => {
+      setOpacity(1)
+    }, 100)
+  }
+
+  const beforeClose = () => {
+    return new Promise(resolve => {
+      setOpacity(0)
+      setTimeout(resolve, 300)
+    })
+  }
+
   return (
-    <Layout pageContext={pageContext} location={location} crumbLabel={heading} pageName="Courses">
+    <Layout
+      pageContext={pageContext}
+      location={location}
+      crumbLabel={heading}
+      pageName={heading}
+    >
       <SEO title={heading} />
-      <Headline style={{ color: "#707070" }} banner>
-        {heading}
-      </Headline>
-      <MainContainer>
-        {coursesSelection.map((item, index) => (
-          <div style={{ marginTop: "3.25rem" }} key={index}>
-            <Title style={{ textAlign: "center" }} course>
-              {item.heading}
-            </Title>
-            <CardsWrapper>
-              {item.courses.map((it, idx) => (
-                <Card
-                  key={idx}
-                  heading={it.courseCode + " - " + it.studyLevel + " " + it.courseName}
-                  link={
-                    "/courses/" +
-                    it.courseCode.toLowerCase() +
-                    "-" +
-                    it.studyLevel.toLowerCase().replace(/ /g, "-") +
-                    "_" +
-                    it.courseName.toLowerCase().replace(/ /g, "-")
-                  }
-                />
-              ))}
-            </CardsWrapper>
-          </div>
-        ))}
-      </MainContainer>
+      <ModalProvider backgroundComponent={FadingBackground}>
+        <CoursesIntro heading={heading} intro={intro} />
+        <MainContainer>
+          {coursesSelection.map((item, index) => (
+            <CourseCollection courseCollection={item} key={index} toggleModal={toggleModal} />
+          ))}
+        </MainContainer>
+        <SignUpModal
+          isOpen={isOpen}
+          opacity={opacity}
+          toggleModal={toggleModal}
+          afterOpen={afterOpen}
+          beforeClose={beforeClose}
+          zoomWebinarId={selectedZoomWebinarId}
+        />
+      </ModalProvider>
     </Layout>
   )
 }
@@ -75,6 +88,9 @@ export const CoursesPageData = graphql`
             courseCode
             courseName
             studyLevel
+            heroImage {
+              gatsbyImageData
+            }
           }
         }
       }

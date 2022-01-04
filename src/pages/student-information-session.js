@@ -76,7 +76,6 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
       setTimeout(resolve, 300)
     })
   }
-  console.log(data)
   return (
     <Layout
       pageContext={pageContext}
