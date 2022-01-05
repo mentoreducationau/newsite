@@ -9,6 +9,8 @@ import { SectionContainer } from "../styles/ContainerStyles.css"
 import CourseCollection from "../components/pages/courses/CourseCollection"
 import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
 import CoursesSearch from "../components/pages/courses/CourseSearch"
+import CourseCard from "../components/pages/courses/CourseCard"
+import { CardsWrapper } from "../components/pages/courses/courses.css"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -26,10 +28,15 @@ const CoursesPage = ({ pageContext, location, data }) => {
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
   const collectionsRef = useRef([])
   const courseCollections = []
+  const allCoursesArray = []
+  const [searchText, setSearchText] = useState("")
 
   coursesSelection.map((item, index) => {
     const collection = { value: index, label: item.heading }
     courseCollections.push(collection)
+    item.courses.map(it => {
+      allCoursesArray.push(it)
+    })
   })
 
   const toggleModal = id => {
@@ -52,7 +59,10 @@ const CoursesPage = ({ pageContext, location, data }) => {
   }
 
   const excuteScroll = el => {
-    const pos = collectionsRef.current[el].getBoundingClientRect().top + window.pageYOffset - window.innerHeight / 10
+    const pos =
+      collectionsRef.current[el].getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
@@ -66,15 +76,42 @@ const CoursesPage = ({ pageContext, location, data }) => {
       <SEO title={heading} />
       <ModalProvider backgroundComponent={FadingBackground}>
         <CoursesIntro heading={heading} intro={intro} />
-        <CoursesSearch options={courseCollections} excuteScroll={excuteScroll} />
-        {coursesSelection.map((item, index) => (
-          <div key={index} ref={el => (collectionsRef.current[index] = el)}>
-            <CourseCollection
-              courseCollection={item}
-              toggleModal={toggleModal}
-            />
-          </div>
-        ))}
+        <CoursesSearch
+          options={courseCollections}
+          allCoursesArray={allCoursesArray}
+          searchText={searchText}
+          setSearchText={setSearchText}
+          excuteScroll={excuteScroll}
+        />
+        {searchText === "" ? (
+          coursesSelection.map((item, index) => (
+            <div key={index} ref={el => (collectionsRef.current[index] = el)}>
+              <CourseCollection
+                courseCollection={item}
+                toggleModal={toggleModal}
+              />
+            </div>
+          ))
+        ) : (
+          <SectionContainer marginBottom="70px">
+            <CardsWrapper>
+              {allCoursesArray
+                .filter(course =>
+                  course.courseCode
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase()) || course.courseName
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase()) || course.studyLevel
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase())
+                )
+                .map(filterCourse => (
+                  <CourseCard course={filterCourse} toggleModal={toggleModal} />
+                ))}
+            </CardsWrapper>
+          </SectionContainer>
+        )}
+
         <SignUpModal
           isOpen={isOpen}
           opacity={opacity}
