@@ -106,9 +106,27 @@ export const SearchText = styled.p`
   font-weight: 800;
   margin-bottom: 0;
 `
-
-export const DropDownWrapper = styled.div`
-  position: relative;
-  min-height: 80px;
-  width: 50%;
+export const BackToTopArrow = styled.i`
+  border: solid gray;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(225deg);
+  width: 1rem;
+  height: 1rem;
+  margin-top: calc(50% - 0.2rem);
+  margin-left: calc(50% - 0.5rem);
+`
+export const ScrollWrapper = styled.div`
+  display: ${props => (props.showBackToTop ? "block" : "none")};
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  width: 50px;
+  height: 50px;
+  box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 41%), 0px 0px 0px 0px rgb(0 0 0 / 0%);
 `

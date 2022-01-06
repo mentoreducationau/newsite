@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -10,7 +10,11 @@ import CourseCollection from "../components/pages/courses/CourseCollection"
 import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
 import CoursesSearch from "../components/pages/courses/CourseSearch"
 import CourseCard from "../components/pages/courses/CourseCard"
-import { CardsWrapper } from "../components/pages/courses/courses.css"
+import {
+  BackToTopArrow,
+  CardsWrapper,
+  ScrollWrapper,
+} from "../components/pages/courses/courses.css"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -27,9 +31,11 @@ const CoursesPage = ({ pageContext, location, data }) => {
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
   const collectionsRef = useRef([])
+  const dropdownRef = useRef(null)
   const courseCollections = []
   const allCoursesArray = []
   const [searchText, setSearchText] = useState("")
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   coursesSelection.map((item, index) => {
     const collection = { value: index, label: item.heading }
@@ -66,6 +72,35 @@ const CoursesPage = ({ pageContext, location, data }) => {
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
+  const handleScroll = () => {
+    const position =
+      dropdownRef.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+
+    if (position < window.scrollY) {
+      setShowBackToTop(true)
+    } else {
+      setShowBackToTop(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  const scrollToDropdown = () => {
+    const pos =
+      dropdownRef.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+    window.scrollTo({ top: pos, behavior: "smooth" })
+  }
+
   return (
     <Layout
       pageContext={pageContext}
@@ -76,13 +111,16 @@ const CoursesPage = ({ pageContext, location, data }) => {
       <SEO title={heading} />
       <ModalProvider backgroundComponent={FadingBackground}>
         <CoursesIntro heading={heading} intro={intro} />
-        <CoursesSearch
-          options={courseCollections}
-          allCoursesArray={allCoursesArray}
-          searchText={searchText}
-          setSearchText={setSearchText}
-          excuteScroll={excuteScroll}
-        />
+        <div ref={dropdownRef}>
+          <CoursesSearch
+            options={courseCollections}
+            allCoursesArray={allCoursesArray}
+            searchText={searchText}
+            setSearchText={setSearchText}
+            excuteScroll={excuteScroll}
+          />
+        </div>
+
         {searchText === "" ? (
           coursesSelection.map((item, index) => (
             <div key={index} ref={el => (collectionsRef.current[index] = el)}>
@@ -96,14 +134,17 @@ const CoursesPage = ({ pageContext, location, data }) => {
           <SectionContainer marginBottom="70px">
             <CardsWrapper>
               {allCoursesArray
-                .filter(course =>
-                  course.courseCode
-                    .toLowerCase()
-                    .includes(searchText.toLowerCase()) || course.courseName
-                    .toLowerCase()
-                    .includes(searchText.toLowerCase()) || course.studyLevel
-                    .toLowerCase()
-                    .includes(searchText.toLowerCase())
+                .filter(
+                  course =>
+                    course.courseCode
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase()) ||
+                    course.courseName
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase()) ||
+                    course.studyLevel
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase())
                 )
                 .map(filterCourse => (
                   <CourseCard course={filterCourse} toggleModal={toggleModal} />
@@ -111,6 +152,10 @@ const CoursesPage = ({ pageContext, location, data }) => {
             </CardsWrapper>
           </SectionContainer>
         )}
+
+        <ScrollWrapper onClick={scrollToDropdown} showBackToTop={showBackToTop}>
+          <BackToTopArrow />
+        </ScrollWrapper>
 
         <SignUpModal
           isOpen={isOpen}
