@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { Container } from "../../styles/ContainerStyles.css"
 
 export const HeroVideo = styled.div`
@@ -106,4 +107,64 @@ export const IframeWrapper = styled.div`
     iframe {
       width: 100%;
     }
+`
+
+//Modal
+
+export const DescText = styled.p`
+  font-size: 22px;
+  line-height: 24px;
+  margin-bottom: 14px;
+  width: 72%;
+`
+
+export const ThankyouWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 26px;
+`
+export const ThankyouContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+export const ThankyouTitleText = styled.p`
+  font-size: 48px;
+  line-height: 24px;
+  margin-bottom: 24px;
+`
+export const ViewLink = styled(Link)`
+  font-size: 22px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+  margin-bottom: 9px;
+
+  :hover {
+    cursor: pointer;
+  }
+`
+export const CancelWrapper = styled.div`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 25px 24px 0;
+`
+export const IconWrapper = styled.div`
+  :hover {
+    cursor: pointer;
+  }
+`
+
+export const CancelText = styled.p`
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 800;
+  margin-bottom: 0;
+
+  :hover {
+    cursor: pointer;
+  }
 `

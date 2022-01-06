@@ -22,7 +22,7 @@ import { JourneyStarted } from "../../components"
 import { StudentsWork } from "../../components"
 import { FooterForm } from "../../components"
 import Form from "./Form"
-import ThankyouModal from "../../components/pages/studentInformationSession/ThankyouModal"
+import DownloadThankyouModal from "./DownloadThankyouModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -176,7 +176,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
               </>
             )}
           </StickySideBar>
-          <ThankyouModal
+          <DownloadThankyouModal
             isOpen={isThankyouOpen}
             opacity={opacity}
             toggleModal={toggleThankyouModal}

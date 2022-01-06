@@ -129,4 +129,8 @@ export const ScrollWrapper = styled.div`
   width: 50px;
   height: 50px;
   box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 41%), 0px 0px 0px 0px rgb(0 0 0 / 0%);
+
+  :hover{
+    cursor: pointer;
+  }
 `

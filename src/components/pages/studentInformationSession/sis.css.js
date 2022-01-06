@@ -173,6 +173,7 @@ export const ViewLink = styled(Link)`
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 1px;
+  margin-bottom: 9px;
 
   :hover {
     cursor: pointer;
