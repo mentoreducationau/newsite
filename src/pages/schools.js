@@ -1,88 +1,39 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { MainContainer } from "../components/pages/about/index.css"
 import SEO from "../components/seo"
-import { Headline, Paragraph, Title } from "../styles/Typography.css"
-import Card from "../components/pages/forms/Card"
+import CoursesIntro from "../components/pages/schools/Intro"
+import FacultyCollection from "../components/pages/schools/FacultyCollection"
 
-const CardsWrapper = styled.div`
-  --repeat: auto-fit;
+const SchoolsPage = ({ pageContext, location, data }) => {
+  const schools = data.allContentfulSchool.nodes
+  const pageHeading = "Mentor Education - Schools"
+  const intro =
+    "I'm baby quinoa XOXO cronut venmo food truck wayfarers poutine hoodie VHS tilde cred polaroid fam vexillologist trust fund. Authentic locavore typewriter snackwave bitters, keffiyeh wolf 3 wolf moon. Selfies umami paleo organic sartorial shabby chic asymmetrical cray marfa etsy microdosing subway tile chambray. Vexillologist lo-fi letterpress pabst tumblr banh mi schlitz mixtape food truck 8-bit. Pug single-origin coffee salvia, polaroid mumblecore cred microdosing paleo craft beer before they sold out aesthetic pitchfork."
 
-  @media (min-width: calc(250px * 5)) {
-    --repeat: 3;
-  }
-
-  display: grid;
-  grid-template-columns: repeat(
-    var(--repeat, auto-fit),
-    minmax(calc(250px * 1), 1fr)
-  );
-  grid-template-rows: auto;
-  gap: 27px;
-  width: 100%;
-`
-
-const Schools = ({ pageContext, location, data }) => {
   return (
     <Layout
       pageContext={pageContext}
       location={location}
-      crumbLabel="Schools"
+      crumbLabel="schools"
       pageName="Schools"
     >
-      <SEO title="Mentor Education Schools" />
-      <Headline style={{ color: "#707070" }} banner>
-        Mentor Education - Schools
-      </Headline>
-      <MainContainer>
-        {data.allContentfulSchool.nodes.map((item, index) => (
-          <Paragraph key={index}>
-            Mentor Education's{" "}
-            <Link to={"/" + item.heading.toLowerCase().replaceAll(" ", "-")}>
-              {item.heading}
-            </Link>{" "}
-            provides courses from Certificate III to Advanced Diploma Level,
-            including qualifications in Accounting, Bookkeeping and Mortgage
-            Broking.
-          </Paragraph>
-        ))}
-        {data.allContentfulSchool.nodes.map((item, index) => (
-          <div style={{ marginTop: "3.25rem" }} key={index}>
-            <Title style={{ textAlign: "center" }} course>
-              {item.heading}
-            </Title>
-            <CardsWrapper>
-              {item.faculties.map((it, idx) => (
-                <Card
-                  key={idx}
-                  heading={it.heading}
-                  link={
-                    "/" +
-                    it.heading.toLowerCase().replaceAll(" & ", "-") +
-                    "-courses"
-                  }
-                />
-              ))}
-            </CardsWrapper>
-          </div>
-        ))}
-      </MainContainer>
+      <SEO title={pageHeading} />
+      <CoursesIntro heading={pageHeading} intro={intro} />
+      {schools.map((item, index) => (
+          <FacultyCollection school={item} key={index} />
+      ))}
     </Layout>
   )
 }
 
-export default Schools
+export default SchoolsPage
 
 export const SchoolsPageData = graphql`
-  query PrivateDiningQuery {
+  query SchoolsPageQuery {
     allContentfulSchool {
       nodes {
         heading
-        introduction {
-          raw
-        }
         faculties {
           heading
         }

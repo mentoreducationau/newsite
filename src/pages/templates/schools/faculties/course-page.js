@@ -3,8 +3,8 @@ import React from "react";
 import Layout from "../../../../components/layout";
 import Seo from "../../../../components/seo";
 
-import CourseTabs from '../../../../components/pages/schools/course-tabs'
-import CoursePaymentPlans from "../../../../components/pages/schools/course-payment-plans";
+import CourseTabs from '../../../../components/pages/schools-old/course-tabs'
+import CoursePaymentPlans from "../../../../components/pages/schools-old/course-payment-plans";
 export default function CoursePage({pageContext, location}) {
   return (
     <Layout pageContext={pageContext} location={location} crumbLabel="course">

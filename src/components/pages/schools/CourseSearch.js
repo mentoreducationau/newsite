@@ -1,6 +1,6 @@
 import React from "react"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
-import { SearchText } from "./courses.css"
+import { SearchText } from "./schools.css"
 import Dropdown from "./DropDown"
 
 const CoursesSearch = ({options, setSearchText, excuteScroll}) => {
