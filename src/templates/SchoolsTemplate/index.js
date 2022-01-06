@@ -1,31 +1,45 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-
+import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import Layout from "../../components/layout"
-import { MainContainer } from "../../components/pages/about/index.css"
 import SEO from "../../components/seo"
-import { Headline, Title } from "../../styles/Typography.css"
-import Card from "../../components/pages/forms/Card"
-import Renderer from "../../rich-text-renderers/sample"
+import CoursesIntro from "../../components/pages/schools/Intro"
+import CourseCollection from "../../components/pages/courses/CourseCollection"
+import SignUpModal from "../../components/pages/studentInformationSession/SignUpModal"
 
-const CardsWrapper = styled.div`
-  --repeat: auto-fit;
-
-  @media (min-width: calc(250px * 5)) {
-    --repeat: 3;
-  }
-  display: grid;
-  grid-template-columns: repeat(
-    var(--repeat, auto-fit),
-    minmax(calc(250px * 1), 1fr)
-  );
-  grid-template-rows: auto;
-  gap: 27px;
-  width: 100%;
+const FadingBackground = styled(BaseModalBackground)`
+  opacity: ${props => props.opacity};
+  align-items: start;
+  transition: all 0.3s ease-in-out;
 `
 
 const SchoolsTemplate = ({ pageContext, location }) => {
   const schoolData = pageContext.schoolData
+  const intro =
+    "The School of Accounting and Finance is one of three schools within Mentor Education. The school offers a range of courses from Certificate III to Advanced Diploma Level, with pathways to higher education. The school provides education and training for students seeking formal qualifications in careers from Bookkeepers and Accountants to Paraplanners and Assistant Financial Advisers (in a non-advice providing capacity).Mentor Education is committed to providing our students with skill and knowledge that is relevant, current and focusses on the future as well as the present. Our courses are developed not only to meet the Australian context but are relevant to the world of business across a number of industries."
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [opacity, setOpacity] = useState(0)
+  const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
+
+  const toggleModal = id => {
+    setOpacity(0)
+    setSelectedZoomWebinarId(id)
+    setIsOpen(!isOpen)
+  }
+
+  const afterOpen = () => {
+    setTimeout(() => {
+      setOpacity(1)
+    }, 100)
+  }
+
+  const beforeClose = () => {
+    return new Promise(resolve => {
+      setOpacity(0)
+      setTimeout(resolve, 300)
+    })
+  }
 
   return (
     <Layout
@@ -35,37 +49,22 @@ const SchoolsTemplate = ({ pageContext, location }) => {
       pageName="Schools"
     >
       <SEO title={schoolData.heading} />
-      <Headline style={{ color: "#707070" }} banner>
-        {schoolData.heading}
-      </Headline>
-      <MainContainer>
-        <Renderer node={schoolData.introduction} />
-        {schoolData.faculties.map((faculty, index) =>
+      <ModalProvider backgroundComponent={FadingBackground}>
+        <CoursesIntro heading={schoolData.heading} intro={intro} />
+        {schoolData.faculties.map(faculty =>
           faculty.courseSections.map((courseSection, idx) => (
-            <div style={{ marginTop: "3.25rem" }} key={idx}>
-              <Title style={{ textAlign: "center" }} course>
-                {courseSection.heading}
-              </Title>
-              <CardsWrapper>
-                {courseSection.courses.map((it, ix) => (
-                  <Card
-                    key={ix}
-                    heading={it.courseCode + " - " + it.studyLevel + " " + it.courseName}
-                    link={
-                      "/courses/" +
-                      it.courseCode.toLowerCase() +
-                      "-" +
-                      it.studyLevel.toLowerCase().replace(/ /g, "-") +
-                      "_" +
-                      it.courseName.toLowerCase().replace(/ /g, "-")
-                    }
-                  />
-                ))}
-              </CardsWrapper>
-            </div>
+            <CourseCollection courseCollection={courseSection} toggleModal={toggleModal} key={idx} />
           ))
         )}
-      </MainContainer>
+        <SignUpModal
+          isOpen={isOpen}
+          opacity={opacity}
+          toggleModal={toggleModal}
+          afterOpen={afterOpen}
+          beforeClose={beforeClose}
+          zoomWebinarId={selectedZoomWebinarId}
+        />
+      </ModalProvider>
     </Layout>
   )
 }

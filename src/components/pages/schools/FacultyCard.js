@@ -23,24 +23,33 @@ const FacultyCard = ({ faculty }) => {
         }
         style={{textDecoration: "none", color: "black"}}
       > */}
-        <div
-          style={{
-            width: "100%",
-            height: "197px",
-            borderTopLeftRadius: "5px",
-            borderTopRightRadius: "5px",
-            marginBottom: "13px",
-            backgroundColor: "gray"
-          }}
-        ></div>
-        <CourseNameText>
-          {faculty.heading}
-        </CourseNameText>
-        <ButtonWrapper>
+      <div
+        style={{
+          width: "100%",
+          height: "197px",
+          borderTopLeftRadius: "5px",
+          borderTopRightRadius: "5px",
+          marginBottom: "13px",
+          backgroundColor: "gray",
+        }}
+      ></div>
+      <CourseNameText>{faculty.heading}</CourseNameText>
+      <ButtonWrapper>
+        <Link
+          to={
+            "/schools/" +
+            faculty.heading
+              .toLowerCase()
+              .replaceAll(" & ", "-")
+              .replaceAll(" ", "-") +
+            "/"
+          }
+        >
           <CardButton fontSize="21px" lineHeight="28px">
             View Faculty
           </CardButton>
-        </ButtonWrapper>
+        </Link>
+      </ButtonWrapper>
       {/* </Link> */}
     </CourseCardWrapper>
   )

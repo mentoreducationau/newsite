@@ -26,6 +26,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   courseName
                   courseCode
                   studyLevel
+                  heroImage {
+                    gatsbyImageData(aspectRatio: 0.56)
+                  }
                 }
               }
             }
@@ -44,7 +47,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     )
 
     schools.data.allContentfulSchool.edges.forEach(({ node }) => {
-      const path = `/${node.heading.toLowerCase().replace(/ /g, "-")}`
+      for (var i = 0; i < node.faculties.length; i++) {
+      const path = `/schools/${node.faculties[i].heading.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`
       createPage({
         path,
         component: SchoolsTemplate,
@@ -52,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           pagePath: path,
           schoolData: node,
         },
-      })
+      })}
     })
   })
 
