@@ -37,7 +37,10 @@ const Dropdown = ({ options, setSearchText, excuteScroll }) => {
     <DropDownContainer ref={ref}>
       <DropDownHeader>
         <Focus />
-        <SearchInput onChange={e => onChangeHandler(e.target.value)} placeholder="Start typing or click to open menu" />
+        <SearchInput
+          onChange={e => onChangeHandler(e.target.value)}
+          placeholder="Start typing or click to open menu"
+        />
         <Arrow onClick={toggling} />
       </DropDownHeader>
       <DropDownListContainer isOpen={isOpen}>
@@ -64,13 +67,15 @@ const DropDownContainer = styled("div")`
 const DropDownHeader = styled("div")`
   height: 1.75rem;
   padding: 1.5rem 0.5em 2rem 0;
-  border-bottom: 1px solid #AAA6A6;
+  border-bottom: 1px solid #aaa6a6;
   font-size: 16px;
   font-family: PitchRegular;
   color: black;
   background: #ffffff;
   display: flex;
   justify-content: space-between;
+
+  position: relative;
 `
 
 const Arrow = styled.i`
@@ -116,7 +121,7 @@ const DropDownList = styled("ul")`
   }
 
   :hover {
-      cursor: pointer;
+    cursor: pointer;
   }
 `
 

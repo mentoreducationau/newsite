@@ -77,12 +77,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
       dropdownRef.current.getBoundingClientRect().top +
       window.pageYOffset -
       window.innerHeight / 10
-
-    if (position < window.scrollY) {
-      setShowBackToTop(true)
-    } else {
-      setShowBackToTop(false)
-    }
+    setShowBackToTop(position < window.scrollY)
   }
 
   useEffect(() => {
