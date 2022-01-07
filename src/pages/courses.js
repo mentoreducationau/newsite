@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import CoursesIntro from "../components/pages/courses/Intro"
 import { SectionContainer } from "../styles/ContainerStyles.css"
@@ -108,7 +108,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
       crumbLabel={heading}
       pageName={heading}
     >
-      <SEO title={heading} />
+      <Seo title={heading} />
       <ModalProvider backgroundComponent={FadingBackground}>
         <CoursesIntro heading={heading} intro={intro} />
         <div ref={dropdownRef}>

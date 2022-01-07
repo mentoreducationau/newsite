@@ -37,7 +37,7 @@ const Dropdown = ({ options, setSearchText, excuteScroll }) => {
     <DropDownContainer ref={ref}>
       <DropDownHeader>
         <Focus />
-        <SearchInput onChange={e => onChangeHandler(e.target.value)} placeholder="Start typing or click to open menu" autoFocus />
+        <SearchInput onChange={e => onChangeHandler(e.target.value)} placeholder="Start typing or click to open menu" />
         <Arrow onClick={toggling} />
       </DropDownHeader>
       <DropDownListContainer isOpen={isOpen}>

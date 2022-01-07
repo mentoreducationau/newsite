@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import { Paragraph } from "../../../styles/Typography.css"
+// import { Link } from "gatsby"
 import {
   CourseCardWrapper,
   CardButton,
@@ -41,7 +40,7 @@ const CourseCard = ({ course, toggleModal }) => {
         </CourseNameText>
         <ButtonWrapper>
           <a
-            href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"
+            href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=courseCodedc=courseadviser20"
             style={{ textDecoration: "none" }}
           >
             <CardButton>Enrol Online Now</CardButton>

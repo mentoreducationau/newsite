@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 import CoursesIntro from "../../components/pages/schools/Intro"
 import CourseCollection from "../../components/pages/courses/CourseCollection"
 import SignUpModal from "../../components/pages/studentInformationSession/SignUpModal"
@@ -48,7 +48,7 @@ const SchoolsTemplate = ({ pageContext, location }) => {
       crumbLabel={schoolData.heading}
       pageName="Schools"
     >
-      <SEO title={schoolData.heading} />
+      <Seo title={schoolData.heading} />
       <ModalProvider backgroundComponent={FadingBackground}>
         <CoursesIntro heading={schoolData.heading} intro={intro} />
         {schoolData.faculties.map(faculty =>

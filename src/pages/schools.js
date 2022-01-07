@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import CoursesIntro from "../components/pages/schools/Intro"
 import FacultyCollection from "../components/pages/schools/FacultyCollection"
 
@@ -18,7 +18,7 @@ const SchoolsPage = ({ pageContext, location, data }) => {
       crumbLabel="schools"
       pageName="Schools"
     >
-      <SEO title={pageHeading} />
+      <Seo title={pageHeading} />
       <CoursesIntro heading={pageHeading} intro={intro} />
       {schools.map((item, index) => (
           <FacultyCollection school={item} key={index} />

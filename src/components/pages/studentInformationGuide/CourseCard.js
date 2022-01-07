@@ -46,7 +46,6 @@ const CourseCard = ({ course }) => {
             href={course.enrolmentForm.file.url}
             target="_blank"
             rel="noreferrer"
-            rel="noopener"
           >
             <CardButton>Enrolment Form</CardButton>
           </a>
@@ -56,7 +55,6 @@ const CourseCard = ({ course }) => {
           href={course.courseGuide.file.url}
           target="_blank"
           rel="noreferrer"
-          rel="noopener"
         >
           <CardButton>Brouchure</CardButton>
         </a>

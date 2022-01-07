@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-
 import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 import { MainContainer } from "../../components/pages/about/index.css"
-import SEO from "../../components/seo"
+
 import { Headline, Title } from "../../styles/Typography.css"
 import Card from "../../components/pages/forms/Card"
 import Renderer from "../../rich-text-renderers/sample"
@@ -34,7 +34,7 @@ const CoursesList = ({ pageContext, location }) => {
       crumbLabel={facultyData.heading}
       pageName="Schools"
     >
-      <SEO title={facultyData.heading} />
+      <Seo title={facultyData.heading} />
       <Headline style={{ color: "#707070" }} banner>
         {facultyData.heading}
       </Headline>
@@ -50,7 +50,9 @@ const CoursesList = ({ pageContext, location }) => {
               {courseSection.courses.map((it, ix) => (
                 <Card
                   key={ix}
-                  heading={it.courseCode + " - " + it.studyLevel + " " + it.courseName}
+                  heading={
+                    it.courseCode + " - " + it.studyLevel + " " + it.courseName
+                  }
                   link={
                     "/courses/" +
                     it.courseCode.toLowerCase() +

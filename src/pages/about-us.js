@@ -1,8 +1,6 @@
 import React from "react"
-// import PageTransition from 'gatsby-plugin-page-transitions'
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Principles from "../components/pages/about/principles"
 import AboutTable from "../components/pages/about/about-table"
 import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
@@ -15,7 +13,7 @@ const About = ({ pageContext, location }) => {
       crumbLabel="About Us"
       pageName="About Us"
     >
-      <SEO title="About Us" />
+      <Seo title="About Us" />
       <div className="section">
         <div className="container">
           <h1>Welcome to Mentor Education</h1>

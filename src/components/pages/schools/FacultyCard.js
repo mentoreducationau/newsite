@@ -1,13 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Paragraph } from "../../../styles/Typography.css"
 import {
   CourseCardWrapper,
   CardButton,
   CourseNameText,
   ButtonWrapper,
 } from "./schools.css"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const FacultyCard = ({ faculty }) => {
   return (

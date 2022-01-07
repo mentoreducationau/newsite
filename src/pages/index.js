@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/layout"
 // import Hero from "../components/pages/landing/hero"
 import Publications from "../components/reuse/publications/publicatons"
@@ -14,7 +14,7 @@ import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-
 const IndexPage = ({pageContext, location}) => (
   // <LandingLayout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
   <Layout pageContext={pageContext} location={location} crumbLabel="Home" pageName="Home">
-    <SEO title="Home" />
+    <Seo title="Home" />
     {/* <Hero /> */}
     <TableDesc />
     <Publications />
