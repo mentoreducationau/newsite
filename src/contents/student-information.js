@@ -37,7 +37,7 @@ export const studentInformation = [
   {
     image: "studentinfo_gui",
     title: "Student Information Guide",
-    link: "/",
+    link: "/student-information-guide/",
     content:
       "Looking for further information about Mentor Education? Click here to download our Student Information Guide.   Click here to download the Mentor Education Student Code of Conduct.",
   },
