@@ -1,6 +1,6 @@
 const path = require("path")
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+    exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.
   // NOTE bookNowLinkText
@@ -104,7 +104,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node.faculties[i].heading
             .toLowerCase()
             .replace(/ & /g, "-")
-            .replace(/ /g, "-") + "-courses"
+            .replace(/ /g, "-")
         }`
         createPage({
           path,
