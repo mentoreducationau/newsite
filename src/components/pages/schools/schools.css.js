@@ -44,14 +44,14 @@ export const CourseCardWrapper = styled.div`
     max-width: 250px;
   }
 
-  max-width: 345px;
-  max-height: 452px;
+  width: 345px;
+  height: 452px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin: auto;
-  align-content: space-between;
+  justify-content: space-between;
   font-family: Futura Heavy;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 7%);

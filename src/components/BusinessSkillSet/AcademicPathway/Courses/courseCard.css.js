@@ -56,7 +56,7 @@ export const CourseCardWrapper = styled.div`
   height: 100%;
   padding: 1rem;
   margin: auto;
-  align-content: space-between;
+  justify-content: space-between;
   font-family: Futura Heavy;
   border-radius: 22px;
   border: 1px solid rgba(0, 0, 0, 7%);
