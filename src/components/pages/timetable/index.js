@@ -9,7 +9,7 @@ import Accordion from "../../Accordion/Accordion"
 import { courseArrayForTimetable } from "../../../contents/courseArrayForTimetable"
 
 const Timetable = () => {
-  const [openState, setOpenState] = useState(false)
+  const [openState, setOpenState] = useState(true)
 
   const onClick = () => {
     setOpenState(!openState)
@@ -30,13 +30,13 @@ const Timetable = () => {
             Mentor Education is currently running online virtual classes and
             on-campus in class study for the following qualifications:
           </Paragraph>
-          <TimeTableExpandButton
+          {/* <TimeTableExpandButton
             className="darken-3 waves-effect waves-light btn"
             onClick={() => onClick()}
           >
             Online Tutorials and Webinars
             <i className="material-icons left">play_circle_filled</i>
-          </TimeTableExpandButton>
+          </TimeTableExpandButton> */}
         </ParagraphWrapper>
         {courseArrayForTimetable.map((item, index) =>
           openState ? (

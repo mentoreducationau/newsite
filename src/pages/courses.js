@@ -7,7 +7,6 @@ import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import CoursesIntro from "../components/pages/courses/Intro"
 import { SectionContainer } from "../styles/ContainerStyles.css"
 import CourseCollection from "../components/pages/courses/CourseCollection"
-import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
 import CoursesSearch from "../components/pages/courses/CourseSearch"
 import CourseCard from "../components/pages/courses/CourseCard"
 import {
@@ -15,6 +14,7 @@ import {
   CardsWrapper,
   ScrollWrapper,
 } from "../components/pages/courses/courses.css"
+import DownloadSignUpModal from "../components/pages/courses/DownloadSignUpModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -30,6 +30,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
+  const [courseGuide, setCourseGuide] = useState("")
   const collectionsRef = useRef([])
   const dropdownRef = useRef(null)
   const courseCollections = []
@@ -45,9 +46,9 @@ const CoursesPage = ({ pageContext, location, data }) => {
     })
   })
 
-  const toggleModal = id => {
+  const toggleModal = courseGuide => {
     setOpacity(0)
-    setSelectedZoomWebinarId(id)
+    setCourseGuide(courseGuide)
     setIsOpen(!isOpen)
   }
 
@@ -94,6 +95,10 @@ const CoursesPage = ({ pageContext, location, data }) => {
       window.pageYOffset -
       window.innerHeight / 10
     window.scrollTo({ top: pos, behavior: "smooth" })
+  }
+
+  const onDownLoad = () => {
+    window.open(courseGuide, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -152,13 +157,14 @@ const CoursesPage = ({ pageContext, location, data }) => {
           <BackToTopArrow />
         </ScrollWrapper>
 
-        <SignUpModal
+        <DownloadSignUpModal
           isOpen={isOpen}
           opacity={opacity}
           toggleModal={toggleModal}
           afterOpen={afterOpen}
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
+          onDownLoad={onDownLoad}
         />
       </ModalProvider>
     </Layout>
@@ -180,6 +186,11 @@ export const CoursesPageData = graphql`
             studyLevel
             heroImage {
               gatsbyImageData(aspectRatio: 0.56)
+            }
+            courseGuide {
+              file {
+                url
+              }
             }
           }
         }

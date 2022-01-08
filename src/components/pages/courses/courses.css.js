@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { GlobalFormField } from "../../../styles/FormStyles.css"
 
 export const HeadingText = styled.p`
   font-size: 64px;
@@ -133,4 +134,74 @@ export const ScrollWrapper = styled.div`
   :hover{
     cursor: pointer;
   }
+`
+
+
+
+export const CustomFormStyled = styled.form`
+  width: 100%;
+  margin: 0;
+  display: flex;
+  gap: 72px;
+  align-items: center;
+`
+
+export const FormField = styled(GlobalFormField)`
+  width: 356px;
+  padding-bottom: 0;
+  margin-bottom: 22px;
+  label {
+    font-family: Futura Medium;
+    font-size: 22px;
+    line-height: 30px;
+    color: #464343;
+    padding-left: 1rem;
+    margin-bottom: 8px;
+  }
+
+  input {
+    border: 2px solid #707070 !important;
+    height: 55px !important;
+    width: 356px;
+    border-radius: 5px !important;
+    transition: none !important;
+  }
+`
+
+export const FormButton = styled.button`
+  font-family: Futura Heavy;
+  font-size: 43px;
+  line-height: 57px;
+  background: #df2f16;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 356px;
+  height: 87px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const RightWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const SignUpTitleText = styled.p`
+  font-size: 28px;
+  line-height: 37px;
+  margin-bottom: 0;
+`
+export const DescText = styled.p`
+  font-size: 22px;
+  line-height: 24px;
+  margin-bottom: 14px;
+  width: 72%;
+`
+
+export const SignFormWrapper = styled.div`
+  padding: 39px 56px;
 `

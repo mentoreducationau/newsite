@@ -45,7 +45,7 @@ const CourseCard = ({ course, toggleModal }) => {
           >
             <CardButton>Enrol Online Now</CardButton>
           </a>
-          <CardButton fontSize="21px" lineHeight="28px" onClick={toggleModal}>
+          <CardButton fontSize="21px" lineHeight="28px" onClick={()=>toggleModal(course.courseGuide.file.url)}>
             Download Course Guide
           </CardButton>
         </ButtonWrapper>
