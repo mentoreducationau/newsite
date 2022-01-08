@@ -4,10 +4,9 @@ const Focus = () => {
   return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="8"
-        height="20"
+        width="11.5"
+        height="28.09"
         viewBox="0 0 6.131 16.042"
-        style={{margin: "6px 0 0 6px"}}
       >
         <g
           id="Component_72_3"

@@ -1,11 +1,14 @@
 import React from "react"
 import { useState, useEffect, useRef } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import Focus from "./Focus"
 
 const Dropdown = ({ options, setSearchText, excuteScroll }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [inputText, setInputText] = useState("")
+  const [showFocus, setShowFocus] = useState(false)
   const ref = useRef(null)
+  const inputRef = useRef(null)
 
   const toggling = () => {
     setIsOpen(!isOpen)
@@ -31,16 +34,41 @@ const Dropdown = ({ options, setSearchText, excuteScroll }) => {
 
   const onChangeHandler = v => {
     setSearchText(v)
+    setInputText(v)
   }
+
+  const handleFocus = () => {
+    setShowFocus(true)
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setShowFocus(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [inputRef])
 
   return (
     <DropDownContainer ref={ref}>
       <DropDownHeader>
-        <Focus />
-        <SearchInput
-          onChange={e => onChangeHandler(e.target.value)}
-          placeholder="Start typing or click to open menu"
-        />
+        <InputWrapper>
+          <DisplayWrapper showFocus={showFocus}>
+            <DisplaySpan>{inputText}</DisplaySpan>
+            <Focus />
+          </DisplayWrapper>
+          <SearchInput
+            onChange={e => onChangeHandler(e.target.value)}
+            onFocus={handleFocus}
+            placeholder="Start typing or click to open menu"
+            ref={inputRef}
+          />
+        </InputWrapper>
+
         <Arrow onClick={toggling} />
       </DropDownHeader>
       <DropDownListContainer isOpen={isOpen}>
@@ -145,5 +173,39 @@ const SearchInput = styled("input")`
   height: inherit !important;
   font-size: 22px !important;
   font-family: Futura;
-  padding-left: 8px !important;
+  padding-left: 0.9rem !important;
+  color: white !important;
+  ::placeholder {
+    color: gray !important;
+  }
+`
+const DisplaySpan = styled("span")`
+  font-size: 22px;
+  font-family: Futura;
+`
+const blinking = keyframes`
+  from, to{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+`
+
+const DisplayWrapper = styled("div")`
+  position: absolute;
+  background-color: white;
+  display: flex;
+  z-index: 1;
+  left: 1%;
+  top: 1%;
+
+  svg {
+    display: ${props => (props.showFocus ? "block" : "none")};
+    animation: ${blinking} 1s infinite;
+  }
+`
+const InputWrapper = styled("div")`
+  position: relative;
+  width: 100%;
 `
