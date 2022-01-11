@@ -23,7 +23,7 @@ export const studentInformation = [
   {
     image: "studentinfo_studentlife",
     title: "Student Life",
-    link: "/",
+    link: "/student-life/",
     content:
       "Looking for study tips, career guidance or other student related articles? Visit the Mentor Education Student Life page for to find out more.",
   },

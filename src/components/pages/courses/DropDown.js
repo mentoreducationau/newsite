@@ -6,7 +6,7 @@ import Focus from "./Focus"
 const Dropdown = ({ options, setSearchText, excuteScroll }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [inputText, setInputText] = useState("")
-  const [showFocus, setShowFocus] = useState(false)
+  const [showFocus, setShowFocus] = useState(true)
   const ref = useRef(null)
   const inputRef = useRef(null)
 

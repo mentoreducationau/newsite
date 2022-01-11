@@ -1,6 +1,6 @@
 const path = require("path")
 
-    exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.
   // NOTE bookNowLinkText
@@ -48,15 +48,19 @@ const path = require("path")
 
     schools.data.allContentfulSchool.edges.forEach(({ node }) => {
       for (var i = 0; i < node.faculties.length; i++) {
-      const path = `/schools/${node.faculties[i].heading.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`
-      createPage({
-        path,
-        component: SchoolsTemplate,
-        context: {
-          pagePath: path,
-          schoolData: node,
-        },
-      })}
+        const path = `/schools/${node.faculties[i].heading
+          .toLowerCase()
+          .replace(/ & /g, "-")
+          .replace(/ /g, "-")}`
+        createPage({
+          path,
+          component: SchoolsTemplate,
+          context: {
+            pagePath: path,
+            schoolData: node,
+          },
+        })
+      }
     })
   })
 
@@ -100,12 +104,10 @@ const path = require("path")
 
     faculties.data.allContentfulSchool.edges.forEach(({ node }) => {
       for (var i = 0; i < node.faculties.length; i++) {
-        const path = `/${
-          node.faculties[i].heading
-            .toLowerCase()
-            .replace(/ & /g, "-")
-            .replace(/ /g, "-")
-        }`
+        const path = `/${node.faculties[i].heading
+          .toLowerCase()
+          .replace(/ & /g, "-")
+          .replace(/ /g, "-")}`
         createPage({
           path,
           component: CoursesListTemplate,
@@ -230,6 +232,110 @@ const path = require("path")
         }
       }
     })
+  })
+
+  const coursesAboutSIS = await graphql(`
+    query StudentInformationSessionQuery1 {
+      allContentfulStudentInformationSession {
+        edges {
+          node {
+            course {
+              courseCode
+              courseName
+              coreUnits {
+                unitCode
+                unitName
+                unitType
+              }
+              electiveUnits {
+                unitCode
+                unitName
+                unitType
+              }
+              entryRequirements {
+                raw
+              }
+              intro {
+                raw
+              }
+              landingIntro {
+                raw
+              }
+              learningExperience {
+                raw
+              }
+              outcomes {
+                raw
+              }
+              overview {
+                raw
+              }
+              paymentOptions {
+                raw
+              }
+              unitsDelivery {
+                raw
+                references {
+                  ... on ContentfulCoreUnitGroup {
+                    id
+                    coreUnits {
+                      unitName
+                      unitCode
+                    }
+                  }
+                  ... on ContentfulElectiveUnitGroup {
+                    id
+                    electiveUnitGroup {
+                      unitName
+                      unitCode
+                    }
+                  }
+                }
+              }
+              studyLevel
+              heroImage {
+                gatsbyImageData
+                file {
+                  url
+                }
+              }
+              pricing {
+                salePrice
+              }
+            }
+          }
+        }
+      }
+    }
+  `).then(coursesAboutSIS => {
+    if (coursesAboutSIS.errors) {
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
+    }
+    // Create pages for each markdown file.
+    const CoursesTemplate = path.resolve(
+      `src/templates/CoursesTemplate/index.js`
+    )
+    coursesAboutSIS.data.allContentfulStudentInformationSession.edges.forEach(
+      ({ node }) => {
+        const path = `/${
+          "courses/" +
+          node.course.courseCode.toLowerCase() +
+          "-" +
+          node.course.studyLevel.toLowerCase().replace(/ /g, "-") +
+          "_" +
+          node.course.courseName.toLowerCase().replace(/ /g, "-")
+        }`
+        createPage({
+          path,
+          component: CoursesTemplate,
+          context: {
+            pagePath: path,
+            courseData: node.course,
+          },
+        })
+      }
+    )
   })
 
   const studentLifeArticles = await graphql(`
@@ -365,15 +471,15 @@ const path = require("path")
 
     studentInformationSessions.data.allContentfulStudentInformationSession.edges.forEach(
       ({ node }) => {
-        const path = `/student-information-session/${node.course.courseCode.toLowerCase() +
+        const path = `/student-information-session/${
+          node.course.courseCode.toLowerCase() +
           "-" +
-          node.course.studyLevel
-            .toLowerCase()
-            .replace(/ /g, "-") +
+          node.course.studyLevel.toLowerCase().replace(/ /g, "-") +
           "_" +
-          node.course.courseName
-            .toLowerCase()
-            .replace(/ /g, "-") + "-" + node.sessionDate.replace(/-/g, "")}`
+          node.course.courseName.toLowerCase().replace(/ /g, "-") +
+          "-" +
+          node.sessionDate.replace(/-/g, "")
+        }`
         createPage({
           path,
           component: studentInformationSessionsTemplate,
@@ -386,7 +492,14 @@ const path = require("path")
     )
   })
 
-  return Promise.all([schools, faculties, courses, studentLifeArticles, studentInformationSessions])
+  return Promise.all([
+    schools,
+    faculties,
+    courses,
+    studentLifeArticles,
+    studentInformationSessions,
+    coursesAboutSIS,
+  ])
 }
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

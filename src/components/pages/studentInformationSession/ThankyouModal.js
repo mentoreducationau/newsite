@@ -64,7 +64,6 @@ export default function ThankyouModal({
             <IconWrapper>
               <StaticImage
                 src="../../../images/svg/modal_cancel_icon.svg"
-                style={{ width: "100%" }}
                 onClick={() => toggleModal()}
               />
             </IconWrapper>

@@ -22,6 +22,9 @@ export default function SignUpModal({
   toggleModal,
   zoomWebinarId,
 }) {
+  const handleSubmit = () => {
+    toggleModal()
+  }
   return (
     <div>
       <StyledModal
@@ -33,7 +36,7 @@ export default function SignUpModal({
         opacity={opacity}
       >
         <SignFormWrapper>
-          <SignUpForm zoomWebinarId={zoomWebinarId} />
+          <SignUpForm zoomWebinarId={zoomWebinarId} handleSubmit={handleSubmit} />
         </SignFormWrapper>
       </StyledModal>
     </div>

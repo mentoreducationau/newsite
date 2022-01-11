@@ -184,6 +184,7 @@ export const CancelWrapper = styled.div`
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
   padding: 24px 25px 24px 0;
 `
 export const IconWrapper = styled.div`
