@@ -14,7 +14,8 @@ import {
   CardsWrapper,
   ScrollWrapper,
 } from "../components/pages/courses/courses.css"
-import DownloadSignUpModal from "../components/pages/courses/DownloadSignUpModal"
+import DownloadModal from "../components/Modals/DownloadModal"
+// import DownloadSignUpModal from "../components/pages/courses/DownloadSignUpModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -157,7 +158,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
           <BackToTopArrow />
         </ScrollWrapper>
 
-        <DownloadSignUpModal
+        <DownloadModal
           isOpen={isOpen}
           opacity={opacity}
           toggleModal={toggleModal}

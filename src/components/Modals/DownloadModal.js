@@ -1,12 +1,12 @@
 import React from "react"
+import styled from "styled-components"
 import Modal from "styled-react-modal"
-import { DownloadSignUpForm } from "./DownloadSignUpForm"
-import { SignFormWrapper } from "./courses.css"
+import { DownloadForm } from "./DownloadForm"
 
 const StyledModal = Modal.styled`
-  width: 904px;
-  height: 429px;
-  margin-top: 139px;
+  width: 768px;
+  height: 395px;
+  margin-top: 200px;
   display: flex;
   background-color: white;
   border: none;
@@ -14,18 +14,20 @@ const StyledModal = Modal.styled`
   opacity: 1;
   transition : all 0.3s ease-in-out;`
 
-export default function DownloadSignUpModal({
+export const FormWrapper = styled.div`
+  padding: 39px 49px;
+`
+
+export default function DownloadModal({
   isOpen,
   opacity,
   afterOpen,
   beforeClose,
   toggleModal,
   zoomWebinarId,
-  onDownLoad,
 }) {
   const handleSubmit = () => {
     toggleModal()
-    onDownLoad()
   }
   return (
     <div>
@@ -37,9 +39,12 @@ export default function DownloadSignUpModal({
         onEscapeKeydown={toggleModal}
         opacity={opacity}
       >
-        <SignFormWrapper>
-          <DownloadSignUpForm zoomWebinarId={zoomWebinarId} handleSubmit={handleSubmit} />
-        </SignFormWrapper>
+        <FormWrapper>
+          <DownloadForm
+            zoomWebinarId={zoomWebinarId}
+            handleSubmit={handleSubmit}
+          />
+        </FormWrapper>
       </StyledModal>
     </div>
   )
