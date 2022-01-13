@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
-import { GlobalFormField } from "../../../styles/FormStyles.css"
 
 export const HeadingText = styled.p`
   font-size: 64px;

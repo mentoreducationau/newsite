@@ -3,9 +3,9 @@ import styled from "styled-components"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import CoursesIntro from "../../components/pages/schools/Intro"
+import CoursesIntro from "../../components/pages/courses/Intro"
 import CourseCollection from "../../components/pages/courses/CourseCollection"
-import SignUpModal from "../../components/pages/studentInformationSession/SignUpModal"
+import DownloadModal from "../../components/Modals/DownloadModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -56,7 +56,7 @@ const SchoolsTemplate = ({ pageContext, location }) => {
             <CourseCollection courseCollection={courseSection} toggleModal={toggleModal} key={idx} />
           ))
         )}
-        <SignUpModal
+        <DownloadModal
           isOpen={isOpen}
           opacity={opacity}
           toggleModal={toggleModal}

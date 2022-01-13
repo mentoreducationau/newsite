@@ -29,6 +29,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   heroImage {
                     gatsbyImageData(aspectRatio: 0.56)
                   }
+                  courseGuide {
+                    file {
+                      url
+                    }
+                  }
                 }
               }
             }
