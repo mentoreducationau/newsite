@@ -102,7 +102,7 @@ export const Container = styled.div`
     }};
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     max-width: ${props => {
       switch (props.size) {
         case "sm":
@@ -170,7 +170,7 @@ export const SectionContainer = styled.div`
   margin-bottom: ${props => props.marginBottom ? props.marginBottom : "0"}; 
   
   @media(max-width: 1280px) {
-    max-width: 1200px;
-    width: 90%;
+    width: ${props => props.mobWidth ? props.mobWidth : "90%"};
+    margin-bottom: ${props => props.mobMarginBottom && props.mobMarginBottom}; 
   }
 `

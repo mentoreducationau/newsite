@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { SectionContainer } from "../../../styles/ContainerStyles.css"
 import { GlobalFormField } from "../../../styles/FormStyles.css"
 
 export const HeadingText = styled.p`
@@ -7,12 +8,27 @@ export const HeadingText = styled.p`
   font-weight: 800;
   text-align: center;
   margin-bottom: 33px;
+
+  @media (max-width: 835px) {
+    font-size: 42px;
+    line-height: 56px;
+    margin-bottom: 43px;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 53px;
+    line-height: 70px;
+  }
 `
 export const IntroText = styled.p`
   font-size: 18px;
   line-height: 26.1px;
   font-weight: 800;
   margin-bottom: 0;
+
+  @media (max-width: 835px) {
+    font-weight: 500;
+  }
 `
 export const CourseCollectionHeadingText = styled.p`
   font-size: 46px;
@@ -20,24 +36,43 @@ export const CourseCollectionHeadingText = styled.p`
   text-align: center;
   margin-bottom: 45px;
   font-weight: 800;
+
+  @media (max-width: 835px) {
+    font-size: 29px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 36px;
+    line-height: 44.55px;
+  }
 `
 export const CardsWrapper = styled.div`
-  //   --repeat: auto-fit;
-  --repeat: 3;
+  --repeat: auto-fit;
+  
+  @media (max-width: 1280px) {
+    --repeat: 2;
+    grid-template-columns: 1fr 1fr;
+    max-width: 760px;
+  }
 
-  //   @media (min-width: calc(250px * 5)) {
-  //     --repeat: 3;
-  //   }
+  @media (min-width: 1280px) {
+    --repeat: 3;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1150px;
+  }
+
+  @media (max-width: 835px) {
+    --repeat: 1;
+    grid-template-columns: 1fr;
+  }
+
 
   display: grid;
-  grid-template-columns: repeat(
-    var(--repeat, auto-fit),
-    minmax(calc(250px * 1), 1fr)
-  );
   grid-template-rows: auto;
-  row-gap: 62px;
+  row-gap: 110px;
   column-gap: 34px;
-  width: 100%;
+  margin: 0 auto;
 `
 
 export const CourseCardWrapper = styled.div`
@@ -106,6 +141,10 @@ export const SearchText = styled.p`
   line-height: 32.2px;
   font-weight: 800;
   margin-bottom: 0;
+
+  @media(max-width: 1280px) {
+    font-size: 20px;
+  }
 `
 export const BackToTopArrow = styled.i`
   border: solid gray;
@@ -131,12 +170,10 @@ export const ScrollWrapper = styled.div`
   height: 50px;
   box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 41%), 0px 0px 0px 0px rgb(0 0 0 / 0%);
 
-  :hover{
+  :hover {
     cursor: pointer;
   }
 `
-
-
 
 export const CustomFormStyled = styled.form`
   width: 100%;
@@ -204,4 +241,16 @@ export const DescText = styled.p`
 
 export const SignFormWrapper = styled.div`
   padding: 39px 56px;
+`
+export const SearchWrapper = styled(SectionContainer)`
+  margin-bottom: 58px;
+  align-items: baseline;
+  gap: 35px;
+  position: relative;
+
+  @media (max-width: 835px) {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 110px;
+  }
 `

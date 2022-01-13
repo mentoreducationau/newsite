@@ -90,6 +90,10 @@ export default Dropdown
 
 const DropDownContainer = styled("div")`
   width: 50%;
+
+  @media(max-width: 835px) {
+    width: 100%;
+  }
 `
 
 const DropDownHeader = styled("div")`
@@ -123,8 +127,8 @@ const DropDownListContainer = styled("div")`
   transition: max-height 0.2s ease-in-out;
   overflow: hidden;
   width: 50% !important;
-  @media (max-width: 451px) {
-    width: ${props => (props.dropWidth ? "90%" : "43%")};
+  @media(max-width: 835px) {
+    width: 100% !important;
   }
 `
 
@@ -178,10 +182,17 @@ const SearchInput = styled("input")`
   ::placeholder {
     color: gray !important;
   }
+
+  @media(max-width: 1280px) {
+    font-size: 20px;
+  }
 `
 const DisplaySpan = styled("span")`
   font-size: 22px;
   font-family: Futura;
+  @media(max-width: 1280px) {
+    font-size: 20px;
+  }
 `
 const blinking = keyframes`
   from, to{

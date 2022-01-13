@@ -67,7 +67,7 @@ export const BottomBannerContainer = styled.div`
     background-color: #d32f2f;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     a {
       width: 40%;
     }

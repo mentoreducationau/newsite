@@ -216,7 +216,7 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   color: white;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     width: 80%;
   }
 `
@@ -240,7 +240,7 @@ export const HostWrapper = styled.div`
   align-items: center;
   gap: 49px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     gap: 20px;
   }
 `

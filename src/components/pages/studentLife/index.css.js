@@ -162,7 +162,7 @@ export const CardsWrapper = styled.div`
 export const ArticleInfoWrapper = styled.div`
   padding: 2.5rem;
 
-  @media(max-width: 1200px) {
+  @media(max-width: 1280px) {
     padding: 1.25rem;
   }
 

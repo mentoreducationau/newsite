@@ -5,7 +5,7 @@ import CourseCard from "./CourseCard"
 
 const CourseCollection = ({ courseCollection, toggleModal }) => {
   return (
-    <SectionContainer marginBottom="70px">
+    <SectionContainer marginBottom="58px" mobMarginBottom="137.5px">
       <CourseCollectionHeadingText>{courseCollection.heading}</CourseCollectionHeadingText>
       <CardsWrapper>
         {courseCollection.courses.map((it, idx) => (

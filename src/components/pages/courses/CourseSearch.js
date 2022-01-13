@@ -1,14 +1,13 @@
 import React from "react"
-import { SectionContainer } from "../../../styles/ContainerStyles.css"
-import { SearchText } from "./courses.css"
+import { SearchText, SearchWrapper } from "./courses.css"
 import Dropdown from "./DropDown"
 
 const CoursesSearch = ({options, setSearchText, excuteScroll}) => {
   return (
-    <SectionContainer marginBottom="58px" row style={{alignItems: "baseline", gap: "35px", position: "relative"}}>
+    <SearchWrapper row mobWidth="75%">
         <SearchText>Quick select field of study: </SearchText>
         <Dropdown options={options} setSearchText={setSearchText} excuteScroll={excuteScroll} />
-    </SectionContainer>
+    </SearchWrapper>
   )
 }
 export default CoursesSearch
