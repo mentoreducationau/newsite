@@ -1,10 +1,9 @@
 import styled from "styled-components"
 
 export const CourseCardWrapper = styled.div`
-
-@media(min-width: 250 * 3px){
+  @media (min-width: 250 * 3px) {
     max-width: 250px;
-}
+  }
 
   width: 100%;
 
@@ -41,7 +40,6 @@ export const CardsWrapper = styled.div`
     --repeat: 3;
   }
 
-
   display: grid;
   grid-template-columns: repeat(
     var(--repeat, auto-fit),
@@ -50,6 +48,7 @@ export const CardsWrapper = styled.div`
   grid-template-rows: auto;
   gap: 27px;
   width: 100%;
+  margin-bottom: 3.5rem;
 
   ${props => props.theme.tablet`
     width: 100%;

@@ -7,24 +7,8 @@ import Intro from "./Intro"
 import { CardsWrapper } from "../../ImageGrid/index.css"
 import CardWithBotton from "./CardWithBotton"
 
-const StudentForms = () => {
-  const data = [
-    {
-      title: "",
-      cards: [
-        {
-          title: "",
-          title_link: "",
-          buttons: [
-            {
-              title: "",
-              link: "",
-            },
-          ],
-        },
-      ],
-    },
-  ]
+const StudentForms = ({ formsData }) => {
+
   return (
     <>
       <TitleBanner style={{ backgroundAttachment: "fixed" }}>
@@ -34,12 +18,14 @@ const StudentForms = () => {
       </TitleBanner>
       <MainContainer>
         <Intro />
-        {data.map((item, index) => (
+        {formsData.map((item, index) => (
           <React.Fragment key={index}>
-            <Title style={{ textAlign: "center" }} course>{item.title}</Title>
+            <Title style={{ textAlign: "center" }} course>
+              {item.facultyName}
+            </Title>
             <CardsWrapper>
-              {item.cards.map((it, idx)=>(
-                  <CardWithBotton key={idx} card={it} />
+              {item.course.map((it, idx) => (
+                <CardWithBotton key={idx} course={it} />
               ))}
             </CardsWrapper>
           </React.Fragment>

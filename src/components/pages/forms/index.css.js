@@ -51,25 +51,32 @@ export const ParagraphWrapper = styled.div`
 `
 
 export const ButtonWrapper = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 `
 export const RightWrapper = styled.div`
   background-image: url(${cardImg});
   background-repeat: no-repeat;
   background-position: top center;
   min-width: 95px;
-  height: 135px;
+  height: 263px;
   background-color: #2a496b;
   border-radius: 0 22px 22px 0;
 `
 export const LeftWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
   a: hover {
-      text-decoration: underline;
+    text-decoration: underline;
   }
 `
 
 export const CardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 263px;
+`
+export const ButtonsGroup = styled.div`
+  
 `
