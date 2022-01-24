@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react"
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, { Navigation } from "swiper/core"
+// import { Swiper, SwiperSlide } from "swiper/react"
+// import SwiperCore, { Navigation } from "swiper/core"
 
 import { courses } from "../BusinessSkillSet/courses"
 
 import CourseCard from "./CourseCard"
 
 import { CardsHeaderWrapper, TitleWrapper, CardsHeader } from "./index.css"
-import "../../../node_modules/swiper/swiper-bundle.min.css"
+// import "../../../node_modules/swiper/swiper-bundle.min.css"
 
-SwiperCore.use([Navigation])
+// SwiperCore.use([Navigation])
 
 const QualificationPathway = () => {
   const types = [
@@ -44,7 +44,7 @@ const QualificationPathway = () => {
         </TitleWrapper>
       </CardsHeaderWrapper>
 
-      <Swiper
+      {/* <Swiper
         spaceBetween={20}
         slidesPerView={1}
         navigation
@@ -66,7 +66,7 @@ const QualificationPathway = () => {
               <CourseCard course={item} />
             </SwiperSlide>
           ))}
-      </Swiper>
+      </Swiper> */}
     </>
   )
 }
