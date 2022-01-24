@@ -1,5 +1,4 @@
 import * as React from "react"
-// import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo/Seo"
 import MELMSLoginTemplate from "../templates/MELMSLoginTemplate"
 import Layout from "../components/layout"
