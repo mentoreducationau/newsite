@@ -237,16 +237,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             course {
               courseCode
               courseName
-              coreUnits {
-                unitCode
-                unitName
-                unitType
-              }
-              electiveUnits {
-                unitCode
-                unitName
-                unitType
-              }
               entryRequirements {
                 raw
               }
