@@ -1,228 +1,166 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+import { AboutUsContainer } from "../../pages/about/index.css"
+
+const GraduateGroupWrapper = styled.div`
+  margin: 0 auto 20px;
+  text-align: center;
+`
+const TitleText = styled.h1`
+  text-align: center;
+  padding-bottom: 1rem;
+`
+const GraduateWrapper = styled.div`
+  width: 33.3333333333%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+
+  @media (min-width: 993px) {
+    width: 16.6666666667%;
+  }
+`
+const Wrapper = styled.div`
+  padding: 2rem;
+`
 
 const WhereOurGraduatesWork = () => {
   return (
-    <div>
-      <div
-        className="section"
-        style={{
-          padding: `2rem`,
-        }}
-      >
-        <div
-          className=""
-          data-sal="fade"
-          data-sal-delay="100"
-          data-sal-duration="500"
-          data-sal-easing="ease"
-        >
-          <h1
-            className="center-align"
-            style={{
-              paddingBottom: `1rem`,
-            }}
-          >
-            Where Our Graduates Now Work
-          </h1>
+    <AboutUsContainer marginBottom="16rem">
+      <Wrapper>
+        <div>
+          <TitleText>Where Our Graduates Now Work</TitleText>
         </div>
 
-        <div className="row center-align">
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="100"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+        <GraduateGroupWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad1.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
               alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="200"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad2.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-2"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="200"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad3.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-3"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="300"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad4.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-4"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="400"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad5.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-5"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="500"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
-              src="./images/grad6.png"
+              src="./images/6.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-6"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="600"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad7.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-7"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="700"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad8.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-8"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="800"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad9.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-9"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="850"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad10.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-10"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="900"
-            data-sal-duration="500"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad11.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-11"
+              alt="graduates-img-1"
             />
-          </div>
-          <div
-            className="col s4 l2"
-            data-sal="fade"
-            data-sal-delay="950"
-            data-sal-duration="600"
-            data-sal-easing="ease"
-          >
+          </GraduateWrapper>
+          <GraduateWrapper>
             <StaticImage
               src="./images/grad12.png"
               style={{
                 height: `100%`,
-                width: `auto`
+                width: `auto`,
               }}
-              alt="graduates-img-12"
+              alt="graduates-img-1"
             />
-          </div>
-        </div>
-      </div>
-    </div>
+          </GraduateWrapper>
+        </GraduateGroupWrapper>
+      </Wrapper>
+    </AboutUsContainer>
   )
 }
 

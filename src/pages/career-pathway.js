@@ -12,7 +12,7 @@ import {
   ImageWrapper,
   OneImgWrapper,
   TextWrapper,
-} from "../components/pages/about/index.css"
+} from "../components/pages/about-old/index.css"
 import { Headline, Paragraph, ParagraphMedium } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { pathwayCourses, businessArray } from "../contents/career-pathway"
@@ -20,7 +20,7 @@ import Img from "gatsby-image"
 
 const CareerPathwayPage = ({ pageContext, location }) => {
   const imageData = useStaticQuery(graphql`
-    query MyQuery2 {
+    query MyQuery90 {
       allFile(
         filter: {
           extension: { regex: "/(png)/" }
