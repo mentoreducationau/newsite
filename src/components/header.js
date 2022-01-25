@@ -1,13 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import "materialize-css/dist/css/materialize.min.css"
 import { Typography } from "../styles/Typography.css"
-
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
-
 class Header extends Component {
   componentDidMount() {
     const elem = document.querySelector(".sidenav")

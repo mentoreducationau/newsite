@@ -1,7 +1,6 @@
 import React from "react"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
 import { CourseCollectionHeadingText, RequestButton, CourseTable } from "./offers.css"
-import { Button } from "../../../styles/ButtonStyles.css"
 
 const CardCollection = ({ cardCollection }) => {
   return (

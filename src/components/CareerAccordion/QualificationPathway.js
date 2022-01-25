@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react"
 
 import { courses } from "../BusinessSkillSet/courses"
 
-import CourseCard from "./CourseCard"
+// import CourseCard from "./CourseCard"
 
 import { CardsHeaderWrapper, TitleWrapper, CardsHeader } from "./index.css"
 // import "../../../node_modules/swiper/swiper-bundle.min.css"

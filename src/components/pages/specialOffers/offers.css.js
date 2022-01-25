@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { SectionContainer } from "../../../styles/ContainerStyles.css"
 import { Button } from "../../../styles/ButtonStyles.css"
 
 export const HeadingText = styled.p`

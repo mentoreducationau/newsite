@@ -3,14 +3,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import PageTransition from "gatsby-plugin-page-transitions"
 import { Helmet } from "react-helmet"
-import "materialize-css/dist/css/materialize.min.css"
 import { Typography } from "../../../styles/Typography.css"
 import Footer from "../../Footer/footer"
 import "../../layout.css"
 import SessionHeader from "./SessionHeader"
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
 
 const SessionLayout = ({ children, pageContext, location, crumbLabel, background, sessionData, status }) => {
     const data = useStaticQuery(graphql`

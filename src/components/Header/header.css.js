@@ -5,7 +5,7 @@ import bgImg from "../../images/header-hero.jpeg"
 
 export const HeaderWrapper = styled.div`
   min-height: 91vh;
-  background: url(${props => props.background ? props.background : bgImg});
+  background: url(${props => (props.background ? props.background : bgImg)});
   background-size: cover;
   background-color: #cccccc;
   margin: 0 auto;
@@ -39,10 +39,11 @@ export const LogoWrapepr = styled(Link)`
   display: flex;
   align-items: center;
   color: ${props => (props.mobileMenu ? "white" : "red")};
-  font-size: 15px;
+  font-size: 1rem;
   line-height; 20px;
   font-weight: 600;
   white-space: nowrap;
+  text-decoration: none;
 
   @media (max-width: 1100px) {
     white-space: unset;
@@ -80,6 +81,8 @@ export const HeaderLink = styled(Link)`
   line-height: 0;
   margin: 0 0.5rem;
   padding: 0 1rem;
+  background-color: transparent;
+  text-decoration: none;
 
   :hover {
     border-bottom: 2px solid grey;
@@ -149,7 +152,9 @@ export const IconWrapper = styled.div`
   }
 `
 export const IconImg = styled.img`
-  margin-bottom: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 `
 export const ColorRectWrapper = styled.div`
   display: flex;

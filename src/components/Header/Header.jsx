@@ -66,7 +66,11 @@ const Header = ({ siteTitle, pageName, background }) => {
 
   return (
     <>
-      <HeaderWrapper className="container-hero" ref={wrapperRef} background={background}>
+      <HeaderWrapper
+        className="container-hero"
+        ref={wrapperRef}
+        background={background}
+      >
         <NavWrapper ref={ref}>
           <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
           <LinksWrapper>
@@ -90,10 +94,12 @@ const Header = ({ siteTitle, pageName, background }) => {
             />
           </IconWrapper>
         </NavWrapper>
-        <div className="section ">
-          <div className="row ">
+        <div style={{ padding: "1rem 0" }}>
+          <div style={{ margin: "0 auto 20px" }}>
             <DesktopContainer>
-              <ColorShapeWrapper className="col m12 l6 valign-wrapper">
+              <ColorShapeWrapper
+                style={{ display: "flex" }}
+              >
                 <ColorShape marginTop="0px" opacity="0.2" width="750px" />
                 <ColorShape marginTop="-290px" opacity="0.4" width="690px" />
                 <ColorShape

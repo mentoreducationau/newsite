@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-import { TitleBanner, MainContainer, ParagraphWrapper, TimeTableExpandButton } from "./index.css"
+import { TitleBanner, MainContainer, ParagraphWrapper } from "./index.css"
 import { Headline } from "../../../styles/Typography.css"
 import { Container } from "../../../styles/ContainerStyles.css"
 import { Paragraph } from "../../../styles/Typography.css"
@@ -11,9 +11,9 @@ import { courseArrayForTimetable } from "../../../contents/courseArrayForTimetab
 const Timetable = () => {
   const [openState, setOpenState] = useState(true)
 
-  const onClick = () => {
-    setOpenState(!openState)
-  }
+  // const onClick = () => {
+  //   setOpenState(!openState)
+  // }
 
   return (
     <>
