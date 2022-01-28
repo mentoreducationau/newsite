@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
-
+import { Link } from "gatsby"
 export const HeadingText = styled.p`
   font-size: 64px;
   line-height: 84px;
@@ -74,7 +74,7 @@ export const CardsWrapper = styled.div`
   margin: 0 auto;
 `
 
-export const CourseCardWrapper = styled.div`
+export const CourseCardWrapper = styled(Link)`
   @media (min-width: 250 * 3px) {
     max-width: 250px;
   }
@@ -129,11 +129,13 @@ export const CourseNameText = styled.p`
   padding: 0 32px;
 `
 export const ButtonWrapper = styled.div`
+z-index: 2;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 0 21px 51px 21px;
   gap: 9px;
+  /* position: absolute; */
 `
 export const SearchText = styled.p`
   font-size: 22px;

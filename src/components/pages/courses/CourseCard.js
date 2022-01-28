@@ -7,10 +7,18 @@ import {
   ButtonWrapper,
 } from "./courses.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const CourseCard = ({ course, toggleModal }) => {
   return (
-    <CourseCardWrapper>
+    <CourseCardWrapper to={
+      "/courses/" +
+      course.courseCode.toLowerCase() +
+      "-" +
+      course.studyLevel.toLowerCase().replace(/ /g, "-") +
+      "_" +
+      course.courseName.toLowerCase().replace(/ /g, "-")
+    }>
       {/* <Link
         to={
           "/courses/" +
