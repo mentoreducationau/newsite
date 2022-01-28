@@ -26,11 +26,11 @@ const App = ({ element }) => {
 
   return (
     // <ThemeProvider theme={width < 1200 ? Theme.mobile : Theme.desktop}>
-    <ThemeProvider theme={theme}>
-      {/* <GlobalStyles />
-      <Typography /> */}
+//    <ThemeProvider theme={theme}>
+      /* <GlobalStyles />
+      <Typography /> */
       <ActiveMenuProvider>{element}</ActiveMenuProvider>
-    </ThemeProvider>
+   // </ThemeProvider>
   )
 }
 
