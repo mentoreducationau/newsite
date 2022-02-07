@@ -460,9 +460,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         const path = `/student-information-session/${
           node.course.courseCode.toLowerCase() +
           "-" +
-          node.course.studyLevel.toLowerCase().replace(/ /g, "-") +
+          node.course.studyLevel.toLowerCase().replace(" ", "-") +
           "_" +
-          node.course.courseName.toLowerCase().replace(/ /g, "-") +
+          node.course.courseName.toLowerCase().replace(" ", "-") +
           "-" +
           node.sessionDate.replace(/-/g, "")
         }`
