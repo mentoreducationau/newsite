@@ -1,27 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { Paragraph, Subtitle } from "../../../styles/Typography.css"
-import { ArticleWrapper, ArticleInfoWrapper, LinkText } from "./index.css"
+import { ArticleWrapper, ArticleInfoWrapper, LinkText, ArticleImage } from "./index.css"
+import { NoneDecorationLink } from "../../../styles/ButtonStyles.css"
 
 const Article = ({ title, author, date, image }) => {
   return (
-    <Link
+    <NoneDecorationLink
       to={
         "/student-life/" +
         title.toLowerCase().replaceAll(" ", "-").replaceAll("/", "-")
       }
     >
       <ArticleWrapper>
-        <GatsbyImage
-          imgStyle={{
-            width: "100%",
-            borderTopLeftRadius: "10px",
-            borderTopRightRadius: "10px",
-          }}
+        <ArticleImage
           image={getImage(image)}
           alt="test"
         />
+
         <ArticleInfoWrapper>
           <Subtitle>{title}</Subtitle>
           <Paragraph>
@@ -39,17 +35,17 @@ const Article = ({ title, author, date, image }) => {
             hightest mountain? Why, 35 years ago, fly the Atlantic? Why does
             Rice play Texas?
           </Paragraph>
-          <Link
+          <NoneDecorationLink
             to={
               "/student-life/" +
               title.toLowerCase().replaceAll(" ", "-").replaceAll("/", "-")
             }
           >
             <LinkText>View Article</LinkText>
-          </Link>
+          </NoneDecorationLink>
         </ArticleInfoWrapper>
       </ArticleWrapper>
-    </Link>
+    </NoneDecorationLink>
   )
 }
 export default Article

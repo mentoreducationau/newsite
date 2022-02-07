@@ -74,7 +74,7 @@ export const CardsWrapper = styled.div`
   margin: 0 auto;
 `
 
-export const CourseCardWrapper = styled(Link)`
+export const CourseCardWrapper = styled.div`
   @media (min-width: 250 * 3px) {
     max-width: 250px;
   }
@@ -87,6 +87,7 @@ export const CourseCardWrapper = styled(Link)`
   text-align: center;
   margin: auto;
   justify-content: space-between;
+  gap: 20px;
   font-family: Futura Heavy;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 7%);
@@ -125,7 +126,7 @@ export const CourseNameText = styled.p`
   font-size: 19px;
   line-height: 22px;
   font-weight: 800;
-  margin-bottom: 40.3px;
+  margin-bottom: 0;
   padding: 0 32px;
 `
 export const ButtonWrapper = styled.div`

@@ -98,7 +98,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
-  const onDownLoad = () => {
+  const onDownload = () => {
     window.open(courseGuide, '_blank', 'noopener,noreferrer')
   }
 
@@ -165,7 +165,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
           afterOpen={afterOpen}
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
-          onDownLoad={onDownLoad}
+          onDownload={onDownload}
         />
       </ModalProvider>
     </Layout>

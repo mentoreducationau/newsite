@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import {
   CourseCardWrapper,
   CardButton,
@@ -7,22 +7,21 @@ import {
   ButtonWrapper,
 } from "./courses.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
 
 const CourseCard = ({ course, toggleModal }) => {
   return (
-    <CourseCardWrapper >
-      {/* <Link
-        to={
-          "/courses/" +
-          course.courseCode.toLowerCase() +
-          "-" +
-          course.studyLevel.toLowerCase().replace(/ /g, "-") +
-          "_" +
-          course.courseName.toLowerCase().replace(/ /g, "-")
-        }
-        style={{textDecoration: "none", color: "black"}}
-      > */}
+    // <Link
+    //   to={
+    //     "/courses/" +
+    //     course.courseCode.toLowerCase() +
+    //     "-" +
+    //     course.studyLevel.toLowerCase().replace(/ /g, "-") +
+    //     "_" +
+    //     course.courseName.toLowerCase().replace(/ /g, "-")
+    //   }
+    //   style={{ textDecoration: "none", color: "black" }}
+    // >
+      <CourseCardWrapper>
         <GatsbyImage
           image={getImage(course.heroImage)}
           style={{
@@ -46,12 +45,16 @@ const CourseCard = ({ course, toggleModal }) => {
           >
             <CardButton>Enrol Online Now</CardButton>
           </a>
-          <CardButton fontSize="21px" lineHeight="28px" onClick={()=>toggleModal(course.courseGuide.file.url)}>
+          <CardButton
+            fontSize="21px"
+            lineHeight="28px"
+            onClick={() => toggleModal(course.courseGuide.file.url)}
+          >
             Download Course Guide
           </CardButton>
         </ButtonWrapper>
-      {/* </Link> */}
-    </CourseCardWrapper>
+      </CourseCardWrapper>
+    // </Link>
   )
 }
 

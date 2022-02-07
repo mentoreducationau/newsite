@@ -1,3 +1,4 @@
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import img from "../../../images/student-information-imgs/banner1_non_top.jpg"
 import { Container } from "../../../styles/ContainerStyles.css"
@@ -117,8 +118,10 @@ export const ArticleWrapper = styled.div`
   }
 
   width: 100%;
-
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: auto;
   align-content: space-between;
   font-family: Futura Heavy;
@@ -143,6 +146,20 @@ export const ArticleWrapper = styled.div`
   `}
 `
 
+export const ArticleImage = styled(GatsbyImage)`
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  aspect-ratio: 3/2;
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: auto;
+    justify-self: center;
+    aspect-ratio: 3/2;
+  }
+`
+
 export const CardsWrapper = styled.div`
   --repeat: 2;
 
@@ -151,10 +168,7 @@ export const CardsWrapper = styled.div`
   }
 
   display: grid;
-  grid-template-columns: repeat(
-    var(--repeat, 2),
-    minmax(calc(250px * 1), 1fr)
-  );
+  grid-template-columns: repeat(var(--repeat, 2), minmax(calc(250px * 1), 1fr));
   grid-template-rows: auto;
   gap: 6rem;
   width: 100%;
@@ -162,18 +176,18 @@ export const CardsWrapper = styled.div`
 export const ArticleInfoWrapper = styled.div`
   padding: 2.5rem;
 
-  @media(max-width: 1280px) {
+  @media (max-width: 1280px) {
     padding: 1.25rem;
   }
 
-  @media(max-width: 451px) {
+  @media (max-width: 451px) {
     padding: 0.75rem;
   }
 `
 
 export const LinkText = styled.h3`
-    color: red;
-    text-align: right;
+  color: red;
+  text-align: right;
 `
 
 export const IntroWrapper = styled.div`
@@ -187,4 +201,3 @@ export const SubHeadingText = styled.h3`
   color: #707070;
   margin: 1.45rem 0;
 `
-

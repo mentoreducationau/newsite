@@ -25,8 +25,10 @@ export default function DownloadModal({
   beforeClose,
   toggleModal,
   zoomWebinarId,
+  onDownload
 }) {
   const handleSubmit = () => {
+    onDownload()
     toggleModal()
   }
   return (

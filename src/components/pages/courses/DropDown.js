@@ -183,6 +183,10 @@ const SearchInput = styled("input")`
     color: gray !important;
   }
 
+  :focus {
+    outline: none;
+  }
+
   @media(max-width: 1280px) {
     font-size: 20px;
   }

@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 export const Button = styled.button`
@@ -18,6 +19,10 @@ export const Button = styled.button`
 `
 export const ButtonPrimary = styled(Button)`
 
+`
+
+export const NoneDecorationLink = styled(Link)`
+  text-decoration: none !important;
 `
 
 // const ButtonGhost = styled(Button)`
