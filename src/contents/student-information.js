@@ -9,7 +9,7 @@ export const studentInformation = [
   {
     image: "aboutus_employment",
     title: "Mentor Education Academic and VET Calendar 2021",
-    link: "/",
+    link: "education-academic",
     content:
       "Looking for Mentor Education's yearly student calendar? Click here to access Mentor Education's Academic and VET Calendar for 2021 with all key dates for vocational education students.",
   },
@@ -51,14 +51,14 @@ export const studentInformation = [
   {
     image: "studentinfo_pathways",
     title: "Education Pathways",
-    link: "/career-pathway/",
+    link: "/education-pathway/",
     content:
       "For students seeking pathways to higher education, visit our Education Pathways page to find out how your Mentor Education qualification can lead you to your next qualification.",
   },
   {
     image: "studentinfo_questions",
     title: "Questions?",
-    link: "/",
+    link: "/faqs-prospective-students/",
     content:
       "If you are a prospective new student and have questions in relation to any of our nationally reginsed qualifications, please contact an Education Adviser via our website, email or by calling 1300 306 146.  You can also visit our FAQs page for prospective students.",
   },

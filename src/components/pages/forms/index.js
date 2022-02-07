@@ -8,6 +8,7 @@ import { CardsWrapper } from "../../ImageGrid/index.css"
 import CardWithBotton from "./CardWithBotton"
 
 const StudentForms = ({ formsData }) => {
+  console.log(formsData, "FFF")
 
   return (
     <>
@@ -24,9 +25,10 @@ const StudentForms = ({ formsData }) => {
               {item.facultyName}
             </Title>
             <CardsWrapper>
-              {item.course.map((it, idx) => (
-                <CardWithBotton key={idx} course={it} />
-              ))}
+              {item.course !== null &&
+                item.course.map((it, idx) => (
+                  <CardWithBotton key={idx} course={it} />
+                ))}
             </CardsWrapper>
           </React.Fragment>
         ))}
