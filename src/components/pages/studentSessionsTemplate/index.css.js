@@ -19,7 +19,7 @@ export const HeaderWrapper = styled.div`
 export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
-  padding: 0 3rem;
+  padding: 0 66rem;
   //   background: transparent;
   background: white;
   position: fixed;
@@ -74,30 +74,57 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #2c2d2f;
+  // color: #2c2d2f;
+  color: white;
   height: 50%;
   font-family: futura;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 0;
   margin: 0 0.5rem;
-  padding: 0 1rem;
+  padding: 0;
+  background-color: transparent;
+  text-decoration: none;
+  position: relative;
 
-  :hover {
-    border-bottom: 2px solid grey;
+  :after {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 50%;
+    height: 2px;
+    background: red;
+    bottom: 0;
   }
 
-  @media (max-width: 1400px) {
-    padding: 0;
+  :hover {
+    font-size: 1.5rem;
+    :after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0%;
+      height: 2px;
+      background: red;
+      bottom: 0;
+      transition: all 0.5s ease;
+    }
   }
 `
 
 export const SignInButton = styled.button`
-  font-size: 1.5rem;
-  padding: 0.5rem 2rem;
-  border: 1px solid red;
-  color: red;
-  box-shadow: none;
+  background-color: transparent;
+  border: 2px white solid;
+  border-radius: 3px;
+  color: white;
+  font-size: 13px;
+  line-height: 17px;
+  height: 29px;
+  margin: 0 0.5rem;
+
+  :hover {
+    cursor: pointer;
+  }
 `
 export const ColorShapeWrapper = styled.div`
   height: 100vh;
@@ -270,7 +297,7 @@ export const NameText = styled.p`
 export const FormWrapper = styled.div`
   max-width: 750px;
   margin-top: 25px;
-  display: ${props => props.status ? "none" : "display"};
+  display: ${props => (props.status ? "none" : "display")};
 `
 export const TipText = styled.p`
   font-size: 12px;

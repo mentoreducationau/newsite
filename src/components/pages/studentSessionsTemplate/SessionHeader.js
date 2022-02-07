@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react"
+import { Link } from "gatsby"
 import { links } from "../../Header/links-array.js"
 import useActiveMenu from "../../../hooks/ActiveMenu"
 import {
@@ -21,6 +22,7 @@ import {
   HostText,
   FormWrapper,
   TipText,
+  SignInButton
 } from "./index.css"
 import {
   DesktopContainer,
@@ -29,6 +31,7 @@ import {
 import hamburgerIcon from "../../../images/svg/hamburger_icon.svg"
 import mailIcon from "../../../images/svg/mail_icon.svg"
 import phoneIcon from "../../../images/svg/phone_icon.svg"
+import mlogo from "../../../images/mlogo.png"
 import Menu from "../../Header/Menu"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { SessionHeaderForm } from "./SessionHeaderForm.js"
@@ -78,7 +81,10 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
         background={background}
       >
         <NavWrapper ref={ref}>
-          <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
+          <LogoWrapepr to={"/"}><img
+              src={mlogo}
+              style={{ width: "69px", height: "47px", marginBottom: "0" }}
+            /></LogoWrapepr>
           <LinksWrapper>
             {links.map((link, i) => (
               <HeaderLink
@@ -89,6 +95,9 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
                 {link.name}
               </HeaderLink>
             ))}
+            <Link to="/">
+              <SignInButton>STUDENT SIGN-IN</SignInButton>
+            </Link>
           </LinksWrapper>
           <IconWrapper>
             <IconImg src={phoneIcon} alt="phone-icon" />

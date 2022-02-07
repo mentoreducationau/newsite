@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import { links } from "./links-array"
+import { Link } from "gatsby"
 import useActiveMenu from "../../hooks/ActiveMenu"
 import {
   HeaderLink,
@@ -17,6 +18,7 @@ import {
   IconImg,
   ColorRectWrapper,
   ColorRect,
+  SignInButton,
 } from "./header.css"
 import {
   DesktopContainer,
@@ -25,6 +27,7 @@ import {
 import hamburgerIcon from "../../images/svg/hamburger_icon.svg"
 import mailIcon from "../../images/svg/mail_icon.svg"
 import phoneIcon from "../../images/svg/phone_icon.svg"
+import mlogo from "../../images/mlogo.png"
 import Menu from "./Menu"
 
 const Header = ({ siteTitle, pageName, background }) => {
@@ -72,7 +75,12 @@ const Header = ({ siteTitle, pageName, background }) => {
         background={background}
       >
         <NavWrapper ref={ref}>
-          <LogoWrapepr to={"/"}>Mentor Education</LogoWrapepr>
+          <LogoWrapepr to={"/"}>
+            <img
+              src={mlogo}
+              style={{ width: "69px", height: "47px", marginBottom: "0" }}
+            />
+          </LogoWrapepr>
           <LinksWrapper>
             {links.map((link, i) => (
               <HeaderLink
@@ -83,6 +91,9 @@ const Header = ({ siteTitle, pageName, background }) => {
                 {link.name}
               </HeaderLink>
             ))}
+            <Link to="/">
+              <SignInButton>STUDENT SIGN-IN</SignInButton>
+            </Link>
           </LinksWrapper>
           <IconWrapper>
             <IconImg src={phoneIcon} alt="phone-icon" />
@@ -97,9 +108,7 @@ const Header = ({ siteTitle, pageName, background }) => {
         <div style={{ padding: "1rem 0" }}>
           <div style={{ margin: "0 auto 20px" }}>
             <DesktopContainer>
-              <ColorShapeWrapper
-                style={{ display: "flex" }}
-              >
+              <ColorShapeWrapper style={{ display: "flex" }}>
                 <ColorShape marginTop="0px" opacity="0.2" width="750px" />
                 <ColorShape marginTop="-290px" opacity="0.4" width="690px" />
                 <ColorShape
