@@ -66,10 +66,10 @@ const Tab = ({ tabContentArray }) => {
                   item={content.references[0].coreUnits}
                   title="Core Units"
                 />
-                <UnitAccordion
+                {/* <UnitAccordion
                   item={content.references[1].electiveUnitGroup}
                   title="Elevtive Unit Group"
-                />
+                /> */}
               </Display>
             ) : (
               <Display activeTab={activeTab} id={index + 1} key={index}>

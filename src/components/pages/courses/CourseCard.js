@@ -11,14 +11,7 @@ import { Link } from "gatsby"
 
 const CourseCard = ({ course, toggleModal }) => {
   return (
-    <CourseCardWrapper to={
-      "/courses/" +
-      course.courseCode.toLowerCase() +
-      "-" +
-      course.studyLevel.toLowerCase().replace(/ /g, "-") +
-      "_" +
-      course.courseName.toLowerCase().replace(/ /g, "-")
-    }>
+    <CourseCardWrapper >
       {/* <Link
         to={
           "/courses/" +
