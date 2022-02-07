@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt"
 import styled from "styled-components"
 
@@ -125,20 +126,24 @@ const Pathways = () => {
             </span>
           </TextWrapper>
           <ButtonWrapperOnDesk>
-            <RedGoButton>
-              GO
-              <span>
-                <ArrowRight />
-              </span>
-            </RedGoButton>
+            <Link to="/courses/">
+              <RedGoButton>
+                GO
+                <span>
+                  <ArrowRight />
+                </span>
+              </RedGoButton>
+            </Link>
           </ButtonWrapperOnDesk>
           <ButtonWrapperOnMob>
-            <RedGoButton>
-              GO
-              <span>
-                <ArrowRight />
-              </span>
-            </RedGoButton>
+            <Link to="/courses/">
+              <RedGoButton>
+                GO
+                <span>
+                  <ArrowRight />
+                </span>
+              </RedGoButton>
+            </Link>
           </ButtonWrapperOnMob>
         </Wrapper>
       </PathwaysWrapper>

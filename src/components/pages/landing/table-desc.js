@@ -66,7 +66,7 @@ const TableDesc = () => {
                 <p>{item.text}</p>
               </TableDescCardText>
               <TableDescCardButtonWrapper>
-                <TableDescCardButton>Find out how</TableDescCardButton>
+                {/* <TableDescCardButton>Find out how</TableDescCardButton> */}
               </TableDescCardButtonWrapper>
             </TableDescCard>
           </AboutCardWrapper>

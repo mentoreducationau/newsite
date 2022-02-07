@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby" 
 import {
   Container,
   Wrapper,
@@ -18,22 +19,19 @@ import {
 const TestimonialsLanding = () => {
   const cardData = [
     {
-      text:
-        ".. Mentor’s assistance with helping me with both Diploma of Financial Planning and the Advanced Diploma of Financial Planning has been fantastic. I really appreciate their guidance and assistance with helping me obtain my qualifications. Your prompt email responses to my queries are also greatly appreciated.",
+      text: ".. Mentor’s assistance with helping me with both Diploma of Financial Planning and the Advanced Diploma of Financial Planning has been fantastic. I really appreciate their guidance and assistance with helping me obtain my qualifications. Your prompt email responses to my queries are also greatly appreciated.",
       author: "Linda Pfitzner",
       pos1: "Client Service Manager",
       pos2: "Leading Australia Bank Financial Planning",
     },
     {
-      text:
-        ".. Mentor’s assistance with helping me with both Diploma of Financial Planning and the Advanced Diploma of Financial Planning has been fantastic. I really appreciate their guidance and assistance with helping me obtain my qualifications. Your prompt email responses to my queries are also greatly appreciated.",
+      text: ".. Mentor’s assistance with helping me with both Diploma of Financial Planning and the Advanced Diploma of Financial Planning has been fantastic. I really appreciate their guidance and assistance with helping me obtain my qualifications. Your prompt email responses to my queries are also greatly appreciated.",
       author: "Linda Pfitzner",
       pos1: "Client Service Manager",
       pos2: "Leading Australia Bank Financial Planning",
     },
     {
-      text:
-        ".. Mentor’s assistance with helping me with both Diploma of Financial Planning and the Advanced Diploma of Financial Planning has been fantastic. I really appreciate their guidance and assistance with helping me obtain my qualifications. Your prompt email responses to my queries are also greatly appreciated.",
+      text: ".. Mentor’s assistance with helping me with both Diploma of Financial Planning and the Advanced Diploma of Financial Planning has been fantastic. I really appreciate their guidance and assistance with helping me obtain my qualifications. Your prompt email responses to my queries are also greatly appreciated.",
       author: "Linda Pfitzner",
       pos1: "Client Service Manager",
       pos2: "Leading Australia Bank Financial Planning",
@@ -68,8 +66,12 @@ const TestimonialsLanding = () => {
         ))}
       </CardsWrapper>
       <Wrapper>
-        <ReadMoreButtonOnDesk>Read More Reviews</ReadMoreButtonOnDesk>
-        <ReadMoreButtonOnMob>Read More Reviews</ReadMoreButtonOnMob>
+        <Link to="/testimonials/">
+          <ReadMoreButtonOnDesk>Read More Reviews</ReadMoreButtonOnDesk>
+        </Link>
+        <Link to="/testimonials/">
+          <ReadMoreButtonOnMob>Read More Reviews</ReadMoreButtonOnMob>
+        </Link>
       </Wrapper>
     </Container>
   )
