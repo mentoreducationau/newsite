@@ -79,6 +79,7 @@ const Header = ({ siteTitle, pageName, background }) => {
             <img
               src={mlogo}
               style={{ width: "69px", height: "47px", marginBottom: "0" }}
+              alt="header-logo"
             />
           </LogoWrapepr>
           <LinksWrapper>

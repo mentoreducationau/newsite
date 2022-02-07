@@ -121,7 +121,7 @@ export const ArticleWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: auto;
   align-content: space-between;
   font-family: Futura Heavy;

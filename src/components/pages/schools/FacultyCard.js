@@ -6,6 +6,7 @@ import {
   CourseNameText,
   ButtonWrapper,
 } from "./schools.css"
+import { NoneDecorationLink } from "../../../styles/ButtonStyles.css"
 
 const FacultyCard = ({ faculty }) => {
   return (
@@ -33,7 +34,7 @@ const FacultyCard = ({ faculty }) => {
       ></div>
       <CourseNameText>{faculty.heading}</CourseNameText>
       <ButtonWrapper>
-        <Link
+        <NoneDecorationLink
           to={
             "/schools/" +
             faculty.heading
@@ -46,7 +47,7 @@ const FacultyCard = ({ faculty }) => {
           <CardButton fontSize="21px" lineHeight="28px">
             View Faculty
           </CardButton>
-        </Link>
+        </NoneDecorationLink>
       </ButtonWrapper>
       {/* </Link> */}
     </CourseCardWrapper>

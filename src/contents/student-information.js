@@ -44,7 +44,7 @@ export const studentInformation = [
   {
     image: "aboutus_webinar",
     title: "Student Information Sessions",
-    link: "/student-information-session/",
+    link: "/student-information-sessions/",
     content:
       "Interested in attending a future student information session to learn more about Mentor Education courses? Please visit our Student Information Session page to register for our latest course webinars.",
   },

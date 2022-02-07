@@ -12,7 +12,7 @@ import {
   Wrapper,
   PersonNameText,
 } from "./sis.css"
-import { Link } from "gatsby"
+import { NoneDecorationLink } from "../../../styles/ButtonStyles.css"
 
 const SessionCard = ({
   image,
@@ -36,7 +36,7 @@ const SessionCard = ({
   return (
     <>
       {nowTime > parseSessionDate ? (
-        <Link to={"/student-information-session/" + sessionUrl}>
+        <NoneDecorationLink to={"/student-information-session/" + sessionUrl} style={{color: "hsla(0, 0%, 0%, 0.8)"}}>
           <SessionCardWrapper>
             <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
             <ContentWrapper>
@@ -94,7 +94,7 @@ const SessionCard = ({
               </ImageAndButtonWrapper>
             </ContentWrapper>
           </SessionCardWrapper>
-        </Link>
+        </NoneDecorationLink>
       ) : (
         <SessionCardWrapper>
           <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />

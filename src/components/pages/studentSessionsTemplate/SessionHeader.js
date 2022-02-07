@@ -22,7 +22,7 @@ import {
   HostText,
   FormWrapper,
   TipText,
-  SignInButton
+  SignInButton,
 } from "./index.css"
 import {
   DesktopContainer,
@@ -81,10 +81,13 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
         background={background}
       >
         <NavWrapper ref={ref}>
-          <LogoWrapepr to={"/"}><img
+          <LogoWrapepr to={"/"}>
+            <img
               src={mlogo}
               style={{ width: "69px", height: "47px", marginBottom: "0" }}
-            /></LogoWrapepr>
+              alt="session-header"
+            />
+          </LogoWrapepr>
           <LinksWrapper>
             {links.map((link, i) => (
               <HeaderLink

@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
-import { Link } from "gatsby"
 export const HeadingText = styled.p`
   font-size: 64px;
   line-height: 84px;

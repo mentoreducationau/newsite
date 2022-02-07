@@ -32,18 +32,18 @@ const IntroText = styled.p`
   margin-bottom: 0;
 `
 const MainContainer = styled.div`
-max-width: 1200px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 
-  @media(max-width: 1300px) {
+  @media (max-width: 1300px) {
     width: 90%;
   }
 `
 
-const StudentInformationSessionPage = ({ pageContext, location, data }) => {
+const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
@@ -141,11 +141,13 @@ const StudentInformationSessionPage = ({ pageContext, location, data }) => {
   )
 }
 
-export default StudentInformationSessionPage
+export default StudentInformationSessionsPage
 
 export const sisData = graphql`
   query StudentInformationSessionQuery {
-    allContentfulStudentInformationSession {
+    allContentfulStudentInformationSession(
+      sort: { fields: sessionDate, order: DESC }
+    ) {
       nodes {
         id
         coverImage {
