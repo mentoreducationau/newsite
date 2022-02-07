@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import PageTransition from "gatsby-plugin-page-transitions"
+
 import { Helmet } from "react-helmet"
 import { Typography } from "../../../styles/Typography.css"
 import Footer from "../../Footer/footer"
