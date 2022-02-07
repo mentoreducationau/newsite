@@ -28,7 +28,7 @@ const SessionLayout = ({ children, pageContext, location, crumbLabel, background
         />
       </Helmet>
       <SessionHeader siteTitle={data.site.siteMetadata.title} background={background} sessionData={sessionData} status={status} />
-      <PageTransition>
+   
         <div
           style={{
             margin: `0 auto`,
@@ -46,7 +46,7 @@ const SessionLayout = ({ children, pageContext, location, crumbLabel, background
           </main>
           <Footer />
         </div>
-      </PageTransition>
+   
     </>
   )
 }

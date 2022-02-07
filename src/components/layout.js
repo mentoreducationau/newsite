@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import PageTransition from "gatsby-plugin-page-transitions"
+
 import Helmet from "react-helmet"
 import { Typography } from "../styles/Typography.css"
 import Header from "../components/Header/Header"
@@ -43,7 +43,7 @@ const Layout = ({ children, pageContext, location, crumbLabel, pageName, backgro
         />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} pageName={pageName} background={background} />
-      <PageTransition>
+  
         <div
           style={{
             margin: `0 auto`,
@@ -69,7 +69,7 @@ const Layout = ({ children, pageContext, location, crumbLabel, pageName, backgro
           </main>
           <Footer />
         </div>
-      </PageTransition>
+     
     </>
   )
 }

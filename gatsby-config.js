@@ -103,11 +103,6 @@ module.exports = {
         trailingSlashes: false,
      },
     },
-    {
-      resolve: 'gatsby-plugin-page-transitions',
-      options: {
-        transitionTime: 500
-      }
-    }
+    
   ],
 }
