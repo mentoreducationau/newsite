@@ -33,10 +33,12 @@ const StudentsWork = props => {
           )
           return (
             <a key={id} href={link} target="_blank" rel="noreferrer noopener">
-              <GatsbyImage
-                image={img.length && img[0].childImageSharp.gatsbyImageData}
-                alt={companyName}
-              />
+              {img[0].childImageSharp !== null && (
+                <GatsbyImage
+                  image={img.length && img[0].childImageSharp.gatsbyImageData}
+                  alt={companyName}
+                />
+              )}
             </a>
           )
         })}

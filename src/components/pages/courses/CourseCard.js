@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import {
   CourseCardWrapper,
   CardButton,
@@ -7,20 +6,21 @@ import {
   ButtonWrapper,
 } from "./courses.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { NoneDecorationLink } from "../../../styles/ButtonStyles.css"
 
 const CourseCard = ({ course, toggleModal }) => {
   return (
-    // <Link
-    //   to={
-    //     "/courses/" +
-    //     course.courseCode.toLowerCase() +
-    //     "-" +
-    //     course.studyLevel.toLowerCase().replace(/ /g, "-") +
-    //     "_" +
-    //     course.courseName.toLowerCase().replace(/ /g, "-")
-    //   }
-    //   style={{ textDecoration: "none", color: "black" }}
-    // >
+    <NoneDecorationLink
+      to={
+        "/courses/" +
+        course.courseCode.toLowerCase() +
+        "-" +
+        course.studyLevel.toLowerCase().replace(/ /g, "-") +
+        "_" +
+        course.courseName.toLowerCase().replace(/ /g, "-")
+      }
+      style={{ color: "black" }}
+    >
       <CourseCardWrapper>
         <GatsbyImage
           image={getImage(course.heroImage)}
@@ -28,7 +28,6 @@ const CourseCard = ({ course, toggleModal }) => {
             width: "100%",
             borderTopLeftRadius: "5px",
             borderTopRightRadius: "5px",
-            marginBottom: "13px",
           }}
         />
         <CourseNameText>
@@ -40,7 +39,7 @@ const CourseCard = ({ course, toggleModal }) => {
         </CourseNameText>
         <ButtonWrapper>
           <a
-            href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=courseCodedc=courseadviser20"
+            href={`https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` + course.courseCode + `&dc=courseadviser20`}
             style={{ textDecoration: "none" }}
           >
             <CardButton>Enrol Online Now</CardButton>
@@ -54,7 +53,7 @@ const CourseCard = ({ course, toggleModal }) => {
           </CardButton>
         </ButtonWrapper>
       </CourseCardWrapper>
-    // </Link>
+    </NoneDecorationLink>
   )
 }
 

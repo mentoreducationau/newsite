@@ -91,7 +91,7 @@ export default Dropdown
 const DropDownContainer = styled("div")`
   width: 50%;
 
-  @media(max-width: 835px) {
+  @media (max-width: 835px) {
     width: 100%;
   }
 `
@@ -127,7 +127,7 @@ const DropDownListContainer = styled("div")`
   transition: max-height 0.2s ease-in-out;
   overflow: hidden;
   width: 50% !important;
-  @media(max-width: 835px) {
+  @media (max-width: 835px) {
     width: 100% !important;
   }
 `
@@ -171,6 +171,7 @@ const ListItem = styled("li")`
 `
 
 const SearchInput = styled("input")`
+  width: 100%;
   margin: 0 !important;
   border: none !important;
   box-shadow: none !important;
@@ -187,14 +188,14 @@ const SearchInput = styled("input")`
     outline: none;
   }
 
-  @media(max-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 20px;
   }
 `
 const DisplaySpan = styled("span")`
   font-size: 22px;
   font-family: Futura;
-  @media(max-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 20px;
   }
 `
