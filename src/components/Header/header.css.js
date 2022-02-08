@@ -19,7 +19,7 @@ export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
   padding: 0 66px;
-  background: transparent;
+  background-color:  ${props => (props.navBar > 5 ? "white" : "transperant")};
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -74,7 +74,7 @@ export const HeaderLink = styled(Link)`
   justify-content: space-between;
   align-items: center;
   // color: #2c2d2f;
-  color: white;
+color:  ${props => (props.navBar > 5 ? "grey" : "white")};
   height: 50%;
   font-family: futura;
   font-size: 1rem;
@@ -85,7 +85,7 @@ export const HeaderLink = styled(Link)`
   background-color: transparent;
   text-decoration: none;
   position: relative;
-
+  transition: all .3s ease-in;
   :after {
     content: '';
     position: absolute;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { links } from "./links-array"
 import { Link } from "gatsby"
 import useActiveMenu from "../../hooks/ActiveMenu"
@@ -34,19 +34,21 @@ const Header = ({ siteTitle, pageName, background }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
+  const [navBar, setNavBar] = useState(0)
+
+
 
   const handleScroll = () => {
     const position = window.pageYOffset
-    if (position > 0) {
-      ref.current.style.background = "white"
-    } else {
-      ref.current.style.background = "transparent"
-    }
+
+    setNavBar(position)
+    
   }
 
+console.log(navBar)
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
-
+    
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -74,7 +76,7 @@ const Header = ({ siteTitle, pageName, background }) => {
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper ref={ref}>
+        <NavWrapper ref={ref} navbar={navBar}>
           <LogoWrapepr to={"/"}>
             <img
               src={mlogo}
