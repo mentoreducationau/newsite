@@ -34,21 +34,15 @@ const Header = ({ siteTitle, pageName, background }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
-  const [navBar, setNavBar] = useState(0)
-
-
-
+  const [navbarPos, setNavbarPos] =  useState(0)
   const handleScroll = () => {
     const position = window.pageYOffset
-
-    setNavBar(position)
-    
+      setNavbarPos(position)  
   }
 
-console.log(navBar)
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -76,7 +70,9 @@ console.log(navBar)
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper ref={ref} navbar={navBar}>
+        <NavWrapper ref={ref} 
+        navbar={navbarPos}
+        >
           <LogoWrapepr to={"/"}>
             <img
               src={mlogo}
@@ -90,12 +86,15 @@ console.log(navBar)
                 key={link.slug}
                 className="border-bottom"
                 to={`${link.slug}`}
+                navbar={navbarPos}
               >
                 {link.name}
               </HeaderLink>
             ))}
             <Link to="/">
-              <SignInButton>STUDENT SIGN-IN</SignInButton>
+              <SignInButton
+              navbar={navbarPos}
+              >STUDENT SIGN-IN</SignInButton>
             </Link>
           </LinksWrapper>
           <IconWrapper>

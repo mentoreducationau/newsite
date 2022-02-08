@@ -19,7 +19,7 @@ export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
   padding: 0 66px;
-  background-color:  ${props => (props.navBar > 5 ? "white" : "transperant")};
+  background-color:  ${props => (props.navbar > 5 ? "white" : "transperant")};
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -27,7 +27,7 @@ export const NavWrapper = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   box-shadow: none;
-
+  transition: all .3s ease-out;
   @media (max-width: 450px) {
     padding: 12px 20px;
     height: auto;
@@ -74,7 +74,7 @@ export const HeaderLink = styled(Link)`
   justify-content: space-between;
   align-items: center;
   // color: #2c2d2f;
-color:  ${props => (props.navBar > 5 ? "grey" : "white")};
+color:  ${props => (props.navbar > 5 ? "grey" : "white")};
   height: 50%;
   font-family: futura;
   font-size: 1rem;
@@ -113,9 +113,10 @@ color:  ${props => (props.navBar > 5 ? "grey" : "white")};
 
 export const SignInButton = styled.button`
   background-color: transparent;
-  border: 2px white solid;
+  color:  ${props => (props.navbar > 5 ? "grey" : "white")};
+  border: ${props => (props.navbar > 5 ? "2px grey solid" : "2px white solid")};
   border-radius: 3px;
-  color: white;
+
   font-size: 13px;
   line-height: 17px;
   height: 29px;
@@ -217,8 +218,9 @@ export const BottomWrapper = styled.div`
   text-align: center;
   margin-bottom: 33px;
 `
-export const BottomLink = styled(Link)`
+export const BottomLink = styled.p`
   color: white;
+  margin: 0;
   font-size: 22px;
   line-height: 30px;
 `
