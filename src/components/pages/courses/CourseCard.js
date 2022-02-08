@@ -9,18 +9,19 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { NoneDecorationLink } from "../../../styles/ButtonStyles.css"
 
 const CourseCard = ({ course, toggleModal }) => {
+
   return (
-    <NoneDecorationLink
-      to={
-        "/courses/" +
-        course.courseCode.toLowerCase() +
-        "-" +
-        course.studyLevel.toLowerCase().replace(/ /g, "-") +
-        "_" +
-        course.courseName.toLowerCase().replace(/ /g, "-")
-      }
-      style={{ color: "black" }}
-    >
+    // <NoneDecorationLink
+    //   to={
+    //     "/courses/" +
+    //     course.courseCode.toLowerCase() +
+    //     "-" +
+    //     course.studyLevel.toLowerCase().replace(/ /g, "-") +
+    //     "_" +
+    //     course.courseName.toLowerCase().replace(/ /g, "-")
+    //   }
+    //   style={{ color: "black" }}
+    // >
       <CourseCardWrapper>
         <GatsbyImage
           image={getImage(course.heroImage)}
@@ -53,7 +54,7 @@ const CourseCard = ({ course, toggleModal }) => {
           </CardButton>
         </ButtonWrapper>
       </CourseCardWrapper>
-    </NoneDecorationLink>
+    // </NoneDecorationLink>
   )
 }
 

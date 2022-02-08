@@ -3,7 +3,6 @@ import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import {
-  TitleBanner,
   MainContainer,
   IframeContainer,
   BottomBannerContainer,
@@ -11,7 +10,6 @@ import {
   TestimonialParagraph,
   TestimonialHeadline,
 } from "../components/pages/about/index.css"
-import { Headline } from "../styles/Typography.css"
 import { Container } from "../styles/ContainerStyles.css"
 import { testimonials } from "../contents/testimonials"
 

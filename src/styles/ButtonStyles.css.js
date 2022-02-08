@@ -25,6 +25,10 @@ export const NoneDecorationLink = styled(Link)`
   text-decoration: none !important;
 `
 
+export const NoneDecorationA = styled.a`
+  text-decoration: none !important;
+`
+
 // const ButtonGhost = styled(Button)`
 //   background-color: ${(props) => props.theme.buttonGhost};
 //   color: ${(props) => props.theme.textLight};

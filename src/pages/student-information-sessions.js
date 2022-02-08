@@ -58,8 +58,10 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
     setIsThankyouOpen(!isThankyouOpen)
   }
 
-  const toggleModal = id => {
+  const toggleModal = (id, sUrl, cUrl) => {
     setOpacity(0)
+    setCourseUrl(cUrl)
+    setSessionUrl(sUrl)
     setSelectedZoomWebinarId(id)
     setIsOpen(!isOpen)
   }
@@ -76,6 +78,12 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
       setTimeout(resolve, 300)
     })
   }
+
+  const handleSignUp = () => {
+    console.log(courseUrl, sessionUrl)
+    toggleThankyouModal()
+  }
+
   return (
     <Layout
       pageContext={pageContext}
@@ -126,6 +134,7 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
           afterOpen={afterOpen}
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
+          onSignUp={handleSignUp} 
         />
         <ThankyouModal
           isOpen={isThankyouOpen}

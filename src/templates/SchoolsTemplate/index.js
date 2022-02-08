@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
 import Layout from "../../components/layout"
@@ -6,6 +6,10 @@ import Seo from "../../components/seo"
 import CoursesIntro from "../../components/pages/courses/Intro"
 import CourseCollection from "../../components/pages/courses/CourseCollection"
 import DownloadModal from "../../components/Modals/DownloadModal"
+import {
+  BackToTopArrow,
+  ScrollWrapper,
+} from "../../components/pages/courses/courses.css"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -21,6 +25,32 @@ const SchoolsTemplate = ({ pageContext, location }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
+
+  const [showBackToTop, setShowBackToTop] = useState(true)
+  const ref = useRef(null)
+  const handleScroll = () => {
+    const position =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+    setShowBackToTop(position < window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  const scrollToTop = () => {
+    const pos =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+    window.scrollTo({ top: pos, behavior: "smooth" })
+  }
 
   const toggleModal = id => {
     setOpacity(0)
@@ -50,10 +80,16 @@ const SchoolsTemplate = ({ pageContext, location }) => {
     >
       <Seo title={schoolData.heading} />
       <ModalProvider backgroundComponent={FadingBackground}>
-        <CoursesIntro heading={schoolData.heading} intro={intro} />
+        <div ref={ref}>
+          <CoursesIntro heading={schoolData.heading} intro={intro} />
+        </div>
         {schoolData.faculties.map(faculty =>
           faculty.courseSections.map((courseSection, idx) => (
-            <CourseCollection courseCollection={courseSection} toggleModal={toggleModal} key={idx} />
+            <CourseCollection
+              courseCollection={courseSection}
+              toggleModal={toggleModal}
+              key={idx}
+            />
           ))
         )}
         <DownloadModal
@@ -64,6 +100,9 @@ const SchoolsTemplate = ({ pageContext, location }) => {
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
         />
+        <ScrollWrapper onClick={scrollToTop} showBackToTop={showBackToTop}>
+          <BackToTopArrow />
+        </ScrollWrapper>
       </ModalProvider>
     </Layout>
   )

@@ -33,6 +33,7 @@ const SessionCard = ({
     course.courseName.toLowerCase().replace(/ /g, "-")
   const sessionUrl = courseUrl + "-" + sessionDate.replaceAll("-", "")
   const [signedUp, setSignedUp] = useState(false)
+
   return (
     <>
       {nowTime > parseSessionDate ? (
@@ -84,7 +85,7 @@ const SessionCard = ({
                       SIGN UP
                     </SignUpButton>
                   ) : (
-                    <SignUpButton onClick={() => toggleModal(zoomWebinarId)}>
+                    <SignUpButton onClick={() => toggleModal(zoomWebinarId, sessionUrl, courseUrl)}>
                       SIGN UP
                     </SignUpButton>
                   )}

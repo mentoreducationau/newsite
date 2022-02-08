@@ -34,10 +34,10 @@ const Header = ({ siteTitle, pageName, background }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
-  const [navbarPos, setNavbarPos] =  useState(0)
+  const [navbarPos, setNavbarPos] = useState(0)
   const handleScroll = () => {
     const position = window.pageYOffset
-      setNavbarPos(position)  
+    setNavbarPos(position)
   }
 
   useEffect(() => {
@@ -70,9 +70,7 @@ const Header = ({ siteTitle, pageName, background }) => {
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper ref={ref} 
-        navbar={navbarPos}
-        >
+        <NavWrapper ref={ref} navbar={navbarPos}>
           <LogoWrapepr to={"/"}>
             <img
               src={mlogo}
@@ -92,9 +90,7 @@ const Header = ({ siteTitle, pageName, background }) => {
               </HeaderLink>
             ))}
             <Link to="/">
-              <SignInButton
-              navbar={navbarPos}
-              >STUDENT SIGN-IN</SignInButton>
+              <SignInButton navbar={navbarPos}>STUDENT SIGN-IN</SignInButton>
             </Link>
           </LinksWrapper>
           <IconWrapper>

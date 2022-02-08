@@ -15,6 +15,7 @@ import {
   ScrollWrapper,
 } from "../components/pages/courses/courses.css"
 import DownloadModal from "../components/Modals/DownloadModal"
+import ThankyouModal from "../components/pages/studentInformationSession/ThankyouModal"
 // import DownloadSignUpModal from "../components/pages/courses/DownloadSignUpModal"
 
 const FadingBackground = styled(BaseModalBackground)`
@@ -29,6 +30,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
     "I’m baby knausgaard schlitz tote bag mlkshk flannel you probably haven’t heard of them prism retro quinoa ennui shabby chic. Marfa waistcoat fixie craft beer shoreditch man bun ethical mixtape keytar celiac selfies church-key. Gastropub 3 wolf moon lo-fi fingerstache truffaut, +1 cronut hella humblebrag. Fam heirloom synth pickled pinterest XOXO. Cloud bread pour-over scenester fixie 8-bit, raw denim venmo pork belly cornhole disrupt before they sold out blog."
 
   const [isOpen, setIsOpen] = useState(false)
+  const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
   const [courseGuide, setCourseGuide] = useState("")
@@ -46,6 +48,13 @@ const CoursesPage = ({ pageContext, location, data }) => {
       allCoursesArray.push(it)
     })
   })
+
+  const toggleThankyouModal = (sUrl, cUrl) => {
+    setOpacity(0)
+    // setCourseUrl(cUrl)
+    // setSessionUrl(sUrl)
+    setIsThankyouOpen(!isThankyouOpen)
+  }
 
   const toggleModal = courseGuide => {
     setOpacity(0)
@@ -100,6 +109,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
 
   const onDownload = () => {
     window.open(courseGuide, '_blank', 'noopener,noreferrer')
+    toggleThankyouModal()
   }
 
   return (
@@ -166,6 +176,15 @@ const CoursesPage = ({ pageContext, location, data }) => {
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
           onDownload={onDownload}
+        />
+        <ThankyouModal
+          isOpen={isThankyouOpen}
+          opacity={opacity}
+          toggleModal={toggleThankyouModal}
+          afterOpen={afterOpen}
+          beforeClose={beforeClose}
+          // courseUrl={courseUrl}
+          // sessionUrl={sessionUrl}
         />
       </ModalProvider>
     </Layout>

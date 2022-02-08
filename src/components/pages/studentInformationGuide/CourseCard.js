@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import {
   CourseCardWrapper,
   CardButton,
@@ -7,6 +6,7 @@ import {
   ButtonWrapper,
 } from "./courses.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { NoneDecorationA, NoneDecorationLink } from "../../../styles/ButtonStyles.css"
 
 const CourseCard = ({ course }) => {
   return (
@@ -28,7 +28,7 @@ const CourseCard = ({ course }) => {
           course.courseName}
       </CourseNameText>
       <ButtonWrapper enrol={course.enrolmentForm}>
-        <Link
+        <NoneDecorationLink
           to={
             "/courses/" +
             course.courseCode.toLowerCase() +
@@ -37,27 +37,27 @@ const CourseCard = ({ course }) => {
             "_" +
             course.courseName.toLowerCase().replace(/ /g, "-")
           }
-          style={{ textDecoration: "none", color: "black" }}
+          style={{ color: "black" }}
         >
           <CardButton>Enrol Now</CardButton>
-        </Link>
+        </NoneDecorationLink>
         {course.enrolmentForm && (
-          <a
+          <NoneDecorationA
             href={course.enrolmentForm.file.url}
             target="_blank"
             rel="noreferrer"
           >
             <CardButton>Enrolment Form</CardButton>
-          </a>
+          </NoneDecorationA>
         )}
 
-        <a
+        <NoneDecorationA
           href={course.courseGuide.file.url}
           target="_blank"
           rel="noreferrer"
         >
           <CardButton>Brouchure</CardButton>
-        </a>
+        </NoneDecorationA>
       </ButtonWrapper>
     </CourseCardWrapper>
   )

@@ -21,9 +21,11 @@ export default function SignUpModal({
   beforeClose,
   toggleModal,
   zoomWebinarId,
+  onSignUp,
 }) {
   const handleSubmit = () => {
     toggleModal()
+    onSignUp()
   }
   return (
     <div>
