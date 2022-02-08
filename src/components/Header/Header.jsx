@@ -82,7 +82,7 @@ const Header = ({ siteTitle, pageName, background }) => {
         background={background}
       >
         {/* <NavWrapper scrollMoving={scrollMoving}> */}
-        <NavWrapper navbar={navBar}>
+        <NavWrapper navBar={navBar}>
           <LogoWrapepr to={"/"}>
             <img
               src={mlogo}
@@ -97,14 +97,14 @@ const Header = ({ siteTitle, pageName, background }) => {
                 className="border-bottom"
                 to={`${link.slug}`}
                 // scrollMoving={scrollMoving}
-                navbar={navBar}
+                navBar={navBar}
               >
                 {link.name}
               </HeaderLink>
             ))}
             <Link to="/">
               {/* <SignInButton scrollMoving={scrollMoving}>STUDENT SIGN-IN</SignInButton> */}
-              <SignInButton navbar={navBar}>STUDENT SIGN-IN</SignInButton>
+              <SignInButton navBar={navBar}>STUDENT SIGN-IN</SignInButton>
             </Link>
           </LinksWrapper>
           <IconWrapper>
