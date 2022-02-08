@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { links } from "./links-array"
 import { Link } from "gatsby"
 import useActiveMenu from "../../hooks/ActiveMenu"
@@ -31,16 +31,18 @@ import mlogo from "../../images/mlogo.png"
 import Menu from "./Menu"
 
 const Header = ({ siteTitle, pageName, background }) => {
-  const ref = useRef(null)
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
+  const [scrollMoving, setScrollMoving] = useState(false)
 
   const handleScroll = () => {
     const position = window.pageYOffset
     if (position > 0) {
-      ref.current.style.background = "white"
+      // ref.current.style.background = "white"
+      setScrollMoving(true)
     } else {
-      ref.current.style.background = "transparent"
+      // ref.current.style.background = "transparent"
+      setScrollMoving(false)
     }
   }
 
@@ -74,7 +76,7 @@ const Header = ({ siteTitle, pageName, background }) => {
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper ref={ref}>
+        <NavWrapper scrollMoving={scrollMoving}>
           <LogoWrapepr to={"/"}>
             <img
               src={mlogo}
@@ -88,12 +90,13 @@ const Header = ({ siteTitle, pageName, background }) => {
                 key={link.slug}
                 className="border-bottom"
                 to={`${link.slug}`}
+                scrollMoving={scrollMoving}
               >
                 {link.name}
               </HeaderLink>
             ))}
             <Link to="/">
-              <SignInButton>STUDENT SIGN-IN</SignInButton>
+              <SignInButton scrollMoving={scrollMoving}>STUDENT SIGN-IN</SignInButton>
             </Link>
           </LinksWrapper>
           <IconWrapper>

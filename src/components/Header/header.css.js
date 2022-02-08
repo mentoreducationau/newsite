@@ -19,7 +19,7 @@ export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
   padding: 0 66px;
-  background: transparent;
+  background: ${props => (props.scrollMoving ? "white" : "transparent")};
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -27,6 +27,7 @@ export const NavWrapper = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   box-shadow: none;
+  transition: all 0.8s ease;
 
   @media (max-width: 450px) {
     padding: 12px 20px;
@@ -73,8 +74,7 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // color: #2c2d2f;
-  color: white;
+  color: ${props => props.scrollMoving ? "#2c2d2f" : "white"};
   height: 50%;
   font-family: futura;
   font-size: 1rem;
@@ -85,41 +85,43 @@ export const HeaderLink = styled(Link)`
   background-color: transparent;
   text-decoration: none;
   position: relative;
+  transition: all 0.8s ease;
 
   :after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     left: 50%;
     height: 2px;
     background: red;
     bottom: 0;
-  }  
+  }
 
   :hover {
     font-size: 1.5rem;
     :after {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       left: 0%;
       height: 2px;
       background: red;
       bottom: 0;
-      transition: all .5s ease;
-    }  
+      transition: all 0.2s ease;
+    }
   }
 `
 
 export const SignInButton = styled.button`
   background-color: transparent;
-  border: 2px white solid;
+  border: ${props => props.scrollMoving ? "2px #2c2d2f solid" : "2px white solid"};
   border-radius: 3px;
-  color: white;
+  color: ${props => props.scrollMoving ? "#2c2d2f" : "white"};
   font-size: 13px;
   line-height: 17px;
   height: 29px;
   margin: 0 0.5rem;
+  transition: all 0.8s ease;
 
   :hover {
     cursor: pointer;
