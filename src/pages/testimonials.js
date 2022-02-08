@@ -34,11 +34,7 @@ const TestimonialsPage = ({ pageContext, location }) => (
     pageName="Student Testimonials"
   >
     <Seo title="Testimonials" />
-    <TitleBanner style={{ backgroundAttachment: "fixed" }}>
-      <Container>
-        <Headline banner>Testimonials</Headline>
-      </Container>
-    </TitleBanner>
+ 
     <MainContainer>
       <Container>
         <TestimonialHeadline>
