@@ -51,8 +51,8 @@ const Menu = () => {
           ))}
         </MenuListWrapper>
         <BottomWrapper>
-          <BottomLink to="">support @mentor.edu.au</BottomLink>
-          <BottomLink to="">1800 - 000 - 000</BottomLink>
+        <BottomLink >support @mentor.edu.au</BottomLink>
+          <BottomLink >1800 - 000 - 000</BottomLink>
         </BottomWrapper>
       </MenuContainer>
     </>
