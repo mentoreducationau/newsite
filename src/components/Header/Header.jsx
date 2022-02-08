@@ -33,22 +33,27 @@ import Menu from "./Menu"
 const Header = ({ siteTitle, pageName, background }) => {
   const wrapperRef = useRef(null)
   const { setMenuOpen } = useActiveMenu()
-  const [scrollMoving, setScrollMoving] = useState(false)
 
+  // const [scrollMoving, setScrollMoving] = useState(false)
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset
+  //   if (position > 0) {
+  //     setScrollMoving(true)
+  //   } else {
+  //     setScrollMoving(false)
+  //   }
+  // }
+
+
+  const [navBar, setNavBar] = useState(0)
   const handleScroll = () => {
     const position = window.pageYOffset
-    if (position > 0) {
-      // ref.current.style.background = "white"
-      setScrollMoving(true)
-    } else {
-      // ref.current.style.background = "transparent"
-      setScrollMoving(false)
-    }
+    setNavBar(position)
   }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
-
+    
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -76,7 +81,8 @@ const Header = ({ siteTitle, pageName, background }) => {
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper scrollMoving={scrollMoving}>
+        {/* <NavWrapper scrollMoving={scrollMoving}> */}
+        <NavWrapper navbar={navBar}>
           <LogoWrapepr to={"/"}>
             <img
               src={mlogo}
@@ -90,13 +96,15 @@ const Header = ({ siteTitle, pageName, background }) => {
                 key={link.slug}
                 className="border-bottom"
                 to={`${link.slug}`}
-                scrollMoving={scrollMoving}
+                // scrollMoving={scrollMoving}
+                navbar={navBar}
               >
                 {link.name}
               </HeaderLink>
             ))}
             <Link to="/">
-              <SignInButton scrollMoving={scrollMoving}>STUDENT SIGN-IN</SignInButton>
+              {/* <SignInButton scrollMoving={scrollMoving}>STUDENT SIGN-IN</SignInButton> */}
+              <SignInButton navbar={navBar}>STUDENT SIGN-IN</SignInButton>
             </Link>
           </LinksWrapper>
           <IconWrapper>

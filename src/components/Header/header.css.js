@@ -19,7 +19,8 @@ export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
   padding: 0 66px;
-  background: ${props => (props.scrollMoving ? "white" : "transparent")};
+  // background: ${props => (props.scrollMoving ? "white" : "transparent")};
+  background-color:  ${props => (props.navBar > 5 ? "white" : "transperant")};
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -74,7 +75,8 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${props => props.scrollMoving ? "#2c2d2f" : "white"};
+  // color: ${props => props.scrollMoving ? "#2c2d2f" : "white"};
+  color:  ${props => (props.navBar > 5 ? "grey" : "white")};
   height: 50%;
   font-family: futura;
   font-size: 1rem;
@@ -85,8 +87,9 @@ export const HeaderLink = styled(Link)`
   background-color: transparent;
   text-decoration: none;
   position: relative;
-  transition: all 0.8s ease;
+  // transition: all 0.8s ease;
 
+  transition: all .3s ease-in;
   :after {
     content: "";
     position: absolute;
@@ -114,9 +117,11 @@ export const HeaderLink = styled(Link)`
 
 export const SignInButton = styled.button`
   background-color: transparent;
-  border: ${props => props.scrollMoving ? "2px #2c2d2f solid" : "2px white solid"};
+  // border: ${props => props.scrollMoving ? "2px #2c2d2f solid" : "2px white solid"};
+  border:  ${props => (props.navBar > 5 ? "2px grey solid" : "2px white solid")};
   border-radius: 3px;
-  color: ${props => props.scrollMoving ? "#2c2d2f" : "white"};
+  // color: ${props => props.scrollMoving ? "#2c2d2f" : "white"};
+  color:  ${props => (props.navBar > 5 ? "grey" : "white")};
   font-size: 13px;
   line-height: 17px;
   height: 29px;
