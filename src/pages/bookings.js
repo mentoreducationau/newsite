@@ -1,7 +1,6 @@
 import * as React from "react"
 import Seo from "../components/Seo/Seo"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
 import {
   TitleBanner,
   MainContainer
