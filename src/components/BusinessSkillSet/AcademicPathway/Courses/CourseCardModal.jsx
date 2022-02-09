@@ -14,7 +14,6 @@ import {
 } from "./courseCard.css"
 
 const CourseCardModal = ({ display, setDisplayModal, course }) => {
-  //   console.log(course.introduction)
   return (
     <CourseCardModalWrapper display={display ? display.toString() : undefined}>
       <CourseCardModalContainer>

@@ -14,7 +14,6 @@ import {
 import { H4 } from "../../../../styles/Typography.css"
 
 const CourseCard = ({ course, dualCourse = false }) => {
-//   console.log(`course`, course)
   const [displayModal, setDisplayModal] = React.useState(false)
 
   useDisableBodyScroll(displayModal)
@@ -42,7 +41,6 @@ const CourseCard = ({ course, dualCourse = false }) => {
           </>
         )}
         <CourseCardButtonContainer>
-          {/* <CourseCardButton>Course Guide</CourseCardButton> */}
           <CourseCardButton onClick={() => setDisplayModal(true)}>
             Find Out More
           </CourseCardButton>

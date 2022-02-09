@@ -11,10 +11,6 @@ import { courseArrayForTimetable } from "../../../contents/courseArrayForTimetab
 const Timetable = () => {
   const [openState, setOpenState] = useState(true)
 
-  // const onClick = () => {
-  //   setOpenState(!openState)
-  // }
-
   return (
     <>
       <TitleBanner style={{ backgroundAttachment: "fixed" }}>
@@ -30,13 +26,6 @@ const Timetable = () => {
             Mentor Education is currently running online virtual classes and
             on-campus in class study for the following qualifications:
           </Paragraph>
-          {/* <TimeTableExpandButton
-            className="darken-3 waves-effect waves-light btn"
-            onClick={() => onClick()}
-          >
-            Online Tutorials and Webinars
-            <i className="material-icons left">play_circle_filled</i>
-          </TimeTableExpandButton> */}
         </ParagraphWrapper>
         {courseArrayForTimetable.map((item, index) =>
           openState ? (

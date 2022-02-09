@@ -45,7 +45,6 @@ const SpecialOffersPage = ({ pageContext, location, data }) => {
       }
     >
       <Seo title="Special Offers" />
-      {/* <SpecialOffersTemplate offersData={data.allContentfulSpecialsOffers.nodes[0].pageSections}/> */}
       <div ref={ref}>
         <OffersIntro />
       </div>

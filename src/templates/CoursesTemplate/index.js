@@ -1,32 +1,24 @@
 import React, { useRef } from "react"
-// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/Seo/Seo"
 import {
-  // HeroVideo,
   MainContainer,
   CourseContainer,
   StickySideBar,
 } from "./index.css"
 
 import {
-  // CareerSkillSket,
-  // CareerAccordion,
   Knowmore,
   FooterForm,
   StudentsWork,
   CourseInfo,
   JourneyStarted,
-  // LiveTutorials,
-  // Faq,
   EnrolNow,
-  // Mission,
 } from "../../components"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
 import { Headline } from "../../styles/Typography.css"
-// import playbutton from "../../images/svg/playbutton.svg"
 
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData
@@ -68,17 +60,6 @@ const CoursesTemplate = ({ pageContext, location }) => {
             courseData.courseName
           }
         />
-        {/* <HeroVideo>
-          <StaticImage
-            src="../../images/placeholder.png"
-            alt="banner background"
-            layout="fullWidth"
-          />
-          <img className="playbutton" src={playbutton} alt="play" />
-          <Paragraph>
-            Watch video for comprehensive overview of this course
-          </Paragraph>
-        </HeroVideo> */}
         <Container>
           <Headline banner>
             {courseData.courseCode +
@@ -99,15 +80,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
               landingIntro={courseData.landingIntro}
             />
             <JourneyStarted />
-            {/* <LiveTutorials /> */}
-            {/* <Faq /> */}
-            {/* <CareerSkillSket
-              course
-              title="Where will this course take your career?"
-            /> */}
-            {/* <CareerAccordion /> */}
             <Knowmore course />
-            {/* <Mission /> */}
             <StudentsWork course />
             <div ref={ref}>
               <FooterForm course />

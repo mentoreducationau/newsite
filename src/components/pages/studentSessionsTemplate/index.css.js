@@ -5,9 +5,6 @@ import bgImg from "../../../images/header-hero.jpeg"
 import sessionHeaderBg from "../../../images/session-header-bg.png"
 
 export const HeaderWrapper = styled.div`
-  //   min-height: 91vh;
-  //   background: url(${props =>
-    props.background ? props.background : bgImg});
   background-size: cover;
   background-color: #df2f16;
   margin: 0 auto;
@@ -142,13 +139,6 @@ export const ColorShape = styled.div`
   opacity: 1;
   margin-top: ${props => (props.marginTop ? props.marginTop : "-18px")};
   margin-left: ${props => (props.marginLeft ? props.marginLeft : "0")};
-  // border-right: 177px solid transparent;
-  // border-left: 0px solid transparent;
-  // border-top: 438px solid #672060;
-  // width: 178px;
-  // opacity: 1;
-  // margin-top: -18px;
-  // margin-left: 0;
   height: 470px;
   transform: rotate(180deg);
 `

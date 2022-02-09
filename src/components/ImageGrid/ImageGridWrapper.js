@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { CourseCardTitle } from "../BusinessSkillSet/AcademicPathway/Courses/courseCard.css"
@@ -20,11 +19,6 @@ const ImageGridWrapper = ({ title, content, image, link }) => {
 
   return (
     <>
-      {/* <GatsbyImage
-        imgStyle={{ width: "100%" }}
-        image={getImage(image)}
-        alt="test"
-      /> */}
       <Img fluid={image} imgStyle={{ width: "100%" }} />
       <Link style={{ textDecoration: "none" }} to="#">
         <CourseCardTitle

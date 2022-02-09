@@ -31,7 +31,6 @@ const Registar = () => {
   return (
     <RegisterContainer>
       <H3>Register now</H3>
-      {/* <h3>Fill out your details to register now!</h3> */}
       <VerticalFormTemplate buttonText="Register" handleSubmit={handleSubmit} />
     </RegisterContainer>
   )

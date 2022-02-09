@@ -1,15 +1,3 @@
-//   const [courseItems, setCourseItems] = React.useState([])
-//   const [activeTab, setActiveTab] = React.useState()
-
-//   useEffect(() => {
-//     const newCourseItems = []
-//     for (let [value] of Object.entries(courses[0])) {
-//       newCourseItems.push(`${value}`)
-//       setCourseItems(newCourseItems)
-//       setActiveTab(Object.keys(courses[0])[0])
-//     }
-//   },[])
-
 import React from "react"
 import Renderer from "../../rich-text-renderers/sample"
 
@@ -66,10 +54,6 @@ const Tab = ({ tabContentArray }) => {
                   item={content.references[0].coreUnits}
                   title="Core Units"
                 />
-                {/* <UnitAccordion
-                  item={content.references[1].electiveUnitGroup}
-                  title="Elevtive Unit Group"
-                /> */}
               </Display>
             ) : (
               <Display activeTab={activeTab} id={index + 1} key={index}>

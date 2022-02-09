@@ -1,22 +1,6 @@
 import styled from "styled-components"
 import { Container } from "../../styles/ContainerStyles.css"
 
-export const HeroVideo = styled.div`
-  p {
-    padding: 8px 4rem;
-    text-align: right;
-  }
-
-  @media (max-width: 572px) {
-    .playbutton {
-      top: 40%;
-    }
-    p {
-      padding: 8px 2rem;
-      text-align: center;
-    }
-  }
-`
 export const MainContainer = styled(Container)`
   display: flex;
   justify-content: space-between;

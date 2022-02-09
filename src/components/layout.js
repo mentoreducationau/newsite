@@ -47,7 +47,6 @@ const Layout = ({ children, pageContext, location, crumbLabel, pageName, backgro
         <div
           style={{
             margin: `0 auto`,
-            // maxWidth: "100vw",
             minHeight: "1000px",
           }}
         >

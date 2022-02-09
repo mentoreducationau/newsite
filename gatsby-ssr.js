@@ -25,7 +25,6 @@ const App = ({ element }) => {
   if (!isMounted) return null
 
   return (
-    // <ThemeProvider theme={width < 1200 ? Theme.mobile : Theme.desktop}>
  <ThemeProvider theme={theme}>
       /* <GlobalStyles />
       <Typography /> */

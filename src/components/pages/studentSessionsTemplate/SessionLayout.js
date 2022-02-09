@@ -32,7 +32,6 @@ const SessionLayout = ({ children, pageContext, location, crumbLabel, background
         <div
           style={{
             margin: `0 auto`,
-            // maxWidth: "100vw",
             minHeight: "1000px",
           }}
         >

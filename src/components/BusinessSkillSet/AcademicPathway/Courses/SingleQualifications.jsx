@@ -4,7 +4,6 @@ import CourseCard from "./CourseCard"
 
 const SingleQualifications = ({ courses }) => {
   const [singleCourses, setSingleCourses] = React.useState([])
-  // if (courses[6].type == "dualQualification") console.log("meh")
 
   useEffect(() => {
     const newSingleCourses = []

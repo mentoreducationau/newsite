@@ -105,18 +105,16 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
               <WatchNowSection>
                 <WatchNowTitle>WATCH NOW</WatchNowTitle>
                 <IframeWrapper>
-                  {/* <iframe
-                    src={sessionData.youtubeUrl.file.url}
-                    frameborder="0"
-                    webkitallowfullscreen=""
-                    mozallowfullscreen=""
-                    allowfullscreen=""
-                    title="pathway-iframe-1"
-                  ></iframe> */}
                   <video controls autoplay width="100%">
                     <source
                       src={sessionData.youtubeUrl.file.url}
                       type="video/mp4"
+                    />
+                    <track
+                      src="captions_en.vtt"
+                      kind="captions"
+                      srclang="en"
+                      label="english_captions"
                     />
                   </video>
                 </IframeWrapper>
@@ -164,9 +162,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                   >
                     ENROL NOW
                   </H3>
-                  {/* <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"> */}
                   <PriceButton>ENROL</PriceButton>
-                  {/* </a> */}
                 </div>
               </>
             ) : (

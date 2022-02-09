@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-// import "./hero.css"
 import { links } from "../../Header/links-array"
 import { Headline } from "../../../styles/Typography.css"
 import bgImg from "../../../images/header-hero.jpeg"
@@ -56,7 +55,6 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // color: #2c2d2f;
   color: white;
   height: 50%;
   font-family: futura;

@@ -98,10 +98,6 @@ export const CourseCardWrapper = styled.div`
     -10px 10px 20px rgba(0, 0, 0, 10%);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
     -10px 10px 20px rgba(0, 0, 0, 10%);
-  // transition: transform 0.3s ease-in-out;
-  //   :hover {
-  //     transform: scale(1.05);
-  //   }
 
   .gatsby-image-wrapper {
     width: 100%;
@@ -129,16 +125,12 @@ export const CourseNameText = styled.p`
   font-size: 19px;
   line-height: 22px;
   font-weight: 800;
-  //   margin-bottom: 40.3px;
-  //   padding: 0 32px;
 `
 
 export const CourseCodeText = styled.p`
   font-size: 15px;
   line-height: 16.9px;
   font-weight: 800;
-  //   margin-bottom: 40.3px;
-  //   padding: 0 32px;
 `
 
 export const RequestButton = styled(Button)`

@@ -1,6 +1,6 @@
-import React from "react";
-import { Tabs, Tab, CollapsibleItem, Collapsible } from "react-materialize";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from "react"
+import { Tabs, Tab, CollapsibleItem, Collapsible } from "react-materialize"
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 export default function CourseTabs() {
   return (
     <div>
@@ -111,12 +111,9 @@ export default function CourseTabs() {
               </p>
               <p>
                 <ul>
-                  <li>- Set reading (textbook/workbook)
-</li>
-                  <li>- Instructed research
-</li>
-                  <li>- Self-directed research
-</li>
+                  <li>- Set reading (textbook/workbook)</li>
+                  <li>- Instructed research</li>
+                  <li>- Self-directed research</li>
                   <li>- Webinars</li>
                   <li>- Forums</li>
                 </ul>
@@ -143,31 +140,51 @@ export default function CourseTabs() {
               <p>The total course duration is 6 months.</p>
 
               <div className="units">
-              <h4>Skillset Outline (Units)</h4>
-              <Collapsible accordion>
-  <CollapsibleItem
-    expanded={false}
-    header="Core Units"
-    icon={<ExpandMoreIcon />}
-    node="div"
-  >
-   <ul>
-       <li>- <strong> FNSACC311</strong> - Process financial transactions and extract interim reports</li>
-       <li>- <strong> FNSACC312</strong> - Administer subsidiary accounts and ledgers</li>
-       <li>- <strong> FNSACC408</strong> - Work effectively in the accounting and bookkeeping industry</li>
-       <li>- <strong> FNSACC416</strong> - Set up and operate a computerised accounting system</li>
-       <li>- <strong> FNSTPB401</strong> - Complete business activity and instalment activity statements</li>
-       <li>- <strong> FNSTPB402</strong> - Establish and maintain payroll systems</li>
-       <li>- <strong> BSBFIA401</strong> - Prepare financial reports</li>
-   </ul>
-  </CollapsibleItem>
-  </Collapsible>
+                <h4>Skillset Outline (Units)</h4>
+                <Collapsible accordion>
+                  <CollapsibleItem
+                    expanded={false}
+                    header="Core Units"
+                    icon={<ExpandMoreIcon />}
+                    node="div"
+                  >
+                    <ul>
+                      <li>
+                        - <strong> FNSACC311</strong> - Process financial
+                        transactions and extract interim reports
+                      </li>
+                      <li>
+                        - <strong> FNSACC312</strong> - Administer subsidiary
+                        accounts and ledgers
+                      </li>
+                      <li>
+                        - <strong> FNSACC408</strong> - Work effectively in the
+                        accounting and bookkeeping industry
+                      </li>
+                      <li>
+                        - <strong> FNSACC416</strong> - Set up and operate a
+                        computerised accounting system
+                      </li>
+                      <li>
+                        - <strong> FNSTPB401</strong> - Complete business
+                        activity and instalment activity statements
+                      </li>
+                      <li>
+                        - <strong> FNSTPB402</strong> - Establish and maintain
+                        payroll systems
+                      </li>
+                      <li>
+                        - <strong> BSBFIA401</strong> - Prepare financial
+                        reports
+                      </li>
+                    </ul>
+                  </CollapsibleItem>
+                </Collapsible>
               </div>
             </div>
           </Tab>
-         
         </Tabs>
       </div>
     </div>
-  );
+  )
 }

@@ -21,13 +21,6 @@ export const CourseCollectionHeadingText = styled.p`
   font-weight: 800;
 `
 export const CardsWrapper = styled.div`
-  //   --repeat: auto-fit;
-  --repeat: 3;
-
-  //   @media (min-width: calc(250px * 5)) {
-  //     --repeat: 3;
-  //   }
-
   display: grid;
   grid-template-columns: repeat(
     var(--repeat, auto-fit),
@@ -59,10 +52,6 @@ export const CourseCardWrapper = styled.div`
     -10px 10px 20px rgba(0, 0, 0, 10%);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
     -10px 10px 20px rgba(0, 0, 0, 10%);
-  // transition: transform 0.3s ease-in-out;
-  //   :hover {
-  //     transform: scale(1.05);
-  //   }
 
   .gatsby-image-wrapper {
     width: 100%;

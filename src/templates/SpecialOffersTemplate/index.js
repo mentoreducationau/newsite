@@ -11,8 +11,6 @@ const SpecialOffersTemplate = () => {
   const itemsRef = useRef([])
 
   const excuteScroll = el => {
-    // const pos = itemsRef.current[el].getBoundingClientRect().top - 50
-    // window.scrollTo({ top: pos, behavior: "smooth" })
     itemsRef.current[el].scrollIntoView({ behavior: "smooth" })
   }
 

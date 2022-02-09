@@ -34,11 +34,6 @@ const UnitAccordion = ({ item, title }) => {
         active={setActive}
       >
         <table>
-          {/* <tr>
-            <td style={{ textAlign: "left" }} colspan="5">
-              {item.description}
-            </td>
-          </tr> */}
           <tr style={{ background: "#34A57C", color: "#ffffff" }}>
             <th>Unit Name</th>
             <th>Unit Code</th>
