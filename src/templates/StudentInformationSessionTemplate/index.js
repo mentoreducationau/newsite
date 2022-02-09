@@ -42,7 +42,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
     sessionData.course.courseName.toLowerCase().replace(/ /g, "-")
   const sessionUrl =
     courseUrl + "-" + sessionData.sessionDate.toLowerCase().replace(/-/g, "")
-  const status = nowTime > parseSessionDate
+  const status = nowTime < parseSessionDate
   const screenHeight = window.innerHeight
   const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)

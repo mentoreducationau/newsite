@@ -47,41 +47,37 @@ FormFieldComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export const SessionHeaderForm = ({
-  course,
-  buttonText,
-  handleSubmit,
-}) => {
+export const SessionHeaderForm = ({ course, buttonText, handleSubmit }) => {
   const { values, onSubmit, handleChange } = useForm(() => handleSubmit(values))
   return (
     <CustomFormStyled onSubmit={onSubmit}>
-      <FormField course={course}>
-        <FormFieldComponent
-          label="Name*"
-          name="name"
-          value={values.name || ""}
-          onChange={handleChange}
-        />
-      </FormField>
-      
-      <FormField course={course}>
-        <FormFieldComponent
-          label="Email*"
-          name="email"
-          type="email"
-          value={values.email || ""}
-          onChange={handleChange}
-        />
-      </FormField>
-      <FormField course={course}>
-        <FormFieldComponent
-          label="Phone"
-          name="phone"
-          value={values.phone || ""}
-          onChange={handleChange}
-        />
-      </FormField>
-      <FormButton course={course}>{buttonText}</FormButton>
+        <FormField course={course}>
+          <FormFieldComponent
+            label="Name*"
+            name="name"
+            value={values.name || ""}
+            onChange={handleChange}
+          />
+        </FormField>
+
+        <FormField course={course}>
+          <FormFieldComponent
+            label="Email*"
+            name="email"
+            type="email"
+            value={values.email || ""}
+            onChange={handleChange}
+          />
+        </FormField>
+        <FormField course={course}>
+          <FormFieldComponent
+            label="Phone"
+            name="phone"
+            value={values.phone || ""}
+            onChange={handleChange}
+          />
+        </FormField>
+        <FormButton course={course}>{buttonText}</FormButton>
     </CustomFormStyled>
   )
 }

@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { Headline } from "../../../styles/Typography.css"
 import bgImg from "../../../images/header-hero.jpeg"
+import sessionHeaderBg from "../../../images/session-header-bg.png"
 
 export const HeaderWrapper = styled.div`
   //   min-height: 91vh;
@@ -19,8 +20,7 @@ export const HeaderWrapper = styled.div`
 export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
-  padding: 0 66rem;
-  //   background: transparent;
+  padding: 0 66px;
   background: white;
   position: fixed;
   top: 0;
@@ -74,8 +74,7 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // color: #2c2d2f;
-  color: white;
+  color: grey;
   height: 50%;
   font-family: futura;
   font-size: 1rem;
@@ -114,9 +113,9 @@ export const HeaderLink = styled(Link)`
 
 export const SignInButton = styled.button`
   background-color: transparent;
-  border: 2px white solid;
+  border: 2px grey solid;
   border-radius: 3px;
-  color: white;
+  color: grey;
   font-size: 13px;
   line-height: 17px;
   height: 29px;
@@ -127,21 +126,31 @@ export const SignInButton = styled.button`
   }
 `
 export const ColorShapeWrapper = styled.div`
-  height: 100vh;
-  width: 100% !important;
+  height: 100%;
+  // width: 100% !important;
   flex-direction: column;
   align-items: flex-end;
   margin-top: 4.5rem;
   padding: 0 !important;
 `
 export const ColorShape = styled.div`
-  border-left: 90px solid transparent;
-  border-right: 0 solid transparent;
-  border-top: 340px solid #df2f16;
-  width: ${props => (props.width ? props.width : "100%")};
-  opacity: ${props => (props.opacity ? props.opacity : "1")};
-  margin-top: ${props => (props.marginTop ? props.marginTop : "0")};
-  height: 200px;
+  border-right: 177px solid transparent;
+  border-left: 0px solid transparent;
+  border-top: ${props =>
+    props.color ? `438px solid` + props.color : `438px solid #672060`};
+  width: ${props => (props.width ? props.width : "178px")};
+  opacity: 1;
+  margin-top: ${props => (props.marginTop ? props.marginTop : "-18px")};
+  margin-left: ${props => (props.marginLeft ? props.marginLeft : "0")};
+  // border-right: 177px solid transparent;
+  // border-left: 0px solid transparent;
+  // border-top: 438px solid #672060;
+  // width: 178px;
+  // opacity: 1;
+  // margin-top: -18px;
+  // margin-left: 0;
+  height: 470px;
+  transform: rotate(180deg);
 `
 export const TitleWrapper = styled.div`
   position: absolute;
@@ -187,7 +196,7 @@ export const ColorRectWrapper = styled.div`
   margin-top: 21rem;
 `
 export const ColorRect = styled.div`
-  background-color: #df2f16;
+  background-color: green;
   width: ${props => (props.width ? props.width : "50%")};
   height: 43px;
   margin-bottom: 1.1rem;
@@ -235,18 +244,47 @@ export const MenuContainer = styled.div`
   transform: translateX(${props => (props.menuOpen ? "unset" : "100%")});
   transition: transform 0.5s ease-out;
 `
+export const Wrapper = styled.div`
+  background: url(${sessionHeaderBg});
+  background-size: cover;
+  background-repeat: round;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+`
 
 export const ContentContainer = styled.div`
-  margin: 117px 0 36px 60px;
+  padding: 30px 0 36px 60px;
   max-width: 1100px;
   display: flex;
   flex-direction: column;
   color: white;
-
   @media (max-width: 1280px) {
     width: 80%;
   }
 `
+export const MoreInfoWrapper = styled.div`
+  position: relative;
+  display: ${props => (props.status ? "none" : "display")};
+`
+export const MoreInfo = styled.div`
+  position: absolute;
+  bottom: 25px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+export const MoreInfoText = styled.p`
+  font-size: 12px;
+  line-height: 15px;
+  color: white;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-bottom: 0;
+`
+
 export const TitleText = styled.p`
   font-size: 62px;
   line-height: 62px;
