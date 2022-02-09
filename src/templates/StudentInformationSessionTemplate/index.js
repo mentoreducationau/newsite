@@ -42,7 +42,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
     sessionData.course.courseName.toLowerCase().replace(/ /g, "-")
   const sessionUrl =
     courseUrl + "-" + sessionData.sessionDate.toLowerCase().replace(/-/g, "")
-  const status = nowTime < parseSessionDate
+  const status = nowTime > parseSessionDate
   const screenHeight = window.innerHeight
   const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
@@ -54,8 +54,8 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
 
   const openDownloadWindow = () => {
     setTimeout(() => {
-      window.open("", '_blank', 'noopener,noreferrer')
-    }, 3000);
+      window.open("", "_blank", "noopener,noreferrer")
+    }, 3000)
   }
 
   const afterOpen = () => {
@@ -105,14 +105,20 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
               <WatchNowSection>
                 <WatchNowTitle>WATCH NOW</WatchNowTitle>
                 <IframeWrapper>
-                  <iframe
+                  {/* <iframe
                     src={sessionData.youtubeUrl.file.url}
                     frameborder="0"
                     webkitallowfullscreen=""
                     mozallowfullscreen=""
                     allowfullscreen=""
                     title="pathway-iframe-1"
-                  ></iframe>
+                  ></iframe> */}
+                  <video controls autoplay width="100%">
+                    <source
+                      src={sessionData.youtubeUrl.file.url}
+                      type="video/mp4"
+                    />
+                  </video>
                 </IframeWrapper>
               </WatchNowSection>
             )}
@@ -159,7 +165,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                     ENROL NOW
                   </H3>
                   {/* <a href="https://enrolments.mentor.edu.au/enrol-selfserve?course_code=${courseCode}&dc=courseadviser20"> */}
-                    <PriceButton>ENROL</PriceButton>
+                  <PriceButton>ENROL</PriceButton>
                   {/* </a> */}
                 </div>
               </>
@@ -172,7 +178,10 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                   toggleModal={toggleThankyouModal}
                   openDownloadWindow={openDownloadWindow}
                 />
-                <EnrolNow price={sessionData.course.pricing.salePrice} excuteScroll={excuteScroll} />
+                <EnrolNow
+                  price={sessionData.course.pricing.salePrice}
+                  excuteScroll={excuteScroll}
+                />
               </>
             )}
           </StickySideBar>
