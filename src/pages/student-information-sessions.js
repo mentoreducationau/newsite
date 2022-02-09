@@ -80,7 +80,6 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
   }
 
   const handleSignUp = () => {
-    console.log(courseUrl, sessionUrl)
     toggleThankyouModal()
   }
 

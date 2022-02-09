@@ -5,7 +5,6 @@ import { H3 } from "../../styles/Typography.css"
 
 const Form = ({ course, title, buttonTitle, toggleModal, openDownloadWindow }) => {
   const handleSubmit = v => {
-    console.log(v)
     toggleModal && toggleModal()
     openDownloadWindow && openDownloadWindow()
   }

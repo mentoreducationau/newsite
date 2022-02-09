@@ -1,6 +1,6 @@
 import React from "react"
 import { Tabs, Tab, CollapsibleItem, Collapsible } from "react-materialize"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 export default function CourseTabs() {
   return (
     <div>
@@ -145,7 +145,7 @@ export default function CourseTabs() {
                   <CollapsibleItem
                     expanded={false}
                     header="Core Units"
-                    icon={<ExpandMoreIcon />}
+                    // icon={<ExpandMoreIcon />}
                     node="div"
                   >
                     <ul>

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt"
+// import ArrowRightAlt from "@material-ui/icons/ArrowRightAlt"
 import styled from "styled-components"
 
 const PathwaysContainer = styled.div`
@@ -23,13 +23,13 @@ const PathwaysWrapper = styled.div`
     min-height: 150px;
   }
 `
-const ArrowRight = styled(ArrowRightAlt)`
-  display: flex !important;
-  padding-left: 0.1rem !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 30px !important;
-`
+// const ArrowRight = styled(ArrowRightAlt)`
+//   display: flex !important;
+//   padding-left: 0.1rem !important;
+//   align-items: center !important;
+//   justify-content: center !important;
+//   font-size: 30px !important;
+// `
 const RedGoButton = styled.p`
   display: flex;
   padding: 1.5rem 2rem;
@@ -130,7 +130,7 @@ const Pathways = () => {
               <RedGoButton>
                 GO
                 <span>
-                  <ArrowRight />
+                  {/* <ArrowRight /> */}
                 </span>
               </RedGoButton>
             </Link>
@@ -140,7 +140,7 @@ const Pathways = () => {
               <RedGoButton>
                 GO
                 <span>
-                  <ArrowRight />
+                  {/* <ArrowRight /> */}
                 </span>
               </RedGoButton>
             </Link>

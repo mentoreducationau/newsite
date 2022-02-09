@@ -8,7 +8,6 @@ import { CardsWrapper } from "../../ImageGrid/index.css"
 import CardWithBotton from "./CardWithBotton"
 
 const StudentForms = ({ formsData }) => {
-  console.log(formsData, "FFF")
 
   return (
     <>

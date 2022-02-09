@@ -31,7 +31,6 @@ const StudentsWork = props => {
           const img = logos.filter(
             image => image.relativePath === `company-logos/${imgSrc}`
           )
-          console.log(img, "SSS")
           return (
             <a key={id} href={link} target="_blank" rel="noreferrer noopener">
               {(img.length > 0 && img[0].childImageSharp !== null) && (
