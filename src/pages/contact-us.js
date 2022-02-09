@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Seo from "../components/Seo/Seo"
 import ContactUs from "../components/pages/contact"
 
 const Contact = ({ pageContext, location }) => (

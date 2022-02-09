@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Seo from "../components/Seo/Seo"
 import CoursesIntro from "../components/pages/schools/Intro"
 import FacultyCollection from "../components/pages/schools/FacultyCollection"
 import {

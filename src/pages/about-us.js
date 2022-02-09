@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Seo from "../components/Seo/Seo"
 import AboutTable from "../components/pages/about/about-table"
 import WhereOurGraduatesWork from "../components/reuse/where-our-graduates-work-banner/where-our-graduates-work"
 import AboutUsIntro from "../components/pages/about/Intro"

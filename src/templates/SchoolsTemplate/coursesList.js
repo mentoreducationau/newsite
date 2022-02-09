@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+import Seo from "../../components/Seo/Seo"
 import { MainContainer } from "../../components/pages/about/index.css"
 
 import { Headline, Title } from "../../styles/Typography.css"
