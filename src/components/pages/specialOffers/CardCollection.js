@@ -1,18 +1,42 @@
-import React from "react"
+import React, {useRef} from "react"
+import { NoneDecorationA } from "../../../styles/ButtonStyles.css"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
-import { CourseCollectionHeadingText, RequestButton, CourseTable } from "./offers.css"
+import {
+  CourseCollectionHeadingText,
+  RequestButton,
+  CourseTable,
+  ButtonAndScrollWrapper,
+  IconImg,
+} from "./offers.css"
+import scrollUp from "../../../images/svg/scroll_up_icon.svg"
 
 const CardCollection = ({ cardCollection }) => {
+
+  const ref = useRef(null)
+
+  const handleScrollUp = () => {
+    const position =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+      window.scrollTo({ top: position, behavior: "smooth" })
+  }
+
   return (
     <SectionContainer marginBottom="59.5px" mobMarginBottom="137.5px">
-      <CourseCollectionHeadingText>
-        {cardCollection.sectionHeading}
-      </CourseCollectionHeadingText>
+      <div ref={ref}>
+        <CourseCollectionHeadingText>
+          {cardCollection.sectionHeading}
+        </CourseCollectionHeadingText>
+      </div>
+
       <CourseTable>
         {cardCollection.courses.map((item, idx) => (
           <>
             <tr>
-              <td rowSpan="2" style={{textAlign: "center"}}>{item.courseCode}</td>
+              <td rowSpan="2" style={{ textAlign: "center" }}>
+                {item.courseCode}
+              </td>
               <td rowSpan="2">
                 {item.courseCode +
                   " - " +
@@ -21,46 +45,65 @@ const CardCollection = ({ cardCollection }) => {
                   item.courseName}
               </td>
               <td>Self-Paced Study</td>
-              <td>{`$ `+ item.pricing.salePrice + ` (save 59%)`}</td>
+              <td>{`$ ` + item.pricing.salePrice + ` (save 59%)`}</td>
               <td>
-                <RequestButton
-                  width="120px"
-                  height="33px"
-                  fontSize="16px"
-                  lineHeight="26px"
-                  borderRadius="0"
+                <NoneDecorationA
+                  href={
+                    `https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` +
+                    item.courseCode +
+                    `&dc=courseadviser20`
+                  }
                 >
-                  Enrol
-                </RequestButton>
+                  <RequestButton
+                    width="120px"
+                    height="33px"
+                    fontSize="16px"
+                    lineHeight="26px"
+                    borderRadius="0"
+                  >
+                    Enrol
+                  </RequestButton>
+                </NoneDecorationA>
               </td>
             </tr>
             <tr>
               <td>Self-Paced {"&"} Live Tutorial Study</td>
-              <td>{`$ `+ item.pricing.tutorialsSalePrice + ` (save 59%)`}</td>
+              <td>{`$ ` + item.pricing.tutorialsSalePrice + ` (save 59%)`}</td>
               <td>
-                <RequestButton
-                  width="120px"
-                  height="33px"
-                  fontSize="16px"
-                  lineHeight="26px"
-                  borderRadius="0"
+                <NoneDecorationA
+                  href={
+                    `https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` +
+                    item.courseCode +
+                    `&dc=courseadviser20`
+                  }
                 >
-                  Enrol
-                </RequestButton>
+                  <RequestButton
+                    width="120px"
+                    height="33px"
+                    fontSize="16px"
+                    lineHeight="26px"
+                    borderRadius="0"
+                  >
+                    Enrol
+                  </RequestButton>
+                </NoneDecorationA>
               </td>
             </tr>
           </>
         ))}
       </CourseTable>
-      <RequestButton
-        width="250px"
-        height="42px"
-        fontSize="16px"
-        lineHeight="26px"
-        borderRadius="0"
-      >
-        REQUEST A CALL BACK
-      </RequestButton>
+      <ButtonAndScrollWrapper>
+        <RequestButton
+          width="250px"
+          height="42px"
+          fontSize="16px"
+          lineHeight="26px"
+          borderRadius="0"
+        >
+          REQUEST A CALL BACK
+        </RequestButton>
+        <IconImg src={scrollUp} onClick={handleScrollUp} />
+      </ButtonAndScrollWrapper>
     </SectionContainer>
   )
 }

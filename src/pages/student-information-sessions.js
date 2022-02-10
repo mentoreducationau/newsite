@@ -80,7 +80,7 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
   }
 
   const handleSignUp = () => {
-    toggleThankyouModal()
+    toggleThankyouModal(sessionUrl, courseUrl)
   }
 
   return (
@@ -114,7 +114,7 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
             </IntroText>
           </IntroWrapper>
 
-          {data.allContentfulStudentInformationSession.nodes.map(item => (
+          {data.allContentfulStudentInformationSession.nodes.map((item, index) => (
             <SessionCard
               image={item.coverImage}
               sessionDate={item.sessionDate}
@@ -123,6 +123,7 @@ const StudentInformationSessionsPage = ({ pageContext, location, data }) => {
               zoomWebinarId={item.zoomWebinarId}
               toggleModal={toggleModal}
               toggleThankyouModal={toggleThankyouModal}
+              key={index}
             />
           ))}
         </MainContainer>

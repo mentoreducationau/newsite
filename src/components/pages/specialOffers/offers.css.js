@@ -50,89 +50,6 @@ export const CourseCollectionHeadingText = styled.p`
   //   line-height: 44.55px;
   // }
 `
-export const CardsWrapper = styled.div`
-  --repeat: auto-fit;
-
-  @media (max-width: 1280px) {
-    --repeat: 2;
-    grid-template-columns: 1fr 1fr;
-    max-width: 760px;
-  }
-
-  @media (min-width: 1280px) {
-    --repeat: 3;
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: 1150px;
-  }
-
-  @media (max-width: 835px) {
-    --repeat: 1;
-    grid-template-columns: 1fr;
-  }
-
-  display: grid;
-  grid-template-rows: auto;
-  row-gap: 110px;
-  column-gap: 34px;
-  margin: 0 auto;
-`
-
-export const CourseCardWrapper = styled.div`
-  @media (min-width: 250 * 3px) {
-    max-width: 250px;
-  }
-
-  width: 345px;
-  height: 452px;
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  justify-content: space-between;
-  font-family: Futura Heavy;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 7%);
-  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
-    -10px 10px 20px rgba(0, 0, 0, 10%);
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 10%),
-    -10px 10px 20px rgba(0, 0, 0, 10%);
-
-  .gatsby-image-wrapper {
-    width: 100%;
-    justify-self: center;
-  }
-`
-
-export const CardButton = styled.button`
-  font-family: Futura Heavy;
-  font-size: ${props => (props.fontSize ? props.fontSize : "25px")};
-  line-height: ${props => (props.fontSize ? props.lineHeight : "33px")};
-  background: #df2f16;
-  color: white;
-  border: 0;
-  border-radius: 5px;
-  width: 100%;
-  height: 48px;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-export const CourseNameText = styled.p`
-  font-size: 19px;
-  line-height: 22px;
-  font-weight: 800;
-`
-
-export const CourseCodeText = styled.p`
-  font-size: 15px;
-  line-height: 16.9px;
-  font-weight: 800;
-`
-
 export const RequestButton = styled(Button)`
   margin: 0 auto;
 `
@@ -146,5 +63,18 @@ export const CourseTable = styled.table`
       border: solid 1px #df2f16;
       padding: 12px;
     }
+  }
+`
+export const ButtonAndScrollWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+export const IconImg = styled.img`
+  width: 50px;
+  height: 50px;
+  margin: 0 20px 0 0;
+
+  :hover {
+    cursor: pointer;
   }
 `

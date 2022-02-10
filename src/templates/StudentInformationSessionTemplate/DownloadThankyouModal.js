@@ -51,6 +51,7 @@ export default function DownloadThankyouModal({
               borderTopLeftRadius: "10px",
               borderBottomLeftRadius: "10px",
             }}
+            alt="modal-image"
           />
           <ThankyouContentWrapper>
             <ThankyouTitleText>Thank you!</ThankyouTitleText>
@@ -66,6 +67,7 @@ export default function DownloadThankyouModal({
                 src="../../images/svg/modal_cancel_icon.svg"
                 style={{ width: "100%" }}
                 onClick={() => toggleModal()}
+                alt="close-image"
               />
             </IconWrapper>
 

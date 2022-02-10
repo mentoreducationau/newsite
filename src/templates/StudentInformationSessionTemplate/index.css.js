@@ -100,13 +100,10 @@ export const WatchNowTitle = styled.p`
     text-decoration-thickness: 3px;
 `
 export const IframeWrapper = styled.div`
-    width: 834px;
-    height: 509px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
     margin-top: 23px auto;
-
-    iframe {
-      width: 100%;
-    }
 `
 
 //Modal

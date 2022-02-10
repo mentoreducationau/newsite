@@ -4,7 +4,7 @@ import { Title, Paragraph } from "../../styles/Typography.css"
 import { IntroContainer, Intro, CardWrapper } from "./index.css"
 import JourneyCard from "./JourneyCard"
 
-const CourseInfo = () => {
+const JourneyStarted = () => {
   return (
     <>
       <Title>How to get your journey started</Title>
@@ -28,4 +28,4 @@ const CourseInfo = () => {
   )
 }
 
-export default CourseInfo
+export default JourneyStarted

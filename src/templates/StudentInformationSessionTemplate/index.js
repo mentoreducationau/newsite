@@ -16,11 +16,13 @@ import {
 import { EnrolNow } from "../../components"
 import { Container } from "../../styles/ContainerStyles.css"
 import { Headline, H3 } from "../../styles/Typography.css"
-import CourseInfo from "../../components/JourneyStarted"
-import { Knowmore } from "../../components"
-import { JourneyStarted } from "../../components"
-import { StudentsWork } from "../../components"
-import { FooterForm } from "../../components"
+import {
+  FooterForm,
+  StudentsWork,
+  JourneyStarted,
+  Knowmore,
+  CourseInfo,
+} from "../../components"
 import Form from "./Form"
 import DownloadThankyouModal from "./DownloadThankyouModal"
 
@@ -105,7 +107,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
               <WatchNowSection>
                 <WatchNowTitle>WATCH NOW</WatchNowTitle>
                 <IframeWrapper>
-                  <video controls autoplay width="100%">
+                  <video controls width="100%" height="100%">
                     <source
                       src={sessionData.youtubeUrl.file.url}
                       type="video/mp4"
@@ -113,7 +115,7 @@ const StudentInformationSessionTemplate = ({ pageContext, location }) => {
                     <track
                       src="captions_en.vtt"
                       kind="captions"
-                      srclang="en"
+                      srcLang="en"
                       label="english_captions"
                     />
                   </video>

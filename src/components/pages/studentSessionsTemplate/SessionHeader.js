@@ -123,8 +123,8 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
                   </IntroText>
                   <HostWrapper>
                     <HostText>Join your hosts:</HostText>
-                    {sessionData.hosts.map(item => (
-                      <PhotoWrapper>
+                    {sessionData.hosts.map((item, index) => (
+                      <PhotoWrapper key={index}>
                         <GatsbyImage
                           image={getImage(item.portrait)}
                           style={{
@@ -133,6 +133,7 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
                             width: "80px",
                             height: "80px",
                           }}
+                          alt="host-image"
                         />
                         <NameAndRoleWrapper>
                           <NameText>{item.name}</NameText>

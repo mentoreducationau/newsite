@@ -51,7 +51,7 @@ const ImageGrid = () => {
       <SectionWrapper justifyContent="center" style={{ overflow: `visible` }}>
         <CardsWrapper>
           {studentInformation.map((student, index) => (
-            <CourseCardWrapper>
+            <CourseCardWrapper key={index}>
               <ImageGridWrapper
                 key={index}
                 title={student.title}

@@ -108,6 +108,7 @@ const CareerPathwayPage = ({ pageContext, location }) => {
                     fluid={
                       imageData.allFile.edges[0].node.childImageSharp.fluid
                     }
+                    alt="fluid-img"
                   />
                 </OneImgWrapper>
               </ImageWrapper>

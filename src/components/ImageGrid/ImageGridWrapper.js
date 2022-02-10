@@ -19,27 +19,25 @@ const ImageGridWrapper = ({ title, content, image, link }) => {
 
   return (
     <>
-      <Img fluid={image} imgStyle={{ width: "100%" }} />
-      <Link style={{ textDecoration: "none" }} to="#">
-        <CourseCardTitle
-          style={{ color: "#C0202F", textDecoration: "underline" }}
-        >
-          {link === "education-academic" ? (
-            <a
-              href={educationAcademicLink.contentfulAsset.file.url}
-              style={{ color: "rgb(192, 32, 47)" }}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <H4 card>{title}</H4>
-            </a>
-          ) : (
-            <Link to={link} style={{ color: "rgb(192, 32, 47)" }}>
-              <H4 card>{title}</H4>
-            </Link>
-          )}
-        </CourseCardTitle>
-      </Link>
+      <Img fluid={image} imgStyle={{ width: "100%" }} alt="information-image" />
+      <CourseCardTitle
+        style={{ color: "#C0202F", textDecoration: "underline" }}
+      >
+        {link === "education-academic" ? (
+          <a
+            href={educationAcademicLink.contentfulAsset.file.url}
+            style={{ color: "rgb(192, 32, 47)" }}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <H4 card>{title}</H4>
+          </a>
+        ) : (
+          <Link to={link} style={{ color: "rgb(192, 32, 47)" }}>
+            <H4 card>{title}</H4>
+          </Link>
+        )}
+      </CourseCardTitle>
       <CourseCardTitle>{content}</CourseCardTitle>
     </>
   )

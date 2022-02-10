@@ -37,9 +37,16 @@ const SessionCard = ({
   return (
     <>
       {nowTime > parseSessionDate ? (
-        <NoneDecorationLink to={"/student-information-session/" + sessionUrl} style={{color: "hsla(0, 0%, 0%, 0.8)"}}>
+        <NoneDecorationLink
+          to={"/student-information-session/" + sessionUrl}
+          style={{ color: "hsla(0, 0%, 0%, 0.8)" }}
+        >
           <SessionCardWrapper>
-            <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
+            <GatsbyImage
+              image={getImage(image)}
+              style={{ width: "50%" }}
+              alt="session-card-img"
+            />
             <ContentWrapper>
               <CourseDataText>
                 {course.courseCode +
@@ -49,8 +56,7 @@ const SessionCard = ({
                   course.courseName}
               </CourseDataText>
               <CourseDataText color="#DF2F16">
-                {nowTime > parseSessionDate ? "Session Date: " : "Upcoming: "}
-                {sessionDate}
+                Session Date: {sessionDate}
               </CourseDataText>
               <CourseDataText color="#DF2F16" host>
                 Hosts:
@@ -66,29 +72,34 @@ const SessionCard = ({
                           height: "80px",
                           borderRadius: "50%",
                         }}
+                        alt="image-and-button-img"
                       />
                       <PersonNameText>{item.name}</PersonNameText>
                     </Wrapper>
                   ))}
                 </ImageWrapper>
                 <ButtonWrapper>
-                  {nowTime > parseSessionDate ? (
+                  {/* {nowTime > parseSessionDate ? ( */}
                     <SignUpButton
                       onClick={() => toggleThankyouModal(sessionUrl, courseUrl)}
                     >
                       WATCH NOW
                     </SignUpButton>
-                  ) : signedUp ? (
+                  {/* ) : signedUp ? (
                     <SignUpButton
                       onClick={() => toggleThankyouModal(sessionUrl, courseUrl)}
                     >
                       SIGN UP
                     </SignUpButton>
                   ) : (
-                    <SignUpButton onClick={() => toggleModal(zoomWebinarId, sessionUrl, courseUrl)}>
+                    <SignUpButton
+                      onClick={() =>
+                        toggleModal(zoomWebinarId, sessionUrl, courseUrl)
+                      }
+                    >
                       SIGN UP
                     </SignUpButton>
-                  )}
+                  )} */}
 
                   <HintText>**Click anywhere to view detail</HintText>
                 </ButtonWrapper>
@@ -98,7 +109,11 @@ const SessionCard = ({
         </NoneDecorationLink>
       ) : (
         <SessionCardWrapper>
-          <GatsbyImage image={getImage(image)} style={{ width: "50%" }} />
+          <GatsbyImage
+            image={getImage(image)}
+            style={{ width: "50%" }}
+            alt="session-card-img"
+          />
           <ContentWrapper>
             <CourseDataText>
               {course.courseCode +
@@ -108,16 +123,15 @@ const SessionCard = ({
                 course.courseName}
             </CourseDataText>
             <CourseDataText color="#DF2F16">
-              {nowTime > parseSessionDate ? "Session Date: " : "Upcoming: "}
-              {sessionDate}
+              Upcoming: {sessionDate}
             </CourseDataText>
             <CourseDataText color="#DF2F16" host>
               Hosts:
             </CourseDataText>
             <ImageAndButtonWrapper>
               <ImageWrapper>
-                {hosts.map(item => (
-                  <Wrapper key={item.name}>
+                {hosts.map((item, index) => (
+                  <Wrapper key={index}>
                     <GatsbyImage
                       image={getImage(item.portrait)}
                       style={{
@@ -125,26 +139,32 @@ const SessionCard = ({
                         height: "80px",
                         borderRadius: "50%",
                       }}
+                      alt="img-test"
                     />
                     <PersonNameText>{item.name}</PersonNameText>
                   </Wrapper>
                 ))}
               </ImageWrapper>
               <ButtonWrapper>
-                {nowTime > parseSessionDate ? (
+                {/* {nowTime > parseSessionDate ? (
                   <SignUpButton
                     onClick={() => toggleThankyouModal(sessionUrl, courseUrl)}
                   >
                     WATCH NOW
                   </SignUpButton>
-                ) : signedUp ? (
+                ) :  */}
+                {signedUp ? (
                   <SignUpButton
                     onClick={() => toggleThankyouModal(sessionUrl, courseUrl)}
                   >
                     SIGN UP
                   </SignUpButton>
                 ) : (
-                  <SignUpButton onClick={() => toggleModal(zoomWebinarId)}>
+                  <SignUpButton
+                    onClick={() =>
+                      toggleModal(zoomWebinarId, sessionUrl, courseUrl)
+                    }
+                  >
                     SIGN UP
                   </SignUpButton>
                 )}

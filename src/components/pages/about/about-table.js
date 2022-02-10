@@ -81,7 +81,7 @@ export default function AboutTable() {
           <AboutCardWrapper key={index}>
             <TableDescCard>
               <TableDescCardImage>
-                <Img fluid={it.image} />
+                <Img fluid={it.image} alt="table-desc-image" />
               </TableDescCardImage>
               <TableDescCardTitle>{it.title}</TableDescCardTitle>
               <TableDescCardText>

@@ -19,6 +19,7 @@ const CourseCard = ({ course }) => {
           borderTopRightRadius: "5px",
           marginBottom: "13px",
         }}
+        alt="course-card-img"
       />
       <CourseNameText enrol={course.enrolmentForm}>
         {course.courseCode +
