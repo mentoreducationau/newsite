@@ -1,14 +1,7 @@
 import React, { useEffect, useRef } from "react"
-import { Link } from "gatsby"
-import { links } from "../../Header/links-array.js"
 import useActiveMenu from "../../../hooks/ActiveMenu"
 import {
-  HeaderLink,
-  LinksWrapper,
-  LogoWrapepr,
-  NavWrapper,
   HeaderWrapper,
-  IconWrapper,
   IconImg,
   ColorRectWrapper,
   ContentContainer,
@@ -22,29 +15,25 @@ import {
   HostText,
   FormWrapper,
   TipText,
-  SignInButton,
   Wrapper,
   MoreInfoText,
   MoreInfoWrapper,
   MoreInfo,
+  TipTextWrapper
 } from "./index.css"
 import {
   DesktopContainer,
   MobileContainer,
 } from "../../../styles/ContainerStyles.css"
-import hamburgerIcon from "../../../images/svg/hamburger_icon.svg"
-import mailIcon from "../../../images/svg/mail_icon.svg"
-import phoneIcon from "../../../images/svg/phone_icon.svg"
-import mlogo from "../../../images/mlogo.png"
 import moreInfoIcon from "../../../images/svg/moreinfo_icon.svg"
 import Menu from "../../Header/Menu"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { SessionHeaderForm } from "./SessionHeaderForm.js"
+import Nav from "../../Header/Nav.js"
 
 const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
-  const { setMenuOpen } = useActiveMenu()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -57,10 +46,6 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
     return () => clearTimeout(timer)
   }, [])
 
-  const openMenu = () => {
-    setMenuOpen(true)
-  }
-
   return (
     <>
       <HeaderWrapper
@@ -68,38 +53,7 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper ref={ref}>
-          <LogoWrapepr to={"/"}>
-            <img
-              src={mlogo}
-              style={{ width: "69px", height: "47px", marginBottom: "0" }}
-              alt="session-header"
-            />
-          </LogoWrapepr>
-          <LinksWrapper>
-            {links.map((link, i) => (
-              <HeaderLink
-                key={link.slug}
-                className="border-bottom"
-                to={`${link.slug}`}
-              >
-                {link.name}
-              </HeaderLink>
-            ))}
-            <Link to="/">
-              <SignInButton>STUDENT SIGN-IN</SignInButton>
-            </Link>
-          </LinksWrapper>
-          <IconWrapper>
-            <IconImg src={phoneIcon} alt="phone-icon" />
-            <IconImg src={mailIcon} alt="mail-icon" />
-            <IconImg
-              src={hamburgerIcon}
-              onClick={() => openMenu()}
-              alt="hamburger-icon"
-            />
-          </IconWrapper>
-        </NavWrapper>
+        <Nav ref={ref} navbar="10" />
         <div className="section ">
           <div className="row ">
             <DesktopContainer>
@@ -112,7 +66,7 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
                       " " +
                       sessionData.course.courseName}
                   </TitleText>
-                  <SessionDateText>{sessionData.sessionDate}</SessionDateText>
+                  <SessionDateText>{sessionData.sessionDate} AEST</SessionDateText>
                   <IntroText>
                     i’m baby hoodie air plant squid hashtag. street art hexagon
                     pok pok, man bun try-hard knausgaard marfa. brunch photo
@@ -144,10 +98,13 @@ const SessionHeader = ({ siteTitle, background, sessionData, status }) => {
                   </HostWrapper>
                   <FormWrapper status={status}>
                     <SessionHeaderForm course buttonText="Register Now" />
-                    <TipText>
-                      **Include your phone number to receive a free call with
-                      one of our course advisors.
-                    </TipText>
+                    <TipTextWrapper>
+                      <TipText>**</TipText>
+                      <TipText>
+                        Include your phone number to receive a free call with
+                        one of our course advisors.
+                      </TipText>
+                    </TipTextWrapper>
                   </FormWrapper>
                 </ContentContainer>
                 <MoreInfoWrapper status={status}>

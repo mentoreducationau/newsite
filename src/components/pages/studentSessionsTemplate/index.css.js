@@ -330,7 +330,10 @@ export const FormWrapper = styled.div`
 export const TipText = styled.p`
   font-size: 12px;
   line-height: 12px;
-  margin-top: 5px;
+  margin-top: 12px;
   margin-bottom: 0px;
+`
+export const TipTextWrapper = styled.div`
+  display: flex;
   width: 40%;
 `

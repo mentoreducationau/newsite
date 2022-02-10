@@ -6,6 +6,7 @@ export const CustomFormStyled = styled.form`
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  row-gap: 12px;
   justify-content: space-between;
   align-items: end;
 `
