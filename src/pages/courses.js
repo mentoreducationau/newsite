@@ -16,7 +16,6 @@ import {
 } from "../components/pages/courses/courses.css"
 import DownloadModal from "../components/Modals/DownloadModal"
 import ThankyouModal from "../components/pages/studentInformationSession/ThankyouModal"
-// import DownloadSignUpModal from "../components/pages/courses/DownloadSignUpModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};
@@ -109,7 +108,9 @@ const CoursesPage = ({ pageContext, location, data }) => {
 
   const onDownload = () => {
     window.open(courseGuide, '_blank', 'noopener,noreferrer')
-    toggleThankyouModal()
+    setTimeout(() => {
+      toggleThankyouModal()
+    }, 2000);
   }
 
   return (
@@ -157,8 +158,8 @@ const CoursesPage = ({ pageContext, location, data }) => {
                       .toLowerCase()
                       .includes(searchText.toLowerCase())
                 )
-                .map(filterCourse => (
-                  <CourseCard course={filterCourse} toggleModal={toggleModal} />
+                .map((filterCourse, index) => (
+                  <CourseCard key={index} course={filterCourse} toggleModal={toggleModal} />
                 ))}
             </CardsWrapper>
           </SectionContainer>

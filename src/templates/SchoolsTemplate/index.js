@@ -6,6 +6,7 @@ import Seo from "../../components/Seo/Seo"
 import CoursesIntro from "../../components/pages/courses/Intro"
 import CourseCollection from "../../components/pages/courses/CourseCollection"
 import DownloadModal from "../../components/Modals/DownloadModal"
+import ThankyouModal from "../../components/pages/studentInformationSession/ThankyouModal"
 import {
   BackToTopArrow,
   ScrollWrapper,
@@ -23,9 +24,10 @@ const SchoolsTemplate = ({ pageContext, location }) => {
     "The School of Accounting and Finance is one of three schools within Mentor Education. The school offers a range of courses from Certificate III to Advanced Diploma Level, with pathways to higher education. The school provides education and training for students seeking formal qualifications in careers from Bookkeepers and Accountants to Paraplanners and Assistant Financial Advisers (in a non-advice providing capacity).Mentor Education is committed to providing our students with skill and knowledge that is relevant, current and focusses on the future as well as the present. Our courses are developed not only to meet the Australian context but are relevant to the world of business across a number of industries."
 
   const [isOpen, setIsOpen] = useState(false)
+  const [isThankyouOpen, setIsThankyouOpen] = useState(false)
   const [opacity, setOpacity] = useState(0)
   const [selectedZoomWebinarId, setSelectedZoomWebinarId] = useState(0)
-
+  const [courseGuide, setCourseGuide] = useState("")
   const [showBackToTop, setShowBackToTop] = useState(true)
   const ref = useRef(null)
   const handleScroll = () => {
@@ -52,9 +54,16 @@ const SchoolsTemplate = ({ pageContext, location }) => {
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
-  const toggleModal = id => {
+  const toggleThankyouModal = (sUrl, cUrl) => {
     setOpacity(0)
-    setSelectedZoomWebinarId(id)
+    // setCourseUrl(cUrl)
+    // setSessionUrl(sUrl)
+    setIsThankyouOpen(!isThankyouOpen)
+  }
+
+  const toggleModal = courseGuide => {
+    setOpacity(0)
+    setCourseGuide(courseGuide)
     setIsOpen(!isOpen)
   }
 
@@ -69,6 +78,13 @@ const SchoolsTemplate = ({ pageContext, location }) => {
       setOpacity(0)
       setTimeout(resolve, 300)
     })
+  }
+
+  const onDownload = () => {
+    window.open(courseGuide, '_blank', 'noopener,noreferrer')
+    setTimeout(() => {
+      toggleThankyouModal()
+    }, 2000);
   }
 
   return (
@@ -99,6 +115,16 @@ const SchoolsTemplate = ({ pageContext, location }) => {
           afterOpen={afterOpen}
           beforeClose={beforeClose}
           zoomWebinarId={selectedZoomWebinarId}
+          onDownload={onDownload}
+        />
+        <ThankyouModal
+          isOpen={isThankyouOpen}
+          opacity={opacity}
+          toggleModal={toggleThankyouModal}
+          afterOpen={afterOpen}
+          beforeClose={beforeClose}
+          // courseUrl={courseUrl}
+          // sessionUrl={sessionUrl}
         />
         <ScrollWrapper onClick={scrollToTop} showBackToTop={showBackToTop}>
           <BackToTopArrow />

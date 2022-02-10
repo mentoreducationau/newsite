@@ -38,7 +38,7 @@ export const LogoWrapepr = styled(Link)`
   height: 100%;
   display: flex;
   align-items: center;
-  color: ${props => (props.mobileMenu ? "white" : "red")};
+  color: white;
   font-size: 1rem;
   line-height; 20px;
   font-weight: 600;

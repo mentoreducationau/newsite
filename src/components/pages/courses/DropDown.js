@@ -73,9 +73,9 @@ const Dropdown = ({ options, setSearchText, excuteScroll }) => {
       </DropDownHeader>
       <DropDownListContainer isOpen={isOpen}>
         <DropDownList isOpen={isOpen}>
-          {options.map(option => {
+          {options.map((option, index) => {
             return (
-              <ListItem onClick={onOptionClicked(option)}>
+              <ListItem key={index} onClick={onOptionClicked(option)}>
                 {option.label}
               </ListItem>
             )

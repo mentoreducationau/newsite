@@ -51,6 +51,7 @@ export default function ThankyouModal({
               borderTopLeftRadius: "10px",
               borderBottomLeftRadius: "10px",
             }}
+            alt="thankyou-modal-img"
           />
           <ThankyouContentWrapper>
             <ThankyouTitleText>Thank you!</ThankyouTitleText>
@@ -65,6 +66,7 @@ export default function ThankyouModal({
               <StaticImage
                 src="../../../images/svg/modal_cancel_icon.svg"
                 onClick={() => toggleModal()}
+                alt="thankyou-modal-close"
               />
             </IconWrapper>
 

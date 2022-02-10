@@ -34,7 +34,7 @@ const Menu = () => {
     <>
       <MenuContainer menuOpen={menuOpen}>
         <TopBannerWrapper>
-          <LogoWrapepr to={"/"} onClick={() => closeMenu()} mobileMenu>
+          <LogoWrapepr to={"/"} onClick={() => closeMenu()}>
             Mentor Education
           </LogoWrapepr>
           <IconImg
