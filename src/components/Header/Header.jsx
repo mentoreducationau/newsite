@@ -1,12 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { links } from "./links-array"
-import { Link } from "gatsby"
-import useActiveMenu from "../../hooks/ActiveMenu"
 import {
-  HeaderLink,
-  LinksWrapper,
-  LogoWrapepr,
-  NavWrapper,
   HeaderWrapper,
   ColorShapeWrapper,
   ColorShape,
@@ -14,26 +7,19 @@ import {
   BigTitle,
   SmallTitle,
   PageNameWrapper,
-  IconWrapper,
-  IconImg,
   ColorRectWrapper,
   ColorRect,
-  SignInButton,
 } from "./header.css"
 import {
   DesktopContainer,
   MobileContainer,
 } from "../../styles/ContainerStyles.css"
-import hamburgerIcon from "../../images/svg/hamburger_icon.svg"
-import mailIcon from "../../images/svg/mail_icon.svg"
-import phoneIcon from "../../images/svg/phone_icon.svg"
-import mlogo from "../../images/mlogo.png"
 import Menu from "./Menu"
+import Nav from "./Nav"
 
 const Header = ({ siteTitle, pageName, background }) => {
   const ref = useRef(null)
   const wrapperRef = useRef(null)
-  const { setMenuOpen } = useActiveMenu()
   const [navbarPos, setNavbarPos] = useState(0)
   const handleScroll = () => {
     const position = window.pageYOffset
@@ -59,10 +45,6 @@ const Header = ({ siteTitle, pageName, background }) => {
     return () => clearTimeout(timer)
   }, [])
 
-  const openMenu = () => {
-    setMenuOpen(true)
-  }
-
   return (
     <>
       <HeaderWrapper
@@ -70,43 +52,11 @@ const Header = ({ siteTitle, pageName, background }) => {
         ref={wrapperRef}
         background={background}
       >
-        <NavWrapper ref={ref} navbar={navbarPos}>
-          <LogoWrapepr to={"/"}>
-            <img
-              src={mlogo}
-              style={{ width: "69px", height: "47px", marginBottom: "0" }}
-              alt="header-logo"
-            />
-          </LogoWrapepr>
-          <LinksWrapper>
-            {links.map((link, i) => (
-              <HeaderLink
-                key={link.slug}
-                className="border-bottom"
-                to={`${link.slug}`}
-                navbar={navbarPos}
-              >
-                {link.name}
-              </HeaderLink>
-            ))}
-            <Link to="/">
-              <SignInButton navbar={navbarPos}>STUDENT SIGN-IN</SignInButton>
-            </Link>
-          </LinksWrapper>
-          <IconWrapper>
-            <IconImg src={phoneIcon} alt="phone-icon" />
-            <IconImg src={mailIcon} alt="mail-icon" />
-            <IconImg
-              src={hamburgerIcon}
-              onClick={() => openMenu()}
-              alt="hamburger-icon"
-            />
-          </IconWrapper>
-        </NavWrapper>
+        <Nav ref={ref} navbar={navbarPos} />
         <div style={{ padding: "1rem 0" }}>
           <div style={{ margin: "0 auto 20px" }}>
             <DesktopContainer>
-              <ColorShapeWrapper style={{ display: "flex" }}>
+              <ColorShapeWrapper>
                 <ColorShape marginTop="0px" opacity="0.2" width="750px" />
                 <ColorShape marginTop="-290px" opacity="0.4" width="690px" />
                 <ColorShape

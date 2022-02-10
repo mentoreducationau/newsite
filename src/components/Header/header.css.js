@@ -129,6 +129,7 @@ export const SignInButton = styled.button`
 export const ColorShapeWrapper = styled.div`
   height: 100vh;
   width: 100% !important;
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-top: 4.5rem;

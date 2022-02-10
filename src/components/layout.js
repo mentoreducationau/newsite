@@ -16,7 +16,14 @@ import Header from "../components/Header/Header"
 import Footer from "./Footer/footer"
 import "./layout.css"
 
-const Layout = ({ children, pageContext, location, crumbLabel, pageName, background }) => {
+const Layout = ({
+  children,
+  pageContext,
+  location,
+  crumbLabel,
+  pageName,
+  background,
+}) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -42,33 +49,36 @@ const Layout = ({ children, pageContext, location, crumbLabel, pageName, backgro
           rel="stylesheet"
         />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} pageName={pageName} background={background} />
-  
-        <div
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        pageName={pageName}
+        background={background}
+      />
+
+      <div
+        style={{
+          margin: `0 auto`,
+          minHeight: "1000px",
+        }}
+      >
+        <main
           style={{
-            margin: `0 auto`,
-            minHeight: "1000px",
+            margin: `0`,
+            minHeight: "100vh",
           }}
         >
-          <main
-            style={{
-              margin: `0`,
-              minHeight: "100vh",
-            }}
-          >
-            {crumbLabel !== "Home" && (
-              <Breadcrumb
-                crumbs={crumbs}
-                location={location}
-                crumbLabel={customCrumbLabel}
-              />
-            )}
+          {crumbLabel !== "Home" && (
+            <Breadcrumb
+              crumbs={crumbs}
+              location={location}
+              crumbLabel={customCrumbLabel}
+            />
+          )}
 
-            {children}
-          </main>
-          <Footer />
-        </div>
-     
+          {children}
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
