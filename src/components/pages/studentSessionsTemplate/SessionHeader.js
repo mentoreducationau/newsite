@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react"
-import useActiveMenu from "../../../hooks/ActiveMenu"
 import {
   HeaderWrapper,
   IconImg,

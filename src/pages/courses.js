@@ -38,7 +38,7 @@ const CoursesPage = ({ pageContext, location, data }) => {
   const courseCollections = []
   const allCoursesArray = []
   const [searchText, setSearchText] = useState("")
-  const [showBackToTop, setShowBackToTop] = useState(false)
+  // const [showBackToTop, setShowBackToTop] = useState(false)
 
   coursesSelection.map((item, index) => {
     const collection = { value: index, label: item.heading }
@@ -82,21 +82,23 @@ const CoursesPage = ({ pageContext, location, data }) => {
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
-  const handleScroll = () => {
-    const position =
-      dropdownRef.current.getBoundingClientRect().top +
-      window.pageYOffset -
-      window.innerHeight / 10
-    setShowBackToTop(position < window.scrollY)
-  }
+  //  To auto show/hide scrollTopButton
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
+  // const handleScroll = () => {
+  //   const position =
+  //     dropdownRef.current.getBoundingClientRect().top +
+  //     window.pageYOffset -
+  //     window.innerHeight / 10
+  //   setShowBackToTop(state)
+  // }
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll)
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll)
+  //   }
+  // }, [])
 
   const scrollToDropdown = () => {
     const pos =
@@ -107,10 +109,10 @@ const CoursesPage = ({ pageContext, location, data }) => {
   }
 
   const onDownload = () => {
-    window.open(courseGuide, '_blank', 'noopener,noreferrer')
+    window.open(courseGuide, "_blank", "noopener,noreferrer")
     setTimeout(() => {
       toggleThankyouModal()
-    }, 2000);
+    }, 2000)
   }
 
   return (
@@ -132,7 +134,6 @@ const CoursesPage = ({ pageContext, location, data }) => {
             excuteScroll={excuteScroll}
           />
         </div>
-
         {searchText === "" ? (
           coursesSelection.map((item, index) => (
             <div key={index} ref={el => (collectionsRef.current[index] = el)}>
@@ -159,15 +160,23 @@ const CoursesPage = ({ pageContext, location, data }) => {
                       .includes(searchText.toLowerCase())
                 )
                 .map((filterCourse, index) => (
-                  <CourseCard key={index} course={filterCourse} toggleModal={toggleModal} />
+                  <CourseCard
+                    key={index}
+                    course={filterCourse}
+                    toggleModal={toggleModal}
+                  />
                 ))}
             </CardsWrapper>
           </SectionContainer>
         )}
 
-        <ScrollWrapper onClick={scrollToDropdown} showBackToTop={showBackToTop}>
+        <ScrollWrapper onClick={scrollToDropdown}>
           <BackToTopArrow />
         </ScrollWrapper>
+
+        {/* <ScrollWrapper onClick={scrollToDropdown} showBackToTop={showBackToTop}>
+          <BackToTopArrow />
+        </ScrollWrapper> */}
 
         <DownloadModal
           isOpen={isOpen}

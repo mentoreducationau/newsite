@@ -34,30 +34,34 @@ const Accordion = ({ item }) => {
         active={setActive}
       >
         <table>
-          <tr>
-            <td style={{ textAlign: "left" }} colspan="5">
-              {item.description}
-            </td>
-          </tr>
-          <tr style={{ background: "#34A57C", color: "#ffffff" }}>
-            <th>Date</th>
-            <th>Class Codes</th>
-            <th>Description</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-          </tr>
-          {item.courses.map(
-            (it, idx) =>
-              idx < 3 && (
-                <tr>
-                  <td>{it.date}</td>
-                  <td>{it.classCode}</td>
-                  <td>{it.description}</td>
-                  <td>{it.startTime}</td>
-                  <td>{it.endTime}</td>
-                </tr>
-              )
-          )}
+          <thead>
+            <tr>
+              <td style={{ textAlign: "left" }} colSpan="5">
+                {item.description}
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style={{ background: "#34A57C", color: "#ffffff" }}>
+              <th>Date</th>
+              <th>Class Codes</th>
+              <th>Description</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+            </tr>
+            {item.courses.map(
+              (it, idx) =>
+                idx < 3 && (
+                  <tr key={idx}>
+                    <td>{it.date}</td>
+                    <td>{it.classCode}</td>
+                    <td>{it.description}</td>
+                    <td>{it.startTime}</td>
+                    <td>{it.endTime}</td>
+                  </tr>
+                )
+            )}
+          </tbody>
         </table>
       </AccordionContent>
     </AccordionSection>

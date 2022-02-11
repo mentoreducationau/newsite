@@ -43,10 +43,6 @@ export const ParagraphWrapper = styled.div`
     font-size: 24px !important;
     padding-top: 9px !important;
   }
-
-  i {
-    transform: ${props => (props.openState ? "rotate(90deg)" : "rotate(0deg)")};
-  }
 `
 export const TimeTableExpandButton = styled.button`
   font-size: 1.5rem;

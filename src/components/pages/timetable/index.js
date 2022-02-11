@@ -1,5 +1,4 @@
 import React from "react"
-import { useState } from "react"
 
 import { TitleBanner, MainContainer, ParagraphWrapper } from "./index.css"
 import { Headline } from "../../../styles/Typography.css"
@@ -9,8 +8,6 @@ import Accordion from "../../Accordion/Accordion"
 import { courseArrayForTimetable } from "../../../contents/courseArrayForTimetable"
 
 const Timetable = () => {
-  const [openState, setOpenState] = useState(true)
-
   return (
     <>
       <TitleBanner style={{ backgroundAttachment: "fixed" }}>
@@ -19,7 +16,7 @@ const Timetable = () => {
         </Container>
       </TitleBanner>
       <MainContainer>
-        <ParagraphWrapper openState={openState}>
+        <ParagraphWrapper>
           <Paragraph>
             Mentor Education offer students a blend of study options including
             online-self paced courses, virtual classes and on-campus classes.
@@ -27,13 +24,9 @@ const Timetable = () => {
             on-campus in class study for the following qualifications:
           </Paragraph>
         </ParagraphWrapper>
-        {courseArrayForTimetable.map((item, index) =>
-          openState ? (
-            <Accordion key={index} item={item} />
-          ) : (
-            index < 3 && <Accordion key={index} item={item} />
-          )
-        )}
+        {courseArrayForTimetable.map((item, index) => (
+          <Accordion key={index} item={item} />
+        ))}
       </MainContainer>
     </>
   )

@@ -160,7 +160,7 @@ export const BackToTopArrow = styled.i`
   margin-left: calc(50% - 0.5rem);
 `
 export const ScrollWrapper = styled.div`
-  display: ${props => (props.showBackToTop ? "block" : "none")};
+  // display: ${props => (props.showBackToTop ? "block" : "none")};
   position: fixed;
   right: 5%;
   bottom: 5%;

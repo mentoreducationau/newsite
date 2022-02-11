@@ -4,7 +4,7 @@ import {
   CardsWrapper,
   PrinciplesWrapper,
   TableDescCard,
-  TableDescCardButton,
+  // TableDescCardButton,
   TableDescCardButtonWrapper,
   TableDescCardImage,
   TableDescCardText,

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Headline } from "../../../styles/Typography.css"
-import bgImg from "../../../images/header-hero.jpeg"
 import sessionHeaderBg from "../../../images/session-header-bg.png"
 
 export const HeaderWrapper = styled.div`

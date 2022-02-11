@@ -32,7 +32,6 @@ export default function ThankyouModal({
   courseUrl,
   sessionUrl
 }) {
-  console.log(courseUrl, sessionUrl)
   return (
     <div>
       <StyledModal

@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useEffect, useRef } from "react"
 import styled, { keyframes } from "styled-components"
 import Focus from "./Focus"
+import focusIcon from "../../../images/svg/focus_icon.svg"
 
 const Dropdown = ({ options, setSearchText, excuteScroll }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -60,6 +61,7 @@ const Dropdown = ({ options, setSearchText, excuteScroll }) => {
           <DisplayWrapper showFocus={showFocus}>
             <DisplaySpan>{inputText}</DisplaySpan>
             <Focus />
+            {/* <IconImg src={focusIcon} /> */}
           </DisplayWrapper>
           <SearchInput
             onChange={e => onChangeHandler(e.target.value)}
@@ -224,4 +226,7 @@ const DisplayWrapper = styled("div")`
 const InputWrapper = styled("div")`
   position: relative;
   width: 100%;
+`
+const IconImg = styled.img`
+  margin-bottom: 0;
 `

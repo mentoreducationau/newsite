@@ -1,4 +1,4 @@
-import React, {useRef} from "react"
+import React, { useRef } from "react"
 import { NoneDecorationA } from "../../../styles/ButtonStyles.css"
 import { SectionContainer } from "../../../styles/ContainerStyles.css"
 import {
@@ -11,7 +11,6 @@ import {
 import scrollUp from "../../../images/svg/scroll_up_icon.svg"
 
 const CardCollection = ({ cardCollection }) => {
-
   const ref = useRef(null)
 
   const handleScrollUp = () => {
@@ -19,7 +18,7 @@ const CardCollection = ({ cardCollection }) => {
       ref.current.getBoundingClientRect().top +
       window.pageYOffset -
       window.innerHeight / 10
-      window.scrollTo({ top: position, behavior: "smooth" })
+    window.scrollTo({ top: position, behavior: "smooth" })
   }
 
   return (
@@ -32,64 +31,68 @@ const CardCollection = ({ cardCollection }) => {
 
       <CourseTable>
         {cardCollection.courses.map((item, idx) => (
-          <>
-            <tr>
-              <td rowSpan="2" style={{ textAlign: "center" }}>
-                {item.courseCode}
-              </td>
-              <td rowSpan="2">
-                {item.courseCode +
-                  " - " +
-                  item.studyLevel +
-                  " " +
-                  item.courseName}
-              </td>
-              <td>Self-Paced Study</td>
-              <td>{`$ ` + item.pricing.salePrice + ` (save 59%)`}</td>
-              <td>
-                <NoneDecorationA
-                  href={
-                    `https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` +
-                    item.courseCode +
-                    `&dc=courseadviser20`
-                  }
-                >
-                  <RequestButton
-                    width="120px"
-                    height="33px"
-                    fontSize="16px"
-                    lineHeight="26px"
-                    borderRadius="0"
+          <React.Fragment key={idx}>
+            <tbody>
+              <tr>
+                <td rowSpan="2" style={{ textAlign: "center" }}>
+                  {item.courseCode}
+                </td>
+                <td rowSpan="2">
+                  {item.courseCode +
+                    " - " +
+                    item.studyLevel +
+                    " " +
+                    item.courseName}
+                </td>
+                <td>Self-Paced Study</td>
+                <td>{`$ ` + item.pricing.salePrice + ` (save 59%)`}</td>
+                <td>
+                  <NoneDecorationA
+                    href={
+                      `https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` +
+                      item.courseCode +
+                      `&dc=courseadviser20`
+                    }
                   >
-                    Enrol
-                  </RequestButton>
-                </NoneDecorationA>
-              </td>
-            </tr>
-            <tr>
-              <td>Self-Paced {"&"} Live Tutorial Study</td>
-              <td>{`$ ` + item.pricing.tutorialsSalePrice + ` (save 59%)`}</td>
-              <td>
-                <NoneDecorationA
-                  href={
-                    `https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` +
-                    item.courseCode +
-                    `&dc=courseadviser20`
-                  }
-                >
-                  <RequestButton
-                    width="120px"
-                    height="33px"
-                    fontSize="16px"
-                    lineHeight="26px"
-                    borderRadius="0"
+                    <RequestButton
+                      width="120px"
+                      height="33px"
+                      fontSize="16px"
+                      lineHeight="26px"
+                      borderRadius="0"
+                    >
+                      Enrol
+                    </RequestButton>
+                  </NoneDecorationA>
+                </td>
+              </tr>
+              <tr>
+                <td>Self-Paced {"&"} Live Tutorial Study</td>
+                <td>
+                  {`$ ` + item.pricing.tutorialsSalePrice + ` (save 59%)`}
+                </td>
+                <td>
+                  <NoneDecorationA
+                    href={
+                      `https://enrolments.mentor.edu.au/enrol-selfserve?course_code=` +
+                      item.courseCode +
+                      `&dc=courseadviser20`
+                    }
                   >
-                    Enrol
-                  </RequestButton>
-                </NoneDecorationA>
-              </td>
-            </tr>
-          </>
+                    <RequestButton
+                      width="120px"
+                      height="33px"
+                      fontSize="16px"
+                      lineHeight="26px"
+                      borderRadius="0"
+                    >
+                      Enrol
+                    </RequestButton>
+                  </NoneDecorationA>
+                </td>
+              </tr>
+            </tbody>
+          </React.Fragment>
         ))}
       </CourseTable>
       <ButtonAndScrollWrapper>
