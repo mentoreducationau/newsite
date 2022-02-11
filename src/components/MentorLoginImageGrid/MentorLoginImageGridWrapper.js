@@ -4,6 +4,7 @@ import { CourseCardTitle } from "../BusinessSkillSet/AcademicPathway/Courses/cou
 import { H4 } from "../../styles/Typography.css"
 import React from "react"
 import { ButtonLogin, ButtonPwdReset, ButtonsWrapper } from "./index.css"
+import { NoneDecorationA, NoneDecorationLink } from "../../styles/ButtonStyles.css"
 
 const MentorLoginImageGridWrapper = ({ title, link, image }) => {
   return (
@@ -16,29 +17,29 @@ const MentorLoginImageGridWrapper = ({ title, link, image }) => {
         />
       </Link>
       <ButtonsWrapper>
-        <Link style={{ textDecoration: "none" }} to={link}>
+          <NoneDecorationLink to={link}>
           <CourseCardTitle
             style={{ color: "#C0202F", textDecoration: "underline" }}
           >
             <H4 card>{title}</H4>
           </CourseCardTitle>
-        </Link>
+          </NoneDecorationLink>
         <ButtonLogin>LMS LOGIN</ButtonLogin>
         <ButtonPwdReset>PASSWORD RESET</ButtonPwdReset>
         <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          <a
+          <NoneDecorationA
             href="https://learn.mentor.edu.au/"
-            style={{ textDecoration: "underline", color: "#c0202f" }}
+            style={{ color: "#c0202f" }}
           >
             Login
-          </a>{" "}
+          </NoneDecorationA>{" "}
           |{" "}
-          <a
+          <NoneDecorationA
             href="https://learn.mentor.edu.au/d2l/lp/forgotPassword/forgotPassword.d2l"
-            style={{ textDecoration: "underline", color: "#c0202f" }}
+            style={{ color: "#c0202f" }}
           >
             Reset password
-          </a>
+          </NoneDecorationA>
         </p>
       </ButtonsWrapper>
     </>

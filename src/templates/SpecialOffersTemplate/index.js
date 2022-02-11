@@ -28,9 +28,8 @@ const SpecialOffersTemplate = () => {
           <SpecialOffersScrollMenu excuteScroll={excuteScroll} />
         </div>
         {specialOffersArray.map((item, index) => (
-          <div ref={el => (itemsRef.current[index] = el)}>
+          <div ref={el => (itemsRef.current[index] = el)} key={index}>
             <SpecialOffersTable
-              key={index}
               tableData={item.school}
               excuteScroll={excuteScroll}
             />

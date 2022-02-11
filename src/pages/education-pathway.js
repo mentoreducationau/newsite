@@ -65,8 +65,8 @@ const CareerPathwayPage = ({ pageContext, location }) => {
                 <b>{item.title}</b>
               </Paragraph>
               {item.items.map((it, idx) => (
-                <Paragraph>
-                  <Link to={it.link} key={idx}>
+                <Paragraph key={idx}>
+                  <Link to={it.link}>
                     {it.name}
                   </Link>
                 </Paragraph>
@@ -124,10 +124,8 @@ const CareerPathwayPage = ({ pageContext, location }) => {
                 <IframeContainer>
                   <iframe
                     src="https://www.youtube.com/embed/4CnIWoSoCU0"
-                    frameborder="0"
-                    webkitallowfullscreen=""
-                    mozallowfullscreen=""
-                    allowfullscreen=""
+                    frameBorder="0"
+                    allowFullScreen=""
                     title="pathway-iframe-1"
                   ></iframe>
                 </IframeContainer>
@@ -142,10 +140,8 @@ const CareerPathwayPage = ({ pageContext, location }) => {
                 <IframeContainer>
                   <iframe
                     src="https://www.youtube.com/embed/ZdhEiNw-j-4"
-                    frameborder="0"
-                    webkitallowfullscreen=""
-                    mozallowfullscreen=""
-                    allowfullscreen=""
+                    frameBorder="0"
+                    allowFullScreen=""
                     title="pathway-iframe-2"
                   ></iframe>
                 </IframeContainer>

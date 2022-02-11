@@ -6,10 +6,12 @@ import { Container, SectionWrapper } from "../../styles/ContainerStyles.css"
 import { CourseCardWrapper, CardsWrapper } from "./index.css"
 import { Paragraph, Title } from "../../styles/Typography.css.js"
 import ImageGridWrapper from "../ImageGrid/ImageGridWrapper.js"
-import { loginInformation, additionalInformation } from "../../contents/MELMS-login.js"
+import {
+  loginInformation,
+  additionalInformation,
+} from "../../contents/MELMS-login.js"
 
 const MentorLoginImageGrid = () => {
-
   const images = useStaticQuery(graphql`
     query MentorLoginImage {
       allFile(
@@ -44,16 +46,15 @@ const MentorLoginImageGrid = () => {
       <Title style={{ marginTop: "4rem" }} course>
         Login information - Learning Management System
       </Title>
-      <Paragraph style={{marginBottom: "3rem"}}>
+      <Paragraph style={{ marginBottom: "3rem" }}>
         As a Mentor Education student, your online learning login credentials
         may apply to one or all of the below LMS platforms:
       </Paragraph>
       <SectionWrapper justifyContent="center" style={{ overflow: `visible` }}>
         <CardsWrapper>
           {loginInformation.map((item, index) => (
-            <CourseCardWrapper>
+            <CourseCardWrapper key={index}>
               <MentorLoginImageGridWrapper
-                key={index}
                 title={item.linkTitle}
                 link={item.linkUrl}
                 image={
@@ -116,9 +117,8 @@ const MentorLoginImageGrid = () => {
       <SectionWrapper justifyContent="center" style={{ overflow: `visible` }}>
         <CardsWrapper>
           {additionalInformation.map((info, index) => (
-            <CourseCardWrapper>
+            <CourseCardWrapper key={index}>
               <ImageGridWrapper
-                key={index}
                 title={info.title}
                 content={info.content}
                 image={
