@@ -78,6 +78,7 @@ export const CourseCardWrapper = styled.div`
     max-width: 250px;
   }
 
+  position: relative;
   width: 345px;
   height: 452px;
   display: flex;
@@ -135,7 +136,6 @@ z-index: 2;
   width: 100%;
   padding: 0 21px 51px 21px;
   gap: 9px;
-  /* position: absolute; */
 `
 export const SearchText = styled.p`
   font-size: 22px;

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { GlobalFormField } from "../../../styles/FormStyles.css"
 
 export const SessionCardWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,6 +73,7 @@ export const SignUpButton = styled.button`
   border: none;
   border-radius: 2px;
   margin-bottom: 11px;
+  z-index: 2;
 `
 export const HintText = styled.p`
   font-size: 8px;

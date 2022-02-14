@@ -50,6 +50,10 @@ export const CourseCollectionHeadingText = styled.p`
   //   line-height: 44.55px;
   // }
 `
+export const CourseCollectionNavigationText = styled(CourseCollectionHeadingText)`
+  width: 350px;
+  margin-bottom: 0;
+`
 export const RequestButton = styled(Button)`
   margin: 0 auto;
 `
@@ -77,4 +81,10 @@ export const IconImg = styled.img`
   :hover {
     cursor: pointer;
   }
+`
+export const TopNavigationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 13px;
 `

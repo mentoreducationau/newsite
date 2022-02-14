@@ -26,3 +26,9 @@ export const NoneDecorationLink = styled(Link)`
 export const NoneDecorationA = styled.a`
   text-decoration: none !important;
 `
+export const AbsoluteNoneDecorationLink = styled(NoneDecorationLink)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+`

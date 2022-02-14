@@ -8,10 +8,16 @@ import {
   BackToTopArrow,
   ScrollWrapper,
 } from "../components/pages/courses/courses.css"
+import {
+  CourseCollectionNavigationText,
+  TopNavigationWrapper,
+} from "../components/pages/specialOffers/offers.css"
+import { SectionContainer } from "../styles/ContainerStyles.css"
 
 const SpecialOffersPage = ({ pageContext, location, data }) => {
   const [showBackToTop, setShowBackToTop] = useState(true)
   const ref = useRef(null)
+  const sectionsRef = useRef([])
   const handleScroll = () => {
     const position =
       ref.current.getBoundingClientRect().top +
@@ -34,6 +40,14 @@ const SpecialOffersPage = ({ pageContext, location, data }) => {
       window.innerHeight / 10
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
+  const scrollToSection = el => {
+    const pos =
+      sectionsRef.current[el].getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+    window.scrollTo({ top: pos, behavior: "smooth" })
+  }
+
   return (
     <Layout
       pageContext={pageContext}
@@ -48,9 +62,26 @@ const SpecialOffersPage = ({ pageContext, location, data }) => {
       <div ref={ref}>
         <OffersIntro />
       </div>
+      <SectionContainer marginBottom="42px" mobWidth="75%">
+        <TopNavigationWrapper>
+          {data.allContentfulSpecialsOffers.nodes[0].pageSections.map(
+            (item, index) =>
+              index !== 0 && (
+                <CourseCollectionNavigationText
+                  key={index}
+                  onClick={() => scrollToSection(index)}
+                >
+                  {item.sectionHeading}
+                </CourseCollectionNavigationText>
+              )
+          )}
+        </TopNavigationWrapper>
+      </SectionContainer>
       {data.allContentfulSpecialsOffers.nodes[0].pageSections.map(
         (item, index) => (
-          <CardCollection key={index} cardCollection={item} />
+          <div ref={el => (sectionsRef.current[index] = el)}>
+            <CardCollection key={index} cardCollection={item} />
+          </div>
         )
       )}
       <ScrollWrapper onClick={scrollToTop} showBackToTop={showBackToTop}>
