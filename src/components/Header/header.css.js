@@ -19,7 +19,7 @@ export const NavWrapper = styled.nav`
   width: 100vw;
   height: 10vh;
   padding: 0 66px;
-  background-color:  ${props => (props.navbar > 5 ? "white" : "transperant")};
+  background-color: ${props => (props.navbar > 5 ? "white" : "transperant")};
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -27,7 +27,7 @@ export const NavWrapper = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   box-shadow: none;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
   @media (max-width: 450px) {
     padding: 12px 20px;
     height: auto;
@@ -73,8 +73,7 @@ export const HeaderLink = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // color: #2c2d2f;
-color:  ${props => (props.navbar > 5 ? "grey" : "white")};
+  color: ${props => (props.navbar > 5 ? "grey" : "white")};
   height: 50%;
   font-family: futura;
   font-size: 1rem;
@@ -85,35 +84,35 @@ color:  ${props => (props.navbar > 5 ? "grey" : "white")};
   background-color: transparent;
   text-decoration: none;
   position: relative;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
   :after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     left: 50%;
     height: 2px;
     background: red;
     bottom: 0;
-  }  
+  }
 
   :hover {
     font-size: 1.5rem;
     :after {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       left: 0%;
       height: 2px;
       background: red;
       bottom: 0;
-      transition: all .5s ease;
-    }  
+      transition: all 0.5s ease;
+    }
   }
 `
 
 export const SignInButton = styled.button`
   background-color: transparent;
-  color:  ${props => (props.navbar > 5 ? "grey" : "white")};
+  color: ${props => (props.navbar > 5 ? "grey" : "white")};
   border: ${props => (props.navbar > 5 ? "2px grey solid" : "2px white solid")};
   border-radius: 3px;
 
@@ -126,6 +125,10 @@ export const SignInButton = styled.button`
     cursor: pointer;
   }
 `
+export const ColorShapesContainer = styled.div`
+  padding: 1rem 0;
+`
+
 export const ColorShapeWrapper = styled.div`
   height: 100vh;
   width: 100% !important;

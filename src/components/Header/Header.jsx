@@ -1,21 +1,10 @@
 import React, { useEffect, useRef, useState } from "react"
 import {
   HeaderWrapper,
-  ColorShapeWrapper,
-  ColorShape,
-  TitleWrapper,
-  BigTitle,
-  SmallTitle,
-  PageNameWrapper,
-  ColorRectWrapper,
-  ColorRect,
 } from "./header.css"
-import {
-  DesktopContainer,
-  MobileContainer,
-} from "../../styles/ContainerStyles.css"
 import Menu from "./Menu"
 import Nav from "./Nav"
+import ColorShapes from "./ColorShapes"
 
 const Header = ({ siteTitle, pageName, background }) => {
   const ref = useRef(null)
@@ -53,7 +42,7 @@ const Header = ({ siteTitle, pageName, background }) => {
         background={background}
       >
         <Nav ref={ref} navbar={navbarPos} />
-        <div style={{ padding: "1rem 0" }}>
+        {/* <div style={{ padding: "1rem 0" }}>
           <div style={{ margin: "0 auto 20px" }}>
             <DesktopContainer>
               <ColorShapeWrapper>
@@ -94,7 +83,8 @@ const Header = ({ siteTitle, pageName, background }) => {
               </ColorRectWrapper>
             </MobileContainer>
           </div>
-        </div>
+        </div> */}
+        <ColorShapes pageName={pageName} />
         <Menu />
       </HeaderWrapper>
     </>
