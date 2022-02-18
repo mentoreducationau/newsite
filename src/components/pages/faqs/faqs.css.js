@@ -49,7 +49,7 @@ export const AccordionSection = styled.div`
 
 /* Style the buttons that are used to open and close the accordion panel */
 export const AccordionBlock = styled.div`
-  background-color: gray;
+  background-color: white;
   cursor: pointer;
   padding: 1rem 0px;
   display: flex;
@@ -60,7 +60,7 @@ export const AccordionBlock = styled.div`
   outline: none;
   transition: background-color 0.6s ease;
   margin-bottom: ${props => (props.active === "active" ? "0" : "1rem")};
-  height: 5rem;
+  height: 2rem;
 `
 
 /* Style the accordion content panel. Note: hidden by default */
@@ -68,14 +68,14 @@ export const AccordionContent = styled.div`
   background-color: white;
   transition: max-height 0.5s ease;
   overflow: hidden;
-  padding: ${props => (props.active ? "1rem" : "0 1rem")};
+  padding: ${props => (props.active ? "1rem 31px" : "0 31px")};
 `
 
 export const AccordionIcon = styled.button`
   position: relative;
-  width: 20px;
-  height: 20px;
-  margin-left: 20%;
+  width: 14px;
+  height: 14px;
+  margin-left: 0;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -85,7 +85,7 @@ export const AccordionIcon = styled.button`
   &:after {
     content: "";
     position: absolute;
-    background-color: white;
+    background-color: gray;
     transition: transform 0.25s ease-out;
   }
 
@@ -93,7 +93,7 @@ export const AccordionIcon = styled.button`
   &:before {
     top: 0;
     left: 50%;
-    width: 4px;
+    width: 3px;
     height: 100%;
     margin-left: -2px;
   }
@@ -103,7 +103,7 @@ export const AccordionIcon = styled.button`
     top: 50%;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 3px;
     margin-top: -2px;
   }
 
@@ -117,12 +117,13 @@ export const AccordionIcon = styled.button`
   }
 
   @media (max-width: 450px) {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
   }
 `
 export const AccordionTitle = styled(Title)`
   margin: 0;
-  color: white;
-  font-size: 30px;
+  color: grey;
+  font-size: 18px;
+  line-height: 20px;
 `

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react"
-import Renderer from "../../../rich-text-renderers/sample"
+import FaqRenderer from "../../../rich-text-renderers/FaqRenderer"
 import {
   AccordionSection,
   AccordionBlock,
@@ -25,7 +25,7 @@ const FaqAccordion = ({ item }) => {
     <AccordionSection onClick={toggleAccordion}>
       <AccordionBlock active={setActive}>
         <AccordionIcon className={`${setActive}`} />
-        <AccordionTitle style={{ color: "#fff" }} course>
+        <AccordionTitle course>
           {item.question}
         </AccordionTitle>
       </AccordionBlock>
@@ -34,7 +34,7 @@ const FaqAccordion = ({ item }) => {
         style={{ maxHeight: `${setHeight}` }}
         active={setActive}
       >
-        <Renderer node={item.answer} />
+        <FaqRenderer node={item.answer} />
       </AccordionContent>
     </AccordionSection>
   )
