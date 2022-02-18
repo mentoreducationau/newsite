@@ -8,6 +8,7 @@ import ClassTimetable from "./classTimetable"
 import CareerPathwayPage from "./education-pathway"
 import Faq from "./faqs-prospective-students"
 import AcademicAndVetCalendar from "./academicAndVetCalendar"
+import StudentInformationGuide from "./student-information-guide"
 
 const StudentInformationPage = ({ pageContext, location }) => {
   const heading = "Student Information"
@@ -28,7 +29,8 @@ const StudentInformationPage = ({ pageContext, location }) => {
         {/* <ClassTimetable /> */}
         {/* <CareerPathwayPage /> */}
         {/* <Faq /> */}
-        <AcademicAndVetCalendar />
+        {/* <AcademicAndVetCalendar /> */}
+        <StudentInformationGuide />
       </SectionContainer>
     </Layout>
   )
