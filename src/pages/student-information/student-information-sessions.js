@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import Seo from "../components/Seo/Seo"
-import Layout from "../components/layout"
+import Seo from "../../components/Seo/Seo"
+import Layout from "../../components/layout"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
-import SessionCard from "../components/pages/studentInformationSession/SessionCard"
-import SignUpModal from "../components/pages/studentInformationSession/SignUpModal"
-import ThankyouModal from "../components/pages/studentInformationSession/ThankyouModal"
+import SessionCard from "../../components/pages/studentInformationSession/SessionCard"
+import SignUpModal from "../../components/pages/studentInformationSession/SignUpModal"
+import ThankyouModal from "../../components/pages/studentInformationSession/ThankyouModal"
 
 const FadingBackground = styled(BaseModalBackground)`
   opacity: ${props => props.opacity};

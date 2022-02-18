@@ -5,6 +5,7 @@ import Intro from "../../components/pages/student-information/Intro"
 import { SectionContainer } from "../../styles/ContainerStyles.css"
 import LeftMenu from "../../components/pages/student-information/LeftMenu"
 import ClassTimetable from "./classTimetable"
+import CareerPathwayPage from "./education-pathway"
 
 const StudentInformationPage = ({ pageContext, location }) => {
   const heading = "Student Information"
@@ -22,7 +23,8 @@ const StudentInformationPage = ({ pageContext, location }) => {
       <Intro heading={heading} intro={intro} />
       <SectionContainer paddingTop="40px" row>
         <LeftMenu />
-        <ClassTimetable />
+        {/* <ClassTimetable /> */}
+        <CareerPathwayPage />
       </SectionContainer>
     </Layout>
   )

@@ -30,8 +30,8 @@ export const CourseHeading = styled.div`
   }
 `
 export const MainContainer = styled(Container)`
-  margin-top: 3rem;
-  margin-bottom: 6rem;
+  margin-top: ${props => (props.marginTop ? props.marginTop : "3rem")};
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "6rem")};
   a:hover {
     text-decoration: underline;
   }
@@ -93,8 +93,8 @@ export const TestimonialHeadline = styled(Headline)`
 `
 
 export const PathwayContainer = styled(Container)`
-  padding: 2rem 0;
   border-bottom: 1px solid #707070;
+  padding: 0;
 `
 export const ImageWrapper = styled.div`
   display: flex;
