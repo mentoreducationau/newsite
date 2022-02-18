@@ -7,6 +7,7 @@ import LeftMenu from "../../components/pages/student-information/LeftMenu"
 import ClassTimetable from "./classTimetable"
 import CareerPathwayPage from "./education-pathway"
 import Faq from "./faqs-prospective-students"
+import AcademicAndVetCalendar from "./academicAndVetCalendar"
 
 const StudentInformationPage = ({ pageContext, location }) => {
   const heading = "Student Information"
@@ -26,7 +27,8 @@ const StudentInformationPage = ({ pageContext, location }) => {
         <LeftMenu />
         {/* <ClassTimetable /> */}
         {/* <CareerPathwayPage /> */}
-        <Faq />
+        {/* <Faq /> */}
+        <AcademicAndVetCalendar />
       </SectionContainer>
     </Layout>
   )
