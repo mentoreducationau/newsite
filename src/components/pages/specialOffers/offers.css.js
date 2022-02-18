@@ -53,6 +53,10 @@ export const CourseCollectionHeadingText = styled.p`
 export const CourseCollectionNavigationText = styled(CourseCollectionHeadingText)`
   width: 350px;
   margin-bottom: 0;
+
+  :hover {
+    cursor: pointer;
+  }
 `
 export const RequestButton = styled(Button)`
   margin: 0 auto;

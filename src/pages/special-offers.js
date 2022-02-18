@@ -79,8 +79,8 @@ const SpecialOffersPage = ({ pageContext, location, data }) => {
       </SectionContainer>
       {data.allContentfulSpecialsOffers.nodes[0].pageSections.map(
         (item, index) => (
-          <div ref={el => (sectionsRef.current[index] = el)}>
-            <CardCollection key={index} cardCollection={item} />
+          <div ref={el => (sectionsRef.current[index] = el)} key={index}>
+            <CardCollection cardCollection={item} />
           </div>
         )
       )}

@@ -14,13 +14,13 @@ export const AccordionBlock = styled.div`
   padding: 1rem 0px;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 33px;
   border: none;
   border-radius: 5px;
   outline: none;
   transition: background-color 0.6s ease;
   margin-bottom: ${props=>props.active === "active" ? "0" : "1rem"};
-  height: 5rem;
+  height: 63px;
 `
 
 /* Style the accordion content panel. Note: hidden by default */
@@ -33,22 +33,24 @@ export const AccordionContent = styled.div`
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
-    font-size: 24px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
   }
   
   th, td {
     text-align: left;
-    padding: 16px;
+    padding: 16px !important;
   }
   
   tr:nth-child(even) {
     background-color: #F6FAF9;
-    height: 5rem;
+    height: 63px;
   }
 
   tr:nth-child(odd) {
     background-color: #E5F1ED;
-    height: 5rem;
+    height: 63px;
   }
 `
 
@@ -56,7 +58,7 @@ export const AccordionIcon = styled.button`
   position: relative;
   width: 20px;
   height: 20px;
-  margin-left: 20%;
+  margin-left: 2%;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -101,5 +103,7 @@ export const AccordionIcon = styled.button`
 export const AccordionTitle = styled(Title)`
   margin: 0;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 600;
 `

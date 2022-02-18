@@ -167,6 +167,7 @@ export const SectionContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: ${props => props.marginTop ? props.marginTop : "0"};
+  padding-top: ${props => props.paddingTop ? props.paddingTop : "0"};
   margin-bottom: ${props => props.marginBottom ? props.marginBottom : "0"}; 
   
   @media(max-width: 1280px) {

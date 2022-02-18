@@ -25,7 +25,7 @@ const Accordion = ({ item }) => {
       <AccordionBlock active={setActive}>
         <AccordionIcon className={`${setActive}`} />
         <AccordionTitle style={{ color: "#fff" }} course>
-          {item.title}
+          {item.courseName}
         </AccordionTitle>
       </AccordionBlock>
       <AccordionContent
@@ -36,8 +36,8 @@ const Accordion = ({ item }) => {
         <table>
           <thead>
             <tr>
-              <td style={{ textAlign: "left" }} colSpan="5">
-                {item.description}
+              <td style={{ textAlign: "left", fontSize: "20px", lineHeight: "22px" }} colSpan="5">
+                {item.sessionInformation}
               </td>
             </tr>
           </thead>
@@ -49,15 +49,15 @@ const Accordion = ({ item }) => {
               <th>Start Time</th>
               <th>End Time</th>
             </tr>
-            {item.courses.map(
+            {item.sessionsList.map(
               (it, idx) =>
                 idx < 3 && (
-                  <tr key={idx}>
-                    <td>{it.date}</td>
+                  <tr key={it.courseCode}>
+                    <td>{it.dateAndTime.split(" ")[0]}</td>
                     <td>{it.classCode}</td>
-                    <td>{it.description}</td>
-                    <td>{it.startTime}</td>
-                    <td>{it.endTime}</td>
+                    <td>{it.descripion}</td>
+                    <td>{it.dateAndTime.split(" ")[1]}</td>
+                    <td>{it.dateAndTime.split(" ")[1]}</td>
                   </tr>
                 )
             )}
