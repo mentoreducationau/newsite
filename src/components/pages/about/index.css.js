@@ -92,7 +92,7 @@ export const TestimonialHeadline = styled(Headline)`
   text-align: center;
 `
 
-export const PathwayContainer = styled(Container)`
+export const PathwayContainer = styled.div`
   border-bottom: 1px solid #707070;
   padding: 0;
 `

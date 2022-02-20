@@ -9,6 +9,7 @@ import CareerPathwayPage from "./education-pathway"
 import Faq from "./faqs-prospective-students"
 import AcademicAndVetCalendar from "./academicAndVetCalendar"
 import StudentInformationGuide from "./student-information-guide"
+import Forms from "./forms"
 
 const StudentInformationPage = ({ pageContext, location }) => {
   const heading = "Student Information"
@@ -24,13 +25,14 @@ const StudentInformationPage = ({ pageContext, location }) => {
     >
       <Seo title={heading} />
       <Intro heading={heading} intro={intro} />
-      <SectionContainer paddingTop="40px" row>
+      <SectionContainer paddingTop="40px" marginBottom="6rem" row style={{alignItems: "flex-start"}}>
         <LeftMenu />
         {/* <ClassTimetable /> */}
         {/* <CareerPathwayPage /> */}
         {/* <Faq /> */}
         {/* <AcademicAndVetCalendar /> */}
-        <StudentInformationGuide />
+        {/* <StudentInformationGuide /> */}
+        <Forms />
       </SectionContainer>
     </Layout>
   )
