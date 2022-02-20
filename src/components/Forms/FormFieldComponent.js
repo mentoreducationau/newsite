@@ -2,7 +2,13 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { uniqueId } from "lodash"
 import useForm from "../../hooks/useForm"
-import { CustomFormStyled, FormField, FormButton } from "./formComponent.css"
+import {
+  CustomFormStyled,
+  FormField,
+  FormButton,
+  MobileFormField,
+  NameAndSurNameWrapper,
+} from "./formComponent.css"
 
 export const FormFieldComponent = ({
   children,
@@ -47,11 +53,7 @@ FormFieldComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-export const VerticalFormTemplate = ({
-  course,
-  buttonText,
-  handleSubmit,
-}) => {
+export const VerticalFormTemplate = ({ course, buttonText, handleSubmit }) => {
   const { values, onSubmit, handleChange } = useForm(() => handleSubmit(values))
   return (
     <CustomFormStyled onSubmit={onSubmit}>
@@ -81,6 +83,50 @@ export const VerticalFormTemplate = ({
         />
       </FormField>
       <FormButton course={course}>{buttonText}</FormButton>
+    </CustomFormStyled>
+  )
+}
+
+export const MobileFormTemplate = ({ course, buttonText, handleSubmit }) => {
+  const { values, onSubmit, handleChange } = useForm(() => handleSubmit(values))
+  return (
+    <CustomFormStyled onSubmit={onSubmit}>
+      <NameAndSurNameWrapper>
+        <MobileFormField course={course}>
+          <FormFieldComponent
+            label="Name*"
+            name="name"
+            value={values.name || ""}
+            onChange={handleChange}
+          />
+        </MobileFormField>
+        <MobileFormField course={course}>
+          <FormFieldComponent
+            label="SurName*"
+            name="surname"
+            value={values.surname || ""}
+            onChange={handleChange}
+          />
+        </MobileFormField>
+      </NameAndSurNameWrapper>
+
+      <MobileFormField course={course}>
+        <FormFieldComponent
+          label="Phone"
+          name="phone"
+          value={values.phone || ""}
+          onChange={handleChange}
+        />
+      </MobileFormField>
+      <MobileFormField course={course}>
+        <FormFieldComponent
+          label="Email*"
+          name="email"
+          type="email"
+          value={values.email || ""}
+          onChange={handleChange}
+        />
+      </MobileFormField>
     </CustomFormStyled>
   )
 }

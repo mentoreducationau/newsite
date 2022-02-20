@@ -41,3 +41,28 @@ export const FormButton = styled.button`
   align-items: center;
   justify-content: center;
 `
+
+export const MobileFormField = styled(GlobalFormField)`
+  width: 100%;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+  label {
+    font-family: Futura Medium;
+    font-size: 18px;
+    line-height: 24px;
+    color: #707070;
+    margin-bottom: 7px;
+  }
+
+  input {
+    border: 2px solid #707070 !important;
+    height: 41px !important;
+    
+    border-radius: 3px !important;
+    transition: none !important;
+  }
+`
+export const NameAndSurNameWrapper = styled.div`
+  display: flex;
+  gap: 17px;
+` 

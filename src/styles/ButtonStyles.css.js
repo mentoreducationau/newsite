@@ -11,7 +11,7 @@ export const Button = styled.button`
   border-radius: ${props => (props.borderRadius ? props.borderRadius : "5px")};
   width: ${props => (props.width ? props.width : "100%")};
   height: ${props => (props.height ? props.height : "48px")};
-  text-transform: uppercase;
+  text-transform: ${props => props.textTransform ? props.textTransform : "uppercase"};
   cursor: pointer;
   display: flex;
   align-items: center;

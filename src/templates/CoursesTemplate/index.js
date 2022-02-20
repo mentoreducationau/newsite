@@ -7,7 +7,6 @@ import {
   CourseContainer,
   StickySideBar,
 } from "./index.css"
-
 import {
   Knowmore,
   FooterForm,
@@ -16,9 +15,11 @@ import {
   JourneyStarted,
   EnrolNow,
 } from "../../components"
+import MobileStickyBar from "./MobileStickyBar"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
 import { Headline } from "../../styles/Typography.css"
+
 
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData
@@ -26,7 +27,10 @@ const CoursesTemplate = ({ pageContext, location }) => {
   const ref = useRef(null)
 
   const excuteScroll = () => {
-    const pos = ref.current.getBoundingClientRect().top + window.pageYOffset - window.innerHeight/10
+    const pos =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
@@ -60,6 +64,8 @@ const CoursesTemplate = ({ pageContext, location }) => {
             courseData.courseName
           }
         />
+        
+        <MobileStickyBar price={courseData.pricing.salePrice} />
         <Container>
           <Headline banner>
             {courseData.courseCode +
@@ -88,7 +94,10 @@ const CoursesTemplate = ({ pageContext, location }) => {
           </CourseContainer>
           <StickySideBar screenHeight={screenHeight / 10}>
             <CourseGuide course />
-            <EnrolNow price={courseData.pricing.salePrice} excuteScroll={excuteScroll} />
+            <EnrolNow
+              price={courseData.pricing.salePrice}
+              excuteScroll={excuteScroll}
+            />
           </StickySideBar>
         </MainContainer>
       </Layout>
