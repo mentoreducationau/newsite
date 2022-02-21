@@ -136,7 +136,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               courses {
                 courseCode
                 courseName
-             
+
                 entryRequirements {
                   raw
                 }
@@ -171,8 +171,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     ... on ContentfulElectiveUnitGroup {
                       id
                       electiveUnitGroup {
-                        unitName
                         unitCode
+                        unitName
                       }
                     }
                   }

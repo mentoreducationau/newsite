@@ -8,7 +8,9 @@ import {
   FormButton,
   MobileFormField,
   NameAndSurNameWrapper,
+  DownloadButtonWrapper,
 } from "./formComponent.css"
+import { Button } from "../../styles/ButtonStyles.css"
 
 export const FormFieldComponent = ({
   children,
@@ -127,6 +129,18 @@ export const MobileFormTemplate = ({ course, buttonText, handleSubmit }) => {
           onChange={handleChange}
         />
       </MobileFormField>
+      <DownloadButtonWrapper>
+        <Button
+          width="105px"
+          height="31px"
+          fontSize="18px"
+          lineHeight="24px"
+          borderRadius="3px"
+          textTransform="none"
+        >
+          Download
+        </Button>
+      </DownloadButtonWrapper>
     </CustomFormStyled>
   )
 }

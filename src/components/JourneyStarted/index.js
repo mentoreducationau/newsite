@@ -1,10 +1,10 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { Title, Paragraph } from "../../styles/Typography.css"
 
 import { IntroContainer, Intro, CardWrapper } from "./index.css"
 import JourneyCard from "./JourneyCard"
 
-const JourneyStarted = () => {
+const JourneyStarted = ({}, ref) => {
   return (
     <>
       <Title>How to get your journey started</Title>
@@ -20,7 +20,7 @@ const JourneyStarted = () => {
           to select the approach that works best for you.
         </Paragraph>
       </IntroContainer>
-      <CardWrapper>
+      <CardWrapper ref={ref}>
         <JourneyCard title="Self Paced" />
         <JourneyCard title="With Tutorials" />
       </CardWrapper>
@@ -28,4 +28,4 @@ const JourneyStarted = () => {
   )
 }
 
-export default JourneyStarted
+export default forwardRef(JourneyStarted)

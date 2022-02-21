@@ -27,14 +27,17 @@ export const CourseContainer = styled.div`
   }
 `
 export const MobileStickyBarWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 0;
-  background-color: white;
-  width: 100%;
-  z-index: 2;
-  transition: height .3s ease;
+  display: none;
+  @media (max-width: 451px) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+    transition: height 0.3s ease;
+  }
 `
 export const BottomWrapper = styled.div`
   display: flex;
@@ -66,6 +69,6 @@ export const PriceText = styled.p`
   font-size: 18px;
   line-height: 20px;
   font-weight: 600;
-  color: ${props=> props.color ? props.color : "gray"};
+  color: ${props => (props.color ? props.color : "gray")};
   margin-bottom: 0;
 `

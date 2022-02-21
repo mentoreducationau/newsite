@@ -24,7 +24,7 @@ const UnitAccordion = ({ item, title }) => {
     <AccordionSection onClick={toggleAccordion}>
       <AccordionBlock active={setActive}>
         <AccordionIcon className={`${setActive}`} />
-        <AccordionTitle style={{ color: "#fff" }} course>
+        <AccordionTitle>
           {title}
         </AccordionTitle>
       </AccordionBlock>
@@ -34,16 +34,20 @@ const UnitAccordion = ({ item, title }) => {
         active={setActive}
       >
         <table>
-          <tr style={{ background: "#34A57C", color: "#ffffff" }}>
-            <th>Unit Name</th>
-            <th>Unit Code</th>
-          </tr>
-          {item.map(it => (
-            <tr key={it.unitCode}>
-              <td>{it.unitName}</td>
-              <td>{it.unitCode}</td>
+          <thead>
+            <tr style={{ background: "#34A57C", color: "#ffffff" }}>
+              <th>Unit Name</th>
+              <th>Unit Code</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {item.map(it => (
+              <tr key={it.unitCode}>
+                <td>{it.unitName}</td>
+                <td>{it.unitCode}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </AccordionContent>
     </AccordionSection>

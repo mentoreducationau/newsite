@@ -2,11 +2,7 @@ import React, { useRef } from "react"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/Seo/Seo"
-import {
-  MainContainer,
-  CourseContainer,
-  StickySideBar,
-} from "./index.css"
+import { MainContainer, CourseContainer, StickySideBar } from "./index.css"
 import {
   Knowmore,
   FooterForm,
@@ -20,15 +16,23 @@ import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
 import { Container } from "../../styles/ContainerStyles.css"
 import { Headline } from "../../styles/Typography.css"
 
-
 const CoursesTemplate = ({ pageContext, location }) => {
   const courseData = pageContext.courseData
   const screenHeight = window.innerHeight
   const ref = useRef(null)
+  const courseGuideRef = useRef(null)
 
-  const excuteScroll = () => {
+  const excuteScrollToFooterForm = () => {
     const pos =
       ref.current.getBoundingClientRect().top +
+      window.pageYOffset -
+      window.innerHeight / 10
+    window.scrollTo({ top: pos, behavior: "smooth" })
+  }
+
+  const excuteScrollToCourseGuide = () => {
+    const pos =
+      courseGuideRef.current.getBoundingClientRect().top +
       window.pageYOffset -
       window.innerHeight / 10
     window.scrollTo({ top: pos, behavior: "smooth" })
@@ -64,8 +68,11 @@ const CoursesTemplate = ({ pageContext, location }) => {
             courseData.courseName
           }
         />
-        
-        <MobileStickyBar price={courseData.pricing.salePrice} />
+
+        <MobileStickyBar
+          price={courseData.pricing.salePrice}
+          excuteScroll={excuteScrollToCourseGuide}
+        />
         <Container>
           <Headline banner>
             {courseData.courseCode +
@@ -85,18 +92,16 @@ const CoursesTemplate = ({ pageContext, location }) => {
               paymentOptions={courseData.paymentOptions}
               landingIntro={courseData.landingIntro}
             />
-            <JourneyStarted />
+            <JourneyStarted ref={courseGuideRef} />
             <Knowmore course />
             <StudentsWork course />
-            <div ref={ref}>
-              <FooterForm course />
-            </div>
+            <FooterForm ref={ref} course />
           </CourseContainer>
           <StickySideBar screenHeight={screenHeight / 10}>
             <CourseGuide course />
             <EnrolNow
               price={courseData.pricing.salePrice}
-              excuteScroll={excuteScroll}
+              excuteScroll={excuteScrollToFooterForm}
             />
           </StickySideBar>
         </MainContainer>

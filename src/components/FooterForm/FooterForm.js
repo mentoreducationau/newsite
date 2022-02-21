@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -12,7 +12,7 @@ import {
   FooterFormbuttonWrapper,
   FormIntroContainer,
   FormDescription,
-  CourseContainer
+  CourseContainer,
 } from "./FooterForm.css"
 
 import {
@@ -23,9 +23,9 @@ import {
 } from "../../styles/Typography.css"
 import { Container } from "../../styles/ContainerStyles.css"
 
-const FooterForm = props => {
+const FooterForm = (props, ref) => {
   return props.course ? (
-    <CourseContainer>
+    <CourseContainer ref={ref}>
       <Title course>
         Need more <span style={{ color: "#FF1010" }}>assistance</span> or to
         talk to an expert?
@@ -66,7 +66,7 @@ const FooterForm = props => {
       </InputContainer>
     </CourseContainer>
   ) : (
-    <Container>
+    <Container ref={ref}>
       <Title>
         Need more <span style={{ color: "#FF1010" }}>assistance</span> or to
         talk to an expert?
@@ -109,4 +109,4 @@ const FooterForm = props => {
   )
 }
 
-export default FooterForm
+export default forwardRef(FooterForm)

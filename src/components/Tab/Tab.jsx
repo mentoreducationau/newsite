@@ -25,23 +25,21 @@ const Tab = ({ tabContentArray }) => {
   return (
     <TabWrapper>
       <TabButtonsWrapper>
-        {tabTitleArray.map((title, index) => {
-          return (
-            <TabButton
-              id={index + 1}
-              key={index}
-              onClick={() => setActiveTab(index + 1)}
-              className={activeTab === index + 1 ? "active" : ""}
-            >
-              <TabTitle>
-                {title
-                  .replace(/([A-Z])/g, " $1")
-                  .trim()
-                  .trim()}
-              </TabTitle>
-            </TabButton>
-          )
-        })}
+        {tabTitleArray.map((title, index) => (
+          <TabButton
+            id={index + 1}
+            key={index}
+            onClick={() => setActiveTab(index + 1)}
+            className={activeTab === index + 1 ? "active" : ""}
+          >
+            <TabTitle>
+              {title
+                .replace(/([A-Z])/g, " $1")
+                .trim()
+                .trim()}
+            </TabTitle>
+          </TabButton>
+        ))}
       </TabButtonsWrapper>
 
       <TabInfoWrapper>
@@ -50,10 +48,13 @@ const Tab = ({ tabContentArray }) => {
             index === 2 ? (
               <Display activeTab={activeTab} id={index + 1} key={index}>
                 <Renderer node={content} />
-                <UnitAccordion
-                  item={content.references[0].coreUnits}
-                  title="Core Units"
-                />
+                {content.references.map((item, idx) => (
+                  <>
+                    {idx === 0 && (
+                      <UnitAccordion item={item.coreUnits} title="Core Units" />
+                    )}
+                  </>
+                ))}
               </Display>
             ) : (
               <Display activeTab={activeTab} id={index + 1} key={index}>

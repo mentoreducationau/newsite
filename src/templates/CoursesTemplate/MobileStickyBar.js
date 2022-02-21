@@ -10,7 +10,7 @@ import {
 } from "./index.css"
 import mobileCloseIcon from "../../images/svg/mobile_sticky_close_icon.svg"
 
-const MobileStickyBar = ({ price }) => {
+const MobileStickyBar = ({ price, excuteScroll }) => {
   const [showForm, setShowForm] = useState(false)
   return (
     <MobileStickyBarWrapper>
@@ -42,6 +42,7 @@ const MobileStickyBar = ({ price }) => {
           fontSize="18px"
           lineHeight="24px"
           borderRadius="3px"
+          onClick={() => excuteScroll()}
         >
           ENROL
         </Button>

@@ -27,12 +27,12 @@ const StudentInformationPage = ({ pageContext, location }) => {
       <Intro heading={heading} intro={intro} />
       <SectionContainer paddingTop="40px" marginBottom="6rem" row style={{alignItems: "flex-start"}}>
         <LeftMenu />
-        {/* <ClassTimetable /> */}
+        <ClassTimetable />
         {/* <CareerPathwayPage /> */}
         {/* <Faq /> */}
         {/* <AcademicAndVetCalendar /> */}
         {/* <StudentInformationGuide /> */}
-        <Forms />
+        {/* <Forms /> */}
       </SectionContainer>
     </Layout>
   )
