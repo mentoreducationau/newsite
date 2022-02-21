@@ -7,7 +7,7 @@ import {
 } from "../../components/pages/student-information/index.css"
 import FaqAccordion from "../../components/pages/faqs/FaqAccordion"
 
-const Faq = () => {
+const Faq = ({ activeState }) => {
   const faqPageData = useStaticQuery(graphql`
     query FaqsQuery {
       allContentfulFaqsPageSection {
@@ -30,7 +30,7 @@ const Faq = () => {
   const intro =
     "Mentor Education is an Australian nationally recognised vocational education and training (VET) provider, specialising in the provision of interactive online, face-to-face and distance education of nationally accredited qualifications, skill sets and non-accredited industry designations. All Certificate, Diploma, Advanced Diploma, Skill Sets, Graduate Certificate and Graduate Diploma courses are nationally recognised qualifications."
   return (
-    <RightSideWrapper>
+    <RightSideWrapper activeState={activeState}>
       <Heading>{heading}</Heading>
       <IntroText>{intro}</IntroText>
       {faqs.faqItem.map((item, index) => (

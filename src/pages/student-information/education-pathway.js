@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useStaticQuery } from "gatsby"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
 import {
   IframeContainer,
   PathwayContainer,
@@ -12,9 +11,12 @@ import {
 import { Paragraph, ParagraphMedium } from "../../styles/Typography.css"
 import { pathwayCourses, businessArray } from "../../contents/career-pathway"
 import Img from "gatsby-image"
-import { Heading, RightSideWrapper } from "../../components/pages/student-information/index.css"
+import {
+  Heading,
+  RightSideWrapper,
+} from "../../components/pages/student-information/index.css"
 
-const CareerPathwayPage = () => {
+const CareerPathwayPage = ({ activeState }) => {
   const imageData = useStaticQuery(graphql`
     query EducationPathwayQuery {
       allFile(
@@ -39,7 +41,7 @@ const CareerPathwayPage = () => {
   `)
 
   return (
-    <RightSideWrapper>
+    <RightSideWrapper activeState={activeState}>
       <Heading>Education Pathway</Heading>
       <PathwayContainer>
         <ParagraphMedium>EDUCATION PATHWAY COURSES</ParagraphMedium>
@@ -50,7 +52,7 @@ const CareerPathwayPage = () => {
             </Paragraph>
             {item.items.map((it, idx) => (
               <Paragraph key={idx}>
-                <Link to={it.link}>{it.name}</Link>
+                <a href={it.link}>{it.name}</a>
               </Paragraph>
             ))}
           </div>
@@ -78,7 +80,7 @@ const CareerPathwayPage = () => {
               <TextWrapper>
                 <Paragraph>
                   {item.description + ": "}
-                  <Link to={item.link}>{item.link}</Link>
+                  <a to={item.link}>{item.link}</a>
                 </Paragraph>
               </TextWrapper>
               <OneImgWrapper>
@@ -91,7 +93,7 @@ const CareerPathwayPage = () => {
           ) : (
             <Paragraph>
               {item.description + ": "}
-              <Link to={item.link}>{item.link}</Link>
+              <a href={item.link}>{item.link}</a>
             </Paragraph>
           )}
 

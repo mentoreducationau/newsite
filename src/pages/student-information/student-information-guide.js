@@ -7,7 +7,7 @@ import {
 } from "../../components/pages/student-information/index.css"
 import { NoneDecorationA } from "../../styles/ButtonStyles.css"
 
-const StudentInformationGuide = () => {
+const StudentInformationGuide = ( {activeState}) => {
   const guideLink = useStaticQuery(graphql`
     query StudentInformationGuideQuery {
       allContentfulStudentFormsAndDocumentsSections(
@@ -41,7 +41,7 @@ const StudentInformationGuide = () => {
     },
   ]
   return (
-    <RightSideWrapper>
+    <RightSideWrapper activeState={activeState}>
       <Heading>{heading}</Heading>
       {data.map(item => (
         <IntroText key={item.link}>

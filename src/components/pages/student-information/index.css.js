@@ -9,6 +9,7 @@ export const LeftMenuWrapper = styled.div`
   padding: 0 32px;
 `
 export const RightSideWrapper = styled.div`
+  display: ${props => (props.activeState ? "block" : "none")};
   width: 75%;
   @media (max-width: 1280px) {
     width: 65%;
@@ -37,6 +38,21 @@ export const MenuLink = styled(Link)`
 
   :hover {
     font-weight: bolder;
+    cursor: pointer;
+  }
+`
+export const MenuText = styled.p`
+  font-size: 20px;
+  line-height: 20px;
+  color: black;
+  text-decoration: ${props => (props.activeStatus ? "underline" : "none")};
+  font-weight: ${props => (props.activeStatus ? "bolder" : "400")};
+  text-underline-offset: 2px;
+  margin-bottom: 0;
+
+  :hover {
+    font-weight: bolder;
+    cursor: pointer;
   }
 `
 export const Heading = styled.p`

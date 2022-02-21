@@ -7,7 +7,7 @@ import {
 } from "../../components/pages/student-information/index.css"
 import { NoneDecorationA } from "../../styles/ButtonStyles.css"
 
-const AcademicAndVetCalendar = () => {
+const AcademicAndVetCalendar = ({ activeState }) => {
   const educationAcademicLink = useStaticQuery(graphql`
     query EducationAcademicUrl {
       contentfulAsset(contentful_id: { eq: "6TlHo0eVfFoNhj5ZGIZtvO" }) {
@@ -24,7 +24,7 @@ const AcademicAndVetCalendar = () => {
   const intro2 =
     " to access Mentor Education’s Academic and VET Calendar for 2021 with all key dates for vocational education students."
   return (
-    <RightSideWrapper>
+    <RightSideWrapper activeState={activeState}>
       <Heading>{heading}</Heading>
       <IntroText>
         {intro1}
@@ -32,7 +32,7 @@ const AcademicAndVetCalendar = () => {
           href={educationAcademicLink.contentfulAsset.file.url}
           target="_blank"
           rel="noreferrer"
-          style={{color: "blue"}}
+          style={{ color: "blue" }}
         >
           Click here
         </NoneDecorationA>

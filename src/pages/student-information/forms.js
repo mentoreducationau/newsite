@@ -8,7 +8,7 @@ import {
 import FormsGrid from "../../components/pages/student-information/FormsGrid"
 import FormsTable from "../../components/pages/student-information/FormsTable"
 
-const Forms = () => {
+const Forms = ( {activeState}) => {
   const data = useStaticQuery(graphql`
     query StudentFormsAndDocumentsQuery1 {
       allContentfulStudentFormsAndDocumentsPage {
@@ -65,7 +65,7 @@ const Forms = () => {
   }
 
   return (
-    <RightSideWrapper>
+    <RightSideWrapper activeState={activeState}>
       <Heading>{heading}</Heading>
       {intro.map(item => (
         <React.Fragment key={item.title}>
