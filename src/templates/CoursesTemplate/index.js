@@ -13,7 +13,6 @@ import {
 } from "../../components"
 import MobileStickyBar from "./MobileStickyBar"
 import CourseGuide from "../../components/Forms/CourseGuide/CourseGuide"
-import { Container } from "../../styles/ContainerStyles.css"
 import { Headline } from "../../styles/Typography.css"
 
 const CoursesTemplate = ({ pageContext, location }) => {

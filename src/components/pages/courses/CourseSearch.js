@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react"
+import React from "react"
 import { SearchText, SearchWrapper } from "./courses.css"
 import Dropdown from "./DropDown"
 

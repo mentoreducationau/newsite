@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Container } from "../../styles/ContainerStyles.css"
 
 export const MainContainer = styled.div`
   display: flex;
@@ -25,6 +24,9 @@ export const StickySideBar = styled.div`
   @media(min-width: 1280px) {
     width: 300px;
   }
+  @media(max-width: 450px) {
+    display: none;
+  }
 `
 export const CourseContainer = styled.div`
   width: 70%;
@@ -37,6 +39,9 @@ export const CourseContainer = styled.div`
 
   @media(min-width: 1280px) {
     width: 800px;
+  }
+  @media(max-width: 450px) {
+    width: 100%;
   }
 `
 export const MobileStickyBarWrapper = styled.div`

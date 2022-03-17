@@ -66,7 +66,7 @@ export const MobileFormField = styled(GlobalFormField)`
 `
 export const NameAndSurNameWrapper = styled.div`
   display: flex;
-  gap: 17px;
+  gap: 10px;
 ` 
 export const DownloadButtonWrapper = styled.div`
   display: flex;

@@ -59,14 +59,24 @@ export const VerticalFormTemplate = ({ course, buttonText, handleSubmit }) => {
   const { values, onSubmit, handleChange } = useForm(() => handleSubmit(values))
   return (
     <CustomFormStyled onSubmit={onSubmit}>
-      <FormField course={course}>
-        <FormFieldComponent
-          label="Name*"
-          name="name"
-          value={values.name || ""}
-          onChange={handleChange}
-        />
-      </FormField>
+      <NameAndSurNameWrapper>
+        <FormField course={course}>
+          <FormFieldComponent
+            label="Name*"
+            name="name"
+            value={values.name || ""}
+            onChange={handleChange}
+          />
+        </FormField>
+        <FormField course={course}>
+          <FormFieldComponent
+            label="Surname*"
+            name="surname"
+            value={values.surname || ""}
+            onChange={handleChange}
+          />
+        </FormField>
+      </NameAndSurNameWrapper>
       <FormField course={course}>
         <FormFieldComponent
           label="Phone Number"

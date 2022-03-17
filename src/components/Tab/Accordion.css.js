@@ -32,8 +32,7 @@ export const AccordionContent = styled.div`
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
-    font-size: 16px;
+    // font-size: 16px;
     line-height: 19px;
     font-weight: 400;
   }
@@ -42,16 +41,7 @@ export const AccordionContent = styled.div`
   td {
     text-align: left;
     padding: 16px !important;
-  }
-
-  tr:nth-child(even) {
-    // background-color: #f6faf9;
-    height: 63px;
-  }
-
-  tr:nth-child(odd) {
-    // background-color: #e5f1ed;
-    height: 63px;
+    border: none;
   }
 `
 

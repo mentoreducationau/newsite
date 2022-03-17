@@ -50,8 +50,10 @@ const Tab = ({ tabContentArray }) => {
                 <Renderer node={content} />
                 {content.references.map((item, idx) => (
                   <>
-                    {idx === 0 && (
+                    {idx === 0 ? (
                       <UnitAccordion item={item.coreUnits} title="Core Units" />
+                    ) : (
+                      <UnitAccordion item={item.electiveUnitGroup} title="Elective Unit Group" />
                     )}
                   </>
                 ))}

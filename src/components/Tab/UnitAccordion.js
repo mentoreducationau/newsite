@@ -35,12 +35,6 @@ const UnitAccordion = ({ item, title }) => {
         active={setActive}
       >
         <table>
-          <thead>
-            <tr style={{ color: "hsla(0, 0%, 0%, 0.8)" }}>
-              <th>Unit Name</th>
-              <th>Unit Code</th>
-            </tr>
-          </thead>
           <tbody>
             {item.map(it => (
               <tr key={it.unitCode}>

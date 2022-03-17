@@ -80,7 +80,7 @@ const CareerPathwayPage = ({ activeState }) => {
               <TextWrapper>
                 <Paragraph>
                   {item.description + ": "}
-                  <a to={item.link}>{item.link}</a>
+                  <a href={item.link}>{item.link}</a>
                 </Paragraph>
               </TextWrapper>
               <OneImgWrapper>

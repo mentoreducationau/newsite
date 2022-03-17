@@ -61,7 +61,7 @@ const FooterForm = (props, ref) => {
         <InputLabel>How can we help?</InputLabel>
         <Textarea />
         <FooterFormbuttonWrapper>
-          <FooterFormbutton>REACH OUT</FooterFormbutton>
+          <FooterFormbutton>Contact</FooterFormbutton>
         </FooterFormbuttonWrapper>
       </InputContainer>
     </CourseContainer>
@@ -102,7 +102,7 @@ const FooterForm = (props, ref) => {
         <InputLabel>How can we help?</InputLabel>
         <Textarea />
         <FooterFormbuttonWrapper>
-          <FooterFormbutton>REACH OUT</FooterFormbutton>
+          <FooterFormbutton>Contact</FooterFormbutton>
         </FooterFormbuttonWrapper>
       </InputContainer>
     </Container>

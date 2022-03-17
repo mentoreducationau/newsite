@@ -1,9 +1,16 @@
 import React, { forwardRef } from "react"
 import { Title, Paragraph } from "../../styles/Typography.css"
+import AdditionalSupportCard from "./AdditionalSupportCard"
 
-import { IntroContainer, Intro, CardWrapper } from "./index.css"
-import JourneyCard from "./JourneyCard"
-import JourneyCardWithTutorials from "./JourneyCardWithTutorials"
+import {
+  IntroContainer,
+  Intro,
+  CardWrapper,
+  DownloadWrapper,
+  DownloadText,
+} from "./index.css"
+import SelfPacedPricingCard from "./SelfPacedPricingCard"
+import WithTutorialsPricingCard from "./WithTutorialsPricingCard"
 
 const JourneyStarted = ({ pricing, courseCode }, ref) => {
   return (
@@ -22,9 +29,26 @@ const JourneyStarted = ({ pricing, courseCode }, ref) => {
         </Paragraph>
       </IntroContainer>
       <CardWrapper ref={ref}>
-        <JourneyCard pricing={pricing} courseCode={courseCode} title="Self Paced" />
-        <JourneyCardWithTutorials pricing={pricing} courseCode={courseCode} title="With Tutorials" />
+        <SelfPacedPricingCard
+          pricing={pricing}
+          courseCode={courseCode}
+          title="Self Paced"
+        />
+        <WithTutorialsPricingCard
+          pricing={pricing}
+          courseCode={courseCode}
+          title="With Tutorials"
+        />
       </CardWrapper>
+      <DownloadWrapper>
+        <DownloadText>
+          Want to read the full course guide?{" "}
+          <span>
+            <a href="">DOWNLOAD NOW</a>
+          </span>
+        </DownloadText>
+      </DownloadWrapper>
+      <AdditionalSupportCard pricing={pricing} />
     </>
   )
 }
