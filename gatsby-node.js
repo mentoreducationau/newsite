@@ -186,6 +186,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 }
                 pricing {
                   salePrice
+                  paymentPlan
+                  paymentPlanSalesPrice
+                  paymentPlanTutorialsRrp
+                  paymentPlanTutorialsSalePrice
+                  rrp
+                  tutorialsSalePrice
+                  tutorialsRrp
                 }
               }
             }

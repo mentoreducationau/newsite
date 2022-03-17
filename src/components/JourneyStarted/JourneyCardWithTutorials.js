@@ -10,27 +10,32 @@ import {
 } from "./index.css"
 import { NoneDecorationA } from "../../styles/ButtonStyles.css"
 
-const JourneyCard = ({ pricing, courseCode, title }) => {
-  console.log(pricing)
+const JourneyCardWithTutorials = ({ pricing, courseCode, title }) => {
   return (
     <JourneyCardContainer>
       <JourneyTitle>{title}</JourneyTitle>
       <JourneyOldPrice>
-        ${pricing.rrp !== null ? pricing.rrp : "990"}
+        ${pricing.tutorialsRrp !== null ? pricing.tutorialsRrp : pricing.rrp}
       </JourneyOldPrice>
       <JourneyPrice>
-        ${pricing.salePrice !== null ? pricing.salePrice : "990"}
+        $
+        {pricing.tutorialsSalePrice !== null
+          ? pricing.tutorialsSalePrice
+          : pricing.salePrice}
       </JourneyPrice>
       <PriceDes>Full payment</PriceDes>
       <PriceDes>Start anytime</PriceDes>
       <JourneyOldPrice>
-        ${pricing.paymentPlan !== null ? pricing.paymentPlan : "1200"}
+        $
+        {pricing.paymentPlanTutorialsRrp !== null
+          ? pricing.paymentPlanTutorialsRrp
+          : pricing.paymentPlan}
       </JourneyOldPrice>
       <JourneyPrice>
         $
-        {pricing.paymentPlanSalesPrice !== null
-          ? pricing.paymentPlanSalesPrice
-          : "1599"}
+        {pricing.paymentPlanTutorialsSalePrice !== null
+          ? pricing.paymentPlanTutorialsSalePrice
+          : pricing.paymentPlanSalePrice}
       </JourneyPrice>
       <PriceDes>Payment Plan</PriceDes>
       <PriceDes>Direct Debit</PriceDes>
@@ -51,4 +56,4 @@ const JourneyCard = ({ pricing, courseCode, title }) => {
   )
 }
 
-export default JourneyCard
+export default JourneyCardWithTutorials

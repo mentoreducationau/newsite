@@ -92,7 +92,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
               paymentOptions={courseData.paymentOptions}
               landingIntro={courseData.landingIntro}
             />
-            <JourneyStarted ref={courseGuideRef} />
+            <JourneyStarted pricing={courseData.pricing} courseCode={courseData.courseCode} ref={courseGuideRef} />
             <Knowmore course />
             <StudentsWork course />
             <FooterForm ref={ref} course />

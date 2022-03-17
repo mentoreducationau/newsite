@@ -45,12 +45,12 @@ export const AccordionContent = styled.div`
   }
 
   tr:nth-child(even) {
-    background-color: #f6faf9;
+    // background-color: #f6faf9;
     height: 63px;
   }
 
   tr:nth-child(odd) {
-    background-color: #e5f1ed;
+    // background-color: #e5f1ed;
     height: 63px;
   }
 `
@@ -110,4 +110,12 @@ export const AccordionTitle = styled(Title)`
   color: gray;
   font-size: 18px;
   line-height: 20px;
+`
+
+export const AccordionUnitNameTd = styled.div`
+  display: flex;
+
+  li {
+    margin-right: -10px;
+  }
 `

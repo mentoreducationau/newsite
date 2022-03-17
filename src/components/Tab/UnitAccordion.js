@@ -5,6 +5,7 @@ import {
   AccordionIcon,
   AccordionContent,
   AccordionTitle,
+  AccordionUnitNameTd
 } from "./Accordion.css"
 
 const UnitAccordion = ({ item, title }) => {
@@ -35,7 +36,7 @@ const UnitAccordion = ({ item, title }) => {
       >
         <table>
           <thead>
-            <tr style={{ background: "#34A57C", color: "#ffffff" }}>
+            <tr style={{ color: "hsla(0, 0%, 0%, 0.8)" }}>
               <th>Unit Name</th>
               <th>Unit Code</th>
             </tr>
@@ -43,7 +44,7 @@ const UnitAccordion = ({ item, title }) => {
           <tbody>
             {item.map(it => (
               <tr key={it.unitCode}>
-                <td>{it.unitName}</td>
+                <td><AccordionUnitNameTd><li></li>{it.unitName}</AccordionUnitNameTd></td>
                 <td>{it.unitCode}</td>
               </tr>
             ))}

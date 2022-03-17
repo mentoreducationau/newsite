@@ -67,6 +67,10 @@ export const PriceButton = styled.button`
   align-items: center;
   justify-content: center;
 
+  a {
+    color: white;
+  }
+
   ${props => props.theme.desktop`
     font-size: 1.5rem;
     line-height: 51px;

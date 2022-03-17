@@ -3,8 +3,9 @@ import { Title, Paragraph } from "../../styles/Typography.css"
 
 import { IntroContainer, Intro, CardWrapper } from "./index.css"
 import JourneyCard from "./JourneyCard"
+import JourneyCardWithTutorials from "./JourneyCardWithTutorials"
 
-const JourneyStarted = ({}, ref) => {
+const JourneyStarted = ({ pricing, courseCode }, ref) => {
   return (
     <>
       <Title>How to get your journey started</Title>
@@ -21,8 +22,8 @@ const JourneyStarted = ({}, ref) => {
         </Paragraph>
       </IntroContainer>
       <CardWrapper ref={ref}>
-        <JourneyCard title="Self Paced" />
-        <JourneyCard title="With Tutorials" />
+        <JourneyCard pricing={pricing} courseCode={courseCode} title="Self Paced" />
+        <JourneyCardWithTutorials pricing={pricing} courseCode={courseCode} title="With Tutorials" />
       </CardWrapper>
     </>
   )
