@@ -25,8 +25,8 @@ export const Prices = styled.div`
 export const PriceButton = styled.button`
   margin-top: 0.5rem;
   font-family: Futura Heavy;
-  font-size: 28px;
-  line-height: 37px;
+  font-size: 24px;
+  line-height: 30px;
   background: #DF2F16;
   color: white;
   border: 0;
@@ -49,14 +49,14 @@ export const PriceButton = styled.button`
   // `}
 `
 export const EnrolText = styled.p`
-  font-size: 22px;
-  line-height: 30px;
+  font-size: 19px;
+  line-height: 25px;
   margin-bottom: 0;
   color: black;
 `
 export const PriceText = styled.p`
-  font-size: 62px;
-  line-height: 62px;
+  font-size: 50px;
+  line-height: 1;
   margin-bottom: 7px;
   color: #df2f16;
 `
@@ -64,8 +64,8 @@ export const ClickHereWrapper = styled.div`
   text-align: center;
 `
 export const ClickHereText = styled.p`
-  font-size: 22px;
-  line-height: 22px;
+  font-size: 19px;
+  line-height: 19px;
   margin-bottom: 0;
   color: ${props => (props.click ? "#DF2F16" : "black")};
   text-decoration: ${props => (props.click ? "underline" : "none")};

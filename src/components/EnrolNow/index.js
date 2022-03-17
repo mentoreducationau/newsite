@@ -1,5 +1,4 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import {
   EnrolContainer,
   PriceContainer,
@@ -10,23 +9,18 @@ import {
   ClickHereText
 } from "./index.css"
 
-const EnrolNow = ({ price, excuteScroll }) => {
+const EnrolNow = ({ price, excuteScrollToFooterForm, excuteScrollToCourseGuide }) => {
   return (
     <EnrolContainer>
-      <StaticImage
-        src="../../images/footer-img.jpg"
-        alt="support"
-        width={340}
-      />
       <ClickHereWrapper>
-        <ClickHereText onClick={() => excuteScroll()} click>Click here</ClickHereText>
+        <ClickHereText onClick={() => excuteScrollToFooterForm()} click>Click here</ClickHereText>
         <ClickHereText>speak with an expert</ClickHereText>
       </ClickHereWrapper>
       <PriceContainer>
         <EnrolText>ENROL NOW FROM</EnrolText>
         <PriceText>${price}*</PriceText>
       </PriceContainer>
-        <PriceButton>ENROL</PriceButton>
+        <PriceButton onClick={() => excuteScrollToCourseGuide()}>ENROL</PriceButton>
     </EnrolContainer>
   )
 }

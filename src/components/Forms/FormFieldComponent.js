@@ -69,7 +69,7 @@ export const VerticalFormTemplate = ({ course, buttonText, handleSubmit }) => {
       </FormField>
       <FormField course={course}>
         <FormFieldComponent
-          label="Phone"
+          label="Phone Number"
           name="phone"
           value={values.phone || ""}
           onChange={handleChange}

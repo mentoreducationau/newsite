@@ -150,18 +150,9 @@ const TabTitle = styled.h3`
 
 const H3 = styled.h3`
   font-family: Futura Heavy;
-  font-size: 28px;
-  line-height: 37px;
+  font-size: 24px;
+  line-height: 30px;
   margin: 0;
-
-  ${props => props.theme.desktop`
-    font-size: ${props.course ? "28px" : "1.8rem"};
-    line-height: ${props.course ? "37px" : "45px"};
-  `}
-  ${props => props.theme.largeScreen`
-    font-size: ${props.course ? "1.2rem" : "2.8rem"};
-    line-height: ${props.course ? "30px" : "72px"};
-  `}
 `
 
 const H4 = styled.h4`

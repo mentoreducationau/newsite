@@ -14,11 +14,13 @@ export const FormField = styled(GlobalFormField)`
     font-size: 16px;
     line-height: 21px;
     color: #464343;
+    margin-bottom: 5px;
   }
 
   input {
     border: 2px solid #707070 !important;
     height: 35px !important;
+    margin-bottom: 5px;
     
     border-radius: 5px !important;
     transition: none !important;
@@ -27,8 +29,8 @@ export const FormField = styled(GlobalFormField)`
 
 export const FormButton = styled.button`
   font-family: Futura Heavy;
-  font-size: 28px;
-  line-height: 37px;
+  font-size: 24px;
+  line-height: 30px;
   background: #DF2F16;
   color: white;
   border: 0;

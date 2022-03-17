@@ -10,7 +10,9 @@ const CourseGuide = ({ course, imgContained }) => {
   }
   return (
     <CourseGuideContainer course={course}>
-      <H3 style={{marginTop: "0"}} course={course}>Download a Course Guide</H3>
+      <H3 style={{ marginTop: "0" }}>
+        Download a Course Guide
+      </H3>
       {imgContained && (
         <ImageContainer>
           <StaticImage
@@ -19,6 +21,12 @@ const CourseGuide = ({ course, imgContained }) => {
           />
         </ImageContainer>
       )}
+      <StaticImage
+        src="../../../images/footer-img.jpg"
+        alt="support"
+        width={340}
+        style={{ marginBottom: "10px" }}
+      />
       <VerticalFormTemplate
         course={course}
         buttonText="Download"

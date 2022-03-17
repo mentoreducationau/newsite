@@ -1,13 +1,19 @@
 import styled from "styled-components"
 import { Container } from "../../styles/ContainerStyles.css"
 
-export const MainContainer = styled(Container)`
+export const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 2rem auto;
+  padding: 0;
+  width: 90%;
+  @media(min-width: 1280px) {
+    max-width: 1140px;
+  }
 `
 
 export const StickySideBar = styled.div`
-  width: 22.5%;
+  width: 25%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -16,6 +22,9 @@ export const StickySideBar = styled.div`
     props.screenHeight ? "-" + props.screenHeight + "px" : "-4.5rem"};
   padding-top: ${props =>
     props.screenHeight ? props.screenHeight + "px" : "4.5rem"};
+  @media(min-width: 1280px) {
+    width: 300px;
+  }
 `
 export const CourseContainer = styled.div`
   width: 70%;
@@ -24,6 +33,10 @@ export const CourseContainer = styled.div`
 
   ul > li {
     list-style-type: square;
+  }
+
+  @media(min-width: 1280px) {
+    width: 800px;
   }
 `
 export const MobileStickyBarWrapper = styled.div`

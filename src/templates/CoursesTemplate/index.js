@@ -73,7 +73,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
           price={courseData.pricing.salePrice}
           excuteScroll={excuteScrollToCourseGuide}
         />
-        <Container>
+        <MainContainer>
           <Headline banner>
             {courseData.courseCode +
               " - " +
@@ -81,7 +81,7 @@ const CoursesTemplate = ({ pageContext, location }) => {
               " " +
               courseData.courseName}
           </Headline>
-        </Container>
+        </MainContainer>
         <MainContainer>
           <CourseContainer>
             <CourseInfo
@@ -101,7 +101,8 @@ const CoursesTemplate = ({ pageContext, location }) => {
             <CourseGuide course />
             <EnrolNow
               price={courseData.pricing.salePrice}
-              excuteScroll={excuteScrollToFooterForm}
+              excuteScrollToFooterForm={excuteScrollToFooterForm}
+              excuteScrollToCourseGuide={excuteScrollToCourseGuide}
             />
           </StickySideBar>
         </MainContainer>
